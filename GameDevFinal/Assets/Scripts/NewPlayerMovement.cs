@@ -16,11 +16,12 @@ public class NewPlayerMovement : MonoBehaviour
 
     public bool left = false;
     public bool right = true;
-
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,26 @@ public class NewPlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("horizontal", horizontal);
+        if (horizontal > 0) {
+            animator.SetTrigger("Right");
+        } else if (horizontal < 0) {
+            animator.SetTrigger("Left");
+        } else if (vertical < 0) {
+            animator.SetTrigger("Down");
+        } else if (vertical > 0) {
+            animator.SetTrigger("Up");
+        } else {
+            ResetTriggers();
+            animator.SetTrigger("Idle");
+        }
+    }
+
+    void ResetTriggers() {
+        animator.ResetTrigger("Right");
+        animator.ResetTrigger("Left");
+        animator.ResetTrigger("Up");
+        animator.ResetTrigger("Down");
     }
 
     void FixedUpdate() {
