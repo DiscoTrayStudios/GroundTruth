@@ -78,9 +78,24 @@ public class EForInteract : MonoBehaviour {
     public string evidence_name;
     public TestEvidence testEvi;
 
+    public GameObject exPoint;
+
+
     private int currentTextIndex = 0;
 
     // public AudioSource scribble;
+    
+
+    void Awake(){
+        if(testEvi){
+            exPoint = gameObject.transform.Find("ExPoint").gameObject;    
+        }
+        if(GameManager.CheckEvidence(evidence_name)){
+            print("checking");
+            exPoint.SetActive(false);
+            print(exPoint.name);
+        }
+    }
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player")) {
@@ -135,9 +150,12 @@ public class EForInteract : MonoBehaviour {
     private void collect() {
         // set text to something like "can I help you? and can repeat"
         // scribble.Play();
-        GameManager.AddEvidence(evidence_name);
-        GameManager.Instance.GmCollectEvidence(testEvi);
-        GameObject.Find("ExPoint").SetActive(false);
+        if(!GameManager.CheckEvidence(evidence_name)){
+            GameManager.AddEvidence(evidence_name);
+            GameManager.Instance.GmCollectEvidence(testEvi);    
+        }
+       
+        exPoint.SetActive(false);
         print("Evidence collected");
         //Journal.addToJournal(evidence_name);
         //testJournal.Instance.testAddToJournal(testEvi); 
