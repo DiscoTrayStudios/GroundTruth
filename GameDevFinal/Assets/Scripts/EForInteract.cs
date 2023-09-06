@@ -100,7 +100,7 @@ public class EForInteract : MonoBehaviour {
     void Update() {
         if (canShowDialog && Input.GetKeyDown(KeyCode.E))
         {
-            collect();
+            
             if (!dialogShown)
             {
                 GameManager.Instance.DialogShow(text[currentTextIndex]);
@@ -125,6 +125,7 @@ public class EForInteract : MonoBehaviour {
                 }
                 else
                 {
+                    collect();
                     currentTextIndex = 0;
                 }
             }
@@ -136,6 +137,7 @@ public class EForInteract : MonoBehaviour {
         // scribble.Play();
         GameManager.AddEvidence(evidence_name);
         GameManager.Instance.GmCollectEvidence(testEvi);
+        GameObject.Find("ExPoint").SetActive(false);
         print("Evidence collected");
         //Journal.addToJournal(evidence_name);
         //testJournal.Instance.testAddToJournal(testEvi); 
