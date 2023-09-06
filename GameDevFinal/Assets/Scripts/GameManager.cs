@@ -230,6 +230,7 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(false);
             testNotebook.SetActive(false);
         } else if (scene == "InvestigativeArea") {
+            
             groundshake = false;
             dialogBox.SetActive(false);
             UI.SetActive(false);

@@ -7,8 +7,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     private Rigidbody2D body;
     private Transform person;
-    public float horizontal;
-    public float vertical;
+    public float horizontal = 0;
+    public float vertical = 0;
 
     private float moveLimiter = 0.7f;
 
@@ -29,27 +29,17 @@ public class NewPlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("horizontal", horizontal);
-        if (horizontal > 0) {
-            animator.SetTrigger("Right");
-        } else if (horizontal < 0) {
-            animator.SetTrigger("Left");
-        } else if (vertical < 0) {
+        if (horizontal < -0.01 || horizontal > 0.01) {
+            animator.SetTrigger("Walking");
+        } else if (vertical < -0.01) {
             animator.SetTrigger("Down");
-        } else if (vertical > 0) {
+        } else if (vertical > 0.01) {
             animator.SetTrigger("Up");
         } else {
-            ResetTriggers();
             animator.SetTrigger("Idle");
         }
     }
 
-    void ResetTriggers() {
-        animator.ResetTrigger("Right");
-        animator.ResetTrigger("Left");
-        animator.ResetTrigger("Up");
-        animator.ResetTrigger("Down");
-    }
 
     void FixedUpdate() {
         if (horizontal != 0 && vertical != 0) {
