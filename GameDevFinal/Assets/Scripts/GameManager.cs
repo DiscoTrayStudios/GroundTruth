@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -158,6 +159,11 @@ public class GameManager : MonoBehaviour
         } else {
             print("Already Added Evidence");
         }
+    }
+
+    public static bool CheckEvidence(string evi){
+        print(evidence.ContainsKey(evi));
+        return evidence.ContainsKey(evi);
     }
 
     public static void RemoveAllEvidence() {
