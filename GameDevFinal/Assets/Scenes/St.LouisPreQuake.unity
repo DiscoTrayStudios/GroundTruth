@@ -24389,7 +24389,7 @@ GameObject:
   - component: {fileID: 1007355340}
   - component: {fileID: 1007355341}
   m_Layer: 0
-  m_Name: emotes_17 (1)
+  m_Name: ExPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31117,7 +31117,7 @@ GameObject:
   - component: {fileID: 1793634980}
   - component: {fileID: 1793634981}
   m_Layer: 0
-  m_Name: emotes_17
+  m_Name: ExPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31238,7 +31238,7 @@ GameObject:
   - component: {fileID: 1858503905}
   - component: {fileID: 1858503906}
   m_Layer: 0
-  m_Name: emotes_17
+  m_Name: ExPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
