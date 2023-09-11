@@ -29,11 +29,11 @@ public class NewPlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        if (horizontal < -0.01 || horizontal > 0.01) {
+        if (horizontal < -0.001 || horizontal > 0.001) {
             animator.SetTrigger("Walking");
-        } else if (vertical < -0.01) {
+        } else if (vertical < -0.001) {
             animator.SetTrigger("Down");
-        } else if (vertical > 0.01) {
+        } else if (vertical > 0.001) {
             animator.SetTrigger("Up");
         } else {
             animator.SetTrigger("Idle");
