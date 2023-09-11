@@ -24193,10 +24193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c94bcc8e9438ce468ed29530bb7f924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test_evidence_name: Tecumsah
-  test_evidence: 'Tecumsah predicted a natural disaster would happen and it did!
+  test_evidence_name: Tenskwatawa
+  test_evidence: 'Tenskwatawa predicted a natural disaster would happen and it did!
     His prophecy actually came true. '
-  test_evidence_summary: Tecumsah predicted earthquakes
+  test_evidence_summary: Tenskwatawa predicted earthquakes
   test_collected: 0
   score: 25
 --- !u!1 &868936955 stripped
