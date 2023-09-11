@@ -63359,6 +63359,7 @@ MonoBehaviour:
   - I am standing watch. Leave me be...
   evidence_name: Evi7
   testEvi: {fileID: 170264695}
+  exPoint: {fileID: 0}
 --- !u!61 &632093519
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69871,7 +69872,7 @@ Transform:
   m_GameObject: {fileID: 1096000115}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.08, y: -1.34, z: 10.058978}
+  m_LocalPosition: {x: 1.92, y: -1.16, z: 10.058978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -70007,6 +70008,7 @@ MonoBehaviour:
   - Some folks might disagree with me on that.
   evidence_name: Evi1
   testEvi: {fileID: 2119644335}
+  exPoint: {fileID: 0}
 --- !u!61 &1096000120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77607,6 +77609,7 @@ MonoBehaviour:
   - Sometimes I feel the ground rumble from the creature's steps...
   evidence_name: Evi4
   testEvi: {fileID: 103356774}
+  exPoint: {fileID: 0}
 --- !u!114 &1657408942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81599,6 +81602,7 @@ MonoBehaviour:
     of ice had broken.
   evidence_name: informationTwo
   testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
 --- !u!61 &1980269671
 BoxCollider2D:
   m_ObjectHideFlags: 0
