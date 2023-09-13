@@ -9,13 +9,36 @@ public class PlayerMovement: MonoBehaviour {
     private float moveLimiter = 0.7f;
     public float runSpeed = 5f;
 
+    private Animator animator;
+
     void Start() {
         body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("horizontal", horizontal);
+        if (horizontal > 0) {
+            animator.SetTrigger("Right");
+        } else if (horizontal < 0) {
+            animator.SetTrigger("Left");
+        } else if (vertical < 0) {
+            animator.SetTrigger("Down");
+        } else if (vertical > 0) {
+            animator.SetTrigger("Up");
+        } else {
+            animator.SetTrigger("Idle");
+        }
+    }
+
+    void ResetTriggers() {
+        animator.ResetTrigger("Right");
+        animator.ResetTrigger("Left");
+        animator.ResetTrigger("Up");
+        animator.ResetTrigger("Down");
     }
 
     void FixedUpdate() {

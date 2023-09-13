@@ -7,8 +7,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     private Rigidbody2D body;
     private Transform person;
-    public float horizontal;
-    public float vertical;
+    public float horizontal = 0;
+    public float vertical = 0;
 
     private float moveLimiter = 0.7f;
 
@@ -16,11 +16,12 @@ public class NewPlayerMovement : MonoBehaviour
 
     public bool left = false;
     public bool right = true;
-
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,7 +29,17 @@ public class NewPlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        if (horizontal < -0.001 || horizontal > 0.001) {
+            animator.SetTrigger("Walking");
+        } else if (vertical < -0.001) {
+            animator.SetTrigger("Down");
+        } else if (vertical > 0.001) {
+            animator.SetTrigger("Up");
+        } else {
+            animator.SetTrigger("Idle");
+        }
     }
+
 
     void FixedUpdate() {
         if (horizontal != 0 && vertical != 0) {
