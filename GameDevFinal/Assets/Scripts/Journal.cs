@@ -25,15 +25,19 @@ public class Journal : MonoBehaviour
 
     public void openingJournal()
     {
-        bookOpenSound.Play();
-        userInterface.SetActive(false);
-        openedNotebook.SetActive(true);
-        if(infoOne == true){
+        if(!GameManager.Instance.GetPlayerBusy()){
+            GameManager.Instance.SetPlayerBusy(true);
+            bookOpenSound.Play();
+            userInterface.SetActive(false);
+            openedNotebook.SetActive(true);
+            if(infoOne == true){
             informationOne.SetActive(true);
-        }
-        if(infoTwo == true){
+            }
+            if(infoTwo == true){
             informationTwo.SetActive(true);
+            } 
         }
+
         
     }
 
@@ -42,6 +46,7 @@ public class Journal : MonoBehaviour
         bookCloseSound.Play();
         userInterface.SetActive(true);
         openedNotebook.SetActive(false);
+        GameManager.Instance.SetPlayerBusy(false);
     }
 
     public static void addToJournal(string evid){
