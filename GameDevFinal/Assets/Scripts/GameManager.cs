@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
     private static int finalDay = 30;
     private static int pFinalDay = 30;
 
+    private static bool playerBusy = false;
+
     public GameObject failureScreen;
     public GameObject postFailureScreen;
 
@@ -102,6 +104,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool GetPlayerBusy(){
+        return playerBusy;
+    }
+
+    public void SetPlayerBusy(bool p){
+        playerBusy = p;
+    }
+
     public void AdddScoreKeeper(int n) {
         score_keeper.Add(n);
     }
@@ -139,10 +149,12 @@ public class GameManager : MonoBehaviour
         dialogBox.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(TypeText(text));
+        playerBusy = true;
     }
 
     public void DialogHide(){
         dialogBox.SetActive(false);
+        playerBusy = false;
     }
 
     IEnumerator TypeText(string text) {

@@ -106,41 +106,33 @@ public class EForInteract : MonoBehaviour {
     public void OnTriggerExit2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.DialogHide();
             canShowDialog = false;
-            currentTextIndex = 0;
         }
     }
 
     void Update() {
-        if (canShowDialog && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            
-            if (!dialogShown)
+            // If dialog not currently shown and it can be, starts dialog.
+            if (!GameManager.Instance.GetPlayerBusy() & !dialogShown & canShowDialog)
             {
                 GameManager.Instance.DialogShow(text[currentTextIndex]);
                 dialogShown = true;
             }
-            // else
-            // {
-            //     GameManager.Instance.DialogHide();
-            //     dialogShown = false;
-            //     collect();
-            // }
-            else
+            
+            else if (dialogShown)
             {
-                GameManager.Instance.DialogHide();
-                dialogShown = false;
 
                 if (currentTextIndex < text.Length - 1)
                 {
                     currentTextIndex++;
                     GameManager.Instance.DialogShow(text[currentTextIndex]);
-                    dialogShown = true;
                 }
                 else
                 {
                     collect();
+                    dialogShown = false;
+                    GameManager.Instance.DialogHide();
                     currentTextIndex = 0;
                 }
             }
