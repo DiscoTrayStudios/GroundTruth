@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Interact : MonoBehaviour {
 
     public string text;
-    private bool interacting = false;
+
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
         print("Entered..");
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
             GameManager.Instance.DialogShow(text);
-            interacting = true;
+            StartCoroutine(Dialog());
         }
     }
 
@@ -20,8 +20,18 @@ public class Interact : MonoBehaviour {
         if (collider2D.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.DialogHide();
-            
+            StopAllCoroutines();
         }
+    }
+
+    private IEnumerator Dialog(){
+       while(!Input.GetKeyDown(KeyCode.E)){
+        yield return null;
+        
+       } 
+       GameManager.Instance.DialogHide();
+       print("end");
+        StopAllCoroutines();
     }
 
     void Start() {
@@ -29,10 +39,7 @@ public class Interact : MonoBehaviour {
     }
 
     void Update() {
-        if(interacting & Input.GetKeyDown(KeyCode.E)){
-            GameManager.Instance.DialogHide();
-            interacting = false;
-        }
+      
     }
 
 
