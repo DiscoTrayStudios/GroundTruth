@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/St.LouisPreQuake.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/MJ_TestScene.unity
+    path: Assets/Scenes/Tests/MJ_TestScene.unity
     guid: 324a2bc141eb10c4f99c3bfaf872cc43
   - enabled: 1
     path: Assets/Scenes/InvestigativeArea.unity
     guid: f88a4c0f71a2d5d4da8fe8d18ef22570
   - enabled: 1
-    path: Assets/Scenes/GN_Test.unity
+    path: Assets/Scenes/NewMadridPreQuake.unity
     guid: 4c4ad37c9dbf20843a3ee08c30284543
   - enabled: 1
     path: Assets/Scenes/PostQuake.unity
@@ -29,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscene.unity
     guid: eefeb702001a8438cb51c7b822e1f8e7
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/RiverPostQuake.unity
     guid: adc09deb0be854377ae1eea4d4b5db28

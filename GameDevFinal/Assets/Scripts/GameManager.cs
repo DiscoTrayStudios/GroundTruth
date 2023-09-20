@@ -54,6 +54,9 @@ public class GameManager : MonoBehaviour
 
     private bool groundshake = false;
 
+    public string currentScene    = "TitleScreen";
+    public string currentLocation = "TitleScreen";
+
 
     // Start is called before the first frame update
     void Start()
@@ -102,6 +105,11 @@ public class GameManager : MonoBehaviour
                 pMonth = pMonth + 1;
             }
         }
+        if (currentScene == "InvestigativeArea") {
+            if(Input.GetKeyDown(KeyCode.Q)) {
+                ChangeScene(currentLocation);
+            }
+        }
     }
 
     public bool GetPlayerBusy(){
@@ -122,6 +130,14 @@ public class GameManager : MonoBehaviour
             TestEvidenceList.Add(testevi);
         }
         
+    }
+
+    public string GetCurrentScene() {
+        return currentScene;
+    }
+
+    public string GetCurrentLocation() {
+        return currentLocation;
     }
 
     public void DeadlineMissed() {
@@ -222,6 +238,8 @@ public class GameManager : MonoBehaviour
     }
 
     IEnumerator LoadYourAsyncScene(string scene) {
+        if (scene != "InvestigativeArea") {currentLocation = scene;}
+        currentScene = scene;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
 
         while(!asyncLoad.isDone) {
@@ -233,11 +251,22 @@ public class GameManager : MonoBehaviour
         // }
     }
 
+    public void TimeManager(string lastScene, string nextScene) { 
+        if (lastScene == nextScene) {print("No Travel Cost");}
+        else if (nextScene == "St.LouisPreQuake"  ) {AddDays(1);}
+        else if (nextScene == "RiverPreQuake"     ) {AddDays(2);}
+        else if (nextScene == "NewMadridPreQuake" ) {AddDays(5);}
+        else if (nextScene == "St.LouisPostQuakes") {PAddDays(1);}
+        else if (nextScene == "RiverPostQuake"    ) {PAddDays(2);}
+        else if (nextScene == "NewMadridPostQuake") {PAddDays(5);}
+    }
+
+
     public void ChangeScene(string scene){
-        print(scene);
-        // RemoveAllUsedEvidence();
+        TimeManager(currentLocation,scene);
         StartCoroutine(LoadYourAsyncScene(scene));
-        if (scene == "TitleScreen") {
+        // RemoveAllUsedEvidence();
+        if (scene == "TitleScreen") {            
             dialogBox.SetActive(false);
             UI.SetActive(false);
             PostUI.SetActive(false);
@@ -248,6 +277,7 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(false);
             testNotebook.SetActive(false);
         } else if (scene == "InvestigativeArea") {
+            
             groundshake = false;
             dialogBox.SetActive(false);
             UI.SetActive(false);
@@ -258,7 +288,7 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
-        } else if (scene == "GN_Test" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuakes" || scene == "RiverPreQuake" || 
+        } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuakes" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             dialogBox.SetActive(false);
             if (groundshake) {
@@ -294,6 +324,7 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(true);
         } else if (scene == "Cutscene") {
+            currentLocation = "InvestigativeArea";
             dialogBox.SetActive(false);
             UI.SetActive(false);
             testNotebook.SetActive(false);

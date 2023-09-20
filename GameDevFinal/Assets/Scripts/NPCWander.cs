@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// brought to you in part by https://discussions.unity.com/t/freeze-rigidbody-position-in-script/110627/2
+
 public class NPCWander : MonoBehaviour {
     public Waypoint[] waypoints;
     public float moveSpeed = 2f;
@@ -20,7 +22,6 @@ public class NPCWander : MonoBehaviour {
             Waypoint currentWaypoint = waypoints[currentWaypointIndex];
             Vector3 targetPosition = currentWaypoint.transform.position;
             Vector3 direction = (targetPosition - transform.position).normalized;
-
             // Move towards the waypoint
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
@@ -63,14 +64,16 @@ public class NPCWander : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Player")){
-            StopCoroutine(moveToWaypointCoroutine);
-            moveToWaypointCoroutine = null;
-        }
+void OnCollisionEnter2D(Collision2D collision) {
+    rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+    if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine != null) {
+        StopCoroutine(moveToWaypointCoroutine);
+        moveToWaypointCoroutine = null;
     }
+}
 
     void OnCollisionExit2D(Collision2D collision) {
+        rb.constraints = RigidbodyConstraints2D.None;
         if (collision.gameObject.CompareTag("Player")){
             if (moveToWaypointCoroutine == null) {
                 moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());

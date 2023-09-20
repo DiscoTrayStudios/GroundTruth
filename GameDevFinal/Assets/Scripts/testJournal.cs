@@ -120,6 +120,12 @@ public class testJournal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Q)) {
+            if (openedNotebook.activeSelf) {
+                bookCloseSound.Play();
+                userInterface.SetActive(true);  
+                openedNotebook.SetActive(false);
+            }
+        }
     }
 }
