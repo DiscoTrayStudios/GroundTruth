@@ -7,11 +7,12 @@ public class Interact : MonoBehaviour {
 
     public string text;
 
+
     public void OnTriggerEnter2D(Collider2D collider2D) {
         print("Entered..");
-        if (collider2D.gameObject.CompareTag("Player")) {
+        if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
             GameManager.Instance.DialogShow(text);
-            
+            StartCoroutine(Dialog());
         }
     }
 
@@ -19,8 +20,18 @@ public class Interact : MonoBehaviour {
         if (collider2D.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.DialogHide();
-            
+            StopAllCoroutines();
         }
+    }
+
+    private IEnumerator Dialog(){
+       while(!Input.GetKeyDown(KeyCode.E)){
+        yield return null;
+        
+       } 
+       GameManager.Instance.DialogHide();
+       print("end");
+        StopAllCoroutines();
     }
 
     void Start() {
@@ -28,7 +39,7 @@ public class Interact : MonoBehaviour {
     }
 
     void Update() {
-        
+      
     }
 
 

@@ -60,12 +60,15 @@ public class testJournal : MonoBehaviour
     }
     public void openingJournal()
     {
-        MakePages();
-        userInterface.SetActive(false);
-        openedNotebook.SetActive(true);
-        bookOpenSound.Play();
-        testAddToJournal(GameManager.TestEvidenceList);
+        if(!GameManager.Instance.GetPlayerBusy()){
+            GameManager.Instance.SetPlayerBusy(true);
+            MakePages();
+            userInterface.SetActive(false);
+            openedNotebook.SetActive(true);
+            bookOpenSound.Play();
+            testAddToJournal(GameManager.TestEvidenceList);
         //PageOne.SetActive(true);
+        }
     }
 
     public void closingJournal()

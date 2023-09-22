@@ -17,9 +17,14 @@ public class PlayerMovement: MonoBehaviour {
     }
 
     void Update() {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if(!GameManager.Instance.GetPlayerBusy()){
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");   
+        }
+        else{
+            horizontal = 0;
+            vertical = 0;
+        }
         animator.SetFloat("horizontal", horizontal);
         if (horizontal > 0) {
             animator.SetTrigger("Right");
