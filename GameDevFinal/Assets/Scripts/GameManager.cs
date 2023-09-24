@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     public string currentScene    = "TitleScreen";
     public string currentLocation = "TitleScreen";
+    public static bool post = false;
+    public static string article = "";
 
 
     // Start is called before the first frame update
@@ -79,8 +81,8 @@ public class GameManager : MonoBehaviour
         foreach (var evi in used_evidence.Values) {
             total += evi;
         }
-        totalText.text = "Score: " + total.ToString();
-        secondTotal.text = "Score: " + total.ToString();
+        totalText.text   = "Score: " + total.ToString() + "\n Article: " + article;
+        secondTotal.text = "Score: " + total.ToString() + "\n Article: " + article;
         if (finalDay - days < 16) {
             daysLeft.text = "Days Left: " + (finalDay - days).ToString();
         } else {
@@ -120,7 +122,7 @@ public class GameManager : MonoBehaviour
         playerBusy = p;
     }
 
-    public void AdddScoreKeeper(int n) {
+    public void AddScoreKeeper(int n) {
         score_keeper.Add(n);
     }
 
@@ -128,6 +130,9 @@ public class GameManager : MonoBehaviour
         if(!testevi.test_collected){
             testevi.setCollected(true);
             TestEvidenceList.Add(testevi);
+            ArticleManager.updateOrderedEvidenceSet(testevi);
+            print(testevi.test_evidence);         // sentence
+            print(testevi.test_evidence_summary); // phrase
         }
         
     }
@@ -203,14 +208,15 @@ public class GameManager : MonoBehaviour
     public static void AddUsedEvidence(string evi, int score) {
         if (!used_evidence.ContainsKey(evi)) {
             used_evidence.Add(evi, score);
+            article = ArticleManager.updateArticle(evi,false);
         } else {
-            print("Already Added Evidence");
         }
     }
 
     public static void DeleteUsedEvidence(string evi) {
         if (used_evidence.ContainsKey(evi)) {
             used_evidence.Remove(evi);
+            article = ArticleManager.updateArticle(evi,true);
         } else {
             print("That evidence is not being used");
         }
@@ -324,6 +330,7 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(true);
         } else if (scene == "Cutscene") {
+            post = true;
             currentLocation = "InvestigativeArea";
             dialogBox.SetActive(false);
             UI.SetActive(false);
