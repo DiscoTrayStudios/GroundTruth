@@ -5340,7 +5340,7 @@ GameObject:
   - component: {fileID: 296587789}
   - component: {fileID: 296587788}
   m_Layer: 5
-  m_Name: TextTwo
+  m_Name: TextThree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7167,18 +7167,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: testJournal, Assembly-CSharp
         m_MethodName: openingJournal
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1038403563}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SetPlayerBusy
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14208,7 +14196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9.474915, y: -19.530487}
+  m_AnchoredPosition: {x: 9.474915, y: -19.530518}
   m_SizeDelta: {x: 18.95, y: 53.5386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &694954576
@@ -25368,7 +25356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9.474915, y: -19.530487}
+  m_AnchoredPosition: {x: 9.474915, y: -19.530518}
   m_SizeDelta: {x: 18.95, y: 53.5386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1261439343
@@ -25383,15 +25371,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f832dbf6a2c7a246bd50077763cc7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journalBoxOne: {fileID: 81572932}
-  journalBoxTwo: {fileID: 586741237}
-  journalBoxThree: {fileID: 274934747}
-  journalBoxFour: {fileID: 1406177205}
-  journalBoxFive: {fileID: 784653433}
-  journalBoxSix: {fileID: 1535094720}
-  journalBoxSeven: {fileID: 675503432}
-  journalBoxEight: {fileID: 1996918475}
-  journalBoxNineArticle: {fileID: 631683743}
+  journalBoxOne: {fileID: 441086294}
+  journalBoxTwo: {fileID: 1783283067}
+  journalBoxThree: {fileID: 1869199064}
+  journalBoxFour: {fileID: 1517214506}
+  journalBoxFive: {fileID: 274402480}
+  journalBoxSix: {fileID: 673554548}
+  journalBoxSeven: {fileID: 1441088776}
+  journalBoxEight: {fileID: 296587788}
+  journalBoxNineArticle: {fileID: 112139637}
   PageOne: {fileID: 1388060879}
   PageTwo: {fileID: 71207365}
   PageThree: {fileID: 1037378696}
