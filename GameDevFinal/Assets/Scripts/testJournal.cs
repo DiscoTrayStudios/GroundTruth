@@ -128,6 +128,7 @@ public class testJournal : MonoBehaviour
                 bookCloseSound.Play();
                 userInterface.SetActive(true);  
                 openedNotebook.SetActive(false);
+                GameManager.Instance.SetPlayerBusy(false);
             }
         }
         else if(Input.GetKeyDown(KeyCode.LeftArrow)) {
