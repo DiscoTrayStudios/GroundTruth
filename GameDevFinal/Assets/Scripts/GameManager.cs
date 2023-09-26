@@ -81,8 +81,8 @@ public class GameManager : MonoBehaviour
         foreach (var evi in used_evidence.Values) {
             total += evi;
         }
-        totalText.text   = "Score: " + total.ToString() + "\n Article: " + article;
-        secondTotal.text = "Score: " + total.ToString() + "\n Article: " + article;
+        totalText.text   = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article;
+        secondTotal.text = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article;
         if (finalDay - days < 16) {
             daysLeft.text = "Days Left: " + (finalDay - days).ToString();
         } else {
@@ -331,6 +331,7 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(true);
         } else if (scene == "Cutscene") {
             post = true;
+            ArticleManager.resetArticleAndScore();
             currentLocation = "InvestigativeArea";
             dialogBox.SetActive(false);
             UI.SetActive(false);
