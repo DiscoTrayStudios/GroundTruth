@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 307850907}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 14.2, z: 0}
+  m_LocalPosition: {x: 1, y: 10.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27262,8 +27262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Evi6
-  test_evidence: 'The Mississippi River has recently had a steamboat on the river.
-    It can travel much faster than regular wooden boats. '
+  test_evidence: 'The Mississippi River has recently hosted its first steamboat.
+    It travels much faster than regular wooden boats. '
   test_evidence_summary: Steamboat on the Mississippi
   test_collected: 0
   score: 25
@@ -27524,8 +27524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Evi8
-  test_evidence: Man claims to sail up the entire river in one day from South to
-    North.
+  test_evidence: 'A man standing next to the Missouri River claimed to have sailed
+    up all of it in one day, from South to North. '
   test_evidence_summary: Traveling Up River
   test_collected: 0
   score: -25
