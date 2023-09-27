@@ -373,7 +373,7 @@ RectTransform:
   - {fileID: 1989066769}
   - {fileID: 1268659630}
   - {fileID: 792266232}
-  m_Father: {fileID: 211266600}
+  m_Father: {fileID: 1388060880}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1198,9 +1198,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 30611163}
-  - {fileID: 673554547}
-  - {fileID: 1441088775}
-  - {fileID: 296587787}
+  - {fileID: 441086293}
+  - {fileID: 1783283066}
+  - {fileID: 1869199063}
+  - {fileID: 1517214505}
+  - {fileID: 274402479}
   m_Father: {fileID: 1261439342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1686,7 +1688,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi4
-  score: 25
 --- !u!61 &84477806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2124,11 +2125,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1037378697}
+  m_Father: {fileID: 211266600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216.96335, y: -7.2}
+  m_AnchoredPosition: {x: -216.96335, y: -7.2000275}
   m_SizeDelta: {x: 374.0734, y: 525.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &114696482
@@ -3896,8 +3897,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 22399656}
   - {fileID: 1746379766}
+  - {fileID: 112139639}
   m_Father: {fileID: 1261439342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4822,7 +4823,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1388060880}
+  m_Father: {fileID: 71207366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5358,7 +5359,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 71207366}
+  m_Father: {fileID: 1037378697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8165,7 +8166,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1388060880}
+  m_Father: {fileID: 71207366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8593,7 +8594,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi7
-  score: -25
 --- !u!61 &445630589
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9269,7 +9269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi3
-  score: -25
 --- !u!61 &476805463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10593,7 +10592,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi1
-  score: -25
 --- !u!61 &551045655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11494,7 +11492,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi2
-  score: 25
 --- !u!61 &596060992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13123,7 +13120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi2
-  score: 25
 --- !u!61 &643069260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13458,7 +13454,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 71207366}
+  m_Father: {fileID: 1037378697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13811,7 +13807,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi1
-  score: -25
 --- !u!61 &684898645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15518,7 +15513,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi6
-  score: -25
 --- !u!61 &728979375
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17625,7 +17619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi5
-  score: 25
 --- !u!61 &816078398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21384,7 +21377,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 323282272}
-  - {fileID: 112139639}
+  - {fileID: 673554547}
+  - {fileID: 1441088775}
+  - {fileID: 296587787}
   m_Father: {fileID: 1261439342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -21619,7 +21614,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Should not Be Added
-  score: 0
 --- !u!82 &1038403568
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22176,7 +22170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi3
-  score: 25
 --- !u!61 &1090934440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22866,7 +22859,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi8
-  score: 25
 --- !u!61 &1125748331
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24517,7 +24509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi4
-  score: -25
 --- !u!61 &1220528351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29052,11 +29043,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 782282400}
-  - {fileID: 441086293}
-  - {fileID: 1783283066}
-  - {fileID: 1869199063}
-  - {fileID: 1517214505}
-  - {fileID: 274402479}
+  - {fileID: 22399656}
   m_Father: {fileID: 1261439342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -29723,7 +29710,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 71207366}
+  m_Father: {fileID: 1037378697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -30840,7 +30827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi7
-  score: -25
 --- !u!61 &1477865944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31484,7 +31470,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1388060880}
+  m_Father: {fileID: 71207366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -36354,7 +36340,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1388060880}
+  m_Father: {fileID: 71207366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -36512,7 +36498,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi8
-  score: 25
 --- !u!61 &1787315905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37460,7 +37445,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1388060880}
+  m_Father: {fileID: 71207366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -40265,7 +40250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi6
-  score: 25
 --- !u!61 &2009499881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40689,7 +40673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi5
-  score: -25
 --- !u!61 &2025020551
 BoxCollider2D:
   m_ObjectHideFlags: 0
