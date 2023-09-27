@@ -23812,9 +23812,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Volcano
-  test_evidence: 'A volcano erupted and caused all of the ground to shake. No one
-    has seen this volcano and no evidence of lava has been discovered, but I was
-    told this by a man. '
+  test_evidence: A volcano erupted and caused all of the ground to shake. No one
+    has seen this volcano and no evidence of lava has been discovered.
   test_evidence_summary: Volcanic Eruption
   test_collected: 0
   score: -25
