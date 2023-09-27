@@ -18,6 +18,7 @@ public class testJournal : MonoBehaviour
     public TextMeshProUGUI journalBoxSix;
     public TextMeshProUGUI journalBoxSeven;
     public TextMeshProUGUI journalBoxEight;
+    public TextMeshProUGUI journalBoxNineArticle;
     private List<TextMeshProUGUI> journalBoxes = new List<TextMeshProUGUI>();
 
     private int pageIndex;
@@ -31,6 +32,8 @@ public class testJournal : MonoBehaviour
     public AudioSource bookOpenSound;
     public AudioSource bookCloseSound;
     private bool firstOpen = false; 
+
+
 
     // Start is called before the first frame update
     void Start(){
@@ -89,7 +92,7 @@ public class testJournal : MonoBehaviour
             journalBoxes[boxIndex].text = item.test_evidence;
             if(boxIndex +1 < journalBoxes.Count){
                 boxIndex = boxIndex + 1;
-            }
+            } journalBoxNineArticle.text = ArticleManager.getArticle();
             // item.test_collected = true;
         }
                
@@ -125,6 +128,16 @@ public class testJournal : MonoBehaviour
                 bookCloseSound.Play();
                 userInterface.SetActive(true);  
                 openedNotebook.SetActive(false);
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+            if (openedNotebook.activeSelf) {
+                testFlipRightPage(-1);
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.RightArrow)) {
+            if (openedNotebook.activeSelf) {
+                testFlipRightPage(1);
             }
         }
     }

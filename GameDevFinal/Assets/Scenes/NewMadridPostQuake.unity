@@ -10599,8 +10599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Losing Home
-  test_evidence: The earthquake has caused houses to burn down. Some townspeople
-    in New Madrid lost their homes because of the earthquakes.
+  test_evidence: 'The earthquake has caused houses to burn down, leaving some homeless. '
   test_evidence_summary: Houses got burned
   test_collected: 0
   score: 25
@@ -10815,8 +10814,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Ground Shake
-  test_evidence: 'There continues to be smaller moments of the ground shaking. Sometimes
-    they happen 3 to 4 times in a day. You have felt this happen too. '
+  test_evidence: 'There continues to be small tremors in New Madrid, even far after
+    the earthquake. Sometimes they happen 3 to 4 times in a day. '
   test_evidence_summary: Ground continues to shake
   test_collected: 0
   score: 25
@@ -10949,8 +10948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Monster causing earthquakes
-  test_evidence: A HUGE monster caused the earthquakes to happen. We better not upset
-    the monster or else they will cause more earthquakes!
+  test_evidence: 'A HUGE monster caused the earthquakes to happen. We had better
+    not upset the monster, or else they will cause more earthquakes! '
   test_evidence_summary: Monster Earthquakes
   test_collected: 0
   score: -25

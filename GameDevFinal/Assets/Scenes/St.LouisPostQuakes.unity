@@ -23664,7 +23664,7 @@ Transform:
   m_GameObject: {fileID: 540245766}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.9283, y: -5.6, z: 14.778102}
+  m_LocalPosition: {x: 27, y: -7.5, z: 14.778102}
   m_LocalScale: {x: -19.800743, y: 50.646782, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23812,11 +23812,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Volcano
-  test_evidence: A volcano erupted and caused all of the ground to shake. No one
-    has seen this volcano and no evidence of lava has been discovered.
+  test_evidence: 'A volcano erupted and caused all of the ground to shake. No one
+    has seen this volcano and no evidence of lava has been discovered, but I was
+    told this by a man. '
   test_evidence_summary: Volcanic Eruption
   test_collected: 0
-  score: 25
+  score: -25
 --- !u!1 &624359841
 GameObject:
   m_ObjectHideFlags: 0
@@ -23907,11 +23908,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Arch
-  test_evidence: Someone is planning to build an arch in St. Louis. This seems really
-    impractical.
+  test_evidence: 'Someone is planning to build an arch in St. Louis. '
   test_evidence_summary: Building Arch
   test_collected: 0
-  score: -25
+  score: 25
 --- !u!1 &746134562
 GameObject:
   m_ObjectHideFlags: 0
@@ -24194,8 +24194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Tenskwatawa
-  test_evidence: 'Tenskwatawa predicted a natural disaster would happen and it did!
-    His prophecy actually came true. '
+  test_evidence: 'Tenskwatawa, leader of the Prophetstown settlement in Indiana,
+    predicted that a natural disaster would strike in Missouri. '
   test_evidence_summary: Tenskwatawa predicted earthquakes
   test_collected: 0
   score: 25
@@ -30936,8 +30936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - 'My goodness... '
-  - 'He really tried! '
-  - 'Perhaps Tecumseh is the prophet that he says he is... '
+  - I had been told something like this was coming.
+  - 'Perhaps Tenskwatawa is the prophet that he says he is... '
   - 'I felt the whole earth shake! '
   evidence_name: Evi5
   testEvi: {fileID: 770101286}
