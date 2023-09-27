@@ -237,6 +237,7 @@ public class GameManager : MonoBehaviour
 
     public void PAddDays(int n) {
         pDays = n + pDays;
+        TravelDisplay.GetComponent<TravelDisplay>().daysTravel = n/2;
     }
 
     void Awake(){
