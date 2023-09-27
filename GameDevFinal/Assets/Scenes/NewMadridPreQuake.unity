@@ -1899,10 +1899,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Magical Creatures
-  test_evidence: There are some magical creatures in the woods around here. I saw
-    it with my own eyes.My husband calls me crazy and says it was just a wild dog.It
-    had HUGE teeth.It had wings and would fly.I am the only person who has seen it.
-    Sometimes I feel the ground rumble from the creature's steps.
+  test_evidence: 'In other news, a woman in New Madrid claims to see monsters in
+    the night. '
   test_evidence_summary: Creature in the woods
   test_collected: 0
   score: -25
@@ -52153,8 +52151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: River People
-  test_evidence: Have you seen the river people yet? They come out from the depths
-    of the river at night. I am standing watch. Leave me be.
+  test_evidence: 'There''s some River People, too, but Timothy Robinson of New Madrid
+    is taking care of it. '
   test_evidence_summary: River People
   test_collected: 0
   score: -25
@@ -61502,6 +61500,8 @@ MonoBehaviour:
   postDaysLeft: {fileID: 0}
   failureScreen: {fileID: 0}
   postFailureScreen: {fileID: 0}
+  currentScene: TitleScreen
+  currentLocation: TitleScreen
 --- !u!4 &518378721
 Transform:
   m_ObjectHideFlags: 0
@@ -63355,8 +63355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - Have you seen the river people yet?
-  - They come out from the depths of the river at night.
-  - I am standing watch. Leave me be...
+  - They crawl out on the bank late at night.
+  - I have to keep watch in case they come during the day.
   evidence_name: Evi7
   testEvi: {fileID: 170264695}
   exPoint: {fileID: 0}
@@ -70004,8 +70004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - I would like this area to become part of the United States.
-  - Some folks might disagree with me on that.
+  - I think this area should be part of the United States.
+  - Some folks might disagree, but I know what's best for us!
   evidence_name: Evi1
   testEvi: {fileID: 2119644335}
   exPoint: {fileID: 0}
@@ -77600,13 +77600,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - There are some magical creatures in the woods around here...
-  - I saw it with my own eyes.
-  - My husband calls me crazy but I saw it!
-  - It had huge teeth!
-  - It had wings and would fly.
-  - I am the only person who has seen it.
-  - Sometimes I feel the ground rumble from the creature's steps...
+  - There are some strange creatures in the woods around here...
+  - I even saw one late at night!
+  - It had huge teeth and was taller than any man!
+  - My husband says I'm crazy but I know what I saw!
+  - Sometimes I feel the ground rumble from the creatures steps...
   evidence_name: Evi4
   testEvi: {fileID: 103356774}
   exPoint: {fileID: 0}
@@ -85574,8 +85572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Unionist Pre
-  test_evidence: I would like this area to become part of the United States. Some
-    folks might disagree with me on that.
+  test_evidence: 'There is ambivalence in the air in New Madrid. One man was eager
+    to join our United States, but noted others might disagree. '
   test_evidence_summary: Joining the United States
   test_collected: 0
   score: 25

@@ -24639,6 +24639,7 @@ MonoBehaviour:
   - Maybe we can all just get along...
   evidence_name: Evi2
   testEvi: {fileID: 1463703164}
+  exPoint: {fileID: 0}
 --- !u!61 &1033061326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24980,7 +24981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Lou Purchase
-  test_evidence: This land out here was "acquired" in the Louisiana Purchase.
+  test_evidence: 'In 1804, President Jefferson bought almost a million square miles
+    of land from the French Republic.  One woman who was born in this region voiced
+    confusion at how either had claim to somewhere her family had lived in for generations. '
   test_evidence_summary: Louisiana Purchase
   test_collected: 0
   score: 25
@@ -27755,8 +27758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: War
-  test_evidence: There is conflict in the northern territories. It can lead to a
-    war.
+  test_evidence: 'Another war with Britain seems inevitable, but the people of the
+    landlocked state of Missouri are nonplussed by a war primarily motivated by naval
+    trade. '
   test_evidence_summary: Potential war in 1812
   test_collected: 0
   score: 25
@@ -28275,7 +28279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Flying
-  test_evidence: You can fly from St. Louis to Virginia in the year 1812.
+  test_evidence: 'A man claims the ability to fly from St. Louis to Virginia, in
+    the current year, 1812. He did not provide instructions, but I would recommend
+    flapping your arms like wings. '
   test_evidence_summary: Flying
   test_collected: 0
   score: -25
@@ -30592,6 +30598,7 @@ MonoBehaviour:
   - We cannot fly and we never will!
   evidence_name: Evi5
   testEvi: {fileID: 1603756445}
+  exPoint: {fileID: 0}
 --- !u!61 &1754727271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31329,6 +31336,7 @@ MonoBehaviour:
   - I have been living near here for a long time...
   evidence_name: Evi3
   testEvi: {fileID: 1231334004}
+  exPoint: {fileID: 0}
 --- !u!114 &1866578264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31598,6 +31606,8 @@ MonoBehaviour:
   postDaysLeft: {fileID: 0}
   failureScreen: {fileID: 0}
   postFailureScreen: {fileID: 0}
+  currentScene: TitleScreen
+  currentLocation: TitleScreen
 --- !u!4 &1887962535
 Transform:
   m_ObjectHideFlags: 0
