@@ -27721,7 +27721,7 @@ MonoBehaviour:
   - {fileID: 1287879057}
   - {fileID: 307850909}
   - {fileID: 500751469}
-  moveSpeed: 0.75
+  moveSpeed: 1.5
 --- !u!61 &1529002009
 BoxCollider2D:
   m_ObjectHideFlags: 0
