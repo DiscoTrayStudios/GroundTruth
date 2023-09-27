@@ -23,14 +23,6 @@ public class TravelDisplay : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    //IEnumerator ShowTravel(int daysback){
-    //int d = 0;
-      //  while(d < daysback){
-        //StartCoroutine(ShortHandMove());
-        //yield return
-        //}
-    //}
-
     private void Change(){
     
         StartCoroutine(ShortHandMove(2, 1));
@@ -41,8 +33,6 @@ public class TravelDisplay : MonoBehaviour
         float longrx = longhand.rectTransform.eulerAngles.x;
         float longry = longhand.rectTransform.eulerAngles.y;
         float longrz = 360f;
-        //print("change");
-        //print(longrz);
         while(longrz > 0f){
             longrz = longrz - 24;            
             longhand.rectTransform.eulerAngles = new UnityEngine.Vector3 (longrx, longry, longrz);
@@ -57,9 +47,6 @@ public class TravelDisplay : MonoBehaviour
         float shortry = shorthand.rectTransform.eulerAngles.y;
         float shortrz = 360f;
         float rot = 30f;
-        
-       // print("change");
-       // print(shortrz);
         while(shortrz > 0){
                        
            

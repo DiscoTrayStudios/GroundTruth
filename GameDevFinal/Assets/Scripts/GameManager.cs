@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
     public GameObject TravelDisplay;
 
     public TextMeshProUGUI totalText;
-    private int total;
     public TextMeshProUGUI secondTotal;
 
     public TextMeshProUGUI dateText;
@@ -81,10 +80,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        total = 0;
-        foreach (var evi in used_evidence.Values) {
-            total += evi;
-        }
         totalText.text   = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article;
         secondTotal.text = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article;
         if (finalDay - days < 16) {

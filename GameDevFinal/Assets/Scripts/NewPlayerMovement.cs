@@ -6,7 +6,6 @@ public class NewPlayerMovement : MonoBehaviour
 {
 
     private Rigidbody2D body;
-    private Transform person;
     public float horizontal = 0;
     public float vertical = 0;
 

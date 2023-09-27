@@ -64,20 +64,18 @@ public class NPCWander : MonoBehaviour {
         }
     }
 
-void OnCollisionEnter2D(Collision2D collision) {
-    rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-    if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine != null) {
-        StopCoroutine(moveToWaypointCoroutine);
-        moveToWaypointCoroutine = null;
+    void OnCollisionEnter2D(Collision2D collision) {
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine != null) {
+            StopCoroutine(moveToWaypointCoroutine);
+            moveToWaypointCoroutine = null;
+        }
     }
-}
 
     void OnCollisionExit2D(Collision2D collision) {
         rb.constraints = RigidbodyConstraints2D.None;
-        if (collision.gameObject.CompareTag("Player")){
-            if (moveToWaypointCoroutine == null) {
-                moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
-            }
+        if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine == null && rb.gameObject.activeSelf){
+            moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
         }
     }
 

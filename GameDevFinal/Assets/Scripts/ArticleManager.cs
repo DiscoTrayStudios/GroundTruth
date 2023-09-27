@@ -18,7 +18,7 @@ public class ArticleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      }
+    }
 
     // Update is called once per frame
     void Update()
@@ -58,7 +58,7 @@ public class ArticleManager : MonoBehaviour
 
         if (remove) { 
             if (truesums.Contains(sum)) { score -= 25; }
-            else                 { score += 25; }
+            else                        { score += 25; }
             sentences.Remove(sentence);
             article = "";
             foreach (string s in sentences) {
