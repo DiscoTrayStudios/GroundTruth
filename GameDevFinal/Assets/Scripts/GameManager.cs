@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public GameObject BossUI;
     public GameObject PostUI;
 
+    public GameObject TravelDisplay;
+
     public TextMeshProUGUI totalText;
     private int total;
     public TextMeshProUGUI secondTotal;
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
     private static int pFinalDay = 30;
 
     private static bool playerBusy = false;
+
+    private static int daysTravel;
 
     public GameObject failureScreen;
     public GameObject postFailureScreen;
@@ -228,6 +232,7 @@ public class GameManager : MonoBehaviour
 
     public void AddDays(int n) {
         days = n + days;
+        TravelDisplay.GetComponent<TravelDisplay>().daysTravel = n/2;
     }
 
     public void PAddDays(int n) {
