@@ -155,10 +155,14 @@ public class GameManager : MonoBehaviour
     public void ResetScene() {
         //GABBY UPDATE
         TestEvidenceList.Clear();
+        print(TestEvidenceList.Count);
         //
         groundshake = false;
         RemoveAllEvidence();
         RemoveAllUsedEvidence();
+        prequakeWatcher.ResetEvidence();
+        postquakeWatcher.ResetEvidence();
+        
         days = 20;
         month = 9;
         pDays = 20;
@@ -202,6 +206,7 @@ public class GameManager : MonoBehaviour
         evidence.Clear();
         print("Evidence Removed");
         print(evidence.Count);
+        
     }
 
     public static void AddUsedEvidence(string evi, int score) {
@@ -232,6 +237,7 @@ public class GameManager : MonoBehaviour
 
     public void PAddDays(int n) {
         pDays = n + pDays;
+        TravelDisplay.GetComponent<TravelDisplay>().daysTravel = n/2;
     }
 
     void Awake(){

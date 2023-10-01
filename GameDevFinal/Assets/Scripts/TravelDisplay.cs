@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,8 +15,14 @@ public class TravelDisplay : MonoBehaviour
     public Image longhand;
     public Image shorthand;
 
+    public TextMeshProUGUI TravelText;
+    
     public void ShowTraveling(){
-        print(daysTravel);
+        gameObject.SetActive(true);
+        StartCoroutine(ShortHandMove(daysTravel, 1));
+    }
+    public void ShowTraveling(String place){
+        ChangeTravelText(place);
         gameObject.SetActive(true);
         StartCoroutine(ShortHandMove(daysTravel, 1));
     }
@@ -23,9 +31,17 @@ public class TravelDisplay : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void Change(){
+    //IEnumerator ShowTravel(int daysback){
+    //int d = 0;
+      //  while(d < daysback){
+        //StartCoroutine(ShortHandMove());
+        //yield return
+        //}
+    //}
+
+    public void ChangeTravelText(String place){
     
-        StartCoroutine(ShortHandMove(2, 1));
+        TravelText.SetText("Traveling to " + place + "...");
         
     }
 
@@ -79,10 +95,6 @@ public class TravelDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(Input.GetKeyDown(KeyCode.Space)){
-        //Change();
-        ShowTraveling();
-        print("pressed");
-      }
+      
     }
 }

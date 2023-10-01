@@ -25,9 +25,15 @@ public class NewPlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        if(!GameManager.Instance.GetPlayerBusy()){
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        }
+        else{
+            horizontal = 0;
+            vertical = 0;
+        }
         if (horizontal < -0.001 || horizontal > 0.001) {
             animator.SetTrigger("Walking");
         } else if (vertical < -0.001) {

@@ -52,7 +52,11 @@ public class EvidenceWatcher : MonoBehaviour
             }
         }
     }
-
+    public void ResetEvidence(){
+        foreach (var evi in evidence) {
+            evi.SetActive(false);
+        }
+    }
     public void TestShowEvidence(){
         //print("testShowEvidence" + GameManager.TestEvidenceList);
         index = 0;
