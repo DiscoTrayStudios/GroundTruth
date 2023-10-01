@@ -11,6 +11,7 @@ public class NPCWander : MonoBehaviour {
     private int currentWaypointIndex = 0;
     private Coroutine moveToWaypointCoroutine;
     private Rigidbody2D rb;
+    private bool someoneIsStill = false;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -65,10 +66,20 @@ public class NPCWander : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-        if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine != null) {
-            StopCoroutine(moveToWaypointCoroutine);
-            moveToWaypointCoroutine = null;
+        print(someoneIsStill);
+        if (!someoneIsStill) {
+            someoneIsStill = true;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine != null) {
+                StopCoroutine(moveToWaypointCoroutine);
+                moveToWaypointCoroutine = null;
+            }
+        }
+        else {
+            rb.constraints = RigidbodyConstraints2D.None;
+            Vector2 desired = rb.gameObject.transform.position - collision.gameObject.transform.position;
+            print(collision.gameObject.transform.position);
+	       	rb.AddForce(desired.normalized * moveSpeed - rb.velocity);
         }
     }
 
@@ -76,7 +87,9 @@ public class NPCWander : MonoBehaviour {
         rb.constraints = RigidbodyConstraints2D.None;
         if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine == null && rb.gameObject.activeSelf){
             moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
-        }
+            if (someoneIsStill) {
+                someoneIsStill = false;
+            }
+        }        
     }
-
 }

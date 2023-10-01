@@ -23816,7 +23816,6 @@ MonoBehaviour:
     has seen this volcano and no evidence of lava has been discovered.
   test_evidence_summary: Volcanic Eruption
   test_collected: 0
-  score: -25
 --- !u!1 &624359841
 GameObject:
   m_ObjectHideFlags: 0
@@ -23910,7 +23909,6 @@ MonoBehaviour:
   test_evidence: 'Someone is planning to build an arch in St. Louis. '
   test_evidence_summary: Building Arch
   test_collected: 0
-  score: 25
 --- !u!1 &746134562
 GameObject:
   m_ObjectHideFlags: 0
@@ -24070,6 +24068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 868936955}
   waypoints:
   - {fileID: 1483225426}
   - {fileID: 1996458634}
@@ -24197,7 +24196,6 @@ MonoBehaviour:
     predicted that a natural disaster would strike in Missouri. '
   test_evidence_summary: Tenskwatawa predicted earthquakes
   test_collected: 0
-  score: 25
 --- !u!1 &868936955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4377197526211451461, guid: 13b1fe7632ab5b442851429a3b34806d, type: 3}
@@ -24937,6 +24935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 868936955}
   waypoints:
   - {fileID: 1314008261}
   - {fileID: 1282068960}
@@ -30998,6 +30997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 868936955}
   waypoints:
   - {fileID: 1717115909}
   - {fileID: 300908561}
@@ -31237,6 +31237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 868936955}
   waypoints:
   - {fileID: 1267396284}
   - {fileID: 1143969265}
@@ -31691,6 +31692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 868936955}
   waypoints:
   - {fileID: 2061007252}
   - {fileID: 1715188947}
@@ -31940,6 +31942,7 @@ MonoBehaviour:
   testNotebook: {fileID: 0}
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}
+  TravelDisplay: {fileID: 0}
   totalText: {fileID: 0}
   secondTotal: {fileID: 0}
   dateText: {fileID: 0}
