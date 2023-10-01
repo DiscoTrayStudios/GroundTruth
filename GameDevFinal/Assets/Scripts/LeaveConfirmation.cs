@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class LeaveConfirmation : MonoBehaviour
 {
-
+    private bool isPost;
     // Start is called before the first frame update
-    public void OpenConfirmBox(){
+    public void OpenConfirmBox(bool post){
         if(!GameManager.Instance.GetPlayerBusy()){
+            isPost = post;
             gameObject.SetActive(true);  
             GameManager.Instance.SetPlayerBusy(true); 
         }
@@ -17,7 +18,12 @@ public class LeaveConfirmation : MonoBehaviour
     public void LeaveConfirmed(){
         GameManager.Instance.SetPlayerBusy(false);
         gameObject.SetActive(false);
-        GameManager.Instance.ChangeScene("InvestigativeArea");
+        if(!isPost){
+            GameManager.Instance.ChangeScene("InvestigativeArea");
+        }
+        else{
+            GameManager.Instance.ChangeScene("PostQuake");
+        }
     }
 
 
