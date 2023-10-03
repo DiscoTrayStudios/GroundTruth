@@ -28,11 +28,11 @@ public class Highlight : MonoBehaviour
     {
         print("I was clicked");
         if (wasClicked) {
-            target = new Color(1f, 0f, 0f, 0.3f);
+            target = new Color(1f, 0f, 0f, 0.15f);
             wasClicked = false;
             GameManager.DeleteUsedEvidence(evidence);
         } else {
-            target = new Color(0f, 1f, 0f, 0.3f);
+            target = new Color(0f, 1f, 0f, 0.6f);
             wasClicked = true;
             GameManager.AddUsedEvidence(evidence, 0);
         }
