@@ -43,8 +43,21 @@ public class NPCWander : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        
+    void FixedUpdate() {
+        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 10f);
+        if (colls.Length > 1) {
+    		foreach (Collider2D col in colls) {
+    			if (col.CompareTag("Player")) {
+    				Vector2 desired = col.gameObject.transform.position - rb.gameObject.transform.position;
+
+    				float actual = desired.magnitude;
+    				if (col.CompareTag("Player")) {
+    					actual *= 3;
+    				}
+    				rb.AddForce(desired.normalized * -1 - rb.velocity);
+    			}
+    		}
+        }
     }
 
 
@@ -87,9 +100,7 @@ public class NPCWander : MonoBehaviour {
         rb.constraints = RigidbodyConstraints2D.None;
         if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine == null && rb.gameObject.activeSelf){
             moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
-            if (someoneIsStill) {
-                someoneIsStill = false;
-            }
+            someoneIsStill = false;
         }        
     }
 }
