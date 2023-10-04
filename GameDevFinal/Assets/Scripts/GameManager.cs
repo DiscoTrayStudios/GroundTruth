@@ -108,11 +108,11 @@ public class GameManager : MonoBehaviour
                 pMonth = pMonth + 1;
             }
         }
-        if (currentScene == "InvestigativeArea") {
-            if(Input.GetKeyDown(KeyCode.Q)) {
-                ChangeScene(currentLocation);
-            }
-        }
+      //  if (currentScene == "InvestigativeArea") {
+      //      if(Input.GetKeyDown(KeyCode.Q)) {
+      //          ChangeScene(currentLocation); This lets you go back for free
+      //      }
+      //  }
     }
 
     public bool GetPlayerBusy(){

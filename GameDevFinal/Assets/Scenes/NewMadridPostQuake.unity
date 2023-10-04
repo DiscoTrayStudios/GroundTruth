@@ -9960,7 +9960,7 @@ GameObject:
   - component: {fileID: 298588405}
   m_Layer: 0
   m_Name: Farmer's wife
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10046,13 +10046,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1616967101}
   waypoints:
   - {fileID: 53799639}
   - {fileID: 11254249}
   - {fileID: 118635580}
   - {fileID: 11254249}
   moveSpeed: 1.05
+  player: {fileID: 1616967101}
 --- !u!61 &298588402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10205,7 +10205,7 @@ GameObject:
   - component: {fileID: 454353346}
   m_Layer: 0
   m_Name: Male Townsperson 1
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10291,13 +10291,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1616967101}
   waypoints:
   - {fileID: 977688834}
   - {fileID: 535007210}
   - {fileID: 929438470}
   - {fileID: 192336875}
   moveSpeed: 0.875
+  player: {fileID: 1616967101}
 --- !u!61 &454353343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11014,7 +11014,7 @@ GameObject:
   - component: {fileID: 967889323}
   m_Layer: 0
   m_Name: Female Townsperson 1
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11098,13 +11098,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1616967101}
   waypoints:
   - {fileID: 1688796430}
   - {fileID: 1081005464}
   - {fileID: 492254044}
   - {fileID: 187842028}
   moveSpeed: 1.5
+  player: {fileID: 1616967101}
 --- !u!61 &967889320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68574,7 +68574,7 @@ GameObject:
   - component: {fileID: 1627804157}
   m_Layer: 0
   m_Name: Male Farmer 1
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68660,13 +68660,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1616967101}
   waypoints:
   - {fileID: 1326521560}
   - {fileID: 1827851483}
   - {fileID: 1510367340}
   - {fileID: 2121224480}
   moveSpeed: 1
+  player: {fileID: 1616967101}
 --- !u!50 &1627804154
 Rigidbody2D:
   serializedVersion: 4
