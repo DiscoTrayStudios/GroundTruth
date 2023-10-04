@@ -173,7 +173,8 @@ public class GameManager : MonoBehaviour
         print("cleared journal");
         postTestNotebook.GetComponent<testJournal>().ResetJournal();
         print("cleared journal");
-        
+        ArticleManager.resetArticleAndScore();
+        article = "";
         
         days = 20;
         month = 9;
