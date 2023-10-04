@@ -18,7 +18,7 @@ public class ArticleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      }
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,7 +39,7 @@ public class ArticleManager : MonoBehaviour
 
     public static int getScore() { return score; }
 
-    public static void resetArticleAndScore() { article = ""; score = 0; }
+    public static void resetArticleAndScore() { article = ""; score = 0; sentences = new HashSet<string>(); }
 
     public static string updateArticle(string evix, bool remove) {
         int num = evix[^1] - '0';
@@ -58,7 +58,7 @@ public class ArticleManager : MonoBehaviour
 
         if (remove) { 
             if (truesums.Contains(sum)) { score -= 25; }
-            else                 { score += 25; }
+            else                        { score += 25; }
             sentences.Remove(sentence);
             article = "";
             foreach (string s in sentences) {

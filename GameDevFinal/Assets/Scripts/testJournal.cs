@@ -93,7 +93,7 @@ public class testJournal : MonoBehaviour
             journalBoxes[boxIndex].text = item.test_evidence;
             if(boxIndex +1 < journalBoxes.Count){
                 boxIndex = boxIndex + 1;
-            } journalBoxNineArticle.text = ArticleManager.getArticle();
+            } journalBoxNineArticle.text = "Current Article Draft: \n" + ArticleManager.getArticle();
             // item.test_collected = true;
         }
                
@@ -129,6 +129,7 @@ public class testJournal : MonoBehaviour
                 bookCloseSound.Play();
                 userInterface.SetActive(true);  
                 openedNotebook.SetActive(false);
+                GameManager.Instance.SetPlayerBusy(false);
             }
         }
         else if(Input.GetKeyDown(KeyCode.LeftArrow)) {

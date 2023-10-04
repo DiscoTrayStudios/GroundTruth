@@ -23827,6 +23827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 1483225426}
   - {fileID: 1996458634}
@@ -24766,6 +24767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 1314008261}
   - {fileID: 1282068960}
@@ -24986,7 +24988,6 @@ MonoBehaviour:
     confusion at how either had claim to somewhere her family had lived in for generations. '
   test_evidence_summary: Louisiana Purchase
   test_collected: 0
-  score: 25
 --- !u!1 &1267396282
 GameObject:
   m_ObjectHideFlags: 0
@@ -27763,7 +27764,6 @@ MonoBehaviour:
     trade. '
   test_evidence_summary: Potential war in 1812
   test_collected: 0
-  score: 25
 --- !u!1 &1483225424
 GameObject:
   m_ObjectHideFlags: 0
@@ -28284,7 +28284,6 @@ MonoBehaviour:
     flapping your arms like wings. '
   test_evidence_summary: Flying
   test_collected: 0
-  score: -25
 --- !u!1 &1613148982
 GameObject:
   m_ObjectHideFlags: 0
@@ -30656,6 +30655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 1717115909}
   - {fileID: 300908561}
@@ -30895,6 +30895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 1267396284}
   - {fileID: 1143969265}
@@ -31349,6 +31350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 2061007252}
   - {fileID: 1715188947}
@@ -31598,6 +31600,7 @@ MonoBehaviour:
   testNotebook: {fileID: 0}
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}
+  TravelDisplay: {fileID: 0}
   totalText: {fileID: 0}
   secondTotal: {fileID: 0}
   dateText: {fileID: 0}
