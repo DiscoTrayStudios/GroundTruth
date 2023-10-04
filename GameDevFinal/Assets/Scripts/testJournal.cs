@@ -79,6 +79,7 @@ public class testJournal : MonoBehaviour
         bookCloseSound.Play();
         userInterface.SetActive(true);
         openedNotebook.SetActive(false);
+        GameManager.Instance.SetPlayerBusy(false);
     }
 
     public void testAddToJournal(List<TestEvidence> evidenceList){

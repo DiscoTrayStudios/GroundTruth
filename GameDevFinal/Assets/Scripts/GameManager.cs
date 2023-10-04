@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public GameObject Credits;
     public GameObject UI;
     public GameObject testNotebook;
+
+    public GameObject postTestNotebook;
     public GameObject BossUI;
     public GameObject PostUI;
 
@@ -167,6 +169,11 @@ public class GameManager : MonoBehaviour
         RemoveAllUsedEvidence();
         prequakeWatcher.ResetEvidence();
         postquakeWatcher.ResetEvidence();
+        testNotebook.GetComponent<testJournal>().ResetJournal();
+        print("cleared journal");
+        postTestNotebook.GetComponent<testJournal>().ResetJournal();
+        print("cleared journal");
+        
         
         days = 20;
         month = 9;
