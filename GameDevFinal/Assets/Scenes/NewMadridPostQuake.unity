@@ -10046,6 +10046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1616967101}
   waypoints:
   - {fileID: 53799639}
   - {fileID: 11254249}
@@ -10290,6 +10291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1616967101}
   waypoints:
   - {fileID: 977688834}
   - {fileID: 535007210}
@@ -10602,7 +10604,6 @@ MonoBehaviour:
   test_evidence: 'The earthquake has caused houses to burn down, leaving some homeless. '
   test_evidence_summary: Houses got burned
   test_collected: 0
-  score: 25
 --- !u!1 &662691919
 GameObject:
   m_ObjectHideFlags: 0
@@ -10818,7 +10819,6 @@ MonoBehaviour:
     the earthquake. Sometimes they happen 3 to 4 times in a day. '
   test_evidence_summary: Ground continues to shake
   test_collected: 0
-  score: 25
 --- !u!1 &830762831
 GameObject:
   m_ObjectHideFlags: 0
@@ -10952,7 +10952,6 @@ MonoBehaviour:
     not upset the monster, or else they will cause more earthquakes! '
   test_evidence_summary: Monster Earthquakes
   test_collected: 0
-  score: -25
 --- !u!1 &929438468
 GameObject:
   m_ObjectHideFlags: 0
@@ -11099,6 +11098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1616967101}
   waypoints:
   - {fileID: 1688796430}
   - {fileID: 1081005464}
@@ -68660,6 +68660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1616967101}
   waypoints:
   - {fileID: 1326521560}
   - {fileID: 1827851483}

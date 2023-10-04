@@ -1903,7 +1903,6 @@ MonoBehaviour:
     the night. '
   test_evidence_summary: Creature in the woods
   test_collected: 0
-  score: -25
 --- !u!1 &111164225
 GameObject:
   m_ObjectHideFlags: 0
@@ -51997,6 +51996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 1937000054}
   - {fileID: 858050538}
@@ -52155,7 +52155,6 @@ MonoBehaviour:
     is taking care of it. '
   test_evidence_summary: River People
   test_collected: 0
-  score: -25
 --- !u!1 &187405088
 GameObject:
   m_ObjectHideFlags: 0
@@ -53772,7 +53771,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 2
-  score: 2
 --- !u!61 &244700718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58932,7 +58930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi8
-  score: 8
 --- !u!61 &271172222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59240,7 +59237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi7
-  score: 7
 --- !u!61 &346992056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61492,6 +61488,7 @@ MonoBehaviour:
   testNotebook: {fileID: 0}
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}
+  TravelDisplay: {fileID: 0}
   totalText: {fileID: 1660815581}
   secondTotal: {fileID: 0}
   dateText: {fileID: 187405090}
@@ -61705,7 +61702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi1
-  score: 1
 --- !u!61 &530994297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62705,6 +62701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 1812559034}
   - {fileID: 1442710348}
@@ -63514,6 +63511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 126826305}
   - {fileID: 1820465272}
@@ -64774,7 +64772,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 6
-  score: 6
 --- !u!61 &770726194
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64911,7 +64908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi2
-  score: 2
 --- !u!61 &771549373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65391,7 +65387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 8
-  score: 8
 --- !u!61 &812760952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67877,7 +67872,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi6
-  score: 6
 --- !u!61 &951676202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68098,7 +68092,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 4
-  score: 4
 --- !u!61 &966712758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -70163,6 +70156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 1228946339}
   - {fileID: 897438930}
@@ -70422,7 +70416,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi3
-  score: 3
 --- !u!61 &1123546405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -70867,7 +70860,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 1
-  score: 1
 --- !u!61 &1159488185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73665,7 +73657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 7
-  score: 7
 --- !u!61 &1398404230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77776,6 +77767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 489400169}
   - {fileID: 1442710348}
@@ -79266,6 +79258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 1442710348}
   - {fileID: 1812559034}
@@ -80432,7 +80425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi4
-  score: 4
 --- !u!61 &1882766884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -80604,7 +80596,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 5
-  score: 5
 --- !u!61 &1910873586
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82520,7 +82511,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi5
-  score: 5
 --- !u!61 &2022345226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82657,7 +82647,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 3
-  score: 3
 --- !u!61 &2037349911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -85576,7 +85565,6 @@ MonoBehaviour:
     to join our United States, but noted others might disagree. '
   test_evidence_summary: Joining the United States
   test_collected: 0
-  score: 25
 --- !u!1 &2139678079
 GameObject:
   m_ObjectHideFlags: 0

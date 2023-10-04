@@ -11,10 +11,6 @@ public class TestEvidencePiece : MonoBehaviour
     public GameObject eviFullPaper;
     public TextMeshProUGUI eviFullText;
     
-    //private List<TextMeshProUGUI> journalBoxes = new List<TextMeshProUGUI>();
-
-    //private List<GameObject> Pages = new List<GameObject>();
-
     // Start is called before the first frame update
     void Start()
     {

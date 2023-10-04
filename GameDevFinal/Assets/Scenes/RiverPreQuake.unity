@@ -27266,7 +27266,6 @@ MonoBehaviour:
     It travels much faster than regular wooden boats. '
   test_evidence_summary: Steamboat on the Mississippi
   test_collected: 0
-  score: 25
 --- !u!1 &1430715973
 GameObject:
   m_ObjectHideFlags: 0
@@ -27524,11 +27523,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test_evidence_name: Evi8
-  test_evidence: 'A man standing next to the Missouri River claimed to have sailed
+  test_evidence: 'A man standing next to the Mississippi River claimed to have sailed
     up all of it in one day, from South to North. '
   test_evidence_summary: Traveling Up River
   test_collected: 0
-  score: -25
 --- !u!1 &1529002001
 GameObject:
   m_ObjectHideFlags: 0
@@ -27716,12 +27714,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1027588120}
   waypoints:
   - {fileID: 506942869}
   - {fileID: 1287879057}
   - {fileID: 307850909}
   - {fileID: 500751469}
-  moveSpeed: 1.5
+  moveSpeed: 0.75
 --- !u!61 &1529002009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33035,12 +33034,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1027588120}
   waypoints:
   - {fileID: 307850909}
   - {fileID: 1287879057}
   - {fileID: 506942869}
   - {fileID: 500751469}
-  moveSpeed: 2
+  moveSpeed: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

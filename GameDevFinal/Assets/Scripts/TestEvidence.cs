@@ -10,7 +10,6 @@ public class TestEvidence : MonoBehaviour
     public string test_evidence;
     public string test_evidence_summary;
     public bool test_collected;
-    public int score;
     void Start()
     {
         
@@ -28,9 +27,6 @@ public class TestEvidence : MonoBehaviour
     }
     public void setCollected(bool collected){
         test_collected = collected;
-    }
-    public void setScore(int num){
-        score = num;
     }
 
     // Update is called once per frame
