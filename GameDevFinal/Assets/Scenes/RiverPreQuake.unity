@@ -27544,7 +27544,7 @@ GameObject:
   - component: {fileID: 1529002009}
   m_Layer: 0
   m_Name: Farmer Wife
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27714,13 +27714,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1027588120}
   waypoints:
   - {fileID: 506942869}
   - {fileID: 1287879057}
   - {fileID: 307850909}
   - {fileID: 500751469}
   moveSpeed: 0.75
+  player: {fileID: 1027588120}
 --- !u!61 &1529002009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32812,7 +32812,7 @@ GameObject:
   - component: {fileID: 1824936334}
   m_Layer: 0
   m_Name: Farmer
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33034,13 +33034,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1027588120}
   waypoints:
   - {fileID: 307850909}
   - {fileID: 1287879057}
   - {fileID: 506942869}
   - {fileID: 500751469}
   moveSpeed: 1
+  player: {fileID: 1027588120}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

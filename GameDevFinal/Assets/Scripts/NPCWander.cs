@@ -7,6 +7,7 @@ using UnityEngine;
 public class NPCWander : MonoBehaviour {
     public Waypoint[] waypoints;
     public float moveSpeed = 2f;
+    public GameObject player;
 
     private int currentWaypointIndex = 0;
     private Coroutine moveToWaypointCoroutine;
@@ -44,18 +45,27 @@ public class NPCWander : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 10f);
+        Collider2D[] colls = Physics2D.OverlapCircleAll(player.transform.position, 1.5f);
         if (colls.Length > 1) {
     		foreach (Collider2D col in colls) {
-    			if (col.CompareTag("Player")) {
-    				Vector2 desired = col.gameObject.transform.position - rb.gameObject.transform.position;
-
-    				float actual = desired.magnitude;
-    				if (col.CompareTag("Player")) {
-    					actual *= 3;
-    				}
-    				rb.AddForce(desired.normalized * -1 - rb.velocity);
-    			}
+                if (col.CompareTag("NPC")) {
+                    Rigidbody2D crb = col.gameObject.GetComponent<Rigidbody2D>();
+//        			Vector2 desired = col.gameObject.transform.position - player.gameObject.transform.position;
+//        			crb.AddForce(desired.normalized * (desired.magnitude - 5f) * moveSpeed - crb.velocity);
+                    if (GameManager.Instance.GetPlayerBusy()) {
+                        crb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+                        if (moveToWaypointCoroutine != null) {
+                            StopCoroutine(moveToWaypointCoroutine);
+                            moveToWaypointCoroutine = null;
+                        }
+                    }
+                    else {
+                        crb.constraints = RigidbodyConstraints2D.None;
+                        if (moveToWaypointCoroutine == null){
+                            moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+                        }
+                    }
+                }
     		}
         }
     }
@@ -87,12 +97,6 @@ public class NPCWander : MonoBehaviour {
                 StopCoroutine(moveToWaypointCoroutine);
                 moveToWaypointCoroutine = null;
             }
-        }
-        else {
-            rb.constraints = RigidbodyConstraints2D.None;
-            Vector2 desired = rb.gameObject.transform.position - collision.gameObject.transform.position;
-            print(collision.gameObject.transform.position);
-	       	rb.AddForce(desired.normalized * moveSpeed - rb.velocity);
         }
     }
 

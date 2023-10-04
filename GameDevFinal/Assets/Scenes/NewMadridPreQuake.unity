@@ -51809,7 +51809,7 @@ GameObject:
   - component: {fileID: 167138967}
   m_Layer: 0
   m_Name: SmallFarmer
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51996,13 +51996,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 1937000054}
   - {fileID: 858050538}
   - {fileID: 375745087}
   - {fileID: 1812559034}
   moveSpeed: 1
+  player: {fileID: 1399488542}
 --- !u!50 &167138967
 Rigidbody2D:
   serializedVersion: 4
@@ -62514,7 +62514,7 @@ GameObject:
   - component: {fileID: 596491544}
   m_Layer: 0
   m_Name: Native Male
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62701,13 +62701,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 1812559034}
   - {fileID: 1442710348}
   - {fileID: 251567379}
   - {fileID: 897438930}
   moveSpeed: 1
+  player: {fileID: 1399488542}
 --- !u!50 &596491544
 Rigidbody2D:
   serializedVersion: 4
@@ -63205,7 +63205,7 @@ GameObject:
   - component: {fileID: 632093523}
   m_Layer: 0
   m_Name: Male Farmer (1)
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63511,13 +63511,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 126826305}
   - {fileID: 1820465272}
   - {fileID: 1415094514}
   - {fileID: 685866977}
   moveSpeed: 1
+  player: {fileID: 1399488542}
 --- !u!50 &632093523
 Rigidbody2D:
   serializedVersion: 4
@@ -68325,7 +68325,7 @@ GameObject:
   - component: {fileID: 997683081}
   m_Layer: 0
   m_Name: Native FeMale
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69851,7 +69851,7 @@ GameObject:
   - component: {fileID: 1096000124}
   m_Layer: 0
   m_Name: Unionist
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70156,13 +70156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 1228946339}
   - {fileID: 897438930}
   - {fileID: 615759768}
   - {fileID: 897438930}
   moveSpeed: 1
+  player: {fileID: 1399488542}
 --- !u!50 &1096000124
 Rigidbody2D:
   serializedVersion: 4
@@ -77459,7 +77459,7 @@ GameObject:
   - component: {fileID: 1657408946}
   m_Layer: 0
   m_Name: Female Creature Seer
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77767,12 +77767,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 489400169}
   - {fileID: 1442710348}
   - {fileID: 251567379}
   moveSpeed: 1
+  player: {fileID: 1399488542}
 --- !u!50 &1657408946
 Rigidbody2D:
   serializedVersion: 4
@@ -79071,7 +79071,7 @@ GameObject:
   - component: {fileID: 1742125199}
   m_Layer: 0
   m_Name: Husband
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79258,7 +79258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1399488542}
   waypoints:
   - {fileID: 1442710348}
   - {fileID: 1812559034}
@@ -79267,6 +79266,7 @@ MonoBehaviour:
   - {fileID: 1937000054}
   - {fileID: 1812559034}
   moveSpeed: 1
+  player: {fileID: 1399488542}
 --- !u!50 &1742125199
 Rigidbody2D:
   serializedVersion: 4
@@ -81567,7 +81567,7 @@ GameObject:
   - component: {fileID: 1980269675}
   m_Layer: 0
   m_Name: Male Farmer (1)
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -42,6 +42,7 @@ public class ArticleManager : MonoBehaviour
     public static void resetArticleAndScore() { article = ""; score = 0; sentences = new HashSet<string>(); }
 
     public static string updateArticle(string evix, bool remove) {
+        print(evix);
         int num = evix[^1] - '0';
         string sentence = "";
         string sum =      "";

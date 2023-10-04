@@ -23926,7 +23926,7 @@ GameObject:
   - component: {fileID: 746134569}
   m_Layer: 0
   m_Name: Female Townsperson
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24068,13 +24068,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 868936955}
   waypoints:
   - {fileID: 1483225426}
   - {fileID: 1996458634}
   - {fileID: 1282068960}
   - {fileID: 469601794}
   moveSpeed: 1.05
+  player: {fileID: 868936955}
 --- !u!50 &746134568
 Rigidbody2D:
   serializedVersion: 4
@@ -24784,7 +24784,7 @@ GameObject:
   - component: {fileID: 1033061331}
   m_Layer: 0
   m_Name: Priest
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24935,7 +24935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 868936955}
   waypoints:
   - {fileID: 1314008261}
   - {fileID: 1282068960}
@@ -24944,6 +24943,7 @@ MonoBehaviour:
   - {fileID: 1267396284}
   - {fileID: 1996458634}
   moveSpeed: 1.5
+  player: {fileID: 868936955}
 --- !u!50 &1033061330
 Rigidbody2D:
   serializedVersion: 4
@@ -30846,7 +30846,7 @@ GameObject:
   - component: {fileID: 1754727274}
   m_Layer: 0
   m_Name: Farmer Man
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30997,7 +30997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 868936955}
   waypoints:
   - {fileID: 1717115909}
   - {fileID: 300908561}
@@ -31006,6 +31005,7 @@ MonoBehaviour:
   - {fileID: 469601794}
   - {fileID: 1901801222}
   moveSpeed: 1.1
+  player: {fileID: 868936955}
 --- !u!50 &1754727273
 Rigidbody2D:
   serializedVersion: 4
@@ -31095,7 +31095,7 @@ GameObject:
   - component: {fileID: 1760869913}
   m_Layer: 0
   m_Name: Male Townsperson
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31237,7 +31237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 868936955}
   waypoints:
   - {fileID: 1267396284}
   - {fileID: 1143969265}
@@ -31246,6 +31245,7 @@ MonoBehaviour:
   - {fileID: 624359843}
   - {fileID: 1214902726}
   moveSpeed: 0.95
+  player: {fileID: 868936955}
 --- !u!50 &1760869912
 Rigidbody2D:
   serializedVersion: 4
@@ -31540,7 +31540,7 @@ GameObject:
   - component: {fileID: 1866578266}
   m_Layer: 0
   m_Name: NA Woman
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31692,13 +31692,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 868936955}
   waypoints:
   - {fileID: 2061007252}
   - {fileID: 1715188947}
   - {fileID: 1585697285}
   - {fileID: 1282068960}
   moveSpeed: 1
+  player: {fileID: 868936955}
 --- !u!50 &1866578265
 Rigidbody2D:
   serializedVersion: 4
