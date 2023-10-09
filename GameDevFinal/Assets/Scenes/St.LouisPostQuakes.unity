@@ -23817,6 +23817,8 @@ MonoBehaviour:
     has seen this volcano and no evidence of lava has been discovered.
   test_evidence_summary: Volcanic Eruption
   dialogue: '"Some say there was a volcano!"'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &562661665
 MonoBehaviour:
@@ -23924,6 +23926,8 @@ MonoBehaviour:
   test_evidence: 'Someone is planning to build an arch in St. Louis. '
   test_evidence_summary: Building Arch
   dialogue: Someone said they want to build a giant arch.
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &688633782
 MonoBehaviour:
@@ -24225,6 +24229,8 @@ MonoBehaviour:
     predicted that a natural disaster would strike in Missouri. '
   test_evidence_summary: Tenskwatawa predicted earthquakes
   dialogue: '"Perhaps Tenskwatawa is the prophet that he claims to be."'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &770101287
 MonoBehaviour:
@@ -34355,7 +34361,7 @@ SceneRoots:
   - {fileID: 1029339674}
   - {fileID: 1591604341}
   - {fileID: 1613148983}
+  - {fileID: 562661663}
   - {fileID: 474651012}
   - {fileID: 770101285}
   - {fileID: 688633780}
-  - {fileID: 562661663}
