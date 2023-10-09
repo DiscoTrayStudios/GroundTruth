@@ -132,8 +132,9 @@ public class GameManager : MonoBehaviour
             testevi.setCollected(true);
             TestEvidenceList.Add(testevi);
             ArticleManager.updateOrderedEvidenceSet(testevi);
-            print(testevi.test_evidence);         // sentence
-            print(testevi.test_evidence_summary); // phrase
+//            print(testevi.dialogue);         // literal dialogue
+//            print(testevi.test_evidence);         // sentence
+//            print(testevi.test_evidence_summary); // phrase
         }
         
     }

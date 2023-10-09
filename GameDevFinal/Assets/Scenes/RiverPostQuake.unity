@@ -569,7 +569,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2118709037}
-  - {fileID: 1470871000}
   m_Father: {fileID: 996315365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &458145196
@@ -5350,7 +5349,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 835984152}
-  - {fileID: 1300478144}
   m_Father: {fileID: 996315365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1146369779
@@ -5615,8 +5613,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1300478144}
   - component: {fileID: 1300478145}
+  - component: {fileID: 1300478146}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: EBackwards River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5630,12 +5629,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300478143}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.22132301, y: -7.8220663, z: -0.024666995}
+  m_LocalScale: {x: 1, y: 1.0557, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1146369778}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1300478145
 MonoBehaviour:
@@ -5653,7 +5652,20 @@ MonoBehaviour:
   test_evidence: 'The earthquakes caused the river to flow backwards for a moment.
     While this seems outlandish, multiple people have supported the claim. '
   test_evidence_summary: River flowing backwards.
+  dialogue: '"The current of the river was going backwards."'
   test_collected: 0
+--- !u!114 &1300478146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300478143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1386204229
 GameObject:
   m_ObjectHideFlags: 0
@@ -25504,8 +25516,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1470871000}
   - component: {fileID: 1470871001}
+  - component: {fileID: 1470871002}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: EMan Saves Family
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25519,12 +25532,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470870999}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2793813, y: 4.1495585, z: 10.043646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 458145195}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1470871001
 MonoBehaviour:
@@ -25542,7 +25555,20 @@ MonoBehaviour:
   test_evidence: 'Man claims to save family from the river, but the family does not
     exist for further questioning. '
   test_evidence_summary: Man claims he saves family
+  dialogue: '"I single-handedly saved all four of them on my own."'
   test_collected: 0
+--- !u!114 &1470871002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470870999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1595624957
 GameObject:
   m_ObjectHideFlags: 0
@@ -34488,3 +34514,5 @@ SceneRoots:
   - {fileID: 436210045}
   - {fileID: 2094398408}
   - {fileID: 1767370476}
+  - {fileID: 1470871000}
+  - {fileID: 1300478144}

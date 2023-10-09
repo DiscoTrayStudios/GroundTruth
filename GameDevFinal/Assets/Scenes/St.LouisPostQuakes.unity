@@ -23777,8 +23777,9 @@ GameObject:
   m_Component:
   - component: {fileID: 562661663}
   - component: {fileID: 562661664}
+  - component: {fileID: 562661665}
   m_Layer: 0
-  m_Name: Evidence (3)
+  m_Name: EVolcano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23793,11 +23794,11 @@ Transform:
   m_GameObject: {fileID: 562661662}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.456001, y: -2.6282787, z: 0.6386393}
+  m_LocalPosition: {x: -1.7160015, y: 1.5217214, z: 0.6386393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1033061328}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &562661664
 MonoBehaviour:
@@ -23815,7 +23816,20 @@ MonoBehaviour:
   test_evidence: A volcano erupted and caused all of the ground to shake. No one
     has seen this volcano and no evidence of lava has been discovered.
   test_evidence_summary: Volcanic Eruption
+  dialogue: '"Some say there was a volcano!"'
   test_collected: 0
+--- !u!114 &562661665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562661662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &624359841
 GameObject:
   m_ObjectHideFlags: 0
@@ -23871,8 +23885,9 @@ GameObject:
   m_Component:
   - component: {fileID: 688633780}
   - component: {fileID: 688633781}
+  - component: {fileID: 688633782}
   m_Layer: 0
-  m_Name: Evidence (2)
+  m_Name: EArch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23887,11 +23902,11 @@ Transform:
   m_GameObject: {fileID: 688633779}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.383998, y: -1.4382787, z: 0.6386393}
+  m_LocalPosition: {x: -1.716002, y: 1.5217214, z: 0.6386393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1866578262}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &688633781
 MonoBehaviour:
@@ -23908,7 +23923,20 @@ MonoBehaviour:
   test_evidence_name: Arch
   test_evidence: 'Someone is planning to build an arch in St. Louis. '
   test_evidence_summary: Building Arch
+  dialogue: Someone said they want to build a giant arch.
   test_collected: 0
+--- !u!114 &688633782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688633779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &746134562
 GameObject:
   m_ObjectHideFlags: 0
@@ -24157,8 +24185,9 @@ GameObject:
   m_Component:
   - component: {fileID: 770101285}
   - component: {fileID: 770101286}
+  - component: {fileID: 770101287}
   m_Layer: 0
-  m_Name: Evidence (1)
+  m_Name: ETenskwatawa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24173,11 +24202,11 @@ Transform:
   m_GameObject: {fileID: 770101284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.056002, y: 9.451721, z: 0.6386393}
+  m_LocalPosition: {x: -1.716002, y: 1.5217214, z: 0.6386393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1754727269}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &770101286
 MonoBehaviour:
@@ -24195,7 +24224,20 @@ MonoBehaviour:
   test_evidence: 'Tenskwatawa, leader of the Prophetstown settlement in Indiana,
     predicted that a natural disaster would strike in Missouri. '
   test_evidence_summary: Tenskwatawa predicted earthquakes
+  dialogue: '"Perhaps Tenskwatawa is the prophet that he claims to be."'
   test_collected: 0
+--- !u!114 &770101287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770101284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &868936955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4377197526211451461, guid: 13b1fe7632ab5b442851429a3b34806d, type: 3}
@@ -24920,7 +24962,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1007355340}
-  - {fileID: 562661663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1033061329
@@ -30917,7 +30958,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1858503905}
-  - {fileID: 770101285}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1754727270
@@ -30935,7 +30975,7 @@ MonoBehaviour:
   text:
   - 'My goodness... '
   - I had been told something like this was coming.
-  - 'Perhaps Tenskwatawa is the prophet that he says he is... '
+  - 'Perhaps Tenskwatawa is the prophet that he claims to be... '
   - 'I felt the whole earth shake! '
   evidence_name: Evi5
   testEvi: {fileID: 770101286}
@@ -31656,7 +31696,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1793634980}
-  - {fileID: 688633780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1866578263
@@ -31940,6 +31979,7 @@ MonoBehaviour:
   Credits: {fileID: 0}
   UI: {fileID: 0}
   testNotebook: {fileID: 0}
+  postTestNotebook: {fileID: 0}
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}
   TravelDisplay: {fileID: 0}
@@ -34316,3 +34356,6 @@ SceneRoots:
   - {fileID: 1591604341}
   - {fileID: 1613148983}
   - {fileID: 474651012}
+  - {fileID: 770101285}
+  - {fileID: 688633780}
+  - {fileID: 562661663}

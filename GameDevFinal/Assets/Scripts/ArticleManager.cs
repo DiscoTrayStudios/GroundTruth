@@ -1,3 +1,5 @@
+using System;
+using System.Security.Cryptography;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +11,7 @@ public class ArticleManager : MonoBehaviour
     public static List<TestEvidence> tespreordered  = new List<TestEvidence>{};
     public static List<TestEvidence> tespostordered = new List<TestEvidence>{};
     public static HashSet<string> sentences = new HashSet<string>(); 
-    private static HashSet<string> truesums = new HashSet<string>{"Building Arch", "Tenskwatawa predicted earthquakes", "Houses got burned", 
+    private static HashSet<string> truesums = new HashSet<string>{"Building Arch", "Prop", "Tenskwatawa predicted earthquakes", "Houses got burned", 
                                                                   "Ground continues to shake", "Potential war in 1812", "Louisiana Purchase", 
                                                                   "Joining the United States", "Steamboat on the Mississippi", };
     
@@ -26,6 +28,37 @@ public class ArticleManager : MonoBehaviour
     }
 
 
+   // public static string getFeedback {
+   //     Random rnd = new Random();
+   //     string closing;
+//
+   //     switch(rnd.Next(1,4))
+   //     {
+   //         case "Joining the United States": "We. -Your Editor"
+   //         case "Steamboat on the Mississippi": "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"
+   //         case "Potential war in 1812": "Your article was mediocre. I don't have much else to say about it. -Your Editor"
+   //         case "Louisiana Purchase": "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"
+   //         case "": "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"
+   //     }
+//
+   //     switch(rnd.Next(1,4))
+   //     {
+   //         case "Joining the United States": "We. -Your Editor"
+   //         case "Steamboat on the Mississippi": "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"
+   //         case "Potential war in 1812": "Your article was mediocre. I don't have much else to say about it. -Your Editor"
+   //         case "Louisiana Purchase": "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"
+   //         case "": "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"
+   //     }
+//
+   //     switch(rnd.Next(1,5))
+   //     {
+   //         case 0: "Where's the article?! Were you goofing off again? You're lucky standards are low around here. -Your Editor"
+   //         case 1: "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"
+   //         case 2: "Your article was mediocre. I don't have much else to say about it. -Your Editor"
+   //         case 3: "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"
+   //         case 4: "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"
+   //     }
+   // }
     
     public static string getArticle() { return article; }
 

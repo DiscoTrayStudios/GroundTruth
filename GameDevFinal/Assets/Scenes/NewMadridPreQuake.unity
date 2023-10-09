@@ -1864,8 +1864,9 @@ GameObject:
   m_Component:
   - component: {fileID: 103356773}
   - component: {fileID: 103356774}
+  - component: {fileID: 103356775}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: EMagical Creatures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1880,11 +1881,11 @@ Transform:
   m_GameObject: {fileID: 103356772}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15929365, y: -2.5292094, z: 5.329215}
+  m_LocalPosition: {x: 5.981653, y: 0.69479084, z: 5.329215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1657408938}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &103356774
 MonoBehaviour:
@@ -1902,7 +1903,20 @@ MonoBehaviour:
   test_evidence: 'In other news, a woman in New Madrid claims to see monsters in
     the night. '
   test_evidence_summary: Creature in the woods
+  dialogue: '"My husband says I''m crazy but I know what I saw!"'
   test_collected: 0
+--- !u!114 &103356775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103356772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &111164225
 GameObject:
   m_ObjectHideFlags: 0
@@ -52116,8 +52130,9 @@ GameObject:
   m_Component:
   - component: {fileID: 170264694}
   - component: {fileID: 170264695}
+  - component: {fileID: 170264696}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: ERiver People
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52131,12 +52146,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170264693}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.24236, y: 7.286068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 632093515}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &170264695
 MonoBehaviour:
@@ -52154,7 +52169,20 @@ MonoBehaviour:
   test_evidence: 'There''s some River People, too, but Timothy Robinson of New Madrid
     is taking care of it. '
   test_evidence_summary: River People
+  dialogue: '"Have you seen the river people yet?"'
   test_collected: 0
+--- !u!114 &170264696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170264693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &187405088
 GameObject:
   m_ObjectHideFlags: 0
@@ -61486,6 +61514,7 @@ MonoBehaviour:
   Credits: {fileID: 486926348}
   UI: {fileID: 0}
   testNotebook: {fileID: 0}
+  postTestNotebook: {fileID: 0}
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}
   TravelDisplay: {fileID: 0}
@@ -63224,7 +63253,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1943202404}
-  - {fileID: 170264694}
   m_Father: {fileID: 468905125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &632093516
@@ -63354,6 +63382,7 @@ MonoBehaviour:
   - Have you seen the river people yet?
   - They crawl out on the bank late at night.
   - I have to keep watch in case they come during the day.
+  - They'll rue the day they ever crossed the path of Timothy Robinson!
   evidence_name: Evi7
   testEvi: {fileID: 170264695}
   exPoint: {fileID: 0}
@@ -69870,7 +69899,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 964984497}
-  - {fileID: 2119644334}
   m_Father: {fileID: 468905125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1096000117
@@ -77530,7 +77558,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1202845578}
-  - {fileID: 103356773}
   m_Father: {fileID: 468905125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1657408940
@@ -85526,8 +85553,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2119644334}
   - component: {fileID: 2119644335}
+  - component: {fileID: 2119644336}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: EJoining The United States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85541,12 +85569,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119644333}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.4423594, y: -3.423932, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1096000116}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2119644335
 MonoBehaviour:
@@ -85560,11 +85588,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c94bcc8e9438ce468ed29530bb7f924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test_evidence_name: Unionist Pre
+  test_evidence_name: Joining the United States
   test_evidence: 'There is ambivalence in the air in New Madrid. One man was eager
     to join our United States, but noted others might disagree. '
   test_evidence_summary: Joining the United States
+  dialogue: 
   test_collected: 0
+--- !u!114 &2119644336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119644333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2139678079
 GameObject:
   m_ObjectHideFlags: 0
@@ -85931,3 +85972,6 @@ SceneRoots:
   - {fileID: 111164228}
   - {fileID: 65818904}
   - {fileID: 1518742558}
+  - {fileID: 103356773}
+  - {fileID: 2119644334}
+  - {fileID: 170264694}

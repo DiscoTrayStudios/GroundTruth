@@ -10031,7 +10031,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 662691920}
-  - {fileID: 594435848}
   m_Father: {fileID: 678168410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &298588401
@@ -10276,7 +10275,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1357569346}
-  - {fileID: 829711921}
   m_Father: {fileID: 678168410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &454353342
@@ -10566,8 +10564,9 @@ GameObject:
   m_Component:
   - component: {fileID: 594435848}
   - component: {fileID: 594435849}
+  - component: {fileID: 594435850}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: ELosingHome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10581,12 +10580,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594435847}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.3999996, y: -2.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 298588400}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &594435849
 MonoBehaviour:
@@ -10603,7 +10602,20 @@ MonoBehaviour:
   test_evidence_name: Losing Home
   test_evidence: 'The earthquake has caused houses to burn down, leaving some homeless. '
   test_evidence_summary: Houses got burned
+  dialogue: '"I feel so sad for the people who lost their houses."'
   test_collected: 0
+--- !u!114 &594435850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594435847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &662691919
 GameObject:
   m_ObjectHideFlags: 0
@@ -10780,8 +10792,9 @@ GameObject:
   m_Component:
   - component: {fileID: 829711921}
   - component: {fileID: 829711922}
+  - component: {fileID: 829711923}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: EGround Shake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10795,12 +10808,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829711920}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.1, y: 8.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 454353341}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &829711922
 MonoBehaviour:
@@ -10818,7 +10831,20 @@ MonoBehaviour:
   test_evidence: 'There continues to be small tremors in New Madrid, even far after
     the earthquake. Sometimes they happen 3 to 4 times in a day. '
   test_evidence_summary: Ground continues to shake
+  dialogue: '"We still feel rumblings from the earthquake."'
   test_collected: 0
+--- !u!114 &829711923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829711920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &830762831
 GameObject:
   m_ObjectHideFlags: 0
@@ -10913,8 +10939,9 @@ GameObject:
   m_Component:
   - component: {fileID: 845026965}
   - component: {fileID: 845026966}
+  - component: {fileID: 845026967}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: EMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10928,12 +10955,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845026964}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.18, y: 3.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1627804152}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &845026966
 MonoBehaviour:
@@ -10951,7 +10978,20 @@ MonoBehaviour:
   test_evidence: 'A HUGE monster caused the earthquakes to happen. We had better
     not upset the monster, or else they will cause more earthquakes! '
   test_evidence_summary: Monster Earthquakes
+  dialogue: '"Some monster caused the earthquake."'
   test_collected: 0
+--- !u!114 &845026967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845026964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &929438468
 GameObject:
   m_ObjectHideFlags: 0
@@ -68645,7 +68685,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1194307484}
-  - {fileID: 845026965}
   m_Father: {fileID: 678168410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1627804153
@@ -77097,3 +77136,6 @@ SceneRoots:
   - {fileID: 2047298449}
   - {fileID: 2089816372}
   - {fileID: 530478588}
+  - {fileID: 829711921}
+  - {fileID: 594435848}
+  - {fileID: 845026965}

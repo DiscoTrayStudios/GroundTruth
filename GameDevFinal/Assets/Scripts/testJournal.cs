@@ -18,6 +18,7 @@ public class testJournal : MonoBehaviour
     public TextMeshProUGUI journalBoxSix;
     public TextMeshProUGUI journalBoxSeven;
     public TextMeshProUGUI journalBoxEight;
+    public TextMeshProUGUI journalBoxZero;
     public TextMeshProUGUI journalBoxNineArticle;
     private List<TextMeshProUGUI> journalBoxes = new List<TextMeshProUGUI>();
 
@@ -53,6 +54,7 @@ public class testJournal : MonoBehaviour
         journalBoxes.Add(journalBoxSix);
         journalBoxes.Add(journalBoxSeven);
         journalBoxes.Add(journalBoxEight);
+        journalBoxes.Add(journalBoxZero);
 
         Pages.Add(PageOne);
         Pages.Add(PageTwo);
