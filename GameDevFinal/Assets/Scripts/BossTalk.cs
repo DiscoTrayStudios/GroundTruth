@@ -16,7 +16,9 @@ public string[] text;
 
     public AudioSource scribble;
 
-
+    void Awake(){
+        GameManager.Instance.DialogShow("Welcome to Ground Truth! (Press E to Continue)");
+    }
 
     void Update() {
 
