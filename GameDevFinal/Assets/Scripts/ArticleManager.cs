@@ -16,7 +16,7 @@ public class ArticleManager : MonoBehaviour
                                                                   "Joining the United States", "Steamboat on the Mississippi", "Houses got burned" };
   private static HashSet<string> falsesums = new HashSet<string>{"Monster Earthquakes", "Prophetstown", "Creature in the woods", 
                                                                   "River People", "Man claims he saves family", "Traveling Up River", 
-                                                                  "Volcanic Eruption", "Flying" };
+                                                                  "Volcanic Eruption", "Flying", "I'm gonna get you!"};
     
     public static string article = "";
     public static int score = 0;
@@ -37,11 +37,11 @@ public class ArticleManager : MonoBehaviour
   // 
   //      string lenFeedback = switch(sentences.Count)
   //      {
-  //          case 0:      "Where's the article?! Were you goofing off again? You're lucky standards are low around here.";
-  //          case 1 || 2: "Your article was a little too short. I, and the public, expect more from you.";
-  //          case 4 || 5: "This article was just the right size.";
-  //          case 6 || 7: "Your article was a little overlong. You should be a bit more discerning.";
-  //          case 8:      "Good grief! Is there anything you WON'T try to publish?";
+  //          case 0:      "Where's the article?! Were you goofing off again? You're lucky standards are low around here. ";
+  //          case 1 || 2: "Your article was a little too short. I, and the public, expect more from you. ";
+  //          case 4 || 5: "This article was just the right size. ";
+  //          case 6 || 7: "Your article was a little overlong. You should be a bit more discerning. ";
+  //          case 8:      "Good grief! Is there anything you WON'T try to publish? ";
   //      }
   //      if (GameManager.post) {
 //
