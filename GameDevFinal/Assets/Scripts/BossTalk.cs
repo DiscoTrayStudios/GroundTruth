@@ -18,6 +18,7 @@ public string[] text;
 
     void Awake(){
         GameManager.Instance.DialogShow("Welcome to Ground Truth! (Press E to Continue)");
+        GameManager.Instance.SetPlayerBusy(false);
     }
 
     void Update() {
