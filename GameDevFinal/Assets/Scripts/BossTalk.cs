@@ -8,8 +8,6 @@ public string[] text;
 
     private bool canShowDialog = true;
 
-    private bool dialogShown;
-
     public string evidence_name;
 
     private int currentTextIndex = 0;
@@ -17,7 +15,7 @@ public string[] text;
     public AudioSource scribble;
 
     void Awake(){
-        GameManager.Instance.DialogShow("Welcome to Ground Truth! (Press E to Continue)");
+        GameManager.Instance.GameDialogShow("Welcome to Ground Truth! (Press E to Continue)");
         GameManager.Instance.SetPlayerBusy(false);
     }
 
@@ -25,38 +23,29 @@ public string[] text;
 
         if (canShowDialog && Input.GetKeyDown(KeyCode.E))
         {
-            if (!dialogShown)
-            {
-                GameManager.Instance.DialogShow(text[currentTextIndex]);
-                dialogShown = true;
-            }
-
-            else
-            {
                 GameManager.Instance.DialogHide();
-                dialogShown = false;
-
-                if (currentTextIndex < text.Length - 1)
+                GameManager.Instance.GameDialogHide();
+                
+                if (currentTextIndex < text.Length)
                 {
+                    if(currentTextIndex == 0 || currentTextIndex == 14){
+                        GameManager.Instance.GameDialogShow(text[currentTextIndex]);
+                    }
+                    else{
+                        GameManager.Instance.DialogShow(text[currentTextIndex]);    
+                    }
                     currentTextIndex++;
-                    GameManager.Instance.DialogShow(text[currentTextIndex]);
-                    dialogShown = true;
                 }
                 else
                 {
                     //collect();
-                    currentTextIndex = 0;
+                    
+                    GameManager.Instance.DialogShow(text[1]);
+                    currentTextIndex = 2;
                 }
-            }
         }
     }
 
-    private void collect() {
-        // set text to something like "can I help you? and can repeat"
-        scribble.Play();
-        GameManager.AddEvidence(evidence_name);
-        print("Evidence collected");
-        Journal.addToJournal(evidence_name);
-    }
+  
 
 }

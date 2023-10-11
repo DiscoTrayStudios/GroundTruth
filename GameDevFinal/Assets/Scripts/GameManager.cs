@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public GameObject dialogBox;
     public TextMeshProUGUI dialogText;
 
+    public GameObject gameDialogBox;
+    public TextMeshProUGUI gameDialogText;
+
     public GameObject Title;
     public GameObject InvesArea;
     public GameObject PostQuakeInves;
@@ -180,7 +183,7 @@ public class GameManager : MonoBehaviour
     public void DialogShow(string text) {
         dialogBox.SetActive(true);
         StopAllCoroutines();
-        StartCoroutine(TypeText(text));
+        StartCoroutine(TypeText(dialogText, text));
         playerBusy = true;
     }
 
@@ -188,11 +191,21 @@ public class GameManager : MonoBehaviour
         dialogBox.SetActive(false);
         playerBusy = false;
     }
+    public void GameDialogShow(string text) {
+        gameDialogBox.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(TypeText(gameDialogText, text));
+        playerBusy = true;
+    }
+    public void GameDialogHide(){
+        gameDialogBox.SetActive(false);
+        playerBusy = false;
+    }
 
-    IEnumerator TypeText(string text) {
-        dialogText.text = "";
+    IEnumerator TypeText(TextMeshProUGUI textBox, string text) {
+        textBox.text = "";
         foreach(char c in text.ToCharArray()) {
-            dialogText.text += c;
+            textBox.text += c;
             yield return new WaitForSeconds(0.02f);
         }
     }
@@ -334,7 +347,7 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(true);
             BossUI.SetActive(false);
         } else if (scene == "Boss") {
-            dialogBox.SetActive(true);
+            //dialogBox.SetActive(true);
             UI.SetActive(false);
             testNotebook.SetActive(false);
             PostUI.SetActive(false);
