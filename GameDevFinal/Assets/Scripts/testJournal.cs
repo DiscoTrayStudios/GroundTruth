@@ -93,12 +93,11 @@ public class testJournal : MonoBehaviour
             print(item.test_evidence);
             // if(!item.test_collected){
             journalBoxes[boxIndex].text = item.test_evidence;
-            if(boxIndex +1 < journalBoxes.Count){
+            if (boxIndex +1 < journalBoxes.Count) {
                 boxIndex = boxIndex + 1;
             } journalBoxNineArticle.text = "Current Article Draft: \n" + ArticleManager.getArticle();
             // item.test_collected = true;
         }
-               
     }
 
     public void ResetJournal(){

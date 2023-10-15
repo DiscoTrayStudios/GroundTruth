@@ -24989,6 +24989,8 @@ MonoBehaviour:
   test_evidence_summary: Louisiana Purchase
   dialogue: '"It is a crazy idea that you can buy and own land. I have been living
     near here for a long time."'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &1231334005
 MonoBehaviour:
@@ -27779,6 +27781,8 @@ MonoBehaviour:
     trade. '
   test_evidence_summary: Potential war in 1812
   dialogue: '"Talk around the town is this conflict up north is non-sense."'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &1463703165
 MonoBehaviour:
@@ -28313,6 +28317,8 @@ MonoBehaviour:
     flapping your arms like wings. '
   test_evidence_summary: Flying
   dialogue: '"My friend says he can travel by flying!"'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &1603756446
 MonoBehaviour:
@@ -31395,7 +31401,7 @@ MonoBehaviour:
   - {fileID: 1715188947}
   - {fileID: 1585697285}
   - {fileID: 1282068960}
-  moveSpeed: 2
+  moveSpeed: 1.25
   player: {fileID: 1662008643}
 --- !u!50 &1866578265
 Rigidbody2D:

@@ -64,7 +64,7 @@ public class EvidenceWatcher : MonoBehaviour
         foreach (var item in GameManager.TestEvidenceList)
         {   
             Pieces[index].eviSummary.text = item.test_evidence_summary;
-            Pieces[index].eviFullText.text = item.test_evidence;
+            Pieces[index].eviFullText.text = item.dialogue;
             Pieces[index].eviPaper.SetActive(true);
             index +=1;
         }

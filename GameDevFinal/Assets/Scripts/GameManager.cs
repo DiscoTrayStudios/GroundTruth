@@ -62,7 +62,8 @@ public class GameManager : MonoBehaviour
     public string currentScene    = "TitleScreen";
     public string currentLocation = "TitleScreen";
     public static bool post = false;
-    public static string article = "";
+    public static string article  = "";
+    public static string feedback = "";
 
 
     // Start is called before the first frame update
@@ -82,8 +83,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalText.text   = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article;
-        secondTotal.text = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article;
+        totalText.text   = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article + "\n Feedback: " + feedback;
+        secondTotal.text = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article + "\n Feedback: " + feedback;
         if (finalDay - days < 16) {
             daysLeft.text = "Days Left: " + (finalDay - days).ToString();
         } else {
@@ -125,6 +126,10 @@ public class GameManager : MonoBehaviour
 
     public void AddScoreKeeper(int n) {
         score_keeper.Add(n);
+    }
+
+    public void MakeFeedback() {
+        feedback = ArticleManager.getFeedback();
     }
 
     public void GmCollectEvidence(TestEvidence testevi){

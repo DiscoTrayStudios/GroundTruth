@@ -221,6 +221,8 @@ MonoBehaviour:
     many Native tribes throughout the country, with fervent, apocolyptic rhetoric. '
   test_evidence_summary: Prophetstown
   dialogue: '"Tenskwatawa and his followers believe a cataclysm is drawing near."'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &242193294
 MonoBehaviour:
@@ -27332,6 +27334,8 @@ MonoBehaviour:
   test_evidence_summary: Steamboat on the Mississippi
   dialogue: '"I heard the first steamboat was sailed right here on the Mississippi
     River!"'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &1413066217
 MonoBehaviour:
@@ -27607,6 +27611,8 @@ MonoBehaviour:
     up all of it in one day, from South to North. '
   test_evidence_summary: Traveling Up River
   dialogue: '"I sailed up the entire Mississippi River in one day!"'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
 --- !u!114 &1523640718
 MonoBehaviour:
@@ -33237,7 +33243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1847311882
 Transform:
   m_ObjectHideFlags: 0
