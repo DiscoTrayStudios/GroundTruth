@@ -65,7 +65,8 @@ public class GameManager : MonoBehaviour
     public string currentScene    = "TitleScreen";
     public string currentLocation = "TitleScreen";
     public static bool post = false;
-    public static string article = "";
+    public static string article  = "";
+    public static string feedback = "";
 
 
     // Start is called before the first frame update
@@ -85,8 +86,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalText.text   = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article;
-        secondTotal.text = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article;
+        totalText.text   = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article + "\n Feedback: " + feedback;
+        secondTotal.text = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article + "\n Feedback: " + feedback;
         if (finalDay - days < 16) {
             daysLeft.text = "Days Left: " + (finalDay - days).ToString();
         } else {
@@ -111,11 +112,11 @@ public class GameManager : MonoBehaviour
                 pMonth = pMonth + 1;
             }
         }
-        if (currentScene == "InvestigativeArea") {
-            if(Input.GetKeyDown(KeyCode.Q)) {
-                ChangeScene(currentLocation);
-            }
-        }
+      //  if (currentScene == "InvestigativeArea") {
+      //      if(Input.GetKeyDown(KeyCode.Q)) {
+      //          ChangeScene(currentLocation); This lets you go back for free
+      //      }
+      //  }
     }
 
     public bool GetPlayerBusy(){
@@ -130,13 +131,18 @@ public class GameManager : MonoBehaviour
         score_keeper.Add(n);
     }
 
+    public void MakeFeedback() {
+        feedback = ArticleManager.getFeedback();
+    }
+
     public void GmCollectEvidence(TestEvidence testevi){
         if(!testevi.test_collected){
             testevi.setCollected(true);
             TestEvidenceList.Add(testevi);
             ArticleManager.updateOrderedEvidenceSet(testevi);
-            print(testevi.test_evidence);         // sentence
-            print(testevi.test_evidence_summary); // phrase
+//            print(testevi.dialogue);         // literal dialogue
+//            print(testevi.test_evidence);         // sentence
+//            print(testevi.test_evidence_summary); // phrase
         }
         
     }

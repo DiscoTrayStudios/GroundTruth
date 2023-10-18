@@ -1821,6 +1821,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1354674026}
   eviFullPaper: {fileID: 722557478}
   eviFullText: {fileID: 503571547}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &102678219
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,6 +3153,9 @@ MonoBehaviour:
   eviSummary: {fileID: 225844087}
   eviFullPaper: {fileID: 199652886}
   eviFullText: {fileID: 638205310}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &184930862
 GameObject:
   m_ObjectHideFlags: 0
@@ -7325,6 +7331,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1358430529}
   eviFullPaper: {fileID: 949442714}
   eviFullText: {fileID: 1479654265}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &423226717
 GameObject:
   m_ObjectHideFlags: 0
@@ -10552,6 +10561,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1443611833}
   eviFullPaper: {fileID: 1377905321}
   eviFullText: {fileID: 1555264055}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &551045652
 GameObject:
   m_ObjectHideFlags: 0
@@ -11451,6 +11463,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1030140552}
   eviFullPaper: {fileID: 2012211823}
   eviFullText: {fileID: 1105753117}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &596060989
 GameObject:
   m_ObjectHideFlags: 0
@@ -14401,6 +14416,7 @@ MonoBehaviour:
   journalBoxSix: {fileID: 675503432}
   journalBoxSeven: {fileID: 1996918475}
   journalBoxEight: {fileID: 784653433}
+  journalBoxZero: {fileID: 0}
   journalBoxNineArticle: {fileID: 631683743}
   PageOne: {fileID: 940144840}
   PageTwo: {fileID: 1134790458}
@@ -16152,6 +16168,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1038403563}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: MakeFeedback
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17937,6 +17965,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1320199391}
   eviFullPaper: {fileID: 872601321}
   eviFullText: {fileID: 1580190894}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &827529189
 GameObject:
   m_ObjectHideFlags: 0
@@ -22134,6 +22165,9 @@ MonoBehaviour:
   eviSummary: {fileID: 922931261}
   eviFullPaper: {fileID: 29850292}
   eviFullText: {fileID: 51818950}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &1090934437
 GameObject:
   m_ObjectHideFlags: 0
@@ -25529,6 +25563,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1541831407}
   eviFullPaper: {fileID: 1490342436}
   eviFullText: {fileID: 1660683799}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &1249590575
 GameObject:
   m_ObjectHideFlags: 0
@@ -25864,6 +25901,7 @@ MonoBehaviour:
   journalBoxSix: {fileID: 673554548}
   journalBoxSeven: {fileID: 1441088776}
   journalBoxEight: {fileID: 296587788}
+  journalBoxZero: {fileID: 0}
   journalBoxNineArticle: {fileID: 112139637}
   PageOne: {fileID: 1388060879}
   PageTwo: {fileID: 71207365}
@@ -29743,6 +29781,9 @@ MonoBehaviour:
   eviSummary: {fileID: 721906660}
   eviFullPaper: {fileID: 1341645745}
   eviFullText: {fileID: 603578865}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &1441088774
 GameObject:
   m_ObjectHideFlags: 0
@@ -31320,6 +31361,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1176605849}
   eviFullPaper: {fileID: 1678399342}
   eviFullText: {fileID: 1176335580}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &1511189014
 GameObject:
   m_ObjectHideFlags: 0
@@ -31546,6 +31590,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1668406971}
   eviFullPaper: {fileID: 1308908757}
   eviFullText: {fileID: 1177582320}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &1517214504
 GameObject:
   m_ObjectHideFlags: 0
@@ -33866,6 +33913,9 @@ MonoBehaviour:
   eviSummary: {fileID: 743736782}
   eviFullPaper: {fileID: 686859813}
   eviFullText: {fileID: 263881494}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &1658487906
 GameObject:
   m_ObjectHideFlags: 0
@@ -37821,6 +37871,9 @@ MonoBehaviour:
   eviSummary: {fileID: 803450720}
   eviFullPaper: {fileID: 607269541}
   eviFullText: {fileID: 1744857580}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &1877642778
 GameObject:
   m_ObjectHideFlags: 0
@@ -38751,6 +38804,9 @@ MonoBehaviour:
   eviSummary: {fileID: 569438760}
   eviFullPaper: {fileID: 620564583}
   eviFullText: {fileID: 1424464675}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &1913383721
 GameObject:
   m_ObjectHideFlags: 0
@@ -41162,6 +41218,9 @@ MonoBehaviour:
   eviSummary: {fileID: 1705982246}
   eviFullPaper: {fileID: 430106565}
   eviFullText: {fileID: 567046958}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &2034604503
 GameObject:
   m_ObjectHideFlags: 0
@@ -43055,6 +43114,9 @@ MonoBehaviour:
   eviSummary: {fileID: 970032746}
   eviFullPaper: {fileID: 174436623}
   eviFullText: {fileID: 1952323668}
+  dialogue: {fileID: 0}
+  dialogue1: {fileID: 0}
+  dialogue2: {fileID: 0}
 --- !u!1 &2119289232
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class testJournal : MonoBehaviour
     public TextMeshProUGUI journalBoxSix;
     public TextMeshProUGUI journalBoxSeven;
     public TextMeshProUGUI journalBoxEight;
+    public TextMeshProUGUI journalBoxZero;
     public TextMeshProUGUI journalBoxNineArticle;
     private List<TextMeshProUGUI> journalBoxes = new List<TextMeshProUGUI>();
 
@@ -53,6 +54,7 @@ public class testJournal : MonoBehaviour
         journalBoxes.Add(journalBoxSix);
         journalBoxes.Add(journalBoxSeven);
         journalBoxes.Add(journalBoxEight);
+        journalBoxes.Add(journalBoxZero);
 
         Pages.Add(PageOne);
         Pages.Add(PageTwo);
@@ -91,12 +93,11 @@ public class testJournal : MonoBehaviour
             print(item.test_evidence);
             // if(!item.test_collected){
             journalBoxes[boxIndex].text = item.test_evidence;
-            if(boxIndex +1 < journalBoxes.Count){
+            if (boxIndex +1 < journalBoxes.Count) {
                 boxIndex = boxIndex + 1;
             } journalBoxNineArticle.text = "Current Article Draft: \n" + ArticleManager.getArticle();
             // item.test_collected = true;
         }
-               
     }
 
     public void ResetJournal(){
