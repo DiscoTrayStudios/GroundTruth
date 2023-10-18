@@ -33,7 +33,13 @@ public class WalkAwayFromBoss : MonoBehaviour
         }
 
         rb.velocity = Vector2.zero;
-        GameManager.Instance.ChangeScene("InvestigativeArea");
+        if(!GameManager.Instance.IsPost()){
+            GameManager.Instance.ChangeScene("InvestigativeArea");    
+        }
+        else{
+            GameManager.Instance.ChangeScene("PostQuake");    
+        }
+        
         StopCoroutine(MoveToWaypoint());   
     }
 

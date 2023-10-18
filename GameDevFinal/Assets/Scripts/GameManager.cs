@@ -157,6 +157,10 @@ public class GameManager : MonoBehaviour
         postFailureScreen.SetActive(true);
     }
 
+    public Boolean IsPost(){
+        return post;
+    }
+
     public void ResetScene() {
         //GABBY UPDATE
         TestEvidenceList.Clear();

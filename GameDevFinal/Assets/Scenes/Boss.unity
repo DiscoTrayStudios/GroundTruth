@@ -282,6 +282,11 @@ MonoBehaviour:
   - Remember, travel times vary between locations.
   - Use your time wisely, and good luck!
   - Press the "Start" button to continue or press "E" to repeat.
+  postText:
+  - Earthquakes
+  - New madrid!
+  - Article!
+  - Press the "Start" button to continue or press "E" to repeat.
   evidence_name: 
   scribble: {fileID: 0}
 --- !u!1 &201124973
