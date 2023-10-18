@@ -23685,7 +23685,7 @@ GameObject:
   - component: {fileID: 746134569}
   m_Layer: 0
   m_Name: Female Townsperson
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23827,13 +23827,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 1483225426}
   - {fileID: 1996458634}
   - {fileID: 1282068960}
   - {fileID: 469601794}
   moveSpeed: 1.05
+  player: {fileID: 1662008643}
 --- !u!50 &746134568
 Rigidbody2D:
   serializedVersion: 4
@@ -24617,7 +24617,7 @@ GameObject:
   - component: {fileID: 1033061331}
   m_Layer: 0
   m_Name: Priest
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24752,7 +24752,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1007355340}
-  - {fileID: 1463703163}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1033061329
@@ -24767,7 +24766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 1314008261}
   - {fileID: 1282068960}
@@ -24776,6 +24774,7 @@ MonoBehaviour:
   - {fileID: 1267396284}
   - {fileID: 1996458634}
   moveSpeed: 1.5
+  player: {fileID: 1662008643}
 --- !u!50 &1033061330
 Rigidbody2D:
   serializedVersion: 4
@@ -24948,8 +24947,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1231334003}
   - component: {fileID: 1231334004}
+  - component: {fileID: 1231334005}
   m_Layer: 0
-  m_Name: Evidence (1)
+  m_Name: ELou Purchase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24964,11 +24964,11 @@ Transform:
   m_GameObject: {fileID: 1231334002}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.383998, y: -1.4382787, z: 0.6386393}
+  m_LocalPosition: {x: -1.716002, y: 1.5217214, z: 0.6386393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1866578262}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1231334004
 MonoBehaviour:
@@ -24987,7 +24987,23 @@ MonoBehaviour:
     of land from the French Republic.  One woman who was born in this region voiced
     confusion at how either had claim to somewhere her family had lived in for generations. '
   test_evidence_summary: Louisiana Purchase
+  dialogue: '"It is a crazy idea that you can buy and own land. I have been living
+    near here for a long time."'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
+--- !u!114 &1231334005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231334002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1267396282
 GameObject:
   m_ObjectHideFlags: 0
@@ -27724,8 +27740,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1463703163}
   - component: {fileID: 1463703164}
+  - component: {fileID: 1463703165}
   m_Layer: 0
-  m_Name: Evidence (2)
+  m_Name: EWar Of 1812
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27740,11 +27757,11 @@ Transform:
   m_GameObject: {fileID: 1463703162}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.456001, y: -2.6282787, z: 0.6386393}
+  m_LocalPosition: {x: -1.7160015, y: 1.5217214, z: 0.6386393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1033061328}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1463703164
 MonoBehaviour:
@@ -27758,12 +27775,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c94bcc8e9438ce468ed29530bb7f924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test_evidence_name: War
+  test_evidence_name: Potential war in 1812
   test_evidence: 'Another war with Britain seems inevitable, but the people of the
     landlocked state of Missouri are nonplussed by a war primarily motivated by naval
     trade. '
   test_evidence_summary: Potential war in 1812
+  dialogue: '"Talk around the town is this conflict up north is non-sense."'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
+--- !u!114 &1463703165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463703162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1483225424
 GameObject:
   m_ObjectHideFlags: 0
@@ -28244,8 +28276,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1603756444}
   - component: {fileID: 1603756445}
+  - component: {fileID: 1603756446}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: EFlying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28260,11 +28293,11 @@ Transform:
   m_GameObject: {fileID: 1603756443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.056002, y: 9.451721, z: 0.6386393}
+  m_LocalPosition: {x: -1.716002, y: 1.5217214, z: 0.6386393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1754727269}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1603756445
 MonoBehaviour:
@@ -28283,7 +28316,22 @@ MonoBehaviour:
     the current year, 1812. He did not provide instructions, but I would recommend
     flapping your arms like wings. '
   test_evidence_summary: Flying
+  dialogue: '"My friend says he can travel by flying!"'
+  dialogue1: 
+  dialogue2: 
   test_collected: 0
+--- !u!114 &1603756446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603756443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44573717148fa413a81fb5c773a56aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1613148982
 GameObject:
   m_ObjectHideFlags: 0
@@ -30504,7 +30552,7 @@ GameObject:
   - component: {fileID: 1754727274}
   m_Layer: 0
   m_Name: Farmer Man
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30575,7 +30623,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1858503905}
-  - {fileID: 1603756444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1754727270
@@ -30655,7 +30702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 1717115909}
   - {fileID: 300908561}
@@ -30664,6 +30710,7 @@ MonoBehaviour:
   - {fileID: 469601794}
   - {fileID: 1901801222}
   moveSpeed: 1.1
+  player: {fileID: 1662008643}
 --- !u!50 &1754727273
 Rigidbody2D:
   serializedVersion: 4
@@ -30753,7 +30800,7 @@ GameObject:
   - component: {fileID: 1760869913}
   m_Layer: 0
   m_Name: Male Townsperson
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30895,7 +30942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 1267396284}
   - {fileID: 1143969265}
@@ -30904,6 +30950,7 @@ MonoBehaviour:
   - {fileID: 624359843}
   - {fileID: 1214902726}
   moveSpeed: 0.95
+  player: {fileID: 1662008643}
 --- !u!50 &1760869912
 Rigidbody2D:
   serializedVersion: 4
@@ -31198,7 +31245,7 @@ GameObject:
   - component: {fileID: 1866578266}
   m_Layer: 0
   m_Name: NA Woman
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31314,7 +31361,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1793634980}
-  - {fileID: 1231334003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1866578263
@@ -31350,13 +31396,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1662008643}
   waypoints:
   - {fileID: 2061007252}
   - {fileID: 1715188947}
   - {fileID: 1585697285}
   - {fileID: 1282068960}
-  moveSpeed: 2
+  moveSpeed: 1.25
+  player: {fileID: 1662008643}
 --- !u!50 &1866578265
 Rigidbody2D:
   serializedVersion: 4
@@ -31598,6 +31644,7 @@ MonoBehaviour:
   Credits: {fileID: 0}
   UI: {fileID: 0}
   testNotebook: {fileID: 0}
+  postTestNotebook: {fileID: 0}
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}
   TravelDisplay: {fileID: 0}
@@ -34953,3 +35000,6 @@ SceneRoots:
   - {fileID: 1591604341}
   - {fileID: 1613148983}
   - {fileID: 822133571}
+  - {fileID: 1603756444}
+  - {fileID: 1231334003}
+  - {fileID: 1463703163}
