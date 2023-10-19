@@ -11,7 +11,6 @@ public class TestEvidence : MonoBehaviour
     public string test_evidence_summary;
     public string dialogue;
     public string dialogue1;
-    public string dialogue2;
     public bool test_collected;
     void Start()
     {

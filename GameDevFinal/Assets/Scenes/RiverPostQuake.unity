@@ -389,7 +389,7 @@ SpriteRenderer:
   m_SortingLayerID: 622276537
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ddd0ad3e4e6899b42b43a4de58e915f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21e537230d84fca489ff52f3aa2c8b4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: 458145197}
   - component: {fileID: 458145196}
   - component: {fileID: 458145199}
+  - component: {fileID: 458145200}
   m_Layer: 0
   m_Name: Sailor 1
   m_TagString: NPC
@@ -818,6 +819,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &458145200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458145194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  moveSpeed: 1
+  player: {fileID: 2094398409}
 --- !u!1 &482920095
 GameObject:
   m_ObjectHideFlags: 0
@@ -5478,6 +5498,7 @@ GameObject:
   - component: {fileID: 1146369780}
   - component: {fileID: 1146369779}
   - component: {fileID: 1146369782}
+  - component: {fileID: 1146369783}
   m_Layer: 0
   m_Name: Sailor 5
   m_TagString: NPC
@@ -5607,7 +5628,7 @@ SpriteRenderer:
   m_SortingLayerID: 622276537
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f13c22e8436fe24e9ec04065d5611f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83a5e2b481da373418c4d24c2f5fad85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5663,6 +5684,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1146369783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146369777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  moveSpeed: 2
+  player: {fileID: 0}
 --- !u!1 &1149944538
 GameObject:
   m_ObjectHideFlags: 0
@@ -25671,6 +25707,7 @@ GameObject:
   - component: {fileID: 1417099257}
   - component: {fileID: 1417099256}
   - component: {fileID: 1417099255}
+  - component: {fileID: 1417099259}
   m_Layer: 0
   m_Name: Sailor 6
   m_TagString: NPC
@@ -25845,7 +25882,7 @@ SpriteRenderer:
   m_SortingLayerID: 622276537
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f13c22e8436fe24e9ec04065d5611f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1159ccb7ace88904e89b16d644efd5cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25856,6 +25893,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1417099259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417099253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  moveSpeed: 2
+  player: {fileID: 0}
 --- !u!1 &1470870999
 GameObject:
   m_ObjectHideFlags: 0
@@ -34601,7 +34653,7 @@ SpriteRenderer:
   m_SortingLayerID: 622276537
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b788fc7c05c442d4eaf2b9e9fa2249bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 318b604fcb96c3646a3f2b73b2f1cdc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

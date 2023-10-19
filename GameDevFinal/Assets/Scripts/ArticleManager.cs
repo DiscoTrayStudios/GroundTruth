@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using System.Security.AccessControl;
 using System;
 using System.Security.Cryptography;
@@ -11,6 +12,8 @@ public class ArticleManager : MonoBehaviour
     public static Dictionary<string, string> evidence_sentences = new Dictionary<string, string>();
     public static List<TestEvidence> tespreordered  = new List<TestEvidence>{};
     public static List<TestEvidence> tespostordered = new List<TestEvidence>{};
+    public static List<string> dialoguespreordered  = new List<string>{};
+    public static List<string> dialoguespostordered = new List<string>{};
     public static HashSet<string> sentences = new HashSet<string>(); 
     private static HashSet<string> truesums = new HashSet<string>{"Prophetstown", "Tenskwatawa predicted earthquakes", "River flowing backwards.",
                                                                   "Ground continues to shake", "Potential war in 1812", "Louisiana Purchase", 
@@ -90,7 +93,7 @@ public static string getFeedback()
             case "Flying":                       feedback += "Get your head out of the clouds! We don't even have telegrams yet, there are certainly no planes. "; break;
             case "River People":                 feedback += "I saw a river person once. No, no I didn't. That's not true. "; break;
             case "Prophetstown":                 feedback += "The thoughts on Prophetstown are even more relevant in the wake of the recent Battle of Tippecanoe, fought between Tecumseh's followers and the Indiana army. "; break;
-            case "Creature in the woods":        feedback += "A creature in the woods? Is it spiky, or squishy? Regardless, we do not care. Please report truth. "; break;
+            case "Creature in the woods":        feedback += "A creature in the woods? Is it spiky, or squishy? Just kidding, we do not care. Please report truth. "; break;
             case "Potential war in 1812":        feedback += "The war is in response to continued British aggression at our ports - Likely not a major concern for Missourians. "; break;
             case "Louisiana Purchase":           feedback += "I remember the Louisiana Purchase, but only thought of it politically. Now that you've written it out, I grant it was immoral for Napoleon to waltz in, as if he owned the place. "; break;
             case "Steamboat on the Mississippi": feedback += "A boat powered by steam? This is a great invention! "; break;
@@ -124,13 +127,62 @@ public static string getFeedback()
     
     public static string getArticle() { return article; }
 
-    public static void updateOrderedEvidenceSet(TestEvidence te) {
+    public static void updateOrderedEvidenceSet(TestEvidence te, bool whichDialogue) {
         print(te.test_evidence_name);
         print(te.test_evidence);
         print(te.test_evidence_summary);
-        if (GameManager.post) { tespostordered.Add(te); }
-        else                  {  tespreordered.Add(te); }
+        print(te.dialogue);
+        print(te.dialogue1);
+        print(whichDialogue);
+        if (GameManager.post) { 
+            tespostordered.Add(te); 
+            if (whichDialogue) {
+                dialoguespostordered.Add(te.dialogue1); 
+            } else {
+                dialoguespostordered.Add(te.dialogue); 
+            }
+        }
+        else                  {  
+            tespreordered.Add(te); 
+            if (whichDialogue)  {
+                dialoguespreordered.Add(te.dialogue1);  
+            }
+            else { 
+                dialoguespreordered.Add(te.dialogue); 
+            }
+        }
     } 
+
+    public static int getEvidenceIndex(TestEvidence te) {
+        int index = 0;
+        if (GameManager.post) {
+            foreach (TestEvidence tf in tespostordered) {
+                if (tf.test_evidence_summary == te.test_evidence_summary) {
+                    return index;
+                }
+                index++;
+            }
+        }
+        else                  {
+            foreach (TestEvidence tf in tespreordered) {
+                if (tf.test_evidence_summary == te.test_evidence_summary) {
+                    return index;
+                }
+                index++;
+            }
+        } return index;
+    }
+
+    public static string getDialogues(int index) {
+        if (GameManager.post) { return dialoguespostordered[index]; }
+        else                  {  return dialoguespreordered[index]; }
+    }
+    public static void bothDialogues(int index, TestEvidence te) {
+        if (GameManager.post) { dialoguespostordered[index] = te.dialogue + "\n" + te.dialogue1; }
+        else                  {  dialoguespreordered[index] =  te.dialogue  + "\n" + te.dialogue1; }
+    }
+
+
 
     public static int getScore() { return score; }
 
