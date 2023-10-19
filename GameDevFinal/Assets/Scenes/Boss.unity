@@ -283,9 +283,19 @@ MonoBehaviour:
   - Use your time wisely, and good luck!
   - Press the "Start" button to continue or press "E" to repeat.
   postText:
-  - Earthquakes
-  - New madrid!
-  - Article!
+  - Something catastrophic is happening.
+  - Your last article was not the most accurate. We need you to write another.
+  - Your last article was acceptable. We need you to write another.
+  - Your last article was quite good. We need you to write another.
+  - Your last article was amazing. We need you to write another.
+  - This is a chance for you to redeem yourself.
+  - This is a chance for you to improve.
+  - This is a chance for you to write an even better one.
+  - We need it to be just as great as the last one.
+  - Talk to everyone again and only write the truth. Do not submit any false information.
+  - Talk to everyone again and only write the truth.
+  - Talk to everyone again and write
+  - Talk to everyone again. I know you will have no trouble finding out the truth.
   - Press the "Start" button to continue or press "E" to repeat.
   evidence_name: 
   scribble: {fileID: 0}
@@ -5245,6 +5255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69dc074a9a99c3145bf649d6e102b3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speaking: {fileID: 1581534614}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

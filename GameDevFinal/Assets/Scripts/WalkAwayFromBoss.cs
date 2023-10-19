@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WalkAwayFromBoss : MonoBehaviour
 {
+    public AudioSource speaking;
     private float moveSpeed = 1f;
     private Rigidbody2D rb;
     private Animator animator;
@@ -18,6 +19,7 @@ public class WalkAwayFromBoss : MonoBehaviour
     }
 
     public void WalkAway(){
+        speaking.Stop();
         leaving = true;
         StartCoroutine(MoveToWaypoint());
     }

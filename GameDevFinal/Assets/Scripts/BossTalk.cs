@@ -19,14 +19,17 @@ public string[] text;
     public AudioSource scribble;
 
     void Awake(){
+        currentTextIndex = 0;
         if(!GameManager.Instance.IsPost()){
             GameManager.Instance.GameDialogShow("Welcome to Ground Truth! (Press E to Continue)");    
         }
         else{
+            prevScore = ArticleManager.getScoreNum();
+            print(prevScore);
             GameManager.Instance.DialogShow(postText[currentTextIndex]);
-            currentTextIndex++;
         }
         GameManager.Instance.SetPlayerBusy(false);
+        GameManager.Instance.BossUI.transform.Find("SkipButton").gameObject.SetActive(true);
     }
 
     void Update() {
@@ -51,21 +54,29 @@ public string[] text;
                     GameManager.Instance.DialogShow(text[1]);
                     currentTextIndex = 1;
                     }
+                    currentTextIndex ++;
                 }
                 else{
-                    if (currentTextIndex < postText.Length-1){
+                    if (currentTextIndex == 0){
+                        currentTextIndex = prevScore;
+                        GameManager.Instance.DialogShow(postText[currentTextIndex]);
+                    }
+                    else if(currentTextIndex <= postText.Length - 5){
+                        currentTextIndex += 4;
                         GameManager.Instance.DialogShow(postText[currentTextIndex]);
                     }
                     else if(currentTextIndex == postText.Length - 1){
+                        currentTextIndex = 0;
+                        GameManager.Instance.DialogShow(postText[currentTextIndex]);
+                    }
+                    else{
+                        GameManager.Instance.DialogHide();
+                        currentTextIndex = postText.Length - 1;
                         GameManager.Instance.GameDialogShow(postText[currentTextIndex]);
                     }
-                    else
-                    {
-                    GameManager.Instance.DialogShow(postText[0]);
-                    currentTextIndex = 0;
-                    }
+                    print(currentTextIndex);
                 }
-                currentTextIndex++;
+                
                 
         }
     }

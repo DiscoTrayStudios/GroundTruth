@@ -288,6 +288,9 @@ public class GameManager : MonoBehaviour
         while(!asyncLoad.isDone) {
             yield return null;
         }
+        if(scene == "Boss"){
+            BossUI.transform.Find("SkipButton").gameObject.SetActive(true);
+        }
         // DialogHide();
         // if(scene != "Menu") {
         //     mainScreen.SetActive(false);
@@ -366,6 +369,7 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(true);
+            BossUI.transform.Find("SkipButton").gameObject.SetActive(false);
         } else if (scene == "Cutscene") {
             post = true;
             ArticleManager.resetArticleAndScore();
