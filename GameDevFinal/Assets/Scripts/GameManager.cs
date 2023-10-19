@@ -83,8 +83,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalText.text   = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article + "\n Feedback: " + feedback;
-        secondTotal.text = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article + "\n Feedback: " + feedback;
+        totalText.text   = "Article: " + article + "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
+        secondTotal.text = "Article: " + article + "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
         if (finalDay - days < 16) {
             daysLeft.text = "Days Left: " + (finalDay - days).ToString();
         } else {
@@ -136,7 +136,6 @@ public class GameManager : MonoBehaviour
         if(!testevi.test_collected){
             testevi.setCollected(true);
             TestEvidenceList.Add(testevi);
-            ArticleManager.updateOrderedEvidenceSet(testevi);
 //            print(testevi.dialogue);         // literal dialogue
 //            print(testevi.test_evidence);         // sentence
 //            print(testevi.test_evidence_summary); // phrase
