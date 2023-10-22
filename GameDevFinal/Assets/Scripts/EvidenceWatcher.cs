@@ -17,6 +17,7 @@ public class EvidenceWatcher : MonoBehaviour
     public TestEvidencePiece evidencePieceSix;
     public TestEvidencePiece evidencePieceSeven;
     public TestEvidencePiece evidencePieceEight;
+    public TestEvidencePiece evidencePieceNine;
 
     private int index = 0;
 
@@ -31,6 +32,7 @@ public class EvidenceWatcher : MonoBehaviour
         Pieces.Add(evidencePieceSix);
         Pieces.Add(evidencePieceSeven);
         Pieces.Add(evidencePieceEight);
+        Pieces.Add(evidencePieceNine);
 
         TestShowEvidence();
     }

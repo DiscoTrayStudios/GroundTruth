@@ -81,7 +81,12 @@ public class EForInteract : MonoBehaviour {
             GameManager.Instance.GmCollectEvidence(testEvi);    
             ArticleManager.updateOrderedEvidenceSet(testEvi, whichDialogue);
         }
-        else { ArticleManager.bothDialogues(ArticleManager.getEvidenceIndex(testEvi), testEvi); }
+        else {
+            string currDialogue = ArticleManager.getDialogues(ArticleManager.getEvidenceIndex(testEvi));
+            if ((testEvi.dialogue ==  currDialogue && whichDialogue) || (testEvi.dialogue1 ==  currDialogue && !whichDialogue)) { 
+                ArticleManager.bothDialogues(ArticleManager.getEvidenceIndex(testEvi), testEvi); 
+            }
+        }
         exPoint.SetActive(false);
         print("Evidence collected");
         //Journal.addToJournal(evidence_name);

@@ -69430,7 +69430,7 @@ Transform:
   m_GameObject: {fileID: 1054507605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.72, y: 9.55, z: 10.058978}
+  m_LocalPosition: {x: -2.81, y: 13.02, z: 10.058978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -71092,7 +71092,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b788fc7c05c442d4eaf2b9e9fa2249bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01a1526fbba1f89409f290ce24a2691d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86929,8 +86929,8 @@ MonoBehaviour:
   test_evidence: 'There is ambivalence in the air in New Madrid. One man was eager
     to join our United States, but noted others might disagree. '
   test_evidence_summary: Joining the United States
-  dialogue: 
-  dialogue1: 
+  dialogue: '"I think this area should be part of the United States."'
+  dialogue1: '"This place is joining the united states, I won''t consider the consequences!"'
   test_collected: 0
 --- !u!114 &2119644336
 MonoBehaviour:

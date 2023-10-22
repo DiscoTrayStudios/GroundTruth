@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
 using System.Security.AccessControl;
 using System;
-using System.Security.Cryptography;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,14 +51,15 @@ public static string getFeedback()
     switch (lenArticle)
     {
         case 0: feedback += "Where's the article?! Were you goofing off again? You're lucky standards are low around here. "; break;
-        case 1:
-        case 2:
+        case 1: feedback += "Your article was a little too short. I, and the public, expect more from you. "; break;
+        case 2: feedback += "Your article was a little too short. I, and the public, expect more from you. "; break;
         case 3: feedback += "Your article was a little too short. I, and the public, expect more from you. "; break;
-        case 4:
+        case 4: feedback += "This article was just the right size. "; break;
         case 5: feedback += "This article was just the right size. "; break;
-        case 6:
+        case 6: feedback += "Your article was a little overlong. You should be a bit more discerning. "; break;
         case 7: feedback += "Your article was a little overlong. You should be a bit more discerning. "; break;
-        case 8: feedback += "Good grief! Is there anything you WON'T try to publish? "; break;
+        case 8: feedback += "Your article was a little overlong. You should be a bit more discerning. "; break;
+        case 9: feedback += "Good grief! Is there anything you WON'T try to publish? "; break;
     }
     if (GameManager.post && lenArticle > 1) {
         switch(tespostordered[s1].test_evidence_summary)
@@ -113,12 +113,12 @@ public static string getFeedback()
         }
     }
 
-    switch(score > 75, score > 0, score > -50)
+    switch(score > 75, score > 0, score > -50, lenArticle != 0)
     {
-        case (false, false, false): feedback += "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"; break;
-        case (false, false,  true): feedback += "Your article was mediocre. I don't have much else to say about it. -Your Editor"; break;
-        case (false,  true,  true): feedback += "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"; break;
-        case ( true,  true,  true): feedback += "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"; break;
+        case (false, false, false, true): feedback += "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"; break;
+        case (false, false,  true, true): feedback += "Your article was mediocre. I don't have much else to say about it. -Your Editor"; break;
+        case (false,  true,  true, true): feedback += "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"; break;
+        case ( true,  true,  true, true): feedback += "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"; break;
     }
 
     return feedback;
@@ -154,22 +154,14 @@ public static string getFeedback()
     } 
 
     public static int getEvidenceIndex(TestEvidence te) {
+        List<TestEvidence> telist = new List<TestEvidence>();
+        if (GameManager.post) { telist = tespostordered; } else { telist = tespreordered; };
         int index = 0;
-        if (GameManager.post) {
-            foreach (TestEvidence tf in tespostordered) {
+        foreach (TestEvidence tf in telist) {
                 if (tf.test_evidence_summary == te.test_evidence_summary) {
                     return index;
                 }
                 index++;
-            }
-        }
-        else                  {
-            foreach (TestEvidence tf in tespreordered) {
-                if (tf.test_evidence_summary == te.test_evidence_summary) {
-                    return index;
-                }
-                index++;
-            }
         } return index;
     }
 
@@ -190,7 +182,7 @@ public static string getFeedback()
 
     public static string updateArticle(string evix, bool remove) {
         print(evix);
-        int num = evix[^1] - '0';
+        int num = evix[^1] - '0'; //This line changes something like  'Evi8' :: str  to  8 :: int
         string sentence = "";
         string sum =      "";
         if (GameManager.post) {  
