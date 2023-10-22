@@ -16,7 +16,7 @@ public string[] text;
 
     private int prevScore = 0;
 
-    public AudioSource scribble;
+    public AudioSource speaking;
 
     void Awake(){
         currentTextIndex = 0;
@@ -26,6 +26,7 @@ public string[] text;
         else{
             prevScore = ArticleManager.getScoreNum();
             print(prevScore);
+            speaking.Play();
             GameManager.Instance.DialogShow(postText[currentTextIndex]);
         }
         GameManager.Instance.SetPlayerBusy(false);
@@ -41,17 +42,23 @@ public string[] text;
                 if(!GameManager.Instance.IsPost()){
                     if (currentTextIndex < text.Length)
                     {
-                    if(currentTextIndex == 0 || currentTextIndex == 14){
-                        GameManager.Instance.GameDialogShow(text[currentTextIndex]);
-                    }
-                    else{
-                        GameManager.Instance.DialogShow(text[currentTextIndex]);    
-                    }
+                        if(currentTextIndex == 0 || currentTextIndex == 14){
+                            speaking.Stop();
+                            GameManager.Instance.GameDialogShow(text[currentTextIndex]);
+                        }  
+                        
+                        else{
+                            if(currentTextIndex == 1){
+                            speaking.Play();
+                            }
+                            GameManager.Instance.DialogShow(text[currentTextIndex]);    
+                        }
                     
                     }
                     else
                     {
                     GameManager.Instance.DialogShow(text[1]);
+                    speaking.Play();
                     currentTextIndex = 1;
                     }
                     currentTextIndex ++;
@@ -66,10 +73,12 @@ public string[] text;
                         GameManager.Instance.DialogShow(postText[currentTextIndex]);
                     }
                     else if(currentTextIndex == postText.Length - 1){
+                        speaking.Play();
                         currentTextIndex = 0;
                         GameManager.Instance.DialogShow(postText[currentTextIndex]);
                     }
                     else{
+                        speaking.Stop();
                         GameManager.Instance.DialogHide();
                         currentTextIndex = postText.Length - 1;
                         GameManager.Instance.GameDialogShow(postText[currentTextIndex]);
