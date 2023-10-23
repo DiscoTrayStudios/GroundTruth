@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public GameObject dialogBox;
     public TextMeshProUGUI dialogText;
 
+    public GameObject gameDialogBox;
+    public TextMeshProUGUI gameDialogText;
+
     public GameObject Title;
     public GameObject InvesArea;
     public GameObject PostQuakeInves;
@@ -163,6 +166,10 @@ public class GameManager : MonoBehaviour
         postFailureScreen.SetActive(true);
     }
 
+    public Boolean IsPost(){
+        return post;
+    }
+
     public void ResetScene() {
         //GABBY UPDATE
         TestEvidenceList.Clear();
@@ -189,7 +196,7 @@ public class GameManager : MonoBehaviour
     public void DialogShow(string text) {
         dialogBox.SetActive(true);
         StopAllCoroutines();
-        StartCoroutine(TypeText(text));
+        StartCoroutine(TypeText(dialogText, text));
         playerBusy = true;
     }
 
@@ -197,11 +204,21 @@ public class GameManager : MonoBehaviour
         dialogBox.SetActive(false);
         playerBusy = false;
     }
+    public void GameDialogShow(string text) {
+        gameDialogBox.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(TypeText(gameDialogText, text));
+        playerBusy = true;
+    }
+    public void GameDialogHide(){
+        gameDialogBox.SetActive(false);
+        playerBusy = false;
+    }
 
-    IEnumerator TypeText(string text) {
-        dialogText.text = "";
+    IEnumerator TypeText(TextMeshProUGUI textBox, string text) {
+        textBox.text = "";
         foreach(char c in text.ToCharArray()) {
-            dialogText.text += c;
+            textBox.text += c;
             yield return new WaitForSeconds(0.02f);
         }
     }
@@ -274,6 +291,9 @@ public class GameManager : MonoBehaviour
         while(!asyncLoad.isDone) {
             yield return null;
         }
+        if(scene == "Boss"){
+            BossUI.transform.Find("SkipButton").gameObject.SetActive(true);
+        }
         // DialogHide();
         // if(scene != "Menu") {
         //     mainScreen.SetActive(false);
@@ -343,7 +363,7 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(true);
             BossUI.SetActive(false);
         } else if (scene == "Boss") {
-            dialogBox.SetActive(true);
+            //dialogBox.SetActive(true);
             UI.SetActive(false);
             testNotebook.SetActive(false);
             PostUI.SetActive(false);
@@ -352,6 +372,7 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(true);
+            BossUI.transform.Find("SkipButton").gameObject.SetActive(false);
         } else if (scene == "Cutscene") {
             post = true;
             ArticleManager.resetArticleAndScore();
