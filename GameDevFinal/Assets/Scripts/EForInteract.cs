@@ -15,6 +15,8 @@ public class EForInteract : MonoBehaviour {
 
     public GameObject exPoint;
 
+    public bool whichDialogue;
+
     private int currentTextIndex = 0;
 
     void Awake(){
@@ -33,6 +35,7 @@ public class EForInteract : MonoBehaviour {
             canShowDialog = true;
         }
     }
+
 
     public void OnTriggerExit2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player"))
@@ -76,8 +79,14 @@ public class EForInteract : MonoBehaviour {
         if(!GameManager.CheckEvidence(evidence_name)){
             GameManager.AddEvidence(evidence_name);
             GameManager.Instance.GmCollectEvidence(testEvi);    
+            ArticleManager.updateOrderedEvidenceSet(testEvi, whichDialogue);
         }
-       
+        else {
+            string currDialogue = ArticleManager.getDialogues(ArticleManager.getEvidenceIndex(testEvi));
+            if ((testEvi.dialogue ==  currDialogue && whichDialogue) || (testEvi.dialogue1 ==  currDialogue && !whichDialogue)) { 
+                ArticleManager.bothDialogues(ArticleManager.getEvidenceIndex(testEvi), testEvi); 
+            }
+        }
         exPoint.SetActive(false);
         print("Evidence collected");
         //Journal.addToJournal(evidence_name);

@@ -92,7 +92,7 @@ public class testJournal : MonoBehaviour
             print(boxIndex);
             print(item.test_evidence);
             // if(!item.test_collected){
-            journalBoxes[boxIndex].text = item.test_evidence;
+            journalBoxes[boxIndex].text = ArticleManager.getDialogues(boxIndex);
             if (boxIndex +1 < journalBoxes.Count) {
                 boxIndex = boxIndex + 1;
             } journalBoxNineArticle.text = "Current Article Draft: \n" + ArticleManager.getArticle();

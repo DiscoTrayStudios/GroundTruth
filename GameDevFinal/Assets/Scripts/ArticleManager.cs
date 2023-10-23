@@ -1,6 +1,6 @@
+using System.Threading.Tasks;
 using System.Security.AccessControl;
 using System;
-using System.Security.Cryptography;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +11,8 @@ public class ArticleManager : MonoBehaviour
     public static Dictionary<string, string> evidence_sentences = new Dictionary<string, string>();
     public static List<TestEvidence> tespreordered  = new List<TestEvidence>{};
     public static List<TestEvidence> tespostordered = new List<TestEvidence>{};
+    public static List<string> dialoguespreordered  = new List<string>{};
+    public static List<string> dialoguespostordered = new List<string>{};
     public static HashSet<string> sentences = new HashSet<string>(); 
     private static HashSet<string> truesums = new HashSet<string>{"Prophetstown", "Tenskwatawa predicted earthquakes", "River flowing backwards.",
                                                                   "Ground continues to shake", "Potential war in 1812", "Louisiana Purchase", 
@@ -51,14 +53,15 @@ public static string getFeedback()
     switch (lenArticle)
     {
         case 0: feedback += "Where's the article?! Were you goofing off again? You're lucky standards are low around here. "; break;
-        case 1:
-        case 2:
+        case 1: feedback += "Your article was a little too short. I, and the public, expect more from you. "; break;
+        case 2: feedback += "Your article was a little too short. I, and the public, expect more from you. "; break;
         case 3: feedback += "Your article was a little too short. I, and the public, expect more from you. "; break;
-        case 4:
+        case 4: feedback += "This article was just the right size. "; break;
         case 5: feedback += "This article was just the right size. "; break;
-        case 6:
+        case 6: feedback += "Your article was a little overlong. You should be a bit more discerning. "; break;
         case 7: feedback += "Your article was a little overlong. You should be a bit more discerning. "; break;
-        case 8: feedback += "Good grief! Is there anything you WON'T try to publish? "; break;
+        case 8: feedback += "Your article was a little overlong. You should be a bit more discerning. "; break;
+        case 9: feedback += "Good grief! Is there anything you WON'T try to publish? "; break;
     }
     if (GameManager.post && lenArticle > 1) {
         switch(tespostordered[s1].test_evidence_summary)
@@ -92,7 +95,7 @@ public static string getFeedback()
             case "Flying":                       feedback += "Get your head out of the clouds! We don't even have telegrams yet, there are certainly no planes. "; break;
             case "River People":                 feedback += "I saw a river person once. No, no I didn't. That's not true. "; break;
             case "Prophetstown":                 feedback += "The thoughts on Prophetstown are even more relevant in the wake of the recent Battle of Tippecanoe, fought between Tecumseh's followers and the Indiana army. "; break;
-            case "Creature in the woods":        feedback += "A creature in the woods? Is it spiky, or squishy? Regardless, we do not care. Please report truth. "; break;
+            case "Creature in the woods":        feedback += "A creature in the woods? Is it spiky, or squishy? Just kidding, we do not care. Please report truth. "; break;
             case "Potential war in 1812":        feedback += "The war is in response to continued British aggression at our ports - Likely not a major concern for Missourians. "; break;
             case "Louisiana Purchase":           feedback += "I remember the Louisiana Purchase, but only thought of it politically. Now that you've written it out, I grant it was immoral for Napoleon to waltz in, as if he owned the place. "; break;
             case "Steamboat on the Mississippi": feedback += "A boat powered by steam? This is a great invention! "; break;
@@ -112,12 +115,12 @@ public static string getFeedback()
         }
     }
 
-    switch(score > 75, score > 0, score > -50)
+    switch(score > 75, score > 0, score > -50, lenArticle != 0)
     {
-        case (false, false, false): feedback += "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"; scorenum = 1; break;
-        case (false, false,  true): feedback += "Your article was mediocre. I don't have much else to say about it. -Your Editor"; scorenum = 2; break;
-        case (false,  true,  true): feedback += "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"; scorenum = 3; break;
-        case ( true,  true,  true): feedback += "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"; scorenum = 4; break;
+        case (false, false, false, true): feedback += "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"; scorenum = 1; break;
+        case (false, false,  true, true): feedback += "Your article was mediocre. I don't have much else to say about it. -Your Editor"; scorenum = 2; break;
+        case (false,  true,  true, true): feedback += "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"; scorenum = 3; break;
+        case ( true,  true,  true, true): feedback += "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"; scorenum = 4; break;
     }
 
     return feedback;
@@ -129,13 +132,54 @@ public static string getFeedback()
     
     public static string getArticle() { return article; }
 
-    public static void updateOrderedEvidenceSet(TestEvidence te) {
+    public static void updateOrderedEvidenceSet(TestEvidence te, bool whichDialogue) {
         print(te.test_evidence_name);
         print(te.test_evidence);
         print(te.test_evidence_summary);
-        if (GameManager.post) { tespostordered.Add(te); }
-        else                  {  tespreordered.Add(te); }
+        print(te.dialogue);
+        print(te.dialogue1);
+        print(whichDialogue);
+        if (GameManager.post) { 
+            tespostordered.Add(te); 
+            if (whichDialogue) {
+                dialoguespostordered.Add(te.dialogue1); 
+            } else {
+                dialoguespostordered.Add(te.dialogue); 
+            }
+        }
+        else                  {  
+            tespreordered.Add(te); 
+            if (whichDialogue)  {
+                dialoguespreordered.Add(te.dialogue1);  
+            }
+            else { 
+                dialoguespreordered.Add(te.dialogue); 
+            }
+        }
     } 
+
+    public static int getEvidenceIndex(TestEvidence te) {
+        List<TestEvidence> telist = new List<TestEvidence>();
+        if (GameManager.post) { telist = tespostordered; } else { telist = tespreordered; };
+        int index = 0;
+        foreach (TestEvidence tf in telist) {
+                if (tf.test_evidence_summary == te.test_evidence_summary) {
+                    return index;
+                }
+                index++;
+        } return index;
+    }
+
+    public static string getDialogues(int index) {
+        if (GameManager.post) { return dialoguespostordered[index]; }
+        else                  {  return dialoguespreordered[index]; }
+    }
+    public static void bothDialogues(int index, TestEvidence te) {
+        if (GameManager.post) { dialoguespostordered[index] = te.dialogue + "\n" + te.dialogue1; }
+        else                  {  dialoguespreordered[index] =  te.dialogue  + "\n" + te.dialogue1; }
+    }
+
+
 
     public static int getScore() { return score; }
 
@@ -143,7 +187,7 @@ public static string getFeedback()
 
     public static string updateArticle(string evix, bool remove) {
         print(evix);
-        int num = evix[^1] - '0';
+        int num = evix[^1] - '0'; //This line changes something like  'Evi8' :: str  to  8 :: int
         string sentence = "";
         string sum =      "";
         if (GameManager.post) {  

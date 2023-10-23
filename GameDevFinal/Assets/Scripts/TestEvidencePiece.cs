@@ -12,7 +12,6 @@ public class TestEvidencePiece : MonoBehaviour
     public TextMeshProUGUI eviFullText;
     public TextMeshProUGUI dialogue;
     public TextMeshProUGUI dialogue1;
-    public TextMeshProUGUI dialogue2;
     private bool ddol;
     
     // Start is called before the first frame update

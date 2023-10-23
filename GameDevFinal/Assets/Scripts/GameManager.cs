@@ -38,8 +38,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject TravelDisplay;
 
-    public TextMeshProUGUI totalText;
-    public TextMeshProUGUI secondTotal;
+    public TextMeshProUGUI   firstArticle;
+    public TextMeshProUGUI  secondArticle;
+    public TextMeshProUGUI  firstFeedback;
+    public TextMeshProUGUI secondFeedback;
 
     public TextMeshProUGUI dateText;
     public TextMeshProUGUI daysLeft;
@@ -86,8 +88,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalText.text   = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article + "\n Feedback: " + feedback;
-        secondTotal.text = "Score: " + ArticleManager.getScore().ToString() + "\n Article: " + article + "\n Feedback: " + feedback;
+        firstArticle.text    = "\n \n Article: " + article;
+        secondArticle.text   = "\n \n Article: " + article;
+        firstFeedback.text   = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
+        secondFeedback.text  = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
         if (finalDay - days < 16) {
             daysLeft.text = "Days Left: " + (finalDay - days).ToString();
         } else {
@@ -139,7 +143,6 @@ public class GameManager : MonoBehaviour
         if(!testevi.test_collected){
             testevi.setCollected(true);
             TestEvidenceList.Add(testevi);
-            ArticleManager.updateOrderedEvidenceSet(testevi);
 //            print(testevi.dialogue);         // literal dialogue
 //            print(testevi.test_evidence);         // sentence
 //            print(testevi.test_evidence_summary); // phrase
