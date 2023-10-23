@@ -16,11 +16,14 @@ public class NewPlayerMovement : MonoBehaviour
     public bool left = false;
     public bool right = true;
     private Animator animator;
+
+    private AudioSource walking;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        walking = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class NewPlayerMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         }
         else{
+            walking.Stop();
             horizontal = 0;
             vertical = 0;
         }
@@ -42,6 +46,10 @@ public class NewPlayerMovement : MonoBehaviour
             animator.SetTrigger("Up");
         } else {
             animator.SetTrigger("Idle");
+            walking.Stop();
+        }
+        if((!walking.isPlaying) & (horizontal != 0 || vertical != 0)){
+            walking.Play();
         }
     }
 

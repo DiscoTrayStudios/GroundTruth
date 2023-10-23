@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class WalkAwayFromBoss : MonoBehaviour
 {
+    public AudioSource speaking;
+    public AudioSource walking;
+    public AudioSource door;
     private float moveSpeed = 1f;
     private Rigidbody2D rb;
     private Animator animator;
@@ -18,13 +21,15 @@ public class WalkAwayFromBoss : MonoBehaviour
     }
 
     public void WalkAway(){
+        speaking.Stop();
+        walking.Play();
         leaving = true;
         StartCoroutine(MoveToWaypoint());
     }
 
     private IEnumerator MoveToWaypoint(){
         animator.SetTrigger("Walking");
-        Vector3 targetPosition = new Vector3(0f, -7f, 0f);
+        Vector3 targetPosition = new Vector3(0f, -6.6f, 0f);
         Vector3 direction = (targetPosition - transform.position).normalized;
         while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
@@ -33,7 +38,18 @@ public class WalkAwayFromBoss : MonoBehaviour
         }
 
         rb.velocity = Vector2.zero;
-        GameManager.Instance.ChangeScene("InvestigativeArea");
+        walking.Stop();
+        door.Play();
+        while(door.isPlaying){
+            yield return null;
+        }
+        if(!GameManager.Instance.IsPost()){
+            GameManager.Instance.ChangeScene("InvestigativeArea");    
+        }
+        else{
+            GameManager.Instance.ChangeScene("PostQuake");    
+        }
+        
         StopCoroutine(MoveToWaypoint());   
     }
 
