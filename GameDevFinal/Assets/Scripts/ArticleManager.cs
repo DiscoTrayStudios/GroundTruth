@@ -117,10 +117,23 @@ public static string getFeedback()
 
     switch(score > 75, score > 0, score > -50, lenArticle != 0)
     {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        case (false, false, false): feedback += "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"; scorenum = 1; break;
+        case (false, false,  true): feedback += "Your article was mediocre. I don't have much else to say about it. -Your Editor"; scorenum = 2; break;
+        case (false,  true,  true): feedback += "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"; scorenum = 3; break;
+        case ( true,  true,  true): feedback += "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"; scorenum = 4; break;
+=======
+>>>>>>> Stashed changes
         case (false, false, false, true): feedback += "Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"; scorenum = 1; break;
         case (false, false,  true, true): feedback += "Your article was mediocre. I don't have much else to say about it. -Your Editor"; scorenum = 2; break;
         case (false,  true,  true, true): feedback += "Your article was accurate and interesting. You might be on track for a promotion. -Your Editor"; scorenum = 3; break;
         case ( true,  true,  true, true): feedback += "I don't have any complaints, this is perfect. You're going to go far, kid. -Your Editor"; scorenum = 4; break;
+<<<<<<< Updated upstream
+=======
+>>>>>>> main
+>>>>>>> Stashed changes
     }
 
     return feedback;
