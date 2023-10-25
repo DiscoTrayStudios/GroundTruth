@@ -170,6 +170,10 @@ public class GameManager : MonoBehaviour
         return post;
     }
 
+    public void pre() {
+        post = false;
+    }
+
     public void ResetScene() {
         //GABBY UPDATE
         TestEvidenceList.Clear();
