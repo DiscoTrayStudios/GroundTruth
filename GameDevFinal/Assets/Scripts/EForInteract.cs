@@ -52,6 +52,10 @@ public class EForInteract : MonoBehaviour {
             {
                 GameManager.Instance.DialogShow(text[currentTextIndex]);
                 dialogShown = true;
+                if(gameObject.GetComponent<NPCWander>()!= null){
+                    gameObject.GetComponent<NPCWander>().FaceFront();
+                }
+                
             }
             
             else if (dialogShown)

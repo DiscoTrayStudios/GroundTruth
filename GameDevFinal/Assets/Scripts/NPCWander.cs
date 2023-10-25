@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // brought to you in part by https://discussions.unity.com/t/freeze-rigidbody-position-in-script/110627/2
@@ -13,6 +14,13 @@ public class NPCWander : MonoBehaviour {
     private Coroutine moveToWaypointCoroutine;
     private Rigidbody2D rb;
     private bool someoneIsStill = false;
+
+    public Sprite front;
+    public Sprite back;
+
+    public Sprite left;
+
+    public Sprite right;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -28,9 +36,33 @@ public class NPCWander : MonoBehaviour {
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
                 rb.velocity = direction * moveSpeed;
+                //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
+                if(!front.Equals(null) & !back.Equals(null)){
+                    if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){
+                    
+                        if(direction.x > 0){
+                            gameObject.GetComponent<SpriteRenderer>().sprite = right;
+                        }
+                        else{
+                            gameObject.GetComponent<SpriteRenderer>().sprite = left;
+                        }  
+                    }
+                    else if(Mathf.Abs(direction.y) > Mathf.Abs(direction.x)){
+                        if(direction.y >0){
+                            gameObject.GetComponent<SpriteRenderer>().sprite = back;
+                        }
+                        else{
+                            gameObject.GetComponent<SpriteRenderer>().sprite = front;
+                        }
+                    }
+                }
+                
                 yield return null;
             }
-
+            if(!front.Equals(null)){
+                gameObject.GetComponent<SpriteRenderer>().sprite = front; 
+            }
+            
             rb.velocity = Vector2.zero;
 
             // Wait at the waypoint if specified
@@ -41,6 +73,12 @@ public class NPCWander : MonoBehaviour {
             // Move to the next waypoint
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
+    }
+    public void FaceFront(){
+        if(!front.Equals(null)){
+                StopCoroutine(moveToWaypointCoroutine);
+                gameObject.GetComponent<SpriteRenderer>().sprite = front; 
+            }
     }
 
     // Update is called once per frame
