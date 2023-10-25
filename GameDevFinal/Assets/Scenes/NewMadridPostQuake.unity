@@ -5297,6 +5297,10 @@ MonoBehaviour:
   - {fileID: 2121224480}
   moveSpeed: 1
   player: {fileID: 1616967101}
+  front: {fileID: -1653035860, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
+  back: {fileID: 749363154, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
+  left: {fileID: 850572312, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
+  right: {fileID: 432824591, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
 --- !u!50 &229701272
 Rigidbody2D:
   serializedVersion: 4
@@ -10297,6 +10301,10 @@ MonoBehaviour:
   - {fileID: 11254249}
   moveSpeed: 1.05
   player: {fileID: 1616967101}
+  front: {fileID: 2061438512, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
+  back: {fileID: -1569351921, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
+  left: {fileID: 223987144, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
+  right: {fileID: 1786869345, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
 --- !u!61 &298588402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10542,6 +10550,10 @@ MonoBehaviour:
   - {fileID: 192336875}
   moveSpeed: 0.875
   player: {fileID: 1616967101}
+  front: {fileID: 429940384, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  back: {fileID: 278253206, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  left: {fileID: 1857815547, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  right: {fileID: 1482809782, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
 --- !u!61 &454353343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11482,6 +11494,10 @@ MonoBehaviour:
   - {fileID: 187842028}
   moveSpeed: 1.5
   player: {fileID: 1616967101}
+  front: {fileID: 155156467, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  back: {fileID: -1217604032, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  left: {fileID: -1558654035, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  right: {fileID: -1006467553, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
 --- !u!61 &967889320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60862,6 +60878,10 @@ MonoBehaviour:
   - {fileID: 192336875}
   moveSpeed: 0.875
   player: {fileID: 1616967101}
+  front: {fileID: -1630936696, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
+  back: {fileID: -1318399428, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
+  left: {fileID: 894012449, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
+  right: {fileID: 1864350784, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
 --- !u!61 &1176317156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69373,6 +69393,10 @@ MonoBehaviour:
   - {fileID: 2121224480}
   moveSpeed: 1
   player: {fileID: 1616967101}
+  front: {fileID: 1907875376, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
 --- !u!50 &1627804154
 Rigidbody2D:
   serializedVersion: 4
@@ -77688,6 +77712,10 @@ MonoBehaviour:
   - {fileID: 11254249}
   moveSpeed: 1.05
   player: {fileID: 1616967101}
+  front: {fileID: 1943663392, guid: cfe4454185e1db64fad6aeef593ab038, type: 3}
+  back: {fileID: 1831395918, guid: cfe4454185e1db64fad6aeef593ab038, type: 3}
+  left: {fileID: -2064539783, guid: cfe4454185e1db64fad6aeef593ab038, type: 3}
+  right: {fileID: 2135908665, guid: cfe4454185e1db64fad6aeef593ab038, type: 3}
 --- !u!61 &1723962924
 BoxCollider2D:
   m_ObjectHideFlags: 0
