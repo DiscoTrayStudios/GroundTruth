@@ -52018,10 +52018,10 @@ MonoBehaviour:
   - {fileID: 1812559034}
   moveSpeed: 1
   player: {fileID: 1399488542}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: 1907875376, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
 --- !u!50 &167138967
 Rigidbody2D:
   serializedVersion: 4
@@ -63649,10 +63649,10 @@ MonoBehaviour:
   - {fileID: 685866977}
   moveSpeed: 1
   player: {fileID: 1399488542}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: 1907875376, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
 --- !u!50 &632093523
 Rigidbody2D:
   serializedVersion: 4
@@ -78805,10 +78805,10 @@ MonoBehaviour:
   - {fileID: 251567379}
   moveSpeed: 1
   player: {fileID: 1399488542}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: 155156467, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  back: {fileID: -1217604032, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  left: {fileID: -1558654035, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  right: {fileID: -1006467553, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
 --- !u!50 &1657408946
 Rigidbody2D:
   serializedVersion: 4
@@ -80303,10 +80303,10 @@ MonoBehaviour:
   - {fileID: 1812559034}
   moveSpeed: 1
   player: {fileID: 1399488542}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: 429940384, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  back: {fileID: 278253206, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  left: {fileID: 1857815547, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  right: {fileID: 1482809782, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
 --- !u!50 &1742125199
 Rigidbody2D:
   serializedVersion: 4

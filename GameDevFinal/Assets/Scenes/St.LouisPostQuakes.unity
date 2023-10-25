@@ -23919,6 +23919,10 @@ MonoBehaviour:
   - {fileID: 1901801222}
   moveSpeed: 1.1
   player: {fileID: 868936955}
+  front: {fileID: -1804971562, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  back: {fileID: 737572879, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  left: {fileID: 1114964214, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  right: {fileID: 783621686, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
 --- !u!50 &582157190
 Rigidbody2D:
   serializedVersion: 4
@@ -24356,6 +24360,10 @@ MonoBehaviour:
   - {fileID: 469601794}
   moveSpeed: 1.05
   player: {fileID: 868936955}
+  front: {fileID: 155156467, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  back: {fileID: -1217604032, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  left: {fileID: -1558654035, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  right: {fileID: -1006467553, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
 --- !u!50 &746134568
 Rigidbody2D:
   serializedVersion: 4
@@ -25241,6 +25249,10 @@ MonoBehaviour:
   - {fileID: 1996458634}
   moveSpeed: 1.5
   player: {fileID: 868936955}
+  front: {fileID: 2141530006, guid: eebc19d1d6d5b954a984d64c07c0a1f4, type: 3}
+  back: {fileID: 1985632114, guid: eebc19d1d6d5b954a984d64c07c0a1f4, type: 3}
+  left: {fileID: -906306261, guid: eebc19d1d6d5b954a984d64c07c0a1f4, type: 3}
+  right: {fileID: 2104915638, guid: eebc19d1d6d5b954a984d64c07c0a1f4, type: 3}
 --- !u!50 &1033061330
 Rigidbody2D:
   serializedVersion: 4
@@ -25426,6 +25438,10 @@ MonoBehaviour:
   - {fileID: 1282068960}
   moveSpeed: 1
   player: {fileID: 868936955}
+  front: {fileID: -1653035860, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
+  back: {fileID: 749363154, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
+  left: {fileID: 850572312, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
+  right: {fileID: 432824591, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
 --- !u!114 &1072947616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28888,6 +28904,10 @@ MonoBehaviour:
   - {fileID: 1996458634}
   moveSpeed: 1.5
   player: {fileID: 868936955}
+  front: {fileID: 100544167, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
+  back: {fileID: -250575206, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
+  left: {fileID: -255463592, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
+  right: {fileID: -610570553, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
 --- !u!114 &1529045109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31968,6 +31988,10 @@ MonoBehaviour:
   - {fileID: 1901801222}
   moveSpeed: 1.1
   player: {fileID: 868936955}
+  front: {fileID: 1907875376, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
 --- !u!50 &1754727273
 Rigidbody2D:
   serializedVersion: 4
@@ -32208,6 +32232,10 @@ MonoBehaviour:
   - {fileID: 1214902726}
   moveSpeed: 0.95
   player: {fileID: 868936955}
+  front: {fileID: 429940384, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  back: {fileID: 278253206, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  left: {fileID: 1857815547, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  right: {fileID: 1482809782, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
 --- !u!50 &1760869912
 Rigidbody2D:
   serializedVersion: 4
@@ -32661,6 +32689,10 @@ MonoBehaviour:
   - {fileID: 1282068960}
   moveSpeed: 1
   player: {fileID: 868936955}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!50 &1866578265
 Rigidbody2D:
   serializedVersion: 4
@@ -32896,6 +32928,8 @@ MonoBehaviour:
   postquakeWatcher: {fileID: 0}
   dialogBox: {fileID: 1837659862}
   dialogText: {fileID: 178675619}
+  gameDialogBox: {fileID: 0}
+  gameDialogText: {fileID: 0}
   Title: {fileID: 0}
   InvesArea: {fileID: 0}
   PostQuakeInves: {fileID: 0}

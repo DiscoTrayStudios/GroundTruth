@@ -978,10 +978,10 @@ MonoBehaviour:
   - {fileID: 0}
   moveSpeed: 1
   player: {fileID: 2094398409}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: 1907875376, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
 --- !u!1 &482920095
 GameObject:
   m_ObjectHideFlags: 0
@@ -26456,10 +26456,10 @@ MonoBehaviour:
   waypoints: []
   moveSpeed: 2
   player: {fileID: 0}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: -1804971562, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  back: {fileID: 737572879, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  left: {fileID: 1114964214, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  right: {fileID: 783621686, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
 --- !u!1 &1450194547
 GameObject:
   m_ObjectHideFlags: 0
@@ -26516,10 +26516,10 @@ MonoBehaviour:
   - {fileID: 71947293}
   moveSpeed: 1
   player: {fileID: 2094398409}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: -1804971562, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  back: {fileID: 737572879, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  left: {fileID: 1114964214, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+  right: {fileID: 783621686, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
 --- !u!61 &1450194550
 BoxCollider2D:
   m_ObjectHideFlags: 0
