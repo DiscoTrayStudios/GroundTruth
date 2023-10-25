@@ -14,6 +14,13 @@ public class NPCWander : MonoBehaviour {
     private Rigidbody2D rb;
     private bool someoneIsStill = false;
 
+    public Sprite front;
+    public Sprite back;
+
+    public Sprite left;
+
+    public Sprite right;
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
@@ -28,9 +35,35 @@ public class NPCWander : MonoBehaviour {
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
                 rb.velocity = direction * moveSpeed;
+                //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
+                Debug.DrawRay(transform.position, targetPosition);
+                Debug.Log(gameObject.name + direction);
+                if(!front.Equals(null) & !back.Equals(null)){
+                    if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){
+                    
+                        if(direction.x > 0){
+                            gameObject.GetComponent<SpriteRenderer>().sprite = right;
+                        }
+                        else{
+                            gameObject.GetComponent<SpriteRenderer>().sprite = left;
+                        }  
+                    }
+                    else if(Mathf.Abs(direction.y) > Mathf.Abs(direction.x)){
+                        if(direction.y >0){
+                            gameObject.GetComponent<SpriteRenderer>().sprite = back;
+                        }
+                        else{
+                            gameObject.GetComponent<SpriteRenderer>().sprite = front;
+                        }
+                    }
+                }
+                
                 yield return null;
             }
-
+            if(!front.Equals(null)){
+                gameObject.GetComponent<SpriteRenderer>().sprite = front; 
+            }
+            
             rb.velocity = Vector2.zero;
 
             // Wait at the waypoint if specified
