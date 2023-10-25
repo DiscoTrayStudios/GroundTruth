@@ -599,6 +599,10 @@ MonoBehaviour:
   - {fileID: 1149944540}
   moveSpeed: 0.6
   player: {fileID: 2094398409}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!50 &268605878
 Rigidbody2D:
   serializedVersion: 4
@@ -974,6 +978,10 @@ MonoBehaviour:
   - {fileID: 0}
   moveSpeed: 1
   player: {fileID: 2094398409}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!1 &482920095
 GameObject:
   m_ObjectHideFlags: 0
@@ -26074,6 +26082,10 @@ MonoBehaviour:
   waypoints: []
   moveSpeed: 2
   player: {fileID: 0}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!1 &1149944538
 GameObject:
   m_ObjectHideFlags: 0
@@ -26444,6 +26456,10 @@ MonoBehaviour:
   waypoints: []
   moveSpeed: 2
   player: {fileID: 0}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!1 &1450194547
 GameObject:
   m_ObjectHideFlags: 0
@@ -26500,6 +26516,10 @@ MonoBehaviour:
   - {fileID: 71947293}
   moveSpeed: 1
   player: {fileID: 2094398409}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!61 &1450194550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26778,6 +26798,10 @@ MonoBehaviour:
   waypoints: []
   moveSpeed: 2
   player: {fileID: 0}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!61 &1519401425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33827,6 +33851,10 @@ MonoBehaviour:
   - {fileID: 1149944540}
   moveSpeed: 0.9
   player: {fileID: 2094398409}
+  front: {fileID: 429940384, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  back: {fileID: 278253206, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  left: {fileID: 1857815547, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
+  right: {fileID: 1482809782, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
 --- !u!50 &1867861370
 Rigidbody2D:
   serializedVersion: 4
@@ -33906,6 +33934,10 @@ MonoBehaviour:
   waypoints: []
   moveSpeed: 2
   player: {fileID: 0}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!61 &1936279210
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34456,6 +34488,10 @@ MonoBehaviour:
   - {fileID: 1253988759}
   moveSpeed: 1
   player: {fileID: 2094398409}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!50 &2072108697
 Rigidbody2D:
   serializedVersion: 4

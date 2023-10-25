@@ -52018,6 +52018,10 @@ MonoBehaviour:
   - {fileID: 1812559034}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!50 &167138967
 Rigidbody2D:
   serializedVersion: 4
@@ -61513,6 +61517,8 @@ MonoBehaviour:
   postquakeWatcher: {fileID: 0}
   dialogBox: {fileID: 565970598}
   dialogText: {fileID: 157048232}
+  gameDialogBox: {fileID: 0}
+  gameDialogText: {fileID: 0}
   Title: {fileID: 344293517}
   InvesArea: {fileID: 625964537}
   PostQuakeInves: {fileID: 1148850058}
@@ -61523,8 +61529,10 @@ MonoBehaviour:
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}
   TravelDisplay: {fileID: 0}
-  totalText: {fileID: 1660815581}
-  secondTotal: {fileID: 0}
+  firstArticle: {fileID: 0}
+  secondArticle: {fileID: 0}
+  firstFeedback: {fileID: 0}
+  secondFeedback: {fileID: 0}
   dateText: {fileID: 187405090}
   daysLeft: {fileID: 0}
   postDateText: {fileID: 0}
@@ -62742,6 +62750,10 @@ MonoBehaviour:
   - {fileID: 897438930}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 100544167, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
+  back: {fileID: -250575206, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
+  left: {fileID: -255463592, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
+  right: {fileID: -610570553, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
 --- !u!50 &596491544
 Rigidbody2D:
   serializedVersion: 4
@@ -63637,6 +63649,10 @@ MonoBehaviour:
   - {fileID: 685866977}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!50 &632093523
 Rigidbody2D:
   serializedVersion: 4
@@ -63826,6 +63842,10 @@ MonoBehaviour:
   - {fileID: 251567379}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!61 &639990193
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69483,6 +69503,10 @@ MonoBehaviour:
   - {fileID: 685866977}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!61 &1054507609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71167,6 +71191,10 @@ MonoBehaviour:
   - {fileID: 897438930}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!50 &1096000124
 Rigidbody2D:
   serializedVersion: 4
@@ -78777,6 +78805,10 @@ MonoBehaviour:
   - {fileID: 251567379}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!50 &1657408946
 Rigidbody2D:
   serializedVersion: 4
@@ -80271,6 +80303,10 @@ MonoBehaviour:
   - {fileID: 1812559034}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!50 &1742125199
 Rigidbody2D:
   serializedVersion: 4
@@ -81598,6 +81634,10 @@ MonoBehaviour:
   - {fileID: 897438930}
   moveSpeed: 1
   player: {fileID: 1399488542}
+  front: {fileID: 0}
+  back: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!61 &1883024742
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82929,7 +82969,7 @@ GameObject:
   - component: {fileID: 1980269674}
   - component: {fileID: 1980269675}
   m_Layer: 0
-  m_Name: Male Farmer (1)
+  m_Name: Female Townsperson
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
