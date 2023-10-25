@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // brought to you in part by https://discussions.unity.com/t/freeze-rigidbody-position-in-script/110627/2
@@ -36,8 +37,6 @@ public class NPCWander : MonoBehaviour {
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
                 rb.velocity = direction * moveSpeed;
                 //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
-                Debug.DrawRay(transform.position, targetPosition);
-                Debug.Log(gameObject.name + direction);
                 if(!front.Equals(null) & !back.Equals(null)){
                     if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){
                     
@@ -74,6 +73,12 @@ public class NPCWander : MonoBehaviour {
             // Move to the next waypoint
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
+    }
+    public void FaceFront(){
+        if(!front.Equals(null)){
+                StopCoroutine(moveToWaypointCoroutine);
+                gameObject.GetComponent<SpriteRenderer>().sprite = front; 
+            }
     }
 
     // Update is called once per frame
