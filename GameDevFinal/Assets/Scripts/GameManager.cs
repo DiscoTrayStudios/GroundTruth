@@ -170,6 +170,10 @@ public class GameManager : MonoBehaviour
         return post;
     }
 
+    public void pre() {
+        post = false;
+    }
+
     public void ResetScene() {
         //GABBY UPDATE
         TestEvidenceList.Clear();
@@ -283,6 +287,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     IEnumerator LoadYourAsyncScene(string scene) {
         if (scene != "InvestigativeArea") {currentLocation = scene;}
         currentScene = scene;
@@ -365,6 +371,7 @@ public class GameManager : MonoBehaviour
         } else if (scene == "Boss") {
             //dialogBox.SetActive(true);
             UI.SetActive(false);
+            ArticleManager.resetArticleAndScore();
             testNotebook.SetActive(false);
             PostUI.SetActive(false);
             Title.SetActive(false);
