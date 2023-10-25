@@ -13,6 +13,10 @@ public class Interact : MonoBehaviour {
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
             GameManager.Instance.DialogShow(text);
             StartCoroutine(Dialog());
+            if(gameObject.GetComponent<NPCWander>()!= null){
+                gameObject.GetComponent<NPCWander>().FaceFront();   
+            }
+            
         }
     }
 
