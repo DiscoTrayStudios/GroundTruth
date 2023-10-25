@@ -14,7 +14,7 @@ public class NPCWander : MonoBehaviour {
     private Coroutine moveToWaypointCoroutine;
     private Rigidbody2D rb;
     private bool someoneIsStill = false;
-
+    private bool playerNear = false;
     public Sprite front;
     public Sprite back;
 
@@ -27,8 +27,22 @@ public class NPCWander : MonoBehaviour {
         moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
     }
 
+    void Update() {
+        Collider2D[] near = Physics2D.OverlapCircleAll(rb.gameObject.transform.position, 1.5f);
+        int l = near.Length;
+        foreach (Collider2D n in near) {
+            if (n.CompareTag("Player")) { playerNear = true;  }
+            else                        { l--; }
+        }
+        if (l == 0) { playerNear = false; }
+        if (moveToWaypointCoroutine == null && !playerNear){
+            moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+            someoneIsStill = false;
+        }        
+    }
+
     private IEnumerator MoveToWaypoint(){
-        while (true){
+        while (!playerNear){
             Waypoint currentWaypoint = waypoints[currentWaypointIndex];
             Vector3 targetPosition = currentWaypoint.transform.position;
             Vector3 direction = (targetPosition - transform.position).normalized;
@@ -75,7 +89,7 @@ public class NPCWander : MonoBehaviour {
         }
     }
     public void FaceFront(){
-        if(!front.Equals(null)){
+        if(!front.Equals(null) && moveToWaypointCoroutine != null){
                 StopCoroutine(moveToWaypointCoroutine);
                 gameObject.GetComponent<SpriteRenderer>().sprite = front; 
             }
