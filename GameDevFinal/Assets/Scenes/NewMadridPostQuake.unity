@@ -10301,10 +10301,10 @@ MonoBehaviour:
   - {fileID: 11254249}
   moveSpeed: 1.05
   player: {fileID: 1616967101}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: 2061438512, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
+  back: {fileID: -1569351921, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
+  left: {fileID: 223987144, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
+  right: {fileID: 1786869345, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
 --- !u!61 &298588402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60878,10 +60878,10 @@ MonoBehaviour:
   - {fileID: 192336875}
   moveSpeed: 0.875
   player: {fileID: 1616967101}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: -1630936696, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
+  back: {fileID: -1318399428, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
+  left: {fileID: 894012449, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
+  right: {fileID: 1864350784, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
 --- !u!61 &1176317156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77712,10 +77712,10 @@ MonoBehaviour:
   - {fileID: 11254249}
   moveSpeed: 1.05
   player: {fileID: 1616967101}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: 1943663392, guid: cfe4454185e1db64fad6aeef593ab038, type: 3}
+  back: {fileID: 1831395918, guid: cfe4454185e1db64fad6aeef593ab038, type: 3}
+  left: {fileID: -2064539783, guid: cfe4454185e1db64fad6aeef593ab038, type: 3}
+  right: {fileID: 2135908665, guid: cfe4454185e1db64fad6aeef593ab038, type: 3}
 --- !u!61 &1723962924
 BoxCollider2D:
   m_ObjectHideFlags: 0

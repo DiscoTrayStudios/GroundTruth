@@ -32689,10 +32689,10 @@ MonoBehaviour:
   - {fileID: 1282068960}
   moveSpeed: 1
   player: {fileID: 868936955}
-  front: {fileID: 0}
-  back: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
+  front: {fileID: 1924728001, guid: 19b49298ee0e34544a8d5be797727966, type: 3}
+  back: {fileID: 355436071, guid: 19b49298ee0e34544a8d5be797727966, type: 3}
+  left: {fileID: -323658434, guid: 19b49298ee0e34544a8d5be797727966, type: 3}
+  right: {fileID: -124168760, guid: 19b49298ee0e34544a8d5be797727966, type: 3}
 --- !u!50 &1866578265
 Rigidbody2D:
   serializedVersion: 4
