@@ -183,7 +183,7 @@ public static string getFeedback()
 
     public static int getScore() { return score; }
 
-    public static void resetArticleAndScore() { article = ""; score = 0; sentences = new HashSet<string>(); }
+    public static void resetArticleAndScore() { article = ""; score = 0; sentences = new HashSet<string>(); dialoguespreordered  = new List<string>{}; dialoguespostordered  = new List<string>{};}
 
     public static string updateArticle(string evix, bool remove) {
         print(evix);
