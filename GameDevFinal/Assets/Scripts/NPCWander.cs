@@ -22,6 +22,13 @@ public class NPCWander : MonoBehaviour {
 
     public Sprite right;
 
+    public Sprite front;
+    public Sprite back;
+
+    public Sprite left;
+
+    public Sprite right;
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
