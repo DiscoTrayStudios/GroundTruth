@@ -6469,8 +6469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 217.74596, y: 100.75421}
-  m_SizeDelta: {x: 348.5424, y: 156.9133}
+  m_AnchoredPosition: {x: 217.74596, y: 31.1}
+  m_SizeDelta: {x: 348.5424, y: 287.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337999098
 MonoBehaviour:
@@ -6492,8 +6492,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In the investigation area, click the pieces of evidence to select them
-    to be in included in your newspaper submission.
+  m_text: 'In the investigation area, click the pieces of evidence to see what people
+    have said.
+
+
+    select whether they will be included in your article by clicking
+    the button labelled "true" or "false."
+
+
+    quotes can also be found in the
+    journal in the top-right corner, along with your rough draft.
+
+
 
 '
   m_isRightToLeft: 0
@@ -6522,14 +6532,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.6
+  m_fontSize: 24.1
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -16264,11 +16274,11 @@ MonoBehaviour:
   journalBoxTwo: {fileID: 586741237}
   journalBoxThree: {fileID: 274934747}
   journalBoxFour: {fileID: 1406177205}
-  journalBoxFive: {fileID: 1535094720}
-  journalBoxSix: {fileID: 675503432}
-  journalBoxSeven: {fileID: 1996918475}
-  journalBoxEight: {fileID: 784653433}
-  journalBoxZero: {fileID: 263579373}
+  journalBoxFive: {fileID: 784653433}
+  journalBoxSix: {fileID: 263579373}
+  journalBoxSeven: {fileID: 1535094720}
+  journalBoxEight: {fileID: 675503432}
+  journalBoxZero: {fileID: 1996918475}
   journalBoxNineArticle: {fileID: 631683743}
   PageOne: {fileID: 2078122201}
   PageTwo: {fileID: 940144840}
@@ -23543,7 +23553,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1933728402}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24926,7 +24936,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 31.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -32715,7 +32725,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 31.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

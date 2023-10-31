@@ -8207,7 +8207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - I appreciate the tribal cooperation that Prophetstown encourages.
-  - 'I worry that they do too much to '
+  - 'I worry that they do too much to reduce cultural differences. '
   - His followers are preparing for war, they say a cataclysm is drawing near.
   evidence_name: Evi9
   testEvi: {fileID: 242193293}
@@ -28977,7 +28977,7 @@ GameObject:
   - component: {fileID: 1663308820}
   m_Layer: 0
   m_Name: Collisions
-  m_TagString: Untagged
+  m_TagString: Scenery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

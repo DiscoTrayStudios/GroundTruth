@@ -24178,7 +24178,7 @@ MonoBehaviour:
   test_evidence_name: Phlogiston
   test_evidence: There exists a chemical called phlogiston that causes rust and flammability.
   test_evidence_summary: Phlogiston
-  dialogue: Someone said they want to build a giant arch.
+  dialogue: '"I think phlogiston probably caused this earthquake!"'
   dialogue1: '"The French scientist Lavoisier recently showed that phlogiston doesn''t
     exist."'
   test_collected: 0
@@ -29262,7 +29262,7 @@ GameObject:
   - component: {fileID: 1652552506}
   m_Layer: 5
   m_Name: Buildings C
-  m_TagString: Untagged
+  m_TagString: Scenery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -17,7 +17,7 @@ public class ArticleManager : MonoBehaviour
     private static HashSet<string> truesums = new HashSet<string>{"Prophetstown", "Tenskwatawa predicted earthquakes", "River flowing backwards.",
                                                                   "Ground continues to shake", "Potential war in 1812", "Louisiana Purchase", 
                                                                   "Joining the United States", "Steamboat on the Mississippi", "Houses got burned" };
-    private static HashSet<string> falsesums = new HashSet<string>{"Monster Earthquakes", "Creature in the woods", 
+    private static HashSet<string> falsesums = new HashSet<string>{"Monster Earthquakes", "Creature in the woods", "Phlogiston",
                                                                    "River People", "Man claims he saves family", "Traveling Up River", 
                                                                    "Volcanic Eruption", "Flying", "I'm gonna get you!"};
     
@@ -74,6 +74,7 @@ public static string getFeedback()
             case "Ground continues to shake":         feedback += "\n - Our readers were unaware of the lingering effects of earthquake aftershocks - thank you for letting us know! "; break;
             case "Volcanic Eruption":                 feedback += "\n - Our fact-checkers couldn't find any record of a volcano erupting in the area. "; break;
             case "River flowing backwards.":          feedback += "\n - Amazingly, our fact-checkers have found many accounts of the Mississippi River running backwards during the quakes - the power of nature never ceases to amaze me. "; break;
+            case "Phlogiston":                        feedback += "\n - What is this, 1750?! Phlogiston has been archaic for years, everyone knows that rust and fire are due to oxidation. "; break;
         }
         switch(tespostordered[s2].test_evidence_summary)
         {
@@ -85,6 +86,7 @@ public static string getFeedback()
             case "Ground continues to shake":         feedback += "\n - Our readers were unaware of the lingering effects of earthquake aftershocks - thank you for letting us know! "; break;
             case "Volcanic Eruption":                 feedback += "\n - Our fact-checkers couldn't find any record of a volcano erupting in the area. "; break;
             case "River flowing backwards.":          feedback += "\n - Amazingly, our fact-checkers have found many accounts of the Mississippi River running backwards during the quakes - the power of nature never ceases to amaze me. "; break;
+            case "Phlogiston":                        feedback += "\n - What is this, 1750?! Phlogiston has been archaic for years, everyone knows that rust and fire are due to oxidation. "; break;
         }
     }
 
