@@ -12,15 +12,18 @@ public class FollowCam : MonoBehaviour
     private float uBound;
     private float dBound;
 
+    private float size;
+
     void Start() {
         lBound = boundaryPercent * Camera.main.pixelWidth;
         rBound = Camera.main.pixelWidth - lBound;
         dBound = boundaryPercent * Camera.main.pixelHeight;
         uBound = Camera.main.pixelHeight - dBound;
+        size = gameObject.GetComponent<Camera>().orthographicSize;
     }
 
     void FixedUpdate() {
-        if (sprite)
+        if (sprite & !GameManager.Instance.GetPlayerBusy())
         {
             Vector3 spriteLoc = Camera.main.WorldToScreenPoint(sprite.transform.position);
             Vector3 pos = transform.position;
@@ -48,7 +51,7 @@ public class FollowCam : MonoBehaviour
             transform.position = pos;
         }
     }
-
+    
     void Update() {
         
     }

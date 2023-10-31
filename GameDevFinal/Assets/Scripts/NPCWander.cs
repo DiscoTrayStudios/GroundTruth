@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 // brought to you in part by https://discussions.unity.com/t/freeze-rigidbody-position-in-script/110627/2
 
@@ -76,9 +77,11 @@ public class NPCWander : MonoBehaviour {
     }
     public void FaceFront(){
         if(!front.Equals(null)){
+            if(moveToWaypointCoroutine != null){
                 StopCoroutine(moveToWaypointCoroutine);
-                gameObject.GetComponent<SpriteRenderer>().sprite = front; 
             }
+            gameObject.GetComponent<SpriteRenderer>().sprite = front; 
+        }
     }
 
     // Update is called once per frame
