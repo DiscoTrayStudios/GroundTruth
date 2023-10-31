@@ -43,7 +43,7 @@ public class EForInteract : MonoBehaviour {
             canShowDialog = false;
         }
     }
-
+    
     void Update() {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -54,6 +54,7 @@ public class EForInteract : MonoBehaviour {
                 dialogShown = true;
                 if(gameObject.GetComponent<NPCWander>()!= null){
                     gameObject.GetComponent<NPCWander>().FaceFront();
+                    Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
                 }
                 
             }
@@ -70,8 +71,11 @@ public class EForInteract : MonoBehaviour {
                 {
                     collect();
                     dialogShown = false;
+                    Camera.main.GetComponent<ZoomCamera>().UnZoom();
                     GameManager.Instance.DialogHide();
+                    
                     currentTextIndex = 0;
+
                 }
             }
         }
