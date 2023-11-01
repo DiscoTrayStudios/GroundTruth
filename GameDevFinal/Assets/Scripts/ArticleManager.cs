@@ -78,7 +78,7 @@ public static string getFeedback()
         }
         switch(tespostordered[s2].test_evidence_summary)
         {
-            case "I'm gonna get you!":                feedback += "\n - We, at the editorial board, do not believe that someone will 'get' us, and worry this is mere braggadocio."; break;
+            case "I'm gonna get you!":                feedback += "\n - We, at the editorial board, do not believe that someone will 'get' us, and worry this is mere braggadocio. "; break;
             case "Monster Earthquakes":               feedback += "\n - A monster caused the earthquakes? That's very untrue. Publishing that would be disrespectful. "; break;
             case "Tenskwatawa predicted earthquakes": feedback += "\n - Regardless of the undemocratic and tumultuous leadership in Prophetstown, we were surprised to hear that Tenskatawa correctly predicted the earthquake, and have noticed an increase in support for his cause because of it. "; break;
             case "Houses got burned":                 feedback += "\n - Our readers were shocked and saddened by the news of newly homeless and rampant fires. Good work getting the scoop. "; break;
@@ -116,7 +116,7 @@ public static string getFeedback()
             case "Joining the United States":    feedback += "\n - In the city, it can be difficult to gauge how people impacted feel about the policies we pass. Missouri's reluctance to join the union is a great example. "; break;
         }
     }
-
+    scorenum = 1;
     switch(score > 75, score > 0, score > -50, lenArticle != 0)
     {
         case (false, false, false, true): feedback += "\n - Your article was widely disliked; our readers have begun protesting outside your office. Better luck on the next one! -Your Editor"; scorenum = 1; break;
