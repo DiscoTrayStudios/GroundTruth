@@ -14,8 +14,9 @@ public class NPCWander : MonoBehaviour {
     private int currentWaypointIndex = 0;
     private Coroutine moveToWaypointCoroutine;
     private Rigidbody2D rb;
-    private bool someoneIsStill = false;
-
+    private bool colliding = false;
+    private Vector3 colPos;
+    private bool playerNear = false;
     public Sprite front;
     public Sprite back;
 
@@ -28,13 +29,30 @@ public class NPCWander : MonoBehaviour {
         moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
     }
 
+    void Update() {
+        Collider2D[] near = Physics2D.OverlapCircleAll(rb.gameObject.transform.position, 1.5f);
+        int l = near.Length;
+        foreach (Collider2D n in near) {
+            if (n.CompareTag("Player")) { playerNear = true;  }
+            else                        { l--; }
+        }
+        if (l == 0) { playerNear = false; }
+        if (moveToWaypointCoroutine == null && !playerNear){
+            moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+        }        
+    }
+
     private IEnumerator MoveToWaypoint(){
-        while (true){
+        while (!playerNear){
             Waypoint currentWaypoint = waypoints[currentWaypointIndex];
             Vector3 targetPosition = currentWaypoint.transform.position;
             Vector3 direction = (targetPosition - transform.position).normalized;
             // Move towards the waypoint
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
+                if (colliding) {
+                    direction = (transform.position - colPos).normalized;
+                    targetPosition = transform.position + direction.normalized;
+                }
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
                 rb.velocity = direction * moveSpeed;
                 //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
@@ -57,7 +75,7 @@ public class NPCWander : MonoBehaviour {
                         }
                     }
                 }
-                
+                colliding = false;
                 yield return null;
             }
             if(!front.Equals(null)){
@@ -82,32 +100,7 @@ public class NPCWander : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void FixedUpdate() {
-        Collider2D[] colls = Physics2D.OverlapCircleAll(player.transform.position, 1.5f);
-        if (colls.Length > 1) {
-    		foreach (Collider2D col in colls) {
-                if (col.CompareTag("NPC")) {
-                    Rigidbody2D crb = col.gameObject.GetComponent<Rigidbody2D>();
-//        			Vector2 desired = col.gameObject.transform.position - player.gameObject.transform.position;
-//        			crb.AddForce(desired.normalized * (desired.magnitude - 5f) * moveSpeed - crb.velocity);
-                    if (GameManager.Instance.GetPlayerBusy()) {
-                        crb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-                        if (moveToWaypointCoroutine != null) {
-                            StopCoroutine(moveToWaypointCoroutine);
-                            moveToWaypointCoroutine = null;
-                        }
-                    }
-                    else {
-                        crb.constraints = RigidbodyConstraints2D.None;
-                        if (moveToWaypointCoroutine == null){
-                            moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
-                        }
-                    }
-                }
-    		}
-        }
-    }
+ 
 
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -128,22 +121,23 @@ public class NPCWander : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        print(someoneIsStill);
-        if (!someoneIsStill) {
-            someoneIsStill = true;
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-            if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine != null) {
-                StopCoroutine(moveToWaypointCoroutine);
-                moveToWaypointCoroutine = null;
-            }
-        }
+       //   if (moveToWaypointCoroutine != null){
+       //       StopCoroutine(moveToWaypointCoroutine);               
+       //   }
+       //   currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+       //   colPos = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 0);
+        colliding = true;
+       // Vector3 colPos = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 0);
+       // Vector3 desired = transform.position - colPos;
+       // while (Vector3.Distance(transform.position, desired.normalized * 5.0f) > 0.1f) {
+       //     transform.position = Vector3.MoveTowards(transform.position, transform.position - (desired.normalized * 5.0f), moveSpeed * Time.deltaTime);
+       //     rb.velocity = desired.normalized * moveSpeed;            
+       // }        
     }
 
     void OnCollisionExit2D(Collision2D collision) {
-        rb.constraints = RigidbodyConstraints2D.None;
-        if (collision.gameObject.CompareTag("Player") && moveToWaypointCoroutine == null && rb.gameObject.activeSelf){
-            moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
-            someoneIsStill = false;
-        }        
+        if (moveToWaypointCoroutine == null){
+                moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+        }
     }
 }
