@@ -400,8 +400,8 @@ GameObject:
   - component: {fileID: 268605874}
   - component: {fileID: 268605873}
   - component: {fileID: 268605876}
-  - component: {fileID: 268605878}
   - component: {fileID: 268605877}
+  - component: {fileID: 268605878}
   m_Layer: 0
   m_Name: Sailor 2
   m_TagString: NPC
@@ -611,14 +611,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268605871}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -628,8 +628,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &436210043
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.85
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -772,6 +772,7 @@ GameObject:
   - component: {fileID: 458145196}
   - component: {fileID: 458145199}
   - component: {fileID: 458145200}
+  - component: {fileID: 458145201}
   m_Layer: 0
   m_Name: Sailor 1
   m_TagString: NPC
@@ -982,6 +983,33 @@ MonoBehaviour:
   back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+--- !u!50 &458145201
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458145194}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &482920095
 GameObject:
   m_ObjectHideFlags: 0
@@ -25881,6 +25909,7 @@ GameObject:
   - component: {fileID: 1146369779}
   - component: {fileID: 1146369782}
   - component: {fileID: 1146369783}
+  - component: {fileID: 1146369784}
   m_Layer: 0
   m_Name: Sailor 5
   m_TagString: NPC
@@ -26086,6 +26115,33 @@ MonoBehaviour:
   back: {fileID: -1215528120, guid: 50b4a517a36e1ef49818cea51be36dda, type: 3}
   left: {fileID: -496317216, guid: 50b4a517a36e1ef49818cea51be36dda, type: 3}
   right: {fileID: -873259597, guid: 50b4a517a36e1ef49818cea51be36dda, type: 3}
+--- !u!50 &1146369784
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146369777}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1149944538
 GameObject:
   m_ObjectHideFlags: 0
@@ -26255,6 +26311,7 @@ GameObject:
   - component: {fileID: 1417099256}
   - component: {fileID: 1417099255}
   - component: {fileID: 1417099259}
+  - component: {fileID: 1417099260}
   m_Layer: 0
   m_Name: Sailor 6
   m_TagString: NPC
@@ -26460,6 +26517,33 @@ MonoBehaviour:
   back: {fileID: 737572879, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
   left: {fileID: 1114964214, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
   right: {fileID: 783621686, guid: fcb74926dec4433468d43319267ec8b7, type: 3}
+--- !u!50 &1417099260
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417099253}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1450194547
 GameObject:
   m_ObjectHideFlags: 0
@@ -26474,6 +26558,7 @@ GameObject:
   - component: {fileID: 1450194551}
   - component: {fileID: 1450194550}
   - component: {fileID: 1450194549}
+  - component: {fileID: 1450194554}
   m_Layer: 0
   m_Name: Nimrod Hughes
   m_TagString: NPC
@@ -26682,6 +26767,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1450194554
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450194547}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1470870999
 GameObject:
   m_ObjectHideFlags: 0
@@ -26760,6 +26872,7 @@ GameObject:
   - component: {fileID: 1519401426}
   - component: {fileID: 1519401425}
   - component: {fileID: 1519401424}
+  - component: {fileID: 1519401429}
   m_Layer: 0
   m_Name: Eliza Bryan
   m_TagString: NPC
@@ -26964,6 +27077,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1519401429
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519401422}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1605568451
 GameObject:
   m_ObjectHideFlags: 0
@@ -29146,7 +29286,7 @@ GameObject:
   - component: {fileID: 1756993753}
   m_Layer: 0
   m_Name: Collisions
-  m_TagString: Untagged
+  m_TagString: Scenery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33652,8 +33792,8 @@ GameObject:
   - component: {fileID: 1867861365}
   - component: {fileID: 1867861367}
   - component: {fileID: 1867861368}
-  - component: {fileID: 1867861370}
   - component: {fileID: 1867861369}
+  - component: {fileID: 1867861370}
   m_Layer: 0
   m_Name: Sailor 3
   m_TagString: NPC
@@ -33863,14 +34003,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867861362}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -33880,8 +34020,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1936279207
 GameObject:
   m_ObjectHideFlags: 0
@@ -33896,6 +34036,7 @@ GameObject:
   - component: {fileID: 1936279211}
   - component: {fileID: 1936279210}
   - component: {fileID: 1936279209}
+  - component: {fileID: 1936279214}
   m_Layer: 0
   m_Name: Tecumseh
   m_TagString: NPC
@@ -34100,6 +34241,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1936279214
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936279207}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1996361341
 GameObject:
   m_ObjectHideFlags: 0
@@ -34179,7 +34347,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.448
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -34289,8 +34457,8 @@ GameObject:
   - component: {fileID: 2072108693}
   - component: {fileID: 2072108692}
   - component: {fileID: 2072108695}
-  - component: {fileID: 2072108697}
   - component: {fileID: 2072108696}
+  - component: {fileID: 2072108697}
   m_Layer: 0
   m_Name: Sailor 4
   m_TagString: NPC
@@ -34500,14 +34668,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072108690}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -34517,8 +34685,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1001 &2094398408
 PrefabInstance:
   m_ObjectHideFlags: 0
