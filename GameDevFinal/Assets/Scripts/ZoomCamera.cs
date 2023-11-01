@@ -15,15 +15,16 @@ public class ZoomCamera : MonoBehaviour
         Vector3 zoompos = new Vector3(position.x, position.y + .8f, transform.position.z);
         print(zoompos);
         camerapos = transform.position;
-        StartCoroutine(ZoomToPos(zoomsize, zoompos, 5));
+        StartCoroutine(ZoomToPos(zoomsize, zoompos, 2));
     }
     public void UnZoom(){
-        StartCoroutine(ZoomToPos(camerasize, camerapos, 4));
+        StartCoroutine(ZoomToPos(camerasize, camerapos, 2));
+        Camera.main.GetComponent<FollowCam>().enabled = true;
     }
 
     private IEnumerator ZoomToPos(float size, Vector3 pos, float duration){
         float time = 0f;
-        while(transform.position != pos & gameObject.GetComponent<Camera>().orthographicSize != size){
+        while(time < duration){
             transform.position = Vector3.Lerp(transform.position, pos, time/duration);
             gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, size, time/duration); 
             time += Time.deltaTime;
@@ -31,7 +32,8 @@ public class ZoomCamera : MonoBehaviour
         }
         transform.position = pos;
         gameObject.GetComponent<Camera>().orthographicSize = size;
-        StopAllCoroutines();
+        time = 0f;
+        //StopAllCoroutines();
 
     }
     // Start is called before the first frame update

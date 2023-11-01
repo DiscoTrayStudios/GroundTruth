@@ -77,9 +77,7 @@ public class NPCWander : MonoBehaviour {
     }
     public void FaceFront(){
         if(!front.Equals(null)){
-            if(moveToWaypointCoroutine != null){
-                StopCoroutine(moveToWaypointCoroutine);
-            }
+            StopAllCoroutines();
             gameObject.GetComponent<SpriteRenderer>().sprite = front; 
         }
     }

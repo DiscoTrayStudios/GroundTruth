@@ -73,7 +73,7 @@ public class EForInteract : MonoBehaviour {
                     collect();
                     dialogShown = false;
                     Camera.main.GetComponent<ZoomCamera>().UnZoom();
-                    Camera.main.GetComponent<FollowCam>().enabled = true;
+                    
                     GameManager.Instance.DialogHide();
                     
                     currentTextIndex = 0;
