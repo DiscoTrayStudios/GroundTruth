@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
     public string currentLocation = "TitleScreen";
     public static bool post = false;
     public static string article  = "";
+    private bool beenanywhere = false;
     public static string feedback = "";
 
 
@@ -208,6 +209,13 @@ public class GameManager : MonoBehaviour
         dialogBox.SetActive(false);
         playerBusy = false;
     }
+
+    public void FirstTown() {
+        if (!beenanywhere) {
+            testNotebook.SetActive(true);
+        } 
+    }
+
     public void GameDialogShow(string text) {
         gameDialogBox.SetActive(true);
         StopAllCoroutines();
@@ -345,6 +353,7 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(false);
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuakes" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
+            beenanywhere = true;
             dialogBox.SetActive(false);
             if (groundshake) {
                 PostUI.SetActive(true);
