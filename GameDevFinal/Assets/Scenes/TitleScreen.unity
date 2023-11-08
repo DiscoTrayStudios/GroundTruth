@@ -24173,6 +24173,7 @@ MonoBehaviour:
   firstFeedback: {fileID: 1756940984}
   secondFeedback: {fileID: 1438470291}
   dateText: {fileID: 950500334}
+  duedateText: {fileID: 781994827}
   daysLeft: {fileID: 1272625444}
   postDateText: {fileID: 1123722139}
   postDaysLeft: {fileID: 175669307}
