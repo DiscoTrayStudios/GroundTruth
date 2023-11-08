@@ -24173,6 +24173,7 @@ MonoBehaviour:
   firstFeedback: {fileID: 1756940984}
   secondFeedback: {fileID: 1438470291}
   dateText: {fileID: 950500334}
+  duedateText: {fileID: 781994827}
   daysLeft: {fileID: 1272625444}
   postDateText: {fileID: 1123722139}
   postDaysLeft: {fileID: 175669307}
@@ -29762,7 +29763,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261439341}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
