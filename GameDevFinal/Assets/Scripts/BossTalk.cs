@@ -34,7 +34,9 @@ public string[] text;
     }
 
     void Update() {
-
+        if(GameManager.Instance.BossUI.activeSelf == false){
+            canShowDialog = false;
+        }
         if (canShowDialog && Input.GetKeyDown(KeyCode.E))
         {
                 GameManager.Instance.DialogHide();
