@@ -13842,6 +13842,18 @@ MonoBehaviour:
           m_StringArgument: Cutscene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1161800650}
+        m_TargetAssemblyTypeName: EndButton, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &608879263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24173,7 +24185,7 @@ MonoBehaviour:
   firstFeedback: {fileID: 1756940984}
   secondFeedback: {fileID: 1438470291}
   dateText: {fileID: 950500334}
-  duedateText: {fileID: 781994827}
+  dueDateText: {fileID: 781994827}
   daysLeft: {fileID: 1272625444}
   postDateText: {fileID: 1123722139}
   postDaysLeft: {fileID: 175669307}
@@ -27072,6 +27084,7 @@ GameObject:
   - component: {fileID: 1161800649}
   - component: {fileID: 1161800648}
   - component: {fileID: 1161800647}
+  - component: {fileID: 1161800650}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -27215,18 +27228,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1038403563}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscene
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &1161800648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27265,6 +27266,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161800645}
   m_CullTransparentMesh: 1
+--- !u!114 &1161800650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161800645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfacb457fa2eeaf47a80c4879cd39ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1421891854}
 --- !u!1 &1162081098
 GameObject:
   m_ObjectHideFlags: 0
@@ -27355,6 +27369,7 @@ GameObject:
   - component: {fileID: 1165744983}
   - component: {fileID: 1165744982}
   - component: {fileID: 1165744981}
+  - component: {fileID: 1165744984}
   m_Layer: 5
   m_Name: St. Louis Button
   m_TagString: Untagged
@@ -27438,18 +27453,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1038403563}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: St.LouisPreQuake
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1154789034}
         m_TargetAssemblyTypeName: TravelDisplay, Assembly-CSharp
         m_MethodName: ShowTraveling
@@ -27500,6 +27503,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165744979}
   m_CullTransparentMesh: 1
+--- !u!114 &1165744984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165744979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87167c28388af804db4f5934dd6e2215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travelto: St.Louis
 --- !u!1 &1169471918
 GameObject:
   m_ObjectHideFlags: 0
@@ -38263,6 +38279,7 @@ GameObject:
   - component: {fileID: 1617770902}
   - component: {fileID: 1617770901}
   - component: {fileID: 1617770900}
+  - component: {fileID: 1617770903}
   m_Layer: 5
   m_Name: River Button
   m_TagString: Untagged
@@ -38346,18 +38363,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1038403563}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RiverPreQuake
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1154789034}
         m_TargetAssemblyTypeName: TravelDisplay, Assembly-CSharp
         m_MethodName: ShowTraveling
@@ -38408,6 +38413,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617770898}
   m_CullTransparentMesh: 1
+--- !u!114 &1617770903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617770898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87167c28388af804db4f5934dd6e2215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travelto: River
 --- !u!1 &1623751376
 GameObject:
   m_ObjectHideFlags: 0
@@ -43394,6 +43412,7 @@ GameObject:
   - component: {fileID: 1877642782}
   - component: {fileID: 1877642781}
   - component: {fileID: 1877642780}
+  - component: {fileID: 1877642783}
   m_Layer: 5
   m_Name: Madrid Button
   m_TagString: Untagged
@@ -43501,18 +43520,6 @@ MonoBehaviour:
           m_StringArgument: New Madrid
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1038403563}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: NewMadridPreQuake
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1877642781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43551,6 +43558,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877642778}
   m_CullTransparentMesh: 1
+--- !u!114 &1877642783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877642778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87167c28388af804db4f5934dd6e2215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travelto: NewMadrid
 --- !u!1 &1878614729
 GameObject:
   m_ObjectHideFlags: 0

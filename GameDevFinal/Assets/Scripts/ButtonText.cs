@@ -20,6 +20,11 @@ public class ButtonText : MonoBehaviour
         boolean.text = s;
     }
 
+    public void Reset(){
+        clicked = false;
+        boolean.text = "false";
+    }
+
     // Update is called once per frame
     void Update()
     {
