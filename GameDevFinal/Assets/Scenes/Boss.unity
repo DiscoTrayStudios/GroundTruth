@@ -267,7 +267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - To advance through dialogue in game, press "E" like you just did.
   - Good evening, reporter! I have a task for you.
   - We have received reports of some strange happenings.
   - I need to send someone to get to the bottom of it.
@@ -281,7 +280,6 @@ MonoBehaviour:
   - Submit your article on time or else I will be forced to fire you!
   - Remember, travel times vary between locations.
   - Use your time wisely, and good luck!
-  - Press the "Start" button to continue or press "E" to repeat.
   postText:
   - Something catastrophic is happening.
   - Your last article was not the most accurate. We need you to write another.
@@ -296,8 +294,9 @@ MonoBehaviour:
   - Talk to everyone again and only write the truth.
   - Talk to everyone again and write
   - Talk to everyone again. I know you will have no trouble finding out the truth.
-  - Press the "Start" button to continue or press "E" to repeat.
   evidence_name: 
+  nextButton: {fileID: 0}
+  backButton: {fileID: 0}
   speaking: {fileID: 1581534614}
 --- !u!1 &201124973
 GameObject:

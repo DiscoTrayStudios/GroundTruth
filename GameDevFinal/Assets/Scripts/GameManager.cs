@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
     public static bool post = false;
     public static string article  = "";
     private bool beenanywhere = false;
+
+    public bool seenintro;
     public static string feedback = "";
 
 
@@ -207,7 +209,10 @@ public class GameManager : MonoBehaviour
         pDays = 20;
         pMonth = 5;
     }
-
+    public void StartDialogue(string[] text){
+        dialogBox.SetActive(true);
+        dialogBox.GetComponent<Dialogue>().StartDialogue(text);
+    }
     public void DialogShow(string text) {
         dialogBox.SetActive(true);
         StopAllCoroutines();
@@ -237,6 +242,10 @@ public class GameManager : MonoBehaviour
         playerBusy = false;
     }
 
+    public void SkipTypeText(TextMeshProUGUI textBox, string text){
+        StopAllCoroutines();
+        textBox.text = text;
+    }
     IEnumerator TypeText(TextMeshProUGUI textBox, string text) {
         textBox.text = "";
         foreach(char c in text.ToCharArray()) {

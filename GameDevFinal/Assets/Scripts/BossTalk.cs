@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossTalk : MonoBehaviour
 {
 public string[] text;
 
     public string[] postText;
+
+    private string[] usedPostText;
 
     private bool canShowDialog = true;
 
@@ -16,6 +20,11 @@ public string[] text;
 
     private int prevScore = 0;
 
+    private GameObject button;
+
+    public GameObject nextButton;
+    public GameObject backButton;
+    private bool startedDialogue;
     public AudioSource speaking;
 
     void Awake(){
@@ -27,17 +36,40 @@ public string[] text;
             prevScore = ArticleManager.getScoreNum();
             print(prevScore);
             speaking.Play();
-            GameManager.Instance.DialogShow(postText[currentTextIndex]);
+            GameManager.Instance.DialogShow(postText[0]);
+            usedPostText = new string[postText.Length/4 + 1];   
+            usedPostText[0] = postText[0];
+            int i = 1;
+            for(int j = prevScore; j < postText.Length;j+= 4){
+                usedPostText[i] = postText[j];
+                print(usedPostText[i]);
+                i++;
+            }
+            GameManager.Instance.StartDialogue(usedPostText);
         }
-        GameManager.Instance.SetPlayerBusy(false);
-        GameManager.Instance.BossUI.transform.Find("SkipButton").gameObject.SetActive(true);
+        //GameManager.Instance.SetPlayerBusy(false);
+    
     }
 
+    
     void Update() {
-        if(GameManager.Instance.BossUI.activeSelf == false){
-            canShowDialog = false;
+        if(Input.GetKeyDown(KeyCode.E)){
+            if(!GameManager.Instance.IsPost() & !startedDialogue){
+                if(currentTextIndex == 0){
+                    GameManager.Instance.GameDialogShow("To advance through dialogue in game, press" + "\"" + "E" + "\"" + "like you just did.");
+                    currentTextIndex++;
+                }
+                else{
+                    startedDialogue = true;
+                    speaking.Play();
+                    GameManager.Instance.StartDialogue(text);   
+                    GameManager.Instance.GameDialogHide();
+                }
+                
+                
+            }
         }
-        if (canShowDialog && Input.GetKeyDown(KeyCode.E))
+        /**if (canShowDialog && Input.GetKeyDown(KeyCode.E))
         {
                 GameManager.Instance.DialogHide();
                 GameManager.Instance.GameDialogHide();
@@ -54,6 +86,11 @@ public string[] text;
                             speaking.Play();
                             }
                             GameManager.Instance.DialogShow(text[currentTextIndex]);    
+                        }
+                        if(currentTextIndex == 14){
+                            button.GetComponent<Button>().enabled = true;
+                            button.GetComponent<Image>().enabled = true;
+                            button.transform.Find("Text").gameObject.SetActive(true);
                         }
                     
                     }
@@ -78,6 +115,7 @@ public string[] text;
                         speaking.Play();
                         currentTextIndex = 0;
                         GameManager.Instance.DialogShow(postText[currentTextIndex]);
+                        
                     }
                     else{
                         speaking.Stop();
@@ -85,11 +123,18 @@ public string[] text;
                         currentTextIndex = postText.Length - 1;
                         GameManager.Instance.GameDialogShow(postText[currentTextIndex]);
                     }
+                    if(currentTextIndex == postText.Length - 1){
+                        button.GetComponent<Button>().enabled = true;
+                        button.GetComponent<Image>().enabled = true;
+                        button.transform.Find("Text").gameObject.SetActive(true);
+                        GameManager.Instance.DialogHide();
+                        GameManager.Instance.GameDialogShow(postText[currentTextIndex]);
+                    }
                     print(currentTextIndex);
                 }
                 
                 
-        }
+        }**/
     }
 
   
