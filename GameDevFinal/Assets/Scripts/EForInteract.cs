@@ -33,6 +33,7 @@ public class EForInteract : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player")) {
             canShowDialog = true;
+            StartCoroutine(WaitForStart());
         }
     }
 
@@ -41,26 +42,46 @@ public class EForInteract : MonoBehaviour {
         if (collider2D.gameObject.CompareTag("Player"))
         {
             canShowDialog = false;
+            StopAllCoroutines();
         }
     }
-    
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            // If dialog not currently shown and it can be, starts dialog.
-            if (!GameManager.Instance.GetPlayerBusy() & !dialogShown & canShowDialog)
-            {
-                GameManager.Instance.DialogShow(text[currentTextIndex]);
+    IEnumerator WaitForStart(){
+        bool started = false;
+        while(!started){
+            if(Input.GetKeyDown(KeyCode.E)){
                 dialogShown = true;
+                GameManager.Instance.StartDialogue(text);
+                collect();
                 if(gameObject.GetComponent<NPCWander>()!= null){
                     gameObject.GetComponent<NPCWander>().FaceFront();
                     Camera.main.GetComponent<FollowCam>().enabled = false;
                     Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
+                    
                 }
-                
+                started = true;
             }
+            yield return null;
+        }
+        StartCoroutine(WaitForEnd());
+    }
+    IEnumerator WaitForEnd(){
+        while(dialogShown & GameManager.Instance.GetPlayerBusy()){
+            yield return null;
+        }
+        dialogShown = false;
+        Camera.main.GetComponent<ZoomCamera>().UnZoom();
+        StopAllCoroutines();    
+    }
+    void Update() {
+        /**if (Input.GetKeyDown(KeyCode.E))
+        {
+            // If dialog not currently shown and it can be, starts dialog.
+            if (!GameManager.Instance.GetPlayerBusy() & !dialogShown & canShowDialog)
+            {
+                
+            }**/
             
-            else if (dialogShown)
+            /**else if (dialogShown)
             {
 
                 if (currentTextIndex < text.Length - 1)
@@ -80,7 +101,8 @@ public class EForInteract : MonoBehaviour {
 
                 }
             }
-        }
+            **/
+        //}
     }
 
     private void collect() {
