@@ -42,8 +42,7 @@ public static string getFeedback()
     int lenArticle = sentences.Count;
     int s1 = 0;
     int s2 = 0;
-    int score = 0;
- 
+
     if (lenArticle > 1)
     {
         s1 = rnd.Next(0, lenArticle);
@@ -214,7 +213,7 @@ public static string getFeedback()
         }
         else {
             if (truesums.Contains(sum)) { score += 25; }
-            else                 { score -= 25; }            
+            else                        { score -= 25; }            
             sentences.Add(sentence); 
             article += sentence;
             return article;
