@@ -44,12 +44,18 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI secondFeedback;
 
     public TextMeshProUGUI dateText;
+
+    public TextMeshProUGUI dueDateText;
+
     public TextMeshProUGUI daysLeft;
     public TextMeshProUGUI postDateText;
     public TextMeshProUGUI postDaysLeft;
     public static List<TestEvidence> TestEvidenceList = new List<TestEvidence>();
     private static int days = 20;
     private static int month = 9;
+
+    private static int year = 1811;  
+
     private static int pDays = 20;
     private static int pMonth = 5;
     private static int finalDay = 30;
@@ -69,6 +75,8 @@ public class GameManager : MonoBehaviour
     public static bool post = false;
     public static string article  = "";
     private bool beenanywhere = false;
+
+    public bool seenintro;
     public static string feedback = "";
 
 
@@ -98,25 +106,17 @@ public class GameManager : MonoBehaviour
         } else {
             daysLeft.text = "Days Left: 0";
         }
-        dateText.text = "Date: " + month + "/" + days.ToString() + "/1811";
-        if (pFinalDay - pDays < 16) {
-            postDaysLeft.text = "Days Left: " + (pFinalDay - pDays).ToString();
-        } else {
-            postDaysLeft.text = "Days Left: 0";
-        }
-        postDateText.text = "Date: " + pMonth + "/" + pDays.ToString() + "/1812";
-        if (days > finalDay) {
-            DeadlineMissed();
-            days = days % 30;
-            month = month + 1;
-        }
-        if (groundshake) {
+        dateText.text = "Date: " + month + "/" + days.ToString() + "/" + year;
+        dueDateText.text = "Due: " + month + "/" + finalDay + "/" + year;    
+
+
+        /**if (groundshake) {
             if (pDays > pFinalDay) {
                 PostDeadlineMissed();
                 pDays = pDays % 30;
                 pMonth = pMonth + 1;
             }
-        }
+        }**/
       //  if (currentScene == "InvestigativeArea") {
       //      if(Input.GetKeyDown(KeyCode.Q)) {
       //          ChangeScene(currentLocation); This lets you go back for free
@@ -173,6 +173,18 @@ public class GameManager : MonoBehaviour
 
     public void pre() {
         post = false;
+        days = 20;
+        month = 9;
+        year = 1811;
+        finalDay = 30;
+    }
+
+    public void SetPost(){
+        post = true;
+        days = pDays;
+        month = pMonth;
+        year = 1812;
+        finalDay = pFinalDay;
     }
 
     public void ResetScene() {
@@ -197,7 +209,10 @@ public class GameManager : MonoBehaviour
         pDays = 20;
         pMonth = 5;
     }
-
+    public void StartDialogue(string[] text){
+        dialogBox.SetActive(true);
+        dialogBox.GetComponent<Dialogue>().StartDialogue(text);
+    }
     public void DialogShow(string text) {
         dialogBox.SetActive(true);
         StopAllCoroutines();
@@ -227,6 +242,10 @@ public class GameManager : MonoBehaviour
         playerBusy = false;
     }
 
+    public void SkipTypeText(TextMeshProUGUI textBox, string text){
+        StopAllCoroutines();
+        textBox.text = text;
+    }
     IEnumerator TypeText(TextMeshProUGUI textBox, string text) {
         textBox.text = "";
         foreach(char c in text.ToCharArray()) {
@@ -319,9 +338,9 @@ public class GameManager : MonoBehaviour
         else if (nextScene == "St.LouisPreQuake"  ) {AddDays(1);}
         else if (nextScene == "RiverPreQuake"     ) {AddDays(2);}
         else if (nextScene == "NewMadridPreQuake" ) {AddDays(5);}
-        else if (nextScene == "St.LouisPostQuakes") {PAddDays(1);}
-        else if (nextScene == "RiverPostQuake"    ) {PAddDays(2);}
-        else if (nextScene == "NewMadridPostQuake") {PAddDays(5);}
+        else if (nextScene == "St.LouisPostQuakes") {AddDays(1);}
+        else if (nextScene == "RiverPostQuake"    ) {AddDays(2);}
+        else if (nextScene == "NewMadridPostQuake") {AddDays(5);}
     }
 
 
@@ -390,8 +409,9 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(true);
             BossUI.transform.Find("SkipButton").gameObject.SetActive(false);
         } else if (scene == "Cutscene") {
-            post = true;
             ArticleManager.resetArticleAndScore();
+            ResetScene();
+            SetPost();
             currentLocation = "InvestigativeArea";
             dialogBox.SetActive(false);
             UI.SetActive(false);
@@ -412,8 +432,8 @@ public class GameManager : MonoBehaviour
             testNotebook.SetActive(false);
             PostUI.SetActive(false);
             Title.SetActive(false);
-            InvesArea.SetActive(false);
-            PostQuakeInves.SetActive(true);
+            InvesArea.SetActive(true);
+            //PostQuakeInves.SetActive(true);
             Credits.SetActive(false);
             BossUI.SetActive(false);
         } else {

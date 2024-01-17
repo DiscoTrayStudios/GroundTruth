@@ -58,6 +58,7 @@ public class EvidenceWatcher : MonoBehaviour
         foreach (var evi in evidence) {
             evi.SetActive(false);
             evi.GetComponentInChildren<Highlight>().SetUnclicked();
+            evi.GetComponentInChildren<ButtonText>().Reset();
         }
     }
     public void TestShowEvidence(){

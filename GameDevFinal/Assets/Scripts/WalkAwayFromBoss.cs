@@ -56,7 +56,7 @@ public class WalkAwayFromBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.Instance.BossUI.activeSelf == false){
+        if(GameManager.Instance.dialogBox.activeSelf == false & GameManager.Instance.gameDialogBox.activeSelf == false){
             if(!leaving){
                 WalkAway();   
             }
