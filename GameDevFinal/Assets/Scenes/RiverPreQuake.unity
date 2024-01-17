@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 268856771}
   - component: {fileID: 268856770}
   - component: {fileID: 268856774}
+  - component: {fileID: 268856775}
   m_Layer: 0
   m_Name: Eliza Bryan
   m_TagString: Untagged
@@ -502,6 +503,34 @@ MonoBehaviour:
   back: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
+  tilemap: {fileID: 1663308822}
+--- !u!50 &268856775
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268856768}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &307850907
 GameObject:
   m_ObjectHideFlags: 0
@@ -9994,6 +10023,7 @@ MonoBehaviour:
   back: {fileID: 1985632114, guid: eebc19d1d6d5b954a984d64c07c0a1f4, type: 3}
   left: {fileID: -906306261, guid: eebc19d1d6d5b954a984d64c07c0a1f4, type: 3}
   right: {fileID: 2104915638, guid: eebc19d1d6d5b954a984d64c07c0a1f4, type: 3}
+  tilemap: {fileID: 1663308822}
 --- !u!61 &1278200349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30572,6 +30602,7 @@ MonoBehaviour:
   back: {fileID: -1569351921, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
   left: {fileID: 223987144, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
   right: {fileID: 1786869345, guid: 0b386a14df9401d4ab02c06271ab1221, type: 3}
+  tilemap: {fileID: 1663308822}
 --- !u!61 &1529002009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30631,6 +30662,7 @@ GameObject:
   - component: {fileID: 1642671070}
   - component: {fileID: 1642671071}
   - component: {fileID: 1642671072}
+  - component: {fileID: 1642671073}
   m_Layer: 0
   m_Name: Girl
   m_TagString: Untagged
@@ -30839,6 +30871,34 @@ MonoBehaviour:
   back: {fileID: -1217604032, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
   left: {fileID: -1558654035, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
   right: {fileID: -1006467553, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
+  tilemap: {fileID: 1663308822}
+--- !u!50 &1642671073
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642671065}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1644550977
 GameObject:
   m_ObjectHideFlags: 0
@@ -34187,6 +34247,7 @@ MonoBehaviour:
   back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+  tilemap: {fileID: 1663308822}
 --- !u!1 &1832596119
 GameObject:
   m_ObjectHideFlags: 0
@@ -34275,6 +34336,7 @@ MonoBehaviour:
   back: {fileID: 749363154, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
   left: {fileID: 850572312, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
   right: {fileID: 432824591, guid: a349ff23f5a68ee48b6248d788092b73, type: 3}
+  tilemap: {fileID: 1663308822}
 --- !u!61 &1832596123
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34526,6 +34588,7 @@ MonoBehaviour:
   back: {fileID: -506449211, guid: 8efb0a6d08c7f9045a51deb5cfaf9401, type: 3}
   left: {fileID: -1003306801, guid: 8efb0a6d08c7f9045a51deb5cfaf9401, type: 3}
   right: {fileID: -1646699497, guid: 8efb0a6d08c7f9045a51deb5cfaf9401, type: 3}
+  tilemap: {fileID: 1663308822}
 --- !u!61 &1847311885
 BoxCollider2D:
   m_ObjectHideFlags: 0

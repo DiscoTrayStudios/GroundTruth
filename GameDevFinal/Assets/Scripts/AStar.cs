@@ -182,7 +182,7 @@ public class AStar : MonoBehaviour
         }
     }
 
-public class Node : MonoBehaviour
+    public class Node : MonoBehaviour
     {
         public (int, int) position;
         public float value;

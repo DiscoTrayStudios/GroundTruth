@@ -108,7 +108,14 @@ public class GameManager : MonoBehaviour
         }
         dateText.text = "Date: " + month + "/" + days.ToString() + "/" + year;
         dueDateText.text = "Due: " + month + "/" + finalDay + "/" + year;    
+        if (currentScene == "Boss") {
+            if(Input.GetKey(KeyCode.T) && Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.C)) {
+                BossUI.SetActive(false);
+                DialogHide();
+                GameDialogHide();
+            }
 
+        }
 
         /**if (groundshake) {
             if (pDays > pFinalDay) {
@@ -358,8 +365,7 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(false);
             testNotebook.SetActive(false);
-        } else if (scene == "InvestigativeArea") {
-            
+        } else if (scene == "InvestigativeArea") {            
             groundshake = false;
             dialogBox.SetActive(false);
             UI.SetActive(false);
