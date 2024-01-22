@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -16,11 +16,12 @@ public class AStar : MonoBehaviour
     private int r;
     private Vector3 mouseWorldPos;
     private bool newDestination;
+    private Animator animator;
     
     void Start()
     {
         path = new Stack<Vector3>();    
-
+        animator = GetComponent<Animator>();
         // Get the TilemapCollider2D component
         TilemapCollider2D tilemapCollider = tilemap.GetComponent<TilemapCollider2D>();  
 
@@ -50,7 +51,7 @@ public class AStar : MonoBehaviour
     private bool IsCellOccupied(Vector3 cellCenter)
     {
         Vector3Int cellPosition = tilemap.WorldToCell(cellCenter);
-        (int, int)[] playersize = {(0,0), (0,-1), (1,0), (1,-1),(0,-2),(-1,-2) };
+        (int, int)[] playersize = {(0,0)};
         foreach ((int,int) ps in playersize) {
             if (tilemap.HasTile(new Vector3Int(cellPosition.x + ps.Item1, cellPosition.y + ps.Item2, 0))) {
                 return true;
@@ -126,6 +127,7 @@ public class AStar : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
+            // print("oy");
             mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0f;
             // rb.velocity = new Vector2(mouseWorldPos.x - transform.position.x, mouseWorldPos.y - transform.position.y);
@@ -135,7 +137,7 @@ public class AStar : MonoBehaviour
             foreach (Collider2D col in cols) {
                 if (col.CompareTag("NPC")) { b = true; }
             }
-            if (b && !GameManager.Instance.GetPlayerBusy()) {
+            if (!GameManager.Instance.GetPlayerBusy()) {
                 path = Path(mouseWorldPos);
                 string ot = "";
                 foreach (Vector3 p in path) { 
@@ -152,14 +154,12 @@ public class AStar : MonoBehaviour
                 path.Pop();                
                 newDestination = true;
             } 
-            // if (newDestination) {
-                // if      (targetDirection.x >  0.01) { PlayerMovement.SetHorizontal(1); } 
-                // else if (targetDirection.x < -0.01) { PlayerMovement.SetHorizontal(-1); } 
-                // else if (targetDirection.y >  0.01) { PlayerMovement.SetVertical(1); } 
-                // else if (targetDirection.y < -0.01) { PlayerMovement.SetVertical(-1); } 
-                // else    { PlayerMovement.SetHorizontal(0); PlayerMovement.SetVertical(0); } 
-                // newDestination = false;
-            // }
+            if      ( Mathf.Abs(targetDirection.x) <  targetDirection.y) { animator.SetTrigger("Up"); }                  
+            else if (-Mathf.Abs(targetDirection.x) >  targetDirection.y) { animator.SetTrigger("Down"); }
+            else if ( Mathf.Abs(targetDirection.y) <  targetDirection.x) { animator.SetTrigger("Right"); }
+            else if (-Mathf.Abs(targetDirection.y) >  targetDirection.x) { animator.SetTrigger("Left"); }
+            else    {                             animator.SetTrigger("Idle"); }
+
         }
     }   
     void OnCollisionEnter2D(Collision2D collision) {
@@ -182,7 +182,7 @@ public class AStar : MonoBehaviour
         }
     }
 
-    public class Node : MonoBehaviour
+    public class Node
     {
         public (int, int) position;
         public float value;

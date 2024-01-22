@@ -235,6 +235,7 @@ public class GameManager : MonoBehaviour
     public void FirstTown() {
         if (!beenanywhere) {
             testNotebook.SetActive(true);
+            SetPlayerBusy(true);
         } 
     }
 
