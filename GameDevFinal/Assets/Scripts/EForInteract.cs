@@ -108,7 +108,7 @@ public class EForInteract : MonoBehaviour {
         // set text to something like "can I help you? and can repeat"
         // scribble.Play();
         if(!GameManager.CheckEvidence(evidence_name)){
-            GameManager.AddEvidence(evidence_name);
+            GameManager.Instance.AddEvidence(evidence_name);
             GameManager.Instance.GmCollectEvidence(testEvi);    
             ArticleManager.updateOrderedEvidenceSet(testEvi, whichDialogue);
         }
