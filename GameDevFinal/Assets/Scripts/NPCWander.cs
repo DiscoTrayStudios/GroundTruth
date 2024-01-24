@@ -24,6 +24,7 @@ public class NPCWander : MonoBehaviour {
 
     public Sprite right;
 
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
