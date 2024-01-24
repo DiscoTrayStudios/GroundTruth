@@ -31,7 +31,7 @@ public class EForInteract : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
-        if (collider2D.gameObject.CompareTag("Player")) {
+        if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
             canShowDialog = true;
             StartCoroutine(WaitForStart());
         }
@@ -48,7 +48,6 @@ public class EForInteract : MonoBehaviour {
     IEnumerator WaitForStart(){
         bool started = false;
         while(!started){
-            if(Input.GetKeyDown(KeyCode.E)){
                 dialogShown = true;
                 GameManager.Instance.StartDialogue(text);
                 collect();
@@ -59,7 +58,7 @@ public class EForInteract : MonoBehaviour {
                     
                 }
                 started = true;
-            }
+            
             yield return null;
         }
         StartCoroutine(WaitForEnd());
