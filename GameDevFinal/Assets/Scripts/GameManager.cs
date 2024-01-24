@@ -231,7 +231,7 @@ public class GameManager : MonoBehaviour
         playerBusy = false;
         if(haveEvidence == 1){
             testNotebook.GetComponent<testJournal>().openingJournal();
-            testNotebook.GetComponent<testJournal>().testFlipRightPage(1);
+            testNotebook.GetComponent<testJournal>().flipToPage(1);
 
             haveEvidence = 2;
         }

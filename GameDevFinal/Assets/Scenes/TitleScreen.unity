@@ -16165,6 +16165,8 @@ MonoBehaviour:
   PageTwo: {fileID: 940144840}
   PageThree: {fileID: 1134790458}
   PageFour: {fileID: 721317046}
+  LeftTab: {fileID: 0}
+  RightTab: {fileID: 0}
   userInterface: {fileID: 1238759140}
   openedNotebook: {fileID: 694954574}
   bookOpenSound: {fileID: 694954578}
@@ -29731,6 +29733,8 @@ MonoBehaviour:
   PageTwo: {fileID: 71207365}
   PageThree: {fileID: 1037378696}
   PageFour: {fileID: 211266599}
+  LeftTab: {fileID: 1340029276}
+  RightTab: {fileID: 903861103}
   userInterface: {fileID: 1623751376}
   openedNotebook: {fileID: 1261439341}
   bookOpenSound: {fileID: 1261439345}
