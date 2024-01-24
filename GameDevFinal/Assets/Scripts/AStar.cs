@@ -17,6 +17,9 @@ public class AStar : MonoBehaviour
     private Vector3 mouseWorldPos;
     private bool newDestination;
     private Animator animator;
+    public static bool left;
+    public static bool right;
+
     
     void Start()
     {
@@ -150,18 +153,32 @@ public class AStar : MonoBehaviour
             Vector3 targetDirection = (path.Peek() - transform.position).normalized;
             transform.position = Vector3.MoveTowards(transform.position, path.Peek(), 2 * Time.deltaTime);
             rb.velocity = new Vector2(targetDirection.x, targetDirection.y);
-            if (Vector3.Distance(transform.position, path.Peek()) < 0.05) {
+            if (path.Count == 0 || Vector3.Distance(transform.position, path.Peek()) < 0.05) {
                 path.Pop();                
                 newDestination = true;
             } 
-            if      ( Mathf.Abs(targetDirection.x) <  targetDirection.y) { animator.SetTrigger("Up"); }                  
-            else if (-Mathf.Abs(targetDirection.x) >  targetDirection.y) { animator.SetTrigger("Down"); }
-            else if ( Mathf.Abs(targetDirection.y) <  targetDirection.x) { animator.SetTrigger("Right"); }
-            else if (-Mathf.Abs(targetDirection.y) >  targetDirection.x) { animator.SetTrigger("Left"); }
-            else    {                             animator.SetTrigger("Idle"); }
+            if      ( Mathf.Abs(targetDirection.x) <  targetDirection.y) { AnimatorUpdate(0); left = false; right = false; }                  
+            else if (-Mathf.Abs(targetDirection.x) >  targetDirection.y) { AnimatorUpdate(1); left = false; right = false; }
+            else if ( Mathf.Abs(targetDirection.y) <  targetDirection.x) { AnimatorUpdate(2); left = false;  right = true; }
+            else if (-Mathf.Abs(targetDirection.y) >  targetDirection.x) { AnimatorUpdate(2); left = true; right = false; }
+            else                                                         { AnimatorUpdate(3); left = false; right = false; }
 
         }
     }   
+
+    public static bool GetLeft() { return left; }
+    public static bool GetRight() { return right; }
+
+    void AnimatorUpdate(int index) {
+        int c = 0;
+        string[] animations = {"Up", "Down", "Walking", "Idle"};
+        foreach (string s in animations) {
+            if (c == index) { animator.SetTrigger(s);   }
+            else            { animator.ResetTrigger(s); }
+            c++;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "NPC") {
             path = new Stack<Vector3>();

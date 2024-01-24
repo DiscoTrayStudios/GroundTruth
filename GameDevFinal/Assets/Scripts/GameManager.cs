@@ -223,8 +223,8 @@ public class GameManager : MonoBehaviour
     public void DialogShow(string text) {
         dialogBox.SetActive(true);
         StopAllCoroutines();
-        StartCoroutine(TypeText(dialogText, text));
         playerBusy = true;
+        StartCoroutine(TypeText(dialogText, text));
     }
 
     public void DialogHide(){

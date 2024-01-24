@@ -9,6 +9,7 @@ public class EForInteract : MonoBehaviour {
     private bool canShowDialog;
 
     private bool dialogShown;
+    private bool mousePressed;
 
     public string evidence_name;
     public TestEvidence testEvi;
@@ -37,6 +38,12 @@ public class EForInteract : MonoBehaviour {
         }
     }
 
+    void OnMouseUp()
+    {
+        canShowDialog = true;
+        mousePressed  = true;
+        StartCoroutine(WaitForStart());
+    }
 
     public void OnTriggerExit2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player"))
@@ -48,7 +55,7 @@ public class EForInteract : MonoBehaviour {
     IEnumerator WaitForStart(){
         bool started = false;
         while(!started){
-            if(Input.GetKeyDown(KeyCode.E)){
+            if(mousePressed || Input.GetKeyDown(KeyCode.E)){
                 dialogShown = true;
                 GameManager.Instance.StartDialogue(text);
                 collect();
@@ -70,6 +77,7 @@ public class EForInteract : MonoBehaviour {
         }
         dialogShown = false;
         Camera.main.GetComponent<ZoomCamera>().UnZoom();
+        mousePressed = false;
         StopAllCoroutines();    
     }
     void Update() {

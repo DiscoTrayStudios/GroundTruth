@@ -38,7 +38,13 @@ public class NPCWander : MonoBehaviour {
             else                        { l--; }
         }
         if (l == 0) { playerNear = false; }
-        if (moveToWaypointCoroutine == null && !playerNear){
+
+        // body.AddForce(transform.up * speed);
+		// transform.Rotate(Vector3.back * (Random.value * 2 * angle - angle));
+		// if (Mathf.Abs(transform.position.y) >= 25) {
+		// 	transform.position = new Vector2(Random.Range(-40f, 40f), -25);
+		// }
+        if (moveToWaypointCoroutine == null){
             moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
         }        
     }
