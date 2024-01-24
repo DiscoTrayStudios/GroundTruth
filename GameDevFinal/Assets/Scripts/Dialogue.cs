@@ -32,6 +32,7 @@ public class Dialogue : MonoBehaviour {
         if(textIndex == text.Length - 1){
             DialogueHappening = false;
             nextButtonText.text = "Next";
+            backButton.SetActive(false);
             GameManager.Instance.DialogHide();
         }
         else{
@@ -39,7 +40,8 @@ public class Dialogue : MonoBehaviour {
                 nextButtonText.text = "Done";
             }
             textIndex++;
-            GameManager.Instance.DialogShow(text[textIndex]);  
+            GameManager.Instance.DialogShow(text[textIndex]);
+            backButton.SetActive(true);  
         }
         
     }
@@ -49,6 +51,9 @@ public class Dialogue : MonoBehaviour {
             textIndex--;
             GameManager.Instance.DialogShow(text[textIndex]);
             nextButtonText.text = "Next";  
+            if(textIndex == 0){
+                backButton.SetActive(false);
+            }
         }
         
     }

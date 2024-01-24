@@ -75,7 +75,8 @@ public class GameManager : MonoBehaviour
     public static bool post = false;
     public static string article  = "";
     private bool beenanywhere = false;
-
+    private int haveEvidence = 0;
+    //0 if no evidence, 1 if evidence has been added, 2 if the journal has appeared.
     public bool seenintro;
     public static string feedback = "";
 
@@ -144,6 +145,11 @@ public class GameManager : MonoBehaviour
         if(!testevi.test_collected){
             testevi.setCollected(true);
             TestEvidenceList.Add(testevi);
+            /*if(!haveEvidence){
+                haveEvidence = true;
+                Debug.Log("shouldopen");
+                testNotebook.GetComponent<testJournal>().openingJournal();
+            }*/
 //            print(testevi.dialogue);         // literal dialogue
 //            print(testevi.test_evidence);         // sentence
 //            print(testevi.test_evidence_summary); // phrase
@@ -223,6 +229,12 @@ public class GameManager : MonoBehaviour
     public void DialogHide(){
         dialogBox.SetActive(false);
         playerBusy = false;
+        if(haveEvidence == 1){
+            testNotebook.GetComponent<testJournal>().openingJournal();
+            testNotebook.GetComponent<testJournal>().flipToPage(1);
+
+            haveEvidence = 2;
+        }
     }
 
     public void FirstTown() {
@@ -254,12 +266,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void AddEvidence(string evi) {
+    public void AddEvidence(string evi) {
         if (!evidence.ContainsKey(evi)) {
             evidence.Add(evi, true);
-        } else {
-            print("Already Added Evidence");
-        }
+        } 
+        if(haveEvidence == 0){
+                haveEvidence = 1;
+            }
     }
 
     public static bool CheckEvidence(string evi){

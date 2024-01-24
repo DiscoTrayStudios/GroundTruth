@@ -16165,6 +16165,8 @@ MonoBehaviour:
   PageTwo: {fileID: 940144840}
   PageThree: {fileID: 1134790458}
   PageFour: {fileID: 721317046}
+  LeftTab: {fileID: 0}
+  RightTab: {fileID: 0}
   userInterface: {fileID: 1238759140}
   openedNotebook: {fileID: 694954574}
   bookOpenSound: {fileID: 694954578}
@@ -29731,6 +29733,8 @@ MonoBehaviour:
   PageTwo: {fileID: 71207365}
   PageThree: {fileID: 1037378696}
   PageFour: {fileID: 211266599}
+  LeftTab: {fileID: 1340029276}
+  RightTab: {fileID: 903861103}
   userInterface: {fileID: 1623751376}
   openedNotebook: {fileID: 1261439341}
   bookOpenSound: {fileID: 1261439345}
@@ -33107,7 +33111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1368427299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33125,8 +33129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -224, y: -139}
-  m_SizeDelta: {x: 150, y: 50}
+  m_AnchoredPosition: {x: -224, y: -145}
+  m_SizeDelta: {x: 150, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368427300
 MonoBehaviour:
@@ -38921,8 +38925,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 224, y: -139}
-  m_SizeDelta: {x: 150, y: 50}
+  m_AnchoredPosition: {x: 224, y: -145}
+  m_SizeDelta: {x: 150, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1599059071
 MonoBehaviour:
