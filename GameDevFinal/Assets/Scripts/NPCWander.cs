@@ -29,6 +29,11 @@ public class NPCWander : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());   
     }
+    public void OnTriggerExit2D(Collider2D collider2D) {
+        if (collider2D.gameObject.CompareTag("Player")) {
+            playerNear = false;
+        }
+    }
 
     void Update() {
         Collider2D[] near = Physics2D.OverlapCircleAll(rb.gameObject.transform.position, 1.5f);
@@ -63,22 +68,13 @@ public class NPCWander : MonoBehaviour {
                 rb.velocity = direction * moveSpeed;
                 //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
                 if(!front.Equals(null) & !back.Equals(null)){
-                    if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){
-                    
-                        if(direction.x > 0) {
-                            gameObject.GetComponent<SpriteRenderer>().sprite = right;
-                        }
-                        else{
-                            gameObject.GetComponent<SpriteRenderer>().sprite = left;
-                        }  
+                    if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) {    
+                        if(direction.x > 0) { gameObject.GetComponent<SpriteRenderer>().sprite = right; }
+                        else                { gameObject.GetComponent<SpriteRenderer>().sprite = left;  }  
                     }
-                    else if(Mathf.Abs(direction.y) > Mathf.Abs(direction.x)){
-                        if(direction.y >0){
-                            gameObject.GetComponent<SpriteRenderer>().sprite = back;
-                        }
-                        else{
-                            gameObject.GetComponent<SpriteRenderer>().sprite = front;
-                        }
+                    else if(Mathf.Abs(direction.y) > Mathf.Abs(direction.x)) {
+                        if(direction.y >0) { gameObject.GetComponent<SpriteRenderer>().sprite = back;  }
+                        else               { gameObject.GetComponent<SpriteRenderer>().sprite = front; }
                     }
                 }
                 colliding = false;
@@ -99,7 +95,7 @@ public class NPCWander : MonoBehaviour {
     }
     public void FaceFront(){
         if(!front.Equals(null)){
-            StopAllCoroutines();
+            StopCoroutine(MoveToWaypoint());
             gameObject.GetComponent<SpriteRenderer>().sprite = front; 
         }
     }

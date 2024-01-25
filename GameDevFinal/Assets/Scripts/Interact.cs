@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class Interact : MonoBehaviour {
 
     public string text;
+    private bool talking;
     private Vector3 mouseWorldPos;
 
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
         print("Entered..");
-        if ((collider2D.gameObject.CompareTag("Player"))& !GameManager.Instance.GetPlayerBusy()) {
+        if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy() & !talking) {
+            talking = true;
             GameManager.Instance.DialogShow(text);
             StartCoroutine(Dialog());
             if(gameObject.GetComponent<NPCWander>()!= null){
@@ -22,8 +24,9 @@ public class Interact : MonoBehaviour {
 
     void OnMouseUp()
     {
-        if (!GameManager.Instance.GetPlayerBusy()) {
+        if (!GameManager.Instance.GetPlayerBusy() & !talking) {
             GameManager.Instance.DialogShow(text);
+            talking = true;
             StartCoroutine(Dialog());
             if(gameObject.GetComponent<NPCWander>() != null){
                 gameObject.GetComponent<NPCWander>().FaceFront();
@@ -35,22 +38,22 @@ public class Interact : MonoBehaviour {
     public void OnTriggerExit2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player")) {
             GameManager.Instance.DialogHide();
-            StopAllCoroutines();
+            StopCoroutine(Dialog());
         }
     }
 
     private IEnumerator Dialog(){
-       while(!Input.GetKeyDown(KeyCode.E)){
+        while(!Input.GetKeyDown(KeyCode.E)){
+            yield return null;        
+        } 
+        GameManager.Instance.DialogHide();
+        talking = false;
+        print("end");
         yield return null;
-        
-       } 
-       GameManager.Instance.DialogHide();
-       print("end");
-       StopAllCoroutines();
     }
 
     void Start() {
-
+        talking = false;
     }
 
     void Update() {

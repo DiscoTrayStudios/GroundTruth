@@ -54,7 +54,7 @@ public class AStar : MonoBehaviour
     private bool IsCellOccupied(Vector3 cellCenter)
     {
         Vector3Int cellPosition = tilemap.WorldToCell(cellCenter);
-        (int, int)[] playersize = {(0,0)};
+        (int, int)[] playersize = {(0,0), (0,-1), (-1,0), (-1,-1)};
         foreach ((int,int) ps in playersize) {
             if (tilemap.HasTile(new Vector3Int(cellPosition.x + ps.Item1, cellPosition.y + ps.Item2, 0))) {
                 return true;
@@ -129,6 +129,11 @@ public class AStar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        if (horizontal != 0 | vertical != 0) {
+            path = new Stack<Vector3>();
+        }
         if (Input.GetMouseButtonDown(0)) {
             // print("oy");
             mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -144,7 +149,7 @@ public class AStar : MonoBehaviour
                 path = Path(mouseWorldPos);
                 string ot = "";
                 foreach (Vector3 p in path) { 
-                    ot +=  $"({p.x}, {p.y})";
+                    ot +=  $"({p.x}, {p.y}), ";
                 }
                 print(ot);
             }
@@ -166,7 +171,7 @@ public class AStar : MonoBehaviour
         }
     }   
 
-    public static bool GetLeft() { return left; }
+    public static bool GetLeft()  { return left;  }
     public static bool GetRight() { return right; }
 
     void AnimatorUpdate(int index) {
