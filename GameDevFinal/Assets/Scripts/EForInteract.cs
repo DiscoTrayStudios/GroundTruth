@@ -32,7 +32,7 @@ public class EForInteract : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
-        if (collider2D.gameObject.CompareTag("Player")) {
+        if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
             canShowDialog = true;
             StartCoroutine(WaitForStart());
         }
@@ -66,7 +66,7 @@ public class EForInteract : MonoBehaviour {
                     
                 }
                 started = true;
-            }
+            
             yield return null;
         }
         StartCoroutine(WaitForEnd());
@@ -117,7 +117,7 @@ public class EForInteract : MonoBehaviour {
         // set text to something like "can I help you? and can repeat"
         // scribble.Play();
         if(!GameManager.CheckEvidence(evidence_name)){
-            GameManager.AddEvidence(evidence_name);
+            GameManager.Instance.AddEvidence(evidence_name);
             GameManager.Instance.GmCollectEvidence(testEvi);    
             ArticleManager.updateOrderedEvidenceSet(testEvi, whichDialogue);
         }
