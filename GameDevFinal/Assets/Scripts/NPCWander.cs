@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.Tilemaps;
-
 
 // brought to you in part by https://discussions.unity.com/t/freeze-rigidbody-position-in-script/110627/2
 
@@ -12,6 +9,7 @@ public class NPCWander : MonoBehaviour {
     public Waypoint[] waypoints;
     public float moveSpeed = 2f;
     public GameObject player;
+
     private int currentWaypointIndex = 0;
     private Coroutine moveToWaypointCoroutine;
     private Rigidbody2D rb;
@@ -20,19 +18,15 @@ public class NPCWander : MonoBehaviour {
     private bool playerNear = false;
     public Sprite front;
     public Sprite back;
+
     public Sprite left;
+
     public Sprite right;
-    private bool[,] grid;
-    public Tilemap tilemap;
+
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());   
-    }
-    public void OnTriggerExit2D(Collider2D collider2D) {
-        if (collider2D.gameObject.CompareTag("Player")) {
-            playerNear = false;
-        }
+        moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
     }
 
     void Update() {
@@ -43,38 +37,47 @@ public class NPCWander : MonoBehaviour {
             else                        { l--; }
         }
         if (l == 0) { playerNear = false; }
-
-        // body.AddForce(transform.up * speed);
-		// transform.Rotate(Vector3.back * (Random.value * 2 * angle - angle));
-		// if (Mathf.Abs(transform.position.y) >= 25) {
-		// 	transform.position = new Vector2(Random.Range(-40f, 40f), -25);
-		// }
-        if (moveToWaypointCoroutine == null){
+        if (moveToWaypointCoroutine == null && !playerNear){
             moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
         }        
     }
 
     private IEnumerator MoveToWaypoint(){
-        while (!playerNear){
+        while (!playerNear) {
             Waypoint currentWaypoint = waypoints[currentWaypointIndex];
             Vector3 targetPosition = currentWaypoint.transform.position;
             Vector3 direction = (targetPosition - transform.position).normalized;
+            // Move towards the waypoint
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
                 if (colliding) {
                     direction = (transform.position - colPos).normalized;
-                    targetPosition = transform.position + direction.normalized;
+                    targetPosition = transform.position + (2*direction.normalized);
+                } 
+                if (Vector3.Distance(player.transform.position, targetPosition) < 5f && GameManager.Instance.GetPlayerBusy()) {
+                    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                    currentWaypoint = waypoints[currentWaypointIndex];
+                    targetPosition = currentWaypoint.transform.position;
+                    direction = (targetPosition - transform.position).normalized;
                 }
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
                 rb.velocity = direction * moveSpeed;
                 //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
-                if(!front.Equals(null) & !back.Equals(null)){
-                    if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) {    
-                        if(direction.x > 0) { gameObject.GetComponent<SpriteRenderer>().sprite = right; }
-                        else                { gameObject.GetComponent<SpriteRenderer>().sprite = left;  }  
+                if (!front.Equals(null) & !back.Equals(null)) {
+                    if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){                    
+                        if(direction.x > 0){
+                            gameObject.GetComponent<SpriteRenderer>().sprite = right;
+                        }
+                        else{
+                            gameObject.GetComponent<SpriteRenderer>().sprite = left;
+                        }  
                     }
-                    else if(Mathf.Abs(direction.y) > Mathf.Abs(direction.x)) {
-                        if(direction.y >0) { gameObject.GetComponent<SpriteRenderer>().sprite = back;  }
-                        else               { gameObject.GetComponent<SpriteRenderer>().sprite = front; }
+                    else if(Mathf.Abs(direction.y) > Mathf.Abs(direction.x)){
+                        if(direction.y >0){
+                            gameObject.GetComponent<SpriteRenderer>().sprite = back;
+                        }
+                        else{
+                            gameObject.GetComponent<SpriteRenderer>().sprite = front;
+                        }
                     }
                 }
                 colliding = false;
@@ -82,8 +85,10 @@ public class NPCWander : MonoBehaviour {
             }
             if(!front.Equals(null)){
                 gameObject.GetComponent<SpriteRenderer>().sprite = front; 
-            }            
+            }
+            
             rb.velocity = Vector2.zero;
+
             // Wait at the waypoint if specified
             if (currentWaypoint.waitTime > 0) {
                 yield return new WaitForSeconds(currentWaypoint.waitTime);
@@ -95,8 +100,50 @@ public class NPCWander : MonoBehaviour {
     }
     public void FaceFront(){
         if(!front.Equals(null)){
-            StopCoroutine(MoveToWaypoint());
+            StopCoroutine(moveToWaypointCoroutine);
             gameObject.GetComponent<SpriteRenderer>().sprite = front; 
+        }
+    }
+
+ 
+
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Player")){
+            if (moveToWaypointCoroutine != null){
+                StopCoroutine(moveToWaypointCoroutine);
+                moveToWaypointCoroutine = null;
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag("Player")) {
+            if (moveToWaypointCoroutine == null){
+                moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+       //   if (moveToWaypointCoroutine != null){
+       //       StopCoroutine(moveToWaypointCoroutine);               
+       //   }
+       //   currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+       //   colPos = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 0);
+        colliding = true;
+       // Vector3 colPos = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 0);
+       // Vector3 desired = transform.position - colPos;
+       // while (Vector3.Distance(transform.position, desired.normalized * 5.0f) > 0.1f) {
+       //     transform.position = Vector3.MoveTowards(transform.position, transform.position - (desired.normalized * 5.0f), moveSpeed * Time.deltaTime);
+       //     rb.velocity = desired.normalized * moveSpeed;            
+       // }        
+    }
+
+    void OnCollisionExit2D(Collision2D collision) {
+        if (moveToWaypointCoroutine == null){
+                moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+                colliding = false;
         }
     }
 }

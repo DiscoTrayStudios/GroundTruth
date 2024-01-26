@@ -141,11 +141,7 @@ public class AStar : MonoBehaviour
             // rb.velocity = new Vector2(mouseWorldPos.x - transform.position.x, mouseWorldPos.y - transform.position.y);
             Vector3 v3 = new Vector3(Mathf.Round(mouseWorldPos.x), Mathf.Round(mouseWorldPos.y), 0);
             var cols = Physics2D.OverlapCircleAll(mouseWorldPos, 0.25f);
-            bool b = false;
-            foreach (Collider2D col in cols) {
-                if (col.CompareTag("NPC")) { b = true; }
-            }
-            if (!GameManager.Instance.GetPlayerBusy()) {
+            if (!GameManager.Instance.GetPlayerBusy() && cols.Length > 0) {
                 path = Path(mouseWorldPos);
                 string ot = "";
                 foreach (Vector3 p in path) { 
