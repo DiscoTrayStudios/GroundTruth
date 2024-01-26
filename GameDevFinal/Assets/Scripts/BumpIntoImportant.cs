@@ -19,10 +19,10 @@ public class BumpIntoImportant : MonoBehaviour
         
     }
 
-    public void OnCollissionEnter2D(Collider2D col) {
+    /*public void OnCollissionEnter2D(Collider2D col) {
         if (col.CompareTag("EvidenceHolder")) {
             GameManager.AddEvidence(evidence_name);
             print("Evidence Should Be Collected");
         }
-    }
+    }*/
 }

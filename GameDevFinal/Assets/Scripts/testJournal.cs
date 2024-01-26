@@ -27,6 +27,8 @@ public class testJournal : MonoBehaviour
     public GameObject PageTwo;
     public GameObject PageThree;
     public GameObject PageFour;
+    public GameObject LeftTab;
+    public GameObject RightTab;
     private List<GameObject> Pages = new List<GameObject>();
     public GameObject userInterface;
     public GameObject openedNotebook;
@@ -120,6 +122,14 @@ public class testJournal : MonoBehaviour
             pageIndex += 1;
             Pages[pageIndex].SetActive(true);
         }
+        if(pageIndex == Pages.Count -1){
+
+        }
+    }
+    public void flipToPage(int pIndex){
+        Pages[pageIndex].SetActive(false);
+        pageIndex = pIndex;
+        Pages[pageIndex].SetActive(true);
     }
 
     // Update is called once per frame
