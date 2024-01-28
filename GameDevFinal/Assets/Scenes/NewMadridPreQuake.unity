@@ -52021,7 +52021,6 @@ MonoBehaviour:
   back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
-  tilemap: {fileID: 0}
 --- !u!50 &167138967
 Rigidbody2D:
   serializedVersion: 4
@@ -61161,7 +61160,6 @@ MonoBehaviour:
   back: {fileID: -250575206, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
   left: {fileID: -255463592, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
   right: {fileID: -610570553, guid: a63378d290760bb4d82f4e8f63419842, type: 3}
-  tilemap: {fileID: 0}
 --- !u!50 &596491544
 Rigidbody2D:
   serializedVersion: 4
@@ -62061,7 +62059,6 @@ MonoBehaviour:
   back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
-  tilemap: {fileID: 0}
 --- !u!50 &632093523
 Rigidbody2D:
   serializedVersion: 4
@@ -62255,7 +62252,6 @@ MonoBehaviour:
   back: {fileID: -506449211, guid: 8efb0a6d08c7f9045a51deb5cfaf9401, type: 3}
   left: {fileID: -1003306801, guid: 8efb0a6d08c7f9045a51deb5cfaf9401, type: 3}
   right: {fileID: -1646699497, guid: 8efb0a6d08c7f9045a51deb5cfaf9401, type: 3}
-  tilemap: {fileID: 0}
 --- !u!61 &639990193
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67917,7 +67913,6 @@ MonoBehaviour:
   back: {fileID: -1215528120, guid: 50b4a517a36e1ef49818cea51be36dda, type: 3}
   left: {fileID: -496317216, guid: 50b4a517a36e1ef49818cea51be36dda, type: 3}
   right: {fileID: -873259597, guid: 50b4a517a36e1ef49818cea51be36dda, type: 3}
-  tilemap: {fileID: 0}
 --- !u!61 &1054507609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69606,7 +69601,6 @@ MonoBehaviour:
   back: {fileID: -1318399428, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
   left: {fileID: 894012449, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
   right: {fileID: 1864350784, guid: 9c23f047af29a5540ad06cc4f3d0747e, type: 3}
-  tilemap: {fileID: 0}
 --- !u!50 &1096000124
 Rigidbody2D:
   serializedVersion: 4
@@ -77240,7 +77234,6 @@ MonoBehaviour:
   back: {fileID: -1217604032, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
   left: {fileID: -1558654035, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
   right: {fileID: -1006467553, guid: df91e83e8eea5a94c8aac373565169d1, type: 3}
-  tilemap: {fileID: 0}
 --- !u!50 &1657408946
 Rigidbody2D:
   serializedVersion: 4
@@ -78739,7 +78732,6 @@ MonoBehaviour:
   back: {fileID: 278253206, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
   left: {fileID: 1857815547, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
   right: {fileID: 1482809782, guid: aa113f502ee1e1349aadb488c91fb76e, type: 3}
-  tilemap: {fileID: 0}
 --- !u!50 &1742125199
 Rigidbody2D:
   serializedVersion: 4
@@ -80071,7 +80063,6 @@ MonoBehaviour:
   back: {fileID: 355436071, guid: 19b49298ee0e34544a8d5be797727966, type: 3}
   left: {fileID: -323658434, guid: 19b49298ee0e34544a8d5be797727966, type: 3}
   right: {fileID: -124168760, guid: 19b49298ee0e34544a8d5be797727966, type: 3}
-  tilemap: {fileID: 0}
 --- !u!61 &1883024742
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Linq;
 
 public class AStar : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class AStar : MonoBehaviour
     private int l;
     private int r;
     private Vector3 mouseWorldPos;
-    private bool newDestination;
+    // private bool newDestination;
     private Animator animator;
     public static bool left;
     public static bool right;
@@ -54,17 +55,19 @@ public class AStar : MonoBehaviour
     private bool IsCellOccupied(Vector3 cellCenter)
     {
         Vector3Int cellPosition = tilemap.WorldToCell(cellCenter);
-        (int, int)[] playersize = {(0,0), (0,-1), (-1,0), (-1,-1)};
+        (int, int)[] playersize = {(0,0), (0,-1), (-1,0), (-1,-1), (-1,1), (0,1), 
+        // (1,1), (1,0), (1,-1)
+        };
         foreach ((int,int) ps in playersize) {
             if (tilemap.HasTile(new Vector3Int(cellPosition.x + ps.Item1, cellPosition.y + ps.Item2, 0))) {
                 return true;
             }
-            Collider2D[] near = Physics2D.OverlapCircleAll(cellCenter, 1f);
-            foreach (Collider2D n in near) {
-                if (n.CompareTag("NPC")) { 
-                    return true;  
-                }
-            }
+            // Collider2D[] near = Physics2D.OverlapCircleAll(cellCenter, 1f);
+            // foreach (Collider2D n in near) {
+            //     if (n.CompareTag("NPC")) { 
+            //         return true;  
+            //     }
+            // }
         } return false;
     }
 
@@ -140,14 +143,15 @@ public class AStar : MonoBehaviour
             mouseWorldPos.z = 0f;
             // rb.velocity = new Vector2(mouseWorldPos.x - transform.position.x, mouseWorldPos.y - transform.position.y);
             Vector3 v3 = new Vector3(Mathf.Round(mouseWorldPos.x), Mathf.Round(mouseWorldPos.y), 0);
-            var cols = Physics2D.OverlapCircleAll(mouseWorldPos, 0.25f);
-            if (!GameManager.Instance.GetPlayerBusy() && cols.Length > 0) {
+            List<Collider2D> cols = Physics2D.OverlapCircleAll(mouseWorldPos, 0.25f).ToList();
+            var envcols = cols.Where(col => !col.CompareTag("NPC")).ToList();
+            if (!GameManager.Instance.GetPlayerBusy() && !(envcols.Count > 0)) {
                 path = Path(mouseWorldPos);
-                string ot = "";
-                foreach (Vector3 p in path) { 
-                    ot +=  $"({p.x}, {p.y}), ";
-                }
-                print(ot);
+                // string ot = "";
+                // foreach (Vector3 p in path) { 
+                //     ot +=  $"({p.x}, {p.y}), ";
+                // }
+                // print(ot);
             }
         }
         if (path.Count > 0) {
@@ -156,7 +160,7 @@ public class AStar : MonoBehaviour
             rb.velocity = new Vector2(targetDirection.x, targetDirection.y);
             if (path.Count == 0 || Vector3.Distance(transform.position, path.Peek()) < 0.05) {
                 path.Pop();                
-                newDestination = true;
+                // newDestination = true;
             } 
             if      ( Mathf.Abs(targetDirection.x) <  targetDirection.y) { AnimatorUpdate(0); left = false; right = false; }                  
             else if (-Mathf.Abs(targetDirection.x) >  targetDirection.y) { AnimatorUpdate(1); left = false; right = false; }
@@ -183,7 +187,7 @@ public class AStar : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "NPC") {
             path = new Stack<Vector3>();
-            newDestination = true;
+            // newDestination = true;
             rb.velocity = new Vector2(0f, 0f);
         }
     }

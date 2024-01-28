@@ -11,7 +11,7 @@ public class Interact : MonoBehaviour {
 
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
-        print("Entered..");
+        // print("Entered..");
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy() & !talking) {
             talking = true;
             GameManager.Instance.DialogShow(text);

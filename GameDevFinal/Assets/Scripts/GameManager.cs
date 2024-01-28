@@ -284,7 +284,7 @@ public class GameManager : MonoBehaviour
     }
 
     public static bool CheckEvidence(string evi){
-        print(evidence.ContainsKey(evi));
+        // print(evidence.ContainsKey(evi));
         return evidence.ContainsKey(evi);
     }
 

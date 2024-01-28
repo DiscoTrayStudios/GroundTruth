@@ -6,7 +6,7 @@ public class EForInteract : MonoBehaviour {
 
     public string[] text;
 
-    private bool canShowDialog;
+    // private bool canShowDialog;
 
     private bool dialogShown;
     private bool mousePressed;
@@ -18,14 +18,14 @@ public class EForInteract : MonoBehaviour {
 
     public bool whichDialogue;
 
-    private int currentTextIndex = 0;
+    // private int currentTextIndex = 0;
 
     void Awake(){
         if(testEvi){
             exPoint = gameObject.transform.Find("ExPoint").gameObject;    
         }
         if(GameManager.CheckEvidence(evidence_name)){
-            print("checking");
+            // print("checking");
             exPoint.SetActive(false);
             print(exPoint.name);
         }
@@ -33,14 +33,14 @@ public class EForInteract : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
-            canShowDialog = true;
+            // canShowDialog = true;
             StartCoroutine(WaitForStart());
         }
     }
 
     void OnMouseUp()
     {
-        canShowDialog = true;
+        // canShowDialog = true;
         mousePressed  = true;
         StartCoroutine(WaitForStart());
     }
@@ -48,7 +48,7 @@ public class EForInteract : MonoBehaviour {
     public void OnTriggerExit2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player"))
         {
-            canShowDialog = false;
+            // canShowDialog = false;
             StopAllCoroutines();
         }
     }
