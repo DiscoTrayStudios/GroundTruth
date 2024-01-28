@@ -66,7 +66,7 @@ public class EForInteract : MonoBehaviour {
                     
                 }
                 started = true;
-            
+            }
             yield return null;
         }
         StartCoroutine(WaitForEnd());
