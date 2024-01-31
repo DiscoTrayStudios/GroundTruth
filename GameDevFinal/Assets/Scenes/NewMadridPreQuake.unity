@@ -67394,6 +67394,7 @@ GameObject:
   - component: {fileID: 997683076}
   - component: {fileID: 997683080}
   - component: {fileID: 997683081}
+  - component: {fileID: 997683082}
   m_Layer: 0
   m_Name: Native FeMale
   m_TagString: NPC
@@ -67598,6 +67599,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &997683082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997683075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604892086f1cc450cbab9ebe9994de3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1812559034}
+  - {fileID: 1442710348}
+  - {fileID: 251567379}
+  - {fileID: 897438930}
+  moveSpeed: 1
+  player: {fileID: 1399488542}
+  front: {fileID: 1917702388, guid: a9c9b80da2a44f44d90f4a778387dd5a, type: 3}
+  back: {fileID: 1263108884, guid: a9c9b80da2a44f44d90f4a778387dd5a, type: 3}
+  left: {fileID: 1747150581, guid: a9c9b80da2a44f44d90f4a778387dd5a, type: 3}
+  right: {fileID: 178565606, guid: a9c9b80da2a44f44d90f4a778387dd5a, type: 3}
 --- !u!1 &1042162465
 GameObject:
   m_ObjectHideFlags: 0
