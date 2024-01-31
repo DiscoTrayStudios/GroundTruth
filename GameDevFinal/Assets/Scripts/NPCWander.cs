@@ -100,7 +100,9 @@ public class NPCWander : MonoBehaviour {
     }
     public void FaceFront(){
         if(!front.Equals(null)){
-            StopCoroutine(moveToWaypointCoroutine);
+            if (moveToWaypointCoroutine != null) {
+                StopCoroutine(moveToWaypointCoroutine);
+            }
             gameObject.GetComponent<SpriteRenderer>().sprite = front; 
         }
     }
@@ -141,7 +143,7 @@ public class NPCWander : MonoBehaviour {
     }
 
     void OnCollisionExit2D(Collision2D collision) {
-        if (moveToWaypointCoroutine == null){
+        if (moveToWaypointCoroutine == null && collision.gameObject.activeSelf){
                 moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
                 colliding = false;
         }
