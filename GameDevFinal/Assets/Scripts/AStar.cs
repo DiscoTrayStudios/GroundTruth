@@ -134,7 +134,7 @@ public class AStar : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        if (horizontal != 0 | vertical != 0) {
+        if (horizontal != 0 | vertical != 0 || GameManager.Instance.GetPlayerBusy()) {
             path = new Stack<Vector3>();
         }
         if (Input.GetMouseButtonDown(0)) {
@@ -147,6 +147,7 @@ public class AStar : MonoBehaviour
             var envcols = cols.Where(col => !col.CompareTag("NPC")).ToList();
             if (!GameManager.Instance.GetPlayerBusy() && !(envcols.Count > 0)) {
                 path = Path(mouseWorldPos);
+                wait();
                 // string ot = "";
                 // foreach (Vector3 p in path) { 
                 //     ot +=  $"({p.x}, {p.y}), ";
@@ -154,7 +155,7 @@ public class AStar : MonoBehaviour
                 // print(ot);
             }
         }
-        if (path.Count > 0) {
+        if (path.Count > 0 && !GameManager.Instance.GetPlayerBusy()) {
             Vector3 targetDirection = (path.Peek() - transform.position).normalized;
             transform.position = Vector3.MoveTowards(transform.position, path.Peek(), 2 * Time.deltaTime);
             rb.velocity = new Vector2(targetDirection.x, targetDirection.y);
@@ -196,6 +197,8 @@ public class AStar : MonoBehaviour
         Vector3 v = new Vector3(((float) coord.Item1)/4f,((float) coord.Item2)/4f, 0f);
         return v;
     }
+    IEnumerator wait()
+    { yield return new WaitForSeconds(1f); }
 
     public class NodeComparer : IComparer<Node>
     {

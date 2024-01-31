@@ -9,6 +9,7 @@ public class Interact : MonoBehaviour {
     private bool talking;
     private Vector3 mouseWorldPos;
 
+    public bool GetTalking() { return talking; }
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
         // print("Entered..");
@@ -19,6 +20,8 @@ public class Interact : MonoBehaviour {
             if(gameObject.GetComponent<NPCWander>()!= null){
                 gameObject.GetComponent<NPCWander>().FaceFront();   
             }
+            Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
+
         }
     }
 
@@ -30,7 +33,8 @@ public class Interact : MonoBehaviour {
             StartCoroutine(Dialog());
             if(gameObject.GetComponent<NPCWander>() != null){
                 gameObject.GetComponent<NPCWander>().FaceFront();
-            }            
+            }           
+            Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
         }
     }
 
@@ -49,6 +53,7 @@ public class Interact : MonoBehaviour {
         GameManager.Instance.DialogHide();
         talking = false;
         print("end");
+        Camera.main.GetComponent<ZoomCamera>().UnZoom();
         yield return null;
     }
 

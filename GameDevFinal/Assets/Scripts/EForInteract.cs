@@ -17,6 +17,7 @@ public class EForInteract : MonoBehaviour {
     public GameObject exPoint;
 
     public bool whichDialogue;
+    public bool talking;
 
     // private int currentTextIndex = 0;
 
@@ -52,10 +53,13 @@ public class EForInteract : MonoBehaviour {
             StopAllCoroutines();
         }
     }
+
+
+
     IEnumerator WaitForStart(){
         bool started = false;
         while(!started){
-            if(mousePressed || Input.GetKeyDown(KeyCode.E)){
+            if (mousePressed || Input.GetKeyDown(KeyCode.E)){
                 dialogShown = true;
                 GameManager.Instance.StartDialogue(text);
                 collect();
@@ -63,7 +67,7 @@ public class EForInteract : MonoBehaviour {
                     gameObject.GetComponent<NPCWander>().FaceFront();
                     Camera.main.GetComponent<FollowCam>().enabled = false;
                     Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
-                    
+                    talking = true;
                 }
                 started = true;
             }
@@ -77,6 +81,7 @@ public class EForInteract : MonoBehaviour {
         }
         dialogShown = false;
         Camera.main.GetComponent<ZoomCamera>().UnZoom();
+        talking = false;
         mousePressed = false;
         StopAllCoroutines();    
     }
