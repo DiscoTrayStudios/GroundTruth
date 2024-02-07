@@ -398,10 +398,10 @@ GameObject:
   - component: {fileID: 268605872}
   - component: {fileID: 268605875}
   - component: {fileID: 268605874}
-  - component: {fileID: 268605873}
   - component: {fileID: 268605876}
   - component: {fileID: 268605877}
   - component: {fileID: 268605878}
+  - component: {fileID: 268605879}
   m_Layer: 0
   m_Name: Sailor 2
   m_TagString: NPC
@@ -424,20 +424,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1685964848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &268605873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268605871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: This man cowered behind some trees as soon as we shored. Do not listen to
-    a word he spews...
 --- !u!61 &268605874
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -632,6 +618,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &268605879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268605871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - 'This man cowered behind some trees as soon as we shored. Do not listen to a
+    word he spews... '
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &436210043
 GameObject:
   m_ObjectHideFlags: 0
@@ -47551,9 +47557,9 @@ GameObject:
   - component: {fileID: 1867861366}
   - component: {fileID: 1867861365}
   - component: {fileID: 1867861367}
-  - component: {fileID: 1867861368}
   - component: {fileID: 1867861369}
   - component: {fileID: 1867861370}
+  - component: {fileID: 1867861371}
   m_Layer: 0
   m_Name: Sailor 3
   m_TagString: NPC
@@ -47718,20 +47724,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1867861368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867861362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: I can scarcely believe what I have seen. The river flowed backwards, I swear
-    to you!
 --- !u!114 &1867861369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47784,6 +47776,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1867861371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867861362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - 'I can scarcely believe what I have seen. The river flowed backwards, I swear
+    to you! '
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &1936279207
 GameObject:
   m_ObjectHideFlags: 0
@@ -48224,10 +48236,10 @@ GameObject:
   - component: {fileID: 2072108691}
   - component: {fileID: 2072108694}
   - component: {fileID: 2072108693}
-  - component: {fileID: 2072108692}
   - component: {fileID: 2072108695}
   - component: {fileID: 2072108696}
   - component: {fileID: 2072108697}
+  - component: {fileID: 2072108698}
   m_Layer: 0
   m_Name: Sailor 4
   m_TagString: NPC
@@ -48250,20 +48262,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1685964848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2072108692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072108690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: I have never witnessed anything like that before. The sheer power of the
-    currents...
 --- !u!61 &2072108693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48458,6 +48456,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &2072108698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072108690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - 'I have never witnessed anything like that before. The sheer power of the currents... '
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1001 &2094398408
 PrefabInstance:
   m_ObjectHideFlags: 0

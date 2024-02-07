@@ -54,18 +54,16 @@ public class EForInteract : MonoBehaviour {
     IEnumerator WaitForStart(){
         bool started = false;
         while(!started){
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.E)){
-                dialogShown = true;
-                GameManager.Instance.StartDialogue(text);
-                if (evidence_name != "") { collect(); }
-                if (gameObject.GetComponent<NPCWander>()!= null) {
-                    gameObject.GetComponent<NPCWander>().FaceFront();
-                    Camera.main.GetComponent<FollowCam>().enabled = false;
-                    Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
-                    talking = true;
-                }
-                started = true;
+            dialogShown = true;
+            GameManager.Instance.StartDialogue(text);
+            if (evidence_name != "") { collect(); }
+            if (gameObject.GetComponent<NPCWander>()!= null) {
+                gameObject.GetComponent<NPCWander>().FaceFront();
+                Camera.main.GetComponent<FollowCam>().enabled = false;
+                Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
+                talking = true;
             }
+            started = true;
             yield return null;
         }
         StartCoroutine(WaitForEnd());
