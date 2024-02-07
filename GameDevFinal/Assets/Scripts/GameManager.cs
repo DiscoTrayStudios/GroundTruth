@@ -31,7 +31,9 @@ public class GameManager : MonoBehaviour
     public GameObject Credits;
     public GameObject UI;
     public GameObject testNotebook;
+    public GameObject Timer;
 
+    public GameObject Timerbox;
     public GameObject postTestNotebook;
     public GameObject BossUI;
     public GameObject PostUI;
@@ -73,6 +75,8 @@ public class GameManager : MonoBehaviour
     public string currentScene    = "TitleScreen";
     public string currentLocation = "TitleScreen";
     public static bool post = false;
+
+    public static bool timerGoing = false;
     public static string article  = "";
     private bool beenanywhere = false;
     private int haveEvidence = 0;
@@ -132,6 +136,14 @@ public class GameManager : MonoBehaviour
       //  }
     }
 
+    public void StartTime(){
+        Debug.Log("outgm");
+        if(Timer.GetComponent<Timer>().Started == false){
+            Timer.GetComponent<Timer>().StartTimer();
+            timerGoing = true;
+            Debug.Log("gm");
+        }
+    }
     public bool GetPlayerBusy(){
         return playerBusy;
     }
@@ -335,7 +347,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void BackToOffice(){
+        SetPlayerBusy(false);
+        if(!post){
+            ChangeScene("InvestigativeArea");
+        }
+        else{
+            ChangeScene("PostQuake");
+        }
+        TravelDisplay.GetComponent<TravelDisplay>().ShowTraveling("desk");
+    }
 
     IEnumerator LoadYourAsyncScene(string scene) {
         if (scene != "InvestigativeArea") {currentLocation = scene;}
@@ -379,7 +400,8 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(false);
             testNotebook.SetActive(false);
-        } else if (scene == "InvestigativeArea") {            
+        } else if (scene == "InvestigativeArea") {
+            timerGoing = false;
             groundshake = false;
             dialogBox.SetActive(false);
             UI.SetActive(false);
@@ -390,10 +412,12 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
+            Timerbox.SetActive(false);
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuakes" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             beenanywhere = true;
             dialogBox.SetActive(false);
+            Timerbox.SetActive(true);
             if (groundshake) {
                 PostUI.SetActive(true);
                 UI.SetActive(false);
@@ -406,6 +430,7 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
+            StartTime();
         } else if (scene == "Credits") {
             dialogBox.SetActive(false);
             UI.SetActive(false);

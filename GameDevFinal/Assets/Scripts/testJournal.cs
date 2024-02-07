@@ -116,14 +116,13 @@ public class testJournal : MonoBehaviour
             Pages[pageIndex].SetActive(false);
             pageIndex -= 1;
             Pages[pageIndex].SetActive(true);
+            
         }
         if (pageIndex +1 < Pages.Count && pageNum == 1){
             Pages[pageIndex].SetActive(false);
             pageIndex += 1;
             Pages[pageIndex].SetActive(true);
-        }
-        if(pageIndex == Pages.Count -1){
-
+            
         }
     }
     public void flipToPage(int pIndex){
@@ -152,6 +151,18 @@ public class testJournal : MonoBehaviour
             if (openedNotebook.activeSelf) {
                 testFlipRightPage(1);
             }
+        }
+        if(pageIndex == 0){
+            LeftTab.SetActive(false);
+        }
+        else{
+            LeftTab.SetActive(true);
+        }
+        if(pageIndex == Pages.Count -1){
+            RightTab.SetActive(false);
+        }
+        else{
+            RightTab.SetActive(true);
         }
     }
 }
