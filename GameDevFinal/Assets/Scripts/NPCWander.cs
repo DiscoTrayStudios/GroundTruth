@@ -18,9 +18,7 @@ public class NPCWander : MonoBehaviour {
     private bool playerNear = false;
     public Sprite front;
     public Sprite back;
-
     public Sprite left;
-
     public Sprite right;
 
 
@@ -37,9 +35,9 @@ public class NPCWander : MonoBehaviour {
             else                        { l--; }
         }
         if (l == 0) { playerNear = false; }
-        if (moveToWaypointCoroutine == null && !playerNear){
+        if (moveToWaypointCoroutine == null && !playerNear) {
             moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
-        }        
+        }
     }
 
     private IEnumerator MoveToWaypoint(){
@@ -51,7 +49,7 @@ public class NPCWander : MonoBehaviour {
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
                 if (colliding) {
                     direction = (transform.position - colPos).normalized;
-                    targetPosition = transform.position + (2*direction.normalized);
+                    targetPosition = transform.position + (direction.normalized);
                 } 
                 if (Vector3.Distance(player.transform.position, targetPosition) < 5f && GameManager.Instance.GetPlayerBusy()) {
                     currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
@@ -64,18 +62,16 @@ public class NPCWander : MonoBehaviour {
                 //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
                 if (!front.Equals(null) & !back.Equals(null)) {
                     if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){                    
-                        if(direction.x > 0){
+                        if(direction.x > 0) {
                             gameObject.GetComponent<SpriteRenderer>().sprite = right;
                         }
-                        else{
-                            gameObject.GetComponent<SpriteRenderer>().sprite = left;
-                        }  
+                        else { gameObject.GetComponent<SpriteRenderer>().sprite = left; }  
                     }
                     else if(Mathf.Abs(direction.y) > Mathf.Abs(direction.x)){
-                        if(direction.y >0){
+                        if (direction.y > 0) {
                             gameObject.GetComponent<SpriteRenderer>().sprite = back;
                         }
-                        else{
+                        else {
                             gameObject.GetComponent<SpriteRenderer>().sprite = front;
                         }
                     }
@@ -83,7 +79,7 @@ public class NPCWander : MonoBehaviour {
                 colliding = false;
                 yield return null;
             }
-            if(!front.Equals(null)){
+            if (!front.Equals(null)) {
                 gameObject.GetComponent<SpriteRenderer>().sprite = front; 
             }
             
@@ -104,6 +100,14 @@ public class NPCWander : MonoBehaviour {
                 StopCoroutine(moveToWaypointCoroutine);
             }
             gameObject.GetComponent<SpriteRenderer>().sprite = front; 
+        }
+    }
+
+    public void DontFaceFront(){
+        if(!front.Equals(null)){
+            if (moveToWaypointCoroutine == null) {
+                moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+            }
         }
     }
 

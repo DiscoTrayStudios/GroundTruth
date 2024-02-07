@@ -47935,10 +47935,10 @@ GameObject:
   - component: {fileID: 1529002002}
   - component: {fileID: 1529002005}
   - component: {fileID: 1529002004}
-  - component: {fileID: 1529002003}
   - component: {fileID: 1529002008}
   - component: {fileID: 1529002007}
   - component: {fileID: 1529002009}
+  - component: {fileID: 1529002010}
   m_Layer: 0
   m_Name: Farmer Wife
   m_TagString: NPC
@@ -47961,20 +47961,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 660921206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1529002003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529002001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: I love my husband, but he's a fool if he thinks anyone would believe that
-    nonsense...
 --- !u!61 &1529002004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48167,6 +48153,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1529002010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529002001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - I love my husband, but he's a fool if he thinks anyone would believe that nonsense...
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &1642671065
 GameObject:
   m_ObjectHideFlags: 0

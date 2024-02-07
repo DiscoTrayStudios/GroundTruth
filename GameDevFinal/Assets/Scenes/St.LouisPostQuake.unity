@@ -24030,6 +24030,7 @@ MonoBehaviour:
   testEvi: {fileID: 770101286}
   exPoint: {fileID: 0}
   whichDialogue: 1
+  talking: 0
 --- !u!212 &582157193
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24218,10 +24219,10 @@ GameObject:
   - component: {fileID: 746134566}
   - component: {fileID: 746134565}
   - component: {fileID: 746134564}
-  - component: {fileID: 746134563}
   - component: {fileID: 746134567}
   - component: {fileID: 746134568}
   - component: {fileID: 746134569}
+  - component: {fileID: 746134570}
   m_Layer: 0
   m_Name: Female Townsperson
   m_TagString: NPC
@@ -24229,19 +24230,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &746134563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746134562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: 'I could have sworn the river was flowing backwards the other day... '
 --- !u!61 &746134564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24449,6 +24437,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &746134570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746134562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - 'I could have sworn the river was flowing backwards the other day... '
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &770101284
 GameObject:
   m_ObjectHideFlags: 0
@@ -25141,6 +25148,7 @@ MonoBehaviour:
   testEvi: {fileID: 562661664}
   exPoint: {fileID: 0}
   whichDialogue: 0
+  talking: 0
 --- !u!61 &1033061326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25490,6 +25498,7 @@ MonoBehaviour:
   testEvi: {fileID: 688633781}
   exPoint: {fileID: 0}
   whichDialogue: 1
+  talking: 0
 --- !u!61 &1072947617
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28955,6 +28964,7 @@ MonoBehaviour:
   testEvi: {fileID: 562661664}
   exPoint: {fileID: 0}
   whichDialogue: 1
+  talking: 0
 --- !u!61 &1529045110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33836,6 +33846,7 @@ MonoBehaviour:
   testEvi: {fileID: 770101286}
   exPoint: {fileID: 0}
   whichDialogue: 0
+  talking: 0
 --- !u!61 &1754727271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33988,11 +33999,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1760869910}
   - component: {fileID: 1760869909}
-  - component: {fileID: 1760869908}
   - component: {fileID: 1760869907}
   - component: {fileID: 1760869911}
   - component: {fileID: 1760869912}
   - component: {fileID: 1760869913}
+  - component: {fileID: 1760869914}
   m_Layer: 0
   m_Name: Male Townsperson
   m_TagString: NPC
@@ -34045,19 +34056,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1760869908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760869906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: It is already difficult enough to rebuild without you bothering everybody...
 --- !u!212 &1760869909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34222,6 +34220,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1760869914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760869906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - It is already difficult enough to rebuild without you bothering everybody...
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &1793634979
 GameObject:
   m_ObjectHideFlags: 0
@@ -34584,6 +34601,7 @@ MonoBehaviour:
   testEvi: {fileID: 688633781}
   exPoint: {fileID: 0}
   whichDialogue: 0
+  talking: 0
 --- !u!114 &1866578264
 MonoBehaviour:
   m_ObjectHideFlags: 0

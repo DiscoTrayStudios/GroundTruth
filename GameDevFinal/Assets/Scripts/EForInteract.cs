@@ -22,13 +22,15 @@ public class EForInteract : MonoBehaviour {
     // private int currentTextIndex = 0;
 
     void Awake(){
-        if(testEvi){
-            exPoint = gameObject.transform.Find("ExPoint").gameObject;    
-        }
-        if(GameManager.CheckEvidence(evidence_name)){
-            // print("checking");
-            exPoint.SetActive(false);
-            print(exPoint.name);
+        if (evidence_name != "") {
+            if(testEvi){
+                exPoint = gameObject.transform.Find("ExPoint").gameObject;    
+            }
+            if(GameManager.CheckEvidence(evidence_name)){
+                // print("checking");
+                exPoint.SetActive(false);
+                print(exPoint.name);
+            }
         }
     }
 
@@ -37,13 +39,6 @@ public class EForInteract : MonoBehaviour {
             // canShowDialog = true;
             StartCoroutine(WaitForStart());
         }
-    }
-
-    void OnMouseUp()
-    {
-        // canShowDialog = true;
-        mousePressed  = true;
-        StartCoroutine(WaitForStart());
     }
 
     public void OnTriggerExit2D(Collider2D collider2D) {
@@ -59,11 +54,11 @@ public class EForInteract : MonoBehaviour {
     IEnumerator WaitForStart(){
         bool started = false;
         while(!started){
-            if (mousePressed || Input.GetKeyDown(KeyCode.E)){
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.E)){
                 dialogShown = true;
                 GameManager.Instance.StartDialogue(text);
-                collect();
-                if(gameObject.GetComponent<NPCWander>()!= null){
+                if (evidence_name != "") { collect(); }
+                if (gameObject.GetComponent<NPCWander>()!= null) {
                     gameObject.GetComponent<NPCWander>().FaceFront();
                     Camera.main.GetComponent<FollowCam>().enabled = false;
                     Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);

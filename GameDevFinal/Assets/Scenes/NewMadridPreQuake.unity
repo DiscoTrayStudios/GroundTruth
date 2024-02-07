@@ -51817,10 +51817,10 @@ GameObject:
   - component: {fileID: 167138961}
   - component: {fileID: 167138964}
   - component: {fileID: 167138963}
-  - component: {fileID: 167138962}
   - component: {fileID: 167138965}
   - component: {fileID: 167138966}
   - component: {fileID: 167138967}
+  - component: {fileID: 167138968}
   m_Layer: 0
   m_Name: SmallFarmer
   m_TagString: NPC
@@ -51843,19 +51843,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 165589207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &167138962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167138960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: I just want to farm and create a life for my family.
 --- !u!61 &167138963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52048,6 +52035,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &167138968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167138960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - I just want to farm and create a life for my family.
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &167311458
 GameObject:
   m_ObjectHideFlags: 0
@@ -60956,10 +60962,10 @@ GameObject:
   - component: {fileID: 596491538}
   - component: {fileID: 596491541}
   - component: {fileID: 596491540}
-  - component: {fileID: 596491539}
   - component: {fileID: 596491542}
   - component: {fileID: 596491543}
   - component: {fileID: 596491544}
+  - component: {fileID: 596491545}
   m_Layer: 0
   m_Name: Native Male
   m_TagString: NPC
@@ -60982,19 +60988,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 165589207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &596491539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596491537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: I don't want to join the United States.
 --- !u!61 &596491540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61187,6 +61180,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &596491545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596491537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - I don't want to join the United States.
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &608948821
 GameObject:
   m_ObjectHideFlags: 0
@@ -61894,6 +61906,7 @@ MonoBehaviour:
   testEvi: {fileID: 170264695}
   exPoint: {fileID: 0}
   whichDialogue: 0
+  talking: 0
 --- !u!61 &632093519
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62428,6 +62441,7 @@ MonoBehaviour:
   testEvi: {fileID: 103356774}
   exPoint: {fileID: 0}
   whichDialogue: 1
+  talking: 0
 --- !u!61 &639990197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67391,10 +67405,10 @@ GameObject:
   - component: {fileID: 997683079}
   - component: {fileID: 997683078}
   - component: {fileID: 997683077}
-  - component: {fileID: 997683076}
   - component: {fileID: 997683080}
   - component: {fileID: 997683081}
   - component: {fileID: 997683082}
+  - component: {fileID: 997683083}
   m_Layer: 0
   m_Name: Native FeMale
   m_TagString: NPC
@@ -67402,19 +67416,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &997683076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997683075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: Joining the United States does not seem bad.
 --- !u!61 &997683077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67622,6 +67623,25 @@ MonoBehaviour:
   back: {fileID: 1263108884, guid: a9c9b80da2a44f44d90f4a778387dd5a, type: 3}
   left: {fileID: 1747150581, guid: a9c9b80da2a44f44d90f4a778387dd5a, type: 3}
   right: {fileID: 178565606, guid: a9c9b80da2a44f44d90f4a778387dd5a, type: 3}
+--- !u!114 &997683083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997683075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - Joining the United States does not seem bad.
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &1042162465
 GameObject:
   m_ObjectHideFlags: 0
@@ -68113,6 +68133,7 @@ MonoBehaviour:
   testEvi: {fileID: 170264695}
   exPoint: {fileID: 0}
   whichDialogue: 1
+  talking: 0
 --- !u!61 &1054507613
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69460,6 +69481,7 @@ MonoBehaviour:
   testEvi: {fileID: 2119644335}
   exPoint: {fileID: 0}
   whichDialogue: 0
+  talking: 0
 --- !u!61 &1096000120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77077,6 +77099,7 @@ MonoBehaviour:
   testEvi: {fileID: 103356774}
   exPoint: {fileID: 0}
   whichDialogue: 0
+  talking: 0
 --- !u!114 &1657408942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78550,10 +78573,10 @@ GameObject:
   - component: {fileID: 1742125193}
   - component: {fileID: 1742125196}
   - component: {fileID: 1742125195}
-  - component: {fileID: 1742125194}
   - component: {fileID: 1742125197}
   - component: {fileID: 1742125198}
   - component: {fileID: 1742125199}
+  - component: {fileID: 1742125200}
   m_Layer: 0
   m_Name: Husband
   m_TagString: NPC
@@ -78576,19 +78599,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 165589207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1742125194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742125192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1649cf12d6a4487896d6a248afeac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: My wife is crazy!
 --- !u!61 &1742125195
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -78783,6 +78793,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1742125200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742125192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4188ee12f7e104ad19ede50e9e5ec2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - My wife is crazy!
+  evidence_name: 
+  testEvi: {fileID: 0}
+  exPoint: {fileID: 0}
+  whichDialogue: 0
+  talking: 0
 --- !u!1 &1743059602
 GameObject:
   m_ObjectHideFlags: 0
@@ -80263,6 +80292,7 @@ MonoBehaviour:
   testEvi: {fileID: 2119644335}
   exPoint: {fileID: 0}
   whichDialogue: 1
+  talking: 0
 --- !u!61 &1883024746
 BoxCollider2D:
   m_ObjectHideFlags: 0
