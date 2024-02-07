@@ -158,20 +158,11 @@ public class AStar : MonoBehaviour
                 }
             }
             if (path.Count > 0 && !GameManager.Instance.GetPlayerBusy()) {
-<<<<<<< HEAD
                 Vector3 targetDirection = (path.Peek() - transform.position).normalized;
                 transform.position = Vector3.MoveTowards(transform.position, path.Peek(), 4 * Time.deltaTime);
                 rb.velocity = new Vector2(10f * targetDirection.x, 10f * targetDirection.y);
                 if (path.Count == 0 || Vector3.Distance(transform.position, path.Peek()) < 0.05) {
                     path.Pop();                
-=======
-                Vector3 targetDirection = 5 * (path.Peek() - transform.position).normalized;
-                transform.position = Vector3.MoveTowards(transform.position, path.Peek(), 2 * Time.deltaTime);
-                rb.velocity = new Vector2(targetDirection.x, targetDirection.y);
-                if (path.Count == 0 || Vector3.Distance(transform.position, path.Peek()) < 0.05) {
-                    path.Pop();                
-                    // newDestination = true;
->>>>>>> a7a3f14e181ba76b9e0b365d652769c4ed49a6b8
                 } 
                 if      ( Mathf.Abs(targetDirection.x) <  targetDirection.y) { AnimatorUpdate(0); left = false; right = false; }                  
                 else if (-Mathf.Abs(targetDirection.x) >  targetDirection.y) { AnimatorUpdate(1); left = false; right = false; }
