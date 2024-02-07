@@ -23859,6 +23859,7 @@ GameObject:
   - component: {fileID: 582157190}
   - component: {fileID: 582157189}
   - component: {fileID: 582157188}
+  - component: {fileID: 582157195}
   m_Layer: 0
   m_Name: Nimrod Hughes
   m_TagString: NPC
@@ -24099,6 +24100,19 @@ Transform:
   - {fileID: 2131961576}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &582157195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582157187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1652552505}
 --- !u!1 &624359841
 GameObject:
   m_ObjectHideFlags: 0
@@ -24223,6 +24237,7 @@ GameObject:
   - component: {fileID: 746134568}
   - component: {fileID: 746134569}
   - component: {fileID: 746134570}
+  - component: {fileID: 746134571}
   m_Layer: 0
   m_Name: Female Townsperson
   m_TagString: NPC
@@ -24456,6 +24471,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &746134571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746134562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1652552505}
 --- !u!1 &770101284
 GameObject:
   m_ObjectHideFlags: 0
@@ -25120,6 +25148,7 @@ GameObject:
   - component: {fileID: 1033061329}
   - component: {fileID: 1033061330}
   - component: {fileID: 1033061331}
+  - component: {fileID: 1033061332}
   m_Layer: 0
   m_Name: Priest
   m_TagString: NPC
@@ -25359,6 +25388,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1033061332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033061324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1652552505}
 --- !u!1 &1072947612
 GameObject:
   m_ObjectHideFlags: 0
@@ -25374,6 +25416,7 @@ GameObject:
   - component: {fileID: 1072947615}
   - component: {fileID: 1072947614}
   - component: {fileID: 1072947613}
+  - component: {fileID: 1072947620}
   m_Layer: 0
   m_Name: Patricia Harrison
   m_TagString: NPC
@@ -25612,6 +25655,19 @@ Transform:
   - {fileID: 1103414353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1072947620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072947612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1652552505}
 --- !u!1 &1103414352
 GameObject:
   m_ObjectHideFlags: 0
@@ -28839,6 +28895,7 @@ GameObject:
   - component: {fileID: 1529045108}
   - component: {fileID: 1529045107}
   - component: {fileID: 1529045106}
+  - component: {fileID: 1529045113}
   m_Layer: 0
   m_Name: Akecheta
   m_TagString: NPC
@@ -29078,6 +29135,19 @@ Transform:
   - {fileID: 1741894474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1529045113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529045105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1652552505}
 --- !u!1 &1566514468
 GameObject:
   m_ObjectHideFlags: 0
@@ -33750,6 +33820,7 @@ GameObject:
   - component: {fileID: 1754727273}
   - component: {fileID: 1754727272}
   - component: {fileID: 1754727274}
+  - component: {fileID: 1754727275}
   m_Layer: 0
   m_Name: Farmer Man
   m_TagString: NPC
@@ -33989,6 +34060,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1754727275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754727267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1652552505}
 --- !u!1 &1760869906
 GameObject:
   m_ObjectHideFlags: 0
@@ -34004,6 +34088,7 @@ GameObject:
   - component: {fileID: 1760869912}
   - component: {fileID: 1760869913}
   - component: {fileID: 1760869914}
+  - component: {fileID: 1760869915}
   m_Layer: 0
   m_Name: Male Townsperson
   m_TagString: NPC
@@ -34239,6 +34324,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &1760869915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760869906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1652552505}
 --- !u!1 &1793634979
 GameObject:
   m_ObjectHideFlags: 0
@@ -34459,6 +34557,7 @@ GameObject:
   - component: {fileID: 1866578264}
   - component: {fileID: 1866578265}
   - component: {fileID: 1866578266}
+  - component: {fileID: 1866578267}
   m_Layer: 0
   m_Name: Politician
   m_TagString: NPC
@@ -34697,6 +34796,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1866578267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866578258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1652552505}
 --- !u!1 &1871178825
 GameObject:
   m_ObjectHideFlags: 0
@@ -34868,6 +34980,8 @@ MonoBehaviour:
   Credits: {fileID: 0}
   UI: {fileID: 0}
   testNotebook: {fileID: 0}
+  Timer: {fileID: 0}
+  Timerbox: {fileID: 0}
   postTestNotebook: {fileID: 0}
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}

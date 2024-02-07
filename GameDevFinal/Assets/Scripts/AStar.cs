@@ -21,11 +21,12 @@ public class AStar : MonoBehaviour
     public static bool left;
     public static bool right;
 
-    
     void Start()
     {
         path = new Stack<Vector3>();    
-        animator = GetComponent<Animator>();
+        if (GetComponent<Animator>() != null) {
+            animator = GetComponent<Animator>();
+        }
         // Get the TilemapCollider2D component
         TilemapCollider2D tilemapCollider = tilemap.GetComponent<TilemapCollider2D>();  
 
@@ -132,43 +133,45 @@ public class AStar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        if (horizontal != 0 | vertical != 0 || GameManager.Instance.GetPlayerBusy()) {
-            path = new Stack<Vector3>();
-        }
-        if (Input.GetMouseButtonDown(0)) {
-            // print("oy");
-            mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorldPos.z = 0f;
-            // rb.velocity = new Vector2(mouseWorldPos.x - transform.position.x, mouseWorldPos.y - transform.position.y);
-            Vector3 v3 = new Vector3(Mathf.Round(mouseWorldPos.x), Mathf.Round(mouseWorldPos.y), 0);
-            List<Collider2D> cols = Physics2D.OverlapCircleAll(mouseWorldPos, 0.25f).ToList();
-            var envcols = cols.Where(col => !col.CompareTag("NPC")).ToList();
-            if (!GameManager.Instance.GetPlayerBusy() && !(envcols.Count > 0)) {
-                path = Path(mouseWorldPos);
-                wait();
-                // string ot = "";
-                // foreach (Vector3 p in path) { 
-                //     ot +=  $"({p.x}, {p.y}), ";
-                // }
-                // print(ot);
+        if (gameObject.tag == "Player") {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            if (horizontal != 0 | vertical != 0 || GameManager.Instance.GetPlayerBusy()) {
+                path = new Stack<Vector3>();
             }
-        }
-        if (path.Count > 0 && !GameManager.Instance.GetPlayerBusy()) {
-            Vector3 targetDirection = (path.Peek() - transform.position).normalized;
-            transform.position = Vector3.MoveTowards(transform.position, path.Peek(), 2 * Time.deltaTime);
-            rb.velocity = new Vector2(targetDirection.x, targetDirection.y);
-            if (path.Count == 0 || Vector3.Distance(transform.position, path.Peek()) < 0.05) {
-                path.Pop();                
-                // newDestination = true;
-            } 
-            if      ( Mathf.Abs(targetDirection.x) <  targetDirection.y) { AnimatorUpdate(0); left = false; right = false; }                  
-            else if (-Mathf.Abs(targetDirection.x) >  targetDirection.y) { AnimatorUpdate(1); left = false; right = false; }
-            else if ( Mathf.Abs(targetDirection.y) <  targetDirection.x) { AnimatorUpdate(2); left = false;  right = true; }
-            else if (-Mathf.Abs(targetDirection.y) >  targetDirection.x) { AnimatorUpdate(2); left = true; right = false; }
-            else                                                         { AnimatorUpdate(3); left = false; right = false; }
+            if (Input.GetMouseButtonDown(0)) {
+                // print("oy");
+                mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseWorldPos.z = 0f;
+                // rb.velocity = new Vector2(mouseWorldPos.x - transform.position.x, mouseWorldPos.y - transform.position.y);
+                Vector3 v3 = new Vector3(Mathf.Round(mouseWorldPos.x), Mathf.Round(mouseWorldPos.y), 0);
+                List<Collider2D> cols = Physics2D.OverlapCircleAll(mouseWorldPos, 0.25f).ToList();
+                var envcols = cols.Where(col => !col.CompareTag("NPC")).ToList();
+                if (!GameManager.Instance.GetPlayerBusy() && !(envcols.Count > 0)) {
+                    path = Path(mouseWorldPos);
+                    wait();
+                    // string ot = "";
+                    // foreach (Vector3 p in path) { 
+                    //     ot +=  $"({p.x}, {p.y}), ";
+                    // }
+                    // print(ot);
+                }
+            }
+            if (path.Count > 0 && !GameManager.Instance.GetPlayerBusy()) {
+                Vector3 targetDirection = 5 * (path.Peek() - transform.position).normalized;
+                transform.position = Vector3.MoveTowards(transform.position, path.Peek(), 2 * Time.deltaTime);
+                rb.velocity = new Vector2(targetDirection.x, targetDirection.y);
+                if (path.Count == 0 || Vector3.Distance(transform.position, path.Peek()) < 0.05) {
+                    path.Pop();                
+                    // newDestination = true;
+                } 
+                if      ( Mathf.Abs(targetDirection.x) <  targetDirection.y) { AnimatorUpdate(0); left = false; right = false; }                  
+                else if (-Mathf.Abs(targetDirection.x) >  targetDirection.y) { AnimatorUpdate(1); left = false; right = false; }
+                else if ( Mathf.Abs(targetDirection.y) <  targetDirection.x) { AnimatorUpdate(2); left = false;  right = true; }
+                else if (-Mathf.Abs(targetDirection.y) >  targetDirection.x) { AnimatorUpdate(2); left = true; right = false; }
+                else                                                         { AnimatorUpdate(3); left = false; right = false; }
 
+            }
         }
     }   
 

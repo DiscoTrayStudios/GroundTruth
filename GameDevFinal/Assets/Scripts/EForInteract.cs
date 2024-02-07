@@ -23,7 +23,7 @@ public class EForInteract : MonoBehaviour {
 
     void Awake(){
         if (evidence_name != "") {
-            if(testEvi){
+            if(testEvi) {
                 exPoint = gameObject.transform.Find("ExPoint").gameObject;    
             }
             if(GameManager.CheckEvidence(evidence_name)){

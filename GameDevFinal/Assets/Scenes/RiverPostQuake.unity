@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 268605877}
   - component: {fileID: 268605878}
   - component: {fileID: 268605879}
+  - component: {fileID: 268605880}
   m_Layer: 0
   m_Name: Sailor 2
   m_TagString: NPC
@@ -638,6 +639,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &268605880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268605871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1 &436210043
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,6 +795,7 @@ GameObject:
   - component: {fileID: 458145199}
   - component: {fileID: 458145200}
   - component: {fileID: 458145201}
+  - component: {fileID: 458145202}
   m_Layer: 0
   m_Name: Sailor 1
   m_TagString: NPC
@@ -1021,6 +1036,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &458145202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458145194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1 &482920095
 GameObject:
   m_ObjectHideFlags: 0
@@ -35520,6 +35548,7 @@ GameObject:
   - component: {fileID: 1146369782}
   - component: {fileID: 1146369783}
   - component: {fileID: 1146369784}
+  - component: {fileID: 1146369785}
   m_Layer: 0
   m_Name: Sailor 5
   m_TagString: NPC
@@ -35759,6 +35788,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1146369785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146369777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1 &1149944538
 GameObject:
   m_ObjectHideFlags: 0
@@ -35929,6 +35971,7 @@ GameObject:
   - component: {fileID: 1417099255}
   - component: {fileID: 1417099259}
   - component: {fileID: 1417099260}
+  - component: {fileID: 1417099261}
   m_Layer: 0
   m_Name: Sailor 6
   m_TagString: NPC
@@ -36168,6 +36211,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1417099261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417099253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1 &1450194547
 GameObject:
   m_ObjectHideFlags: 0
@@ -36183,6 +36239,7 @@ GameObject:
   - component: {fileID: 1450194550}
   - component: {fileID: 1450194549}
   - component: {fileID: 1450194554}
+  - component: {fileID: 1450194555}
   m_Layer: 0
   m_Name: Nimrod Hughes
   m_TagString: NPC
@@ -36419,6 +36476,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1450194555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450194547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1 &1470870999
 GameObject:
   m_ObjectHideFlags: 0
@@ -36498,6 +36568,7 @@ GameObject:
   - component: {fileID: 1519401425}
   - component: {fileID: 1519401424}
   - component: {fileID: 1519401429}
+  - component: {fileID: 1519401430}
   m_Layer: 0
   m_Name: Eliza Bryan
   m_TagString: NPC
@@ -36736,6 +36807,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1519401430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519401422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1 &1605568451
 GameObject:
   m_ObjectHideFlags: 0
@@ -47560,6 +47644,7 @@ GameObject:
   - component: {fileID: 1867861369}
   - component: {fileID: 1867861370}
   - component: {fileID: 1867861371}
+  - component: {fileID: 1867861372}
   m_Layer: 0
   m_Name: Sailor 3
   m_TagString: NPC
@@ -47796,6 +47881,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &1867861372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867861362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1 &1936279207
 GameObject:
   m_ObjectHideFlags: 0
@@ -47811,6 +47909,7 @@ GameObject:
   - component: {fileID: 1936279210}
   - component: {fileID: 1936279209}
   - component: {fileID: 1936279214}
+  - component: {fileID: 1936279215}
   m_Layer: 0
   m_Name: Tecumseh
   m_TagString: NPC
@@ -48049,6 +48148,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1936279215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936279207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1 &1996361341
 GameObject:
   m_ObjectHideFlags: 0
@@ -48240,6 +48352,7 @@ GameObject:
   - component: {fileID: 2072108696}
   - component: {fileID: 2072108697}
   - component: {fileID: 2072108698}
+  - component: {fileID: 2072108699}
   m_Layer: 0
   m_Name: Sailor 4
   m_TagString: NPC
@@ -48475,6 +48588,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &2072108699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072108690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1756993755}
 --- !u!1001 &2094398408
 PrefabInstance:
   m_ObjectHideFlags: 0
