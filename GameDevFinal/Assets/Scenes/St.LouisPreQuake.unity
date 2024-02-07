@@ -24462,7 +24462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
+  tilemap: {fileID: 1652552505}
 --- !u!1 &822133569
 GameObject:
   m_ObjectHideFlags: 0
@@ -34182,7 +34182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
+  tilemap: {fileID: 1652552505}
 --- !u!1 &1793634979
 GameObject:
   m_ObjectHideFlags: 0
