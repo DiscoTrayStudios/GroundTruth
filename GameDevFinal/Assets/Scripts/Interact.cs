@@ -25,18 +25,7 @@ public class Interact : MonoBehaviour {
         }
     }
 
-    void OnMouseUp()
-    {
-        if (!GameManager.Instance.GetPlayerBusy() & !talking) {
-            GameManager.Instance.DialogShow(text);
-            talking = true;
-            StartCoroutine(Dialog());
-            if(gameObject.GetComponent<NPCWander>() != null){
-                gameObject.GetComponent<NPCWander>().FaceFront();
-            }           
-            Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
-        }
-    }
+
 
 
     public void OnTriggerExit2D(Collider2D collider2D) {
@@ -47,7 +36,7 @@ public class Interact : MonoBehaviour {
     }
 
     private IEnumerator Dialog(){
-        while(!Input.GetKeyDown(KeyCode.E)){
+        while(!Input.GetKeyDown(KeyCode.E) && !Input.GetMouseButtonDown(0) && !Input.GetMouseButtonDown(1)){
             yield return null;        
         } 
         GameManager.Instance.DialogHide();
@@ -59,19 +48,6 @@ public class Interact : MonoBehaviour {
 
     void Start() {
         talking = false;
-    }
-
-    void Update() {
-        // if (Input.GetMouseButtonDown(0)) {
-        //     // print("oy");
-        //     mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //     mouseWorldPos.z = 0f;
-        //     var cols = Physics2D.OverlapCircleAll(mouseWorldPos, 0.25f);
-        //     foreach (Collider2D col in cols) {
-        //         if (col.gameObject == gameObject) { Dialog(); }
-        //     }
-        // }
-
     }
 
 
