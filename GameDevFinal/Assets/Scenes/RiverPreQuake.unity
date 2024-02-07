@@ -34149,6 +34149,7 @@ GameObject:
   - component: {fileID: 268856770}
   - component: {fileID: 268856774}
   - component: {fileID: 268856775}
+  - component: {fileID: 268856776}
   m_Layer: 0
   m_Name: Eliza Bryan
   m_TagString: Untagged
@@ -34383,6 +34384,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &268856776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268856768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1663308822}
 --- !u!1 &307850907
 GameObject:
   m_ObjectHideFlags: 0
@@ -47262,6 +47276,7 @@ GameObject:
   - component: {fileID: 1278200349}
   - component: {fileID: 1278200348}
   - component: {fileID: 1278200347}
+  - component: {fileID: 1278200353}
   m_Layer: 0
   m_Name: Tecumseh's Sister
   m_TagString: NPC
@@ -47499,6 +47514,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1278200353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278200345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1663308822}
 --- !u!1 &1287879055
 GameObject:
   m_ObjectHideFlags: 0
@@ -47939,6 +47967,7 @@ GameObject:
   - component: {fileID: 1529002007}
   - component: {fileID: 1529002009}
   - component: {fileID: 1529002010}
+  - component: {fileID: 1529002011}
   m_Layer: 0
   m_Name: Farmer Wife
   m_TagString: NPC
@@ -48172,6 +48201,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &1529002011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529002001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1663308822}
 --- !u!1 &1642671065
 GameObject:
   m_ObjectHideFlags: 0
@@ -48187,6 +48229,7 @@ GameObject:
   - component: {fileID: 1642671071}
   - component: {fileID: 1642671072}
   - component: {fileID: 1642671073}
+  - component: {fileID: 1642671074}
   m_Layer: 0
   m_Name: Girl
   m_TagString: Untagged
@@ -48423,6 +48466,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1642671074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642671065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1663308822}
 --- !u!1 &1644550977
 GameObject:
   m_ObjectHideFlags: 0
@@ -55524,6 +55580,7 @@ GameObject:
   - component: {fileID: 1824936333}
   - component: {fileID: 1824936335}
   - component: {fileID: 1824936334}
+  - component: {fileID: 1824936336}
   m_Layer: 0
   m_Name: Farmer
   m_TagString: NPC
@@ -55760,6 +55817,19 @@ MonoBehaviour:
   back: {fileID: -969342814, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   left: {fileID: 664809311, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
   right: {fileID: -1490685038, guid: 8c9a9ef12b120074a9c4649e97aab232, type: 3}
+--- !u!114 &1824936336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824936327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1663308822}
 --- !u!1 &1832596119
 GameObject:
   m_ObjectHideFlags: 0
@@ -55775,6 +55845,7 @@ GameObject:
   - component: {fileID: 1832596123}
   - component: {fileID: 1832596122}
   - component: {fileID: 1832596121}
+  - component: {fileID: 1832596127}
   m_Layer: 0
   m_Name: Patricia Harrison
   m_TagString: NPC
@@ -56012,6 +56083,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1832596127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832596119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1663308822}
 --- !u!1 &1834643778
 GameObject:
   m_ObjectHideFlags: 0
@@ -62896,6 +62980,7 @@ GameObject:
   - component: {fileID: 1847311885}
   - component: {fileID: 1847311884}
   - component: {fileID: 1847311883}
+  - component: {fileID: 1847311889}
   m_Layer: 0
   m_Name: Tecumseh
   m_TagString: NPC
@@ -63133,6 +63218,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1847311889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847311881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1663308822}
 --- !u!1 &2128983690
 GameObject:
   m_ObjectHideFlags: 0

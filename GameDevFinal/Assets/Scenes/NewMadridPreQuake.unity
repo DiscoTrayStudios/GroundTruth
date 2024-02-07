@@ -51821,6 +51821,7 @@ GameObject:
   - component: {fileID: 167138966}
   - component: {fileID: 167138967}
   - component: {fileID: 167138968}
+  - component: {fileID: 167138969}
   m_Layer: 0
   m_Name: SmallFarmer
   m_TagString: NPC
@@ -52054,6 +52055,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &167138969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167138960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &167311458
 GameObject:
   m_ObjectHideFlags: 0
@@ -59935,6 +59949,8 @@ MonoBehaviour:
   Credits: {fileID: 486926348}
   UI: {fileID: 0}
   testNotebook: {fileID: 0}
+  Timer: {fileID: 0}
+  Timerbox: {fileID: 0}
   postTestNotebook: {fileID: 0}
   BossUI: {fileID: 0}
   PostUI: {fileID: 0}
@@ -60966,6 +60982,7 @@ GameObject:
   - component: {fileID: 596491543}
   - component: {fileID: 596491544}
   - component: {fileID: 596491545}
+  - component: {fileID: 596491546}
   m_Layer: 0
   m_Name: Native Male
   m_TagString: NPC
@@ -61199,6 +61216,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &596491546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596491537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &608948821
 GameObject:
   m_ObjectHideFlags: 0
@@ -61751,6 +61781,7 @@ GameObject:
   - component: {fileID: 632093521}
   - component: {fileID: 632093522}
   - component: {fileID: 632093523}
+  - component: {fileID: 632093524}
   m_Layer: 0
   m_Name: Male Farmer (1)
   m_TagString: NPC
@@ -62099,6 +62130,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &632093524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632093514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &636543736
 GameObject:
   m_ObjectHideFlags: 0
@@ -62193,6 +62237,7 @@ GameObject:
   - component: {fileID: 639990193}
   - component: {fileID: 639990192}
   - component: {fileID: 639990191}
+  - component: {fileID: 639990199}
   m_Layer: 0
   m_Name: Tecumseh
   m_TagString: NPC
@@ -62539,6 +62584,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &639990199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639990189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &648443821
 GameObject:
   m_ObjectHideFlags: 0
@@ -67409,6 +67467,7 @@ GameObject:
   - component: {fileID: 997683081}
   - component: {fileID: 997683082}
   - component: {fileID: 997683083}
+  - component: {fileID: 997683084}
   m_Layer: 0
   m_Name: Native FeMale
   m_TagString: NPC
@@ -67642,6 +67701,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &997683084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997683075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &1042162465
 GameObject:
   m_ObjectHideFlags: 0
@@ -67884,6 +67956,7 @@ GameObject:
   - component: {fileID: 1054507609}
   - component: {fileID: 1054507608}
   - component: {fileID: 1054507607}
+  - component: {fileID: 1054507615}
   m_Layer: 0
   m_Name: Eliza Bryan
   m_TagString: NPC
@@ -68231,6 +68304,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1054507615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054507605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &1057372549
 GameObject:
   m_ObjectHideFlags: 0
@@ -69328,6 +69414,7 @@ GameObject:
   - component: {fileID: 1096000122}
   - component: {fileID: 1096000123}
   - component: {fileID: 1096000124}
+  - component: {fileID: 1096000125}
   m_Layer: 0
   m_Name: Unionist
   m_TagString: NPC
@@ -69674,6 +69761,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1096000125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096000115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &1099984200
 GameObject:
   m_ObjectHideFlags: 0
@@ -76957,6 +77057,7 @@ GameObject:
   - component: {fileID: 1657408944}
   - component: {fileID: 1657408945}
   - component: {fileID: 1657408946}
+  - component: {fileID: 1657408947}
   m_Layer: 0
   m_Name: Female Creature Seer
   m_TagString: NPC
@@ -77308,6 +77409,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &1657408947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657408936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &1660815579
 GameObject:
   m_ObjectHideFlags: 0
@@ -78577,6 +78691,7 @@ GameObject:
   - component: {fileID: 1742125198}
   - component: {fileID: 1742125199}
   - component: {fileID: 1742125200}
+  - component: {fileID: 1742125201}
   m_Layer: 0
   m_Name: Husband
   m_TagString: NPC
@@ -78812,6 +78927,19 @@ MonoBehaviour:
   exPoint: {fileID: 0}
   whichDialogue: 0
   talking: 0
+--- !u!114 &1742125201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742125192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &1743059602
 GameObject:
   m_ObjectHideFlags: 0
@@ -80043,6 +80171,7 @@ GameObject:
   - component: {fileID: 1883024742}
   - component: {fileID: 1883024741}
   - component: {fileID: 1883024740}
+  - component: {fileID: 1883024748}
   m_Layer: 0
   m_Name: Politician
   m_TagString: NPC
@@ -80390,6 +80519,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1883024748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883024738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba7fd82e75e2e42a98b535d23aebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 245172399}
 --- !u!1 &1884302325
 GameObject:
   m_ObjectHideFlags: 0

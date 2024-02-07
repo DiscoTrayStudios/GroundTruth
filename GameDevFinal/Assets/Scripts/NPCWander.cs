@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class NPCWander : MonoBehaviour {
     public Waypoint[] waypoints;
+    private Stack<Vector3> path;
     public float moveSpeed = 2f;
     public GameObject player;
 
@@ -23,6 +24,7 @@ public class NPCWander : MonoBehaviour {
 
 
     void Start() {
+        path = new Stack<Vector3>();    
         rb = GetComponent<Rigidbody2D>();
         moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
     }
@@ -44,20 +46,15 @@ public class NPCWander : MonoBehaviour {
         while (!playerNear) {
             Waypoint currentWaypoint = waypoints[currentWaypointIndex];
             Vector3 targetPosition = currentWaypoint.transform.position;
+            path = gameObject.GetComponent<AStar>().Path(targetPosition);
             Vector3 direction = (targetPosition - transform.position).normalized;
             // Move towards the waypoint
-            while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
-                if (colliding) {
-                    direction = (transform.position - colPos).normalized;
-                    targetPosition = transform.position + (direction.normalized);
-                } 
-                if (Vector3.Distance(player.transform.position, targetPosition) < 5f && GameManager.Instance.GetPlayerBusy()) {
-                    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-                    currentWaypoint = waypoints[currentWaypointIndex];
-                    targetPosition = currentWaypoint.transform.position;
-                    direction = (targetPosition - transform.position).normalized;
+            while (path.Count > 0) {
+                transform.position = Vector3.MoveTowards(transform.position, path.Peek(), moveSpeed * Time.deltaTime);
+                if (Vector3.Distance(transform.position, path.Peek()) < 0.1f) {
+                    path.Pop();
                 }
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                
                 rb.velocity = direction * moveSpeed;
                 //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
                 if (!front.Equals(null) & !back.Equals(null)) {
