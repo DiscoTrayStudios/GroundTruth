@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EForInteract : MonoBehaviour {
 
@@ -37,7 +38,7 @@ public class EForInteract : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
             // canShowDialog = true;
-            StartInteract();
+            StartCoroutine(WaitForStart());
         }
     }
 
@@ -51,10 +52,17 @@ public class EForInteract : MonoBehaviour {
 
 
 
-    public void StartInteract(){
-        dialogShown = true;
+    IEnumerator WaitForStart(){
+        
+        bool started = false;
+        while(!started){
+            if(Input.GetKeyDown(KeyCode.E)){
+                started = true;
+            }
+            yield return null;
+        }
         GameManager.Instance.StartDialogue(text);
-            
+        dialogShown = true;
         if (gameObject.GetComponent<NPCWander>()!= null) {
             gameObject.GetComponent<NPCWander>().FaceFront();
             Camera.main.GetComponent<FollowCam>().enabled = false;
