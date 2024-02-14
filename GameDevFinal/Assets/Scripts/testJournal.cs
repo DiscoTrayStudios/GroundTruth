@@ -23,6 +23,8 @@ public class testJournal : MonoBehaviour
     private List<TextMeshProUGUI> journalBoxes = new List<TextMeshProUGUI>();
 
     private int pageIndex;
+
+    public GameObject Exclaim;
     public GameObject PageOne;
     public GameObject PageTwo;
     public GameObject PageThree;
@@ -109,6 +111,28 @@ public class testJournal : MonoBehaviour
         }
         boxIndex = 0;
         pageIndex = 0;
+    }
+
+    public void Notify(){
+        Debug.Log("nnot");
+        StartCoroutine("JournalNotify");
+        StartCoroutine("JournalNotify");
+    }
+    IEnumerator JournalNotify(){
+        Exclaim.SetActive(true);
+        float time = 0;
+        float duration = 1.5f;
+        Color startValue = new Color (1,1,1,1);
+        Color endValue = new Color(1, 1, 1, 0);
+        Image image = Exclaim.GetComponent<Image>();
+
+        while (time < duration)
+        {
+            image.color = Color.Lerp(startValue, endValue, time / duration);
+            time+= Time.deltaTime;
+            yield return null;
+        }
+        Exclaim.SetActive(false);
     }
 
     public void testFlipRightPage(int pageNum){

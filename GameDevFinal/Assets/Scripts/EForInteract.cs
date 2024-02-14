@@ -16,16 +16,16 @@ public class EForInteract : MonoBehaviour {
 
     public GameObject exPoint;
 
+    //private bool SpokenTo = false;
+
     public bool whichDialogue;
     public bool talking;
 
     // private int currentTextIndex = 0;
 
     void Awake(){
+        exPoint = gameObject.transform.Find("ExPoint").gameObject;   
         if (evidence_name != "") {
-            if(testEvi) {
-                exPoint = gameObject.transform.Find("ExPoint").gameObject;    
-            }
             if(GameManager.CheckEvidence(evidence_name)){
                 // print("checking");
                 exPoint.SetActive(false);
@@ -37,7 +37,7 @@ public class EForInteract : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
             // canShowDialog = true;
-            StartCoroutine(WaitForStart());
+            StartInteract();
         }
     }
 
@@ -51,21 +51,17 @@ public class EForInteract : MonoBehaviour {
 
 
 
-    IEnumerator WaitForStart(){
-        bool started = false;
-        while(!started){
-            dialogShown = true;
-            GameManager.Instance.StartDialogue(text);
-            if (evidence_name != "") { collect(); }
-            if (gameObject.GetComponent<NPCWander>()!= null) {
-                gameObject.GetComponent<NPCWander>().FaceFront();
-                Camera.main.GetComponent<FollowCam>().enabled = false;
-                Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
-                talking = true;
-            }
-            started = true;
-            yield return null;
+    public void StartInteract(){
+        dialogShown = true;
+        GameManager.Instance.StartDialogue(text);
+            
+        if (gameObject.GetComponent<NPCWander>()!= null) {
+            gameObject.GetComponent<NPCWander>().FaceFront();
+            Camera.main.GetComponent<FollowCam>().enabled = false;
+            Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);             
         }
+        talking = true;
+        if (evidence_name != "") { collect(); }   
         StartCoroutine(WaitForEnd());
     }
     IEnumerator WaitForEnd(){
@@ -76,6 +72,7 @@ public class EForInteract : MonoBehaviour {
         Camera.main.GetComponent<ZoomCamera>().UnZoom();
         talking = false;
         mousePressed = false;
+        exPoint.SetActive(false);
         StopAllCoroutines();    
     }
     void Update() {
@@ -125,7 +122,6 @@ public class EForInteract : MonoBehaviour {
                 ArticleManager.bothDialogues(ArticleManager.getEvidenceIndex(testEvi), testEvi); 
             }
         }
-        exPoint.SetActive(false);
         print("Evidence collected");
         //Journal.addToJournal(evidence_name);
         //testJournal.Instance.testAddToJournal(testEvi); 
