@@ -61,11 +61,11 @@ public class NewPlayerMovement : MonoBehaviour
         }
 
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-        if (horizontal > 0) {
+        if (horizontal > 0 || AStar.GetRight()) {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
             left = false;
             right = true;
-        } else if (horizontal < 0) {
+        } else if (horizontal < 0  || AStar.GetLeft()) {
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
             left = true;
             right = false;

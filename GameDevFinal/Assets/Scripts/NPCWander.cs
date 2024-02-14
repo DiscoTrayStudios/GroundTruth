@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class NPCWander : MonoBehaviour {
     public Waypoint[] waypoints;
+    private Stack<Vector3> path;
     public float moveSpeed = 2f;
     public GameObject player;
 
@@ -18,59 +19,65 @@ public class NPCWander : MonoBehaviour {
     private bool playerNear = false;
     public Sprite front;
     public Sprite back;
-
     public Sprite left;
-
     public Sprite right;
 
 
     void Start() {
+        path = new Stack<Vector3>();    
         rb = GetComponent<Rigidbody2D>();
-        moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
+        //moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
     }
 
     void Update() {
-        Collider2D[] near = Physics2D.OverlapCircleAll(rb.gameObject.transform.position, 1.5f);
-        int l = near.Length;
-        foreach (Collider2D n in near) {
-            if (n.CompareTag("Player")) { playerNear = true;  }
-            else                        { l--; }
+        if (gameObject.activeSelf) {
+            Collider2D[] near = Physics2D.OverlapCircleAll(rb.gameObject.transform.position, 1.0f);
+            int l = near.Length;
+            foreach (Collider2D n in near) {
+                if (n.CompareTag("Player")) { playerNear = true;  }
+                else                        { l--; }
+            }
+            if (l == 0) { playerNear = false; }
+            if (moveToWaypointCoroutine == null && !playerNear) {
+                moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+            }
         }
-        if (l == 0) { playerNear = false; }
-        if (moveToWaypointCoroutine == null && !playerNear){
-            moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
-        }        
     }
 
     private IEnumerator MoveToWaypoint(){
-        while (!playerNear){
+        while (!playerNear) {
             Waypoint currentWaypoint = waypoints[currentWaypointIndex];
             Vector3 targetPosition = currentWaypoint.transform.position;
+            path = gameObject.GetComponent<AStar>().Path(targetPosition);
             Vector3 direction = (targetPosition - transform.position).normalized;
             // Move towards the waypoint
-            while (Vector3.Distance(transform.position, targetPosition) > 0.1f) {
-                if (colliding) {
-                    direction = (transform.position - colPos).normalized;
-                    targetPosition = transform.position + direction.normalized;
+            while (path.Count > 0) {
+                transform.position = Vector3.MoveTowards(transform.position, path.Peek(), moveSpeed * Time.deltaTime);
+                if (Vector3.Distance(transform.position, path.Peek()) < 0.1f) {
+                    path.Pop();
                 }
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                if (colliding || (playerNear && GameManager.Instance.GetPlayerBusy())) {
+                    currentWaypoint = waypoints[UnityEngine.Random.Range(0,waypoints.Length)];
+                    targetPosition = currentWaypoint.transform.position;
+                    path = gameObject.GetComponent<AStar>().Path(targetPosition);
+                    direction = (targetPosition - transform.position).normalized;
+                    colliding = false;
+                }
+
                 rb.velocity = direction * moveSpeed;
                 //if(transform.position.x - targetPosition.x > transform.position.x - targetPosition.x)
-                if(!front.Equals(null) & !back.Equals(null)){
-                    if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){
-                    
-                        if(direction.x > 0){
+                if (!front.Equals(null) & !back.Equals(null) & !playerNear) {
+                    if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y)){                    
+                        if(direction.x > 0) {
                             gameObject.GetComponent<SpriteRenderer>().sprite = right;
                         }
-                        else{
-                            gameObject.GetComponent<SpriteRenderer>().sprite = left;
-                        }  
+                        else { gameObject.GetComponent<SpriteRenderer>().sprite = left; }  
                     }
                     else if(Mathf.Abs(direction.y) > Mathf.Abs(direction.x)){
-                        if(direction.y >0){
+                        if (direction.y > 0) {
                             gameObject.GetComponent<SpriteRenderer>().sprite = back;
                         }
-                        else{
+                        else {
                             gameObject.GetComponent<SpriteRenderer>().sprite = front;
                         }
                     }
@@ -78,7 +85,7 @@ public class NPCWander : MonoBehaviour {
                 colliding = false;
                 yield return null;
             }
-            if(!front.Equals(null)){
+            if (!front.Equals(null)) {
                 gameObject.GetComponent<SpriteRenderer>().sprite = front; 
             }
             
@@ -93,10 +100,22 @@ public class NPCWander : MonoBehaviour {
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
     }
+
+
     public void FaceFront(){
         if(!front.Equals(null)){
-            StopAllCoroutines();
+            if (moveToWaypointCoroutine != null) {
+                StopCoroutine(moveToWaypointCoroutine);
+            }
             gameObject.GetComponent<SpriteRenderer>().sprite = front; 
+        }
+    }
+
+    public void DontFaceFront(){
+        if(!front.Equals(null)){
+            if (moveToWaypointCoroutine == null) {
+                moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+            }
         }
     }
 
@@ -136,8 +155,9 @@ public class NPCWander : MonoBehaviour {
     }
 
     void OnCollisionExit2D(Collision2D collision) {
-        if (moveToWaypointCoroutine == null){
+        if (moveToWaypointCoroutine == null && collision.gameObject.activeSelf){
                 moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
+                colliding = false;
         }
     }
 }

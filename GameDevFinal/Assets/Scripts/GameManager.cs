@@ -31,7 +31,9 @@ public class GameManager : MonoBehaviour
     public GameObject Credits;
     public GameObject UI;
     public GameObject testNotebook;
+    public GameObject Timer;
 
+    public GameObject Timerbox;
     public GameObject postTestNotebook;
     public GameObject BossUI;
     public GameObject PostUI;
@@ -73,9 +75,12 @@ public class GameManager : MonoBehaviour
     public string currentScene    = "TitleScreen";
     public string currentLocation = "TitleScreen";
     public static bool post = false;
+
+    public static bool timerGoing = false;
     public static string article  = "";
     private bool beenanywhere = false;
-
+    private int haveEvidence = 0;
+    //0 if no evidence, 1 if evidence has been added, 2 if the journal has appeared.
     public bool seenintro;
     public static string feedback = "";
 
@@ -108,7 +113,14 @@ public class GameManager : MonoBehaviour
         }
         dateText.text = "Date: " + month + "/" + days.ToString() + "/" + year;
         dueDateText.text = "Due: " + month + "/" + finalDay + "/" + year;    
+        if (currentScene == "Boss") {
+            if(Input.GetKey(KeyCode.T) && Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.C)) {
+                BossUI.SetActive(false);
+                DialogHide();
+                GameDialogHide();
+            }
 
+        }
 
         /**if (groundshake) {
             if (pDays > pFinalDay) {
@@ -124,6 +136,14 @@ public class GameManager : MonoBehaviour
       //  }
     }
 
+    public void StartTime(){
+        Debug.Log("outgm");
+        if(Timer.GetComponent<Timer>().Started == false){
+            Timer.GetComponent<Timer>().StartTimer();
+            timerGoing = true;
+            Debug.Log("gm");
+        }
+    }
     public bool GetPlayerBusy(){
         return playerBusy;
     }
@@ -144,6 +164,11 @@ public class GameManager : MonoBehaviour
         if(!testevi.test_collected){
             testevi.setCollected(true);
             TestEvidenceList.Add(testevi);
+            /*if(!haveEvidence){
+                haveEvidence = true;
+                Debug.Log("shouldopen");
+                testNotebook.GetComponent<testJournal>().openingJournal();
+            }*/
 //            print(testevi.dialogue);         // literal dialogue
 //            print(testevi.test_evidence);         // sentence
 //            print(testevi.test_evidence_summary); // phrase
@@ -216,18 +241,25 @@ public class GameManager : MonoBehaviour
     public void DialogShow(string text) {
         dialogBox.SetActive(true);
         StopAllCoroutines();
-        StartCoroutine(TypeText(dialogText, text));
         playerBusy = true;
+        StartCoroutine(TypeText(dialogText, text));
     }
 
     public void DialogHide(){
         dialogBox.SetActive(false);
         playerBusy = false;
+        if(haveEvidence == 1){
+            testNotebook.GetComponent<testJournal>().openingJournal();
+            testNotebook.GetComponent<testJournal>().flipToPage(1);
+
+            haveEvidence = 2;
+        }
     }
 
     public void FirstTown() {
         if (!beenanywhere) {
             testNotebook.SetActive(true);
+            SetPlayerBusy(true);
         } 
     }
 
@@ -254,16 +286,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void AddEvidence(string evi) {
+    public void AddEvidence(string evi) {
         if (!evidence.ContainsKey(evi)) {
             evidence.Add(evi, true);
-        } else {
-            print("Already Added Evidence");
-        }
+        } 
+        if(haveEvidence == 0){
+                haveEvidence = 1;
+            }
     }
 
     public static bool CheckEvidence(string evi){
-        print(evidence.ContainsKey(evi));
+        // print(evidence.ContainsKey(evi));
         return evidence.ContainsKey(evi);
     }
 
@@ -314,7 +347,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void BackToOffice(){
+        SetPlayerBusy(false);
+        if(!post){
+            ChangeScene("InvestigativeArea");
+        }
+        else{
+            ChangeScene("PostQuake");
+        }
+        TravelDisplay.GetComponent<TravelDisplay>().ShowTraveling("desk");
+    }
 
     IEnumerator LoadYourAsyncScene(string scene) {
         if (scene != "InvestigativeArea") {currentLocation = scene;}
@@ -359,7 +401,7 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(false);
             testNotebook.SetActive(false);
         } else if (scene == "InvestigativeArea") {
-            
+            timerGoing = false;
             groundshake = false;
             dialogBox.SetActive(false);
             UI.SetActive(false);
@@ -370,11 +412,13 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
-        } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuakes" || scene == "RiverPreQuake" || 
+            Timerbox.SetActive(false);
+        } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             beenanywhere = true;
             dialogBox.SetActive(false);
-            if (groundshake) {
+            Timerbox.SetActive(true);
+            if (post) {
                 PostUI.SetActive(true);
                 UI.SetActive(false);
             } else {
@@ -383,9 +427,11 @@ public class GameManager : MonoBehaviour
             }
             Title.SetActive(false);
             InvesArea.SetActive(false);
+            SetPlayerBusy(false);
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
+            StartTime();
         } else if (scene == "Credits") {
             dialogBox.SetActive(false);
             UI.SetActive(false);

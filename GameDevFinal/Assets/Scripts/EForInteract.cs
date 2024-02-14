@@ -6,9 +6,10 @@ public class EForInteract : MonoBehaviour {
 
     public string[] text;
 
-    private bool canShowDialog;
+    // private bool canShowDialog;
 
     private bool dialogShown;
+    private bool mousePressed;
 
     public string evidence_name;
     public TestEvidence testEvi;
@@ -16,50 +17,53 @@ public class EForInteract : MonoBehaviour {
     public GameObject exPoint;
 
     public bool whichDialogue;
+    public bool talking;
 
-    private int currentTextIndex = 0;
+    // private int currentTextIndex = 0;
 
     void Awake(){
-        if(testEvi){
-            exPoint = gameObject.transform.Find("ExPoint").gameObject;    
-        }
-        if(GameManager.CheckEvidence(evidence_name)){
-            print("checking");
-            exPoint.SetActive(false);
-            print(exPoint.name);
+        if (evidence_name != "") {
+            if(testEvi) {
+                exPoint = gameObject.transform.Find("ExPoint").gameObject;    
+            }
+            if(GameManager.CheckEvidence(evidence_name)){
+                // print("checking");
+                exPoint.SetActive(false);
+                print(exPoint.name);
+            }
         }
     }
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
-        if (collider2D.gameObject.CompareTag("Player")) {
-            canShowDialog = true;
+        if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
+            // canShowDialog = true;
             StartCoroutine(WaitForStart());
         }
     }
 
-
     public void OnTriggerExit2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player"))
         {
-            canShowDialog = false;
+            // canShowDialog = false;
             StopAllCoroutines();
         }
     }
+
+
+
     IEnumerator WaitForStart(){
         bool started = false;
         while(!started){
-            if(Input.GetKeyDown(KeyCode.E)){
-                dialogShown = true;
-                GameManager.Instance.StartDialogue(text);
-                collect();
-                if(gameObject.GetComponent<NPCWander>()!= null){
-                    gameObject.GetComponent<NPCWander>().FaceFront();
-                    Camera.main.GetComponent<FollowCam>().enabled = false;
-                    Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
-                    
-                }
-                started = true;
+            dialogShown = true;
+            GameManager.Instance.StartDialogue(text);
+            if (evidence_name != "") { collect(); }
+            if (gameObject.GetComponent<NPCWander>()!= null) {
+                gameObject.GetComponent<NPCWander>().FaceFront();
+                Camera.main.GetComponent<FollowCam>().enabled = false;
+                Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
+                talking = true;
             }
+            started = true;
             yield return null;
         }
         StartCoroutine(WaitForEnd());
@@ -70,6 +74,8 @@ public class EForInteract : MonoBehaviour {
         }
         dialogShown = false;
         Camera.main.GetComponent<ZoomCamera>().UnZoom();
+        talking = false;
+        mousePressed = false;
         StopAllCoroutines();    
     }
     void Update() {
@@ -109,7 +115,7 @@ public class EForInteract : MonoBehaviour {
         // set text to something like "can I help you? and can repeat"
         // scribble.Play();
         if(!GameManager.CheckEvidence(evidence_name)){
-            GameManager.AddEvidence(evidence_name);
+            GameManager.Instance.AddEvidence(evidence_name);
             GameManager.Instance.GmCollectEvidence(testEvi);    
             ArticleManager.updateOrderedEvidenceSet(testEvi, whichDialogue);
         }
