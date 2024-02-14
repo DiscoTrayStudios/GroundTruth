@@ -39,6 +39,7 @@ public class PlayerMovement: MonoBehaviour {
         }
     }
 
+
     void ResetTriggers() {
         animator.ResetTrigger("Right");
         animator.ResetTrigger("Left");

@@ -115,7 +115,14 @@ public class GameManager : MonoBehaviour
         }
         dateText.text = "Date: " + month + "/" + days.ToString() + "/" + year;
         dueDateText.text = "Due: " + month + "/" + finalDay + "/" + year;    
+        if (currentScene == "Boss") {
+            if(Input.GetKey(KeyCode.T) && Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.C)) {
+                BossUI.SetActive(false);
+                DialogHide();
+                GameDialogHide();
+            }
 
+        }
 
         /**if (groundshake) {
             if (pDays > pFinalDay) {
@@ -236,8 +243,8 @@ public class GameManager : MonoBehaviour
     public void DialogShow(string text) {
         dialogBox.SetActive(true);
         StopAllCoroutines();
-        StartCoroutine(TypeText(dialogText, text));
         playerBusy = true;
+        StartCoroutine(TypeText(dialogText, text));
     }
 
     public void DialogHide(){
@@ -254,6 +261,7 @@ public class GameManager : MonoBehaviour
     public void FirstTown() {
         if (!beenanywhere) {
             testNotebook.SetActive(true);
+            SetPlayerBusy(true);
         } 
     }
 
@@ -291,7 +299,7 @@ public class GameManager : MonoBehaviour
     }
 
     public static bool CheckEvidence(string evi){
-        print(evidence.ContainsKey(evi));
+        // print(evidence.ContainsKey(evi));
         return evidence.ContainsKey(evi);
     }
 
@@ -408,12 +416,12 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(false);
             Timerbox.SetActive(false);
-        } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuakes" || scene == "RiverPreQuake" || 
+        } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             beenanywhere = true;
             dialogBox.SetActive(false);
             Timerbox.SetActive(true);
-            if (groundshake) {
+            if (post) {
                 PostUI.SetActive(true);
                 UI.SetActive(false);
             } else {
@@ -422,6 +430,7 @@ public class GameManager : MonoBehaviour
             }
             Title.SetActive(false);
             InvesArea.SetActive(false);
+            SetPlayerBusy(false);
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
