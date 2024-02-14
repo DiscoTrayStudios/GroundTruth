@@ -16,7 +16,7 @@ public class JournalPopup : MonoBehaviour
     }
     IEnumerator JournalNotify(){
         while(GameManager.Instance.GetPlayerBusy()){
-            yield return null;
+           yield return null;
         }
         float time = 0;
         float duration = 2f;
@@ -29,13 +29,8 @@ public class JournalPopup : MonoBehaviour
             time+= Time.deltaTime;
             yield return null;    
         } 
-        while (time < duration)
-        {
-            image.color = Color.Lerp(startValue, endValue, time / duration);
-            time+= Time.deltaTime;
-            yield return null;    
-        }   
         
+        StopCoroutine(JournalNotify());
         
     }
     // Update is called once per frame

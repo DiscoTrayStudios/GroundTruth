@@ -37,7 +37,7 @@ public class EForInteract : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
             // canShowDialog = true;
-            StartCoroutine(WaitForStart());
+            StartInteract();
         }
     }
 
@@ -51,21 +51,17 @@ public class EForInteract : MonoBehaviour {
 
 
 
-    IEnumerator WaitForStart(){
-        bool started = false;
-        while(!started){
-            dialogShown = true;
-            GameManager.Instance.StartDialogue(text);
+    public void StartInteract(){
+        dialogShown = true;
+        GameManager.Instance.StartDialogue(text);
             
-            if (gameObject.GetComponent<NPCWander>()!= null) {
-                gameObject.GetComponent<NPCWander>().FaceFront();
-                Camera.main.GetComponent<FollowCam>().enabled = false;
-                Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);
-                talking = true;
-            }
-            started = true;
-            yield return null;
+        if (gameObject.GetComponent<NPCWander>()!= null) {
+            gameObject.GetComponent<NPCWander>().FaceFront();
+            Camera.main.GetComponent<FollowCam>().enabled = false;
+            Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);             
         }
+        talking = true;
+        if (evidence_name != "") { collect(); }   
         StartCoroutine(WaitForEnd());
     }
     IEnumerator WaitForEnd(){
@@ -76,7 +72,6 @@ public class EForInteract : MonoBehaviour {
         Camera.main.GetComponent<ZoomCamera>().UnZoom();
         talking = false;
         mousePressed = false;
-        if (evidence_name != "") { collect(); }
         exPoint.SetActive(false);
         StopAllCoroutines();    
     }
