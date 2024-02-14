@@ -139,11 +139,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartTime(){
-        Debug.Log("outgm");
         if(Timer.GetComponent<Timer>().Started == false){
             Timer.GetComponent<Timer>().StartTimer();
             timerGoing = true;
-            Debug.Log("gm");
         }
     }
     public bool GetPlayerBusy(){
@@ -260,8 +258,7 @@ public class GameManager : MonoBehaviour
 
     public void FirstTown() {
         if (!beenanywhere) {
-            testNotebook.SetActive(true);
-            SetPlayerBusy(true);
+            testNotebook.GetComponent<testJournal>().openingJournal();
         } 
     }
 
@@ -403,6 +400,7 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(false);
             testNotebook.SetActive(false);
+            SetPlayerBusy(false);
         } else if (scene == "InvestigativeArea") {
             timerGoing = false;
             groundshake = false;
@@ -416,6 +414,7 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(false);
             Timerbox.SetActive(false);
+            SetPlayerBusy(false);
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             beenanywhere = true;
@@ -430,7 +429,6 @@ public class GameManager : MonoBehaviour
             }
             Title.SetActive(false);
             InvesArea.SetActive(false);
-            SetPlayerBusy(false);
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
@@ -456,6 +454,7 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(true);
+            SetPlayerBusy(false);
             BossUI.transform.Find("SkipButton").gameObject.SetActive(false);
         } else if (scene == "Cutscene") {
             ArticleManager.resetArticleAndScore();
@@ -485,6 +484,8 @@ public class GameManager : MonoBehaviour
             //PostQuakeInves.SetActive(true);
             Credits.SetActive(false);
             BossUI.SetActive(false);
+            Timerbox.SetActive(false);
+            SetPlayerBusy(false);
         } else {
             dialogBox.SetActive(false);
             UI.SetActive(false);
@@ -495,6 +496,7 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
+            Timerbox.SetActive(false);
         }
     }
 
