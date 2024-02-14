@@ -40,8 +40,12 @@ public class TravelDisplay : MonoBehaviour
     //}
 
     public void ChangeTravelText(String place){
-    
-        TravelText.SetText("Traveling to " + place + "...");
+        
+        if (place != "investigative area"){
+            TravelText.SetText("Traveling to " + place + "...");
+        } else {
+            TravelText.SetText("Traveling back to desk...");
+        }
         
     }
 
