@@ -7,7 +7,7 @@ public class EForInteract : MonoBehaviour {
 
     public string[] text;
 
-    // private bool canShowDialog;
+    private bool canShowDialog;
 
     private bool dialogShown;
     private bool mousePressed;
@@ -17,8 +17,6 @@ public class EForInteract : MonoBehaviour {
 
     private bool canClick = false;
     public GameObject exPoint;
-
-    //private bool SpokenTo = false;
 
     public bool whichDialogue;
     public bool talking;
@@ -38,7 +36,7 @@ public class EForInteract : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
-            // canShowDialog = true;
+            canShowDialog = true;
             StartCoroutine(WaitForStart());
         }
     }
@@ -46,7 +44,7 @@ public class EForInteract : MonoBehaviour {
     public void OnTriggerExit2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player"))
         {
-            // canShowDialog = false;
+            canShowDialog = false;
             StopAllCoroutines();
         }
     }
@@ -54,10 +52,15 @@ public class EForInteract : MonoBehaviour {
 
     public void OnMouseEnter(){
         canClick = true;
+        if(canShowDialog){
+            GameManager.Instance.ChatCursor();    
+        }
+        
     }
 
     public void OnMouseExit(){
         canClick = false;
+        GameManager.Instance.NormalCursor();
     }
     IEnumerator WaitForStart(){
         

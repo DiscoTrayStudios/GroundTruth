@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public GameObject journalPopup;
     public GameObject Timer;
 
+    public Texture2D cursortexture;
     public GameObject Timerbox;
     public GameObject postTestNotebook;
     public GameObject BossUI;
@@ -345,6 +346,15 @@ public class GameManager : MonoBehaviour
         } else {
             Destroy(gameObject);
         }
+    }
+
+    public void ChatCursor(){
+        if(!playerBusy){
+            Cursor.SetCursor(cursortexture, Vector2.zero, CursorMode.Auto);
+        }
+    }
+    public void NormalCursor(){
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); 
     }
 
     public void BackToOffice(){
