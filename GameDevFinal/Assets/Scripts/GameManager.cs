@@ -413,7 +413,7 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(false);
             Timerbox.SetActive(false);
-        } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuakes" || scene == "RiverPreQuake" || 
+        } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             beenanywhere = true;
             dialogBox.SetActive(false);
