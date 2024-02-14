@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public GameObject Credits;
     public GameObject UI;
     public GameObject testNotebook;
+
+    public GameObject journalPopup;
     public GameObject Timer;
 
     public GameObject Timerbox;
@@ -281,10 +283,11 @@ public class GameManager : MonoBehaviour
     public void AddEvidence(string evi) {
         if (!evidence.ContainsKey(evi)) {
             evidence.Add(evi, true);
+            journalPopup.GetComponent<JournalPopup>().Notify();
         } 
         if(haveEvidence == 0){
                 haveEvidence = 1;
-            }
+        }
     }
 
     public static bool CheckEvidence(string evi){
