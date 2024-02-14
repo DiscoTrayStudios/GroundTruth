@@ -8,12 +8,8 @@ public class LeaveConfirmation : MonoBehaviour
     private bool isPost;
     // Start is called before the first frame update
     public void OpenConfirmBox(bool post){
-        if(!GameManager.Instance.GetPlayerBusy()){
-            isPost = post;
-            gameObject.SetActive(true);  
-            GameManager.Instance.SetPlayerBusy(true); 
-        }
-        
+        isPost = post;
+        gameObject.SetActive(true);          
     }
     public void LeaveConfirmed(){
         GameManager.Instance.SetPlayerBusy(false);

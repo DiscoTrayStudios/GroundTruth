@@ -12,7 +12,7 @@ public string[] text;
 
     private string[] usedPostText;
 
-    private bool canShowDialog = true;
+    // private bool canShowDialog = true;
 
     public string evidence_name;
 
