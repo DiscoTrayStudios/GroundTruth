@@ -15,6 +15,7 @@ public class EForInteract : MonoBehaviour {
     public string evidence_name;
     public TestEvidence testEvi;
 
+    private bool canClick = false;
     public GameObject exPoint;
 
     //private bool SpokenTo = false;
@@ -51,12 +52,21 @@ public class EForInteract : MonoBehaviour {
     }
 
 
+    public void OnMouseEnter(){
+        canClick = true;
+    }
 
+    public void OnMouseExit(){
+        canClick = false;
+    }
     IEnumerator WaitForStart(){
         
         bool started = false;
         while(!started){
             if(Input.GetKeyDown(KeyCode.E)){
+                started = true;
+            }
+            else if(Input.GetMouseButtonDown(0) && canClick){
                 started = true;
             }
             yield return null;
