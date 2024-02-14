@@ -16,16 +16,16 @@ public class EForInteract : MonoBehaviour {
 
     public GameObject exPoint;
 
+    //private bool SpokenTo = false;
+
     public bool whichDialogue;
     public bool talking;
 
     // private int currentTextIndex = 0;
 
     void Awake(){
+        exPoint = gameObject.transform.Find("ExPoint").gameObject;   
         if (evidence_name != "") {
-            if(testEvi) {
-                exPoint = gameObject.transform.Find("ExPoint").gameObject;    
-            }
             if(GameManager.CheckEvidence(evidence_name)){
                 // print("checking");
                 exPoint.SetActive(false);
@@ -56,7 +56,7 @@ public class EForInteract : MonoBehaviour {
         while(!started){
             dialogShown = true;
             GameManager.Instance.StartDialogue(text);
-            if (evidence_name != "") { collect(); }
+            
             if (gameObject.GetComponent<NPCWander>()!= null) {
                 gameObject.GetComponent<NPCWander>().FaceFront();
                 Camera.main.GetComponent<FollowCam>().enabled = false;
@@ -76,6 +76,8 @@ public class EForInteract : MonoBehaviour {
         Camera.main.GetComponent<ZoomCamera>().UnZoom();
         talking = false;
         mousePressed = false;
+        if (evidence_name != "") { collect(); }
+        exPoint.SetActive(false);
         StopAllCoroutines();    
     }
     void Update() {
@@ -125,7 +127,6 @@ public class EForInteract : MonoBehaviour {
                 ArticleManager.bothDialogues(ArticleManager.getEvidenceIndex(testEvi), testEvi); 
             }
         }
-        exPoint.SetActive(false);
         print("Evidence collected");
         //Journal.addToJournal(evidence_name);
         //testJournal.Instance.testAddToJournal(testEvi); 
