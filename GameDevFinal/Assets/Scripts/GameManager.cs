@@ -418,7 +418,7 @@ public class GameManager : MonoBehaviour
             beenanywhere = true;
             dialogBox.SetActive(false);
             Timerbox.SetActive(true);
-            if (groundshake) {
+            if (post) {
                 PostUI.SetActive(true);
                 UI.SetActive(false);
             } else {
@@ -427,6 +427,7 @@ public class GameManager : MonoBehaviour
             }
             Title.SetActive(false);
             InvesArea.SetActive(false);
+            SetPlayerBusy(false);
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);

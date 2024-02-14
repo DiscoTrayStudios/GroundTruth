@@ -14,6 +14,7 @@ public class ArticleManager : MonoBehaviour
     public static List<string> dialoguespreordered  = new List<string>{};
     public static List<string> dialoguespostordered = new List<string>{};
     public static HashSet<string> sentences = new HashSet<string>(); 
+    public static List<TestEvidence> chosen = new List<TestEvidence>(); 
     private static HashSet<string> truesums = new HashSet<string>{"Prophetstown", "Tenskwatawa predicted earthquakes", "River flowing backwards.",
                                                                   "Ground continues to shake", "Potential war in 1812", "Louisiana Purchase", 
                                                                   "Joining the United States", "Steamboat on the Mississippi", "Houses got burned" };
@@ -39,7 +40,7 @@ public static string getFeedback()
 {
     System.Random rnd = new System.Random();
     string feedback = "";    
-    int lenArticle = sentences.Count;
+    int lenArticle = chosen.Count;
     int s1 = 0;
     int s2 = 0;
 
@@ -63,7 +64,7 @@ public static string getFeedback()
         case 9: feedback += "\n - Good grief! Is there anything you WON'T try to publish? "; break;
     }
     if (GameManager.post && lenArticle > 1) {
-        switch(tespostordered[s1].test_evidence_summary)
+        switch(chosen[s1].test_evidence_summary)
         {
             case "I'm gonna get you!":                feedback += "\n - We, at the editorial board, hope that no one will 'get' us, and are concerned about these threats of being got. "; break;
             case "Monster Earthquakes":               feedback += "\n - A monster caused the earthquakes? That's very untrue. Publishing that would be disrespectful. "; break;
@@ -75,7 +76,7 @@ public static string getFeedback()
             case "River flowing backwards.":          feedback += "\n - Amazingly, our fact-checkers have found many accounts of the Mississippi River running backwards during the quakes - the power of nature never ceases to amaze me. "; break;
             case "Phlogiston":                        feedback += "\n - What is this, 1750?! Phlogiston has been archaic for years, everyone knows that rust and fire are due to oxidation. "; break;
         }
-        switch(tespostordered[s2].test_evidence_summary)
+        switch(chosen[s2].test_evidence_summary)
         {
             case "I'm gonna get you!":                feedback += "\n - We, at the editorial board, do not believe that someone will 'get' us, and worry this is mere braggadocio. "; break;
             case "Monster Earthquakes":               feedback += "\n - A monster caused the earthquakes? That's very untrue. Publishing that would be disrespectful. "; break;
@@ -90,7 +91,7 @@ public static string getFeedback()
     }
 
     else if (lenArticle > 1) {
-        switch(tespreordered[s1].test_evidence_summary)
+        switch(chosen[s1].test_evidence_summary)
         {
             case "Traveling Up River":           feedback += "\n - Oh, someone travelled up the river on a whim? Fat chance! Liars like to stand by the river and tell tall tales, that was day one at my journalism school. "; break;
             case "Flying":                       feedback += "\n - Get your head out of the clouds! We don't even have telegrams yet, there are certainly no planes. "; break;
@@ -102,7 +103,7 @@ public static string getFeedback()
             case "Steamboat on the Mississippi": feedback += "\n - A boat powered by steam? This is a great invention! "; break;
             case "Joining the United States":    feedback += "\n - In the city, it can be difficult to gauge how people impacted feel about the policies we pass. Missouri's reluctance to join the union is a great example. "; break;
         }
-        switch(tespreordered[s2].test_evidence_summary)
+        switch(chosen[s2].test_evidence_summary)
         {
             case "Traveling Up River":           feedback += "\n - Oh, someone travelled up the river on a whim? Fat chance! Liars like to stand by the river and tell tall tales, that was day one at my journalism school. "; break;
             case "Flying":                       feedback += "\n - Get your head out of the clouds! We don't even have telegrams yet, there are certainly no planes. "; break;
@@ -184,7 +185,13 @@ public static string getFeedback()
 
     public static int getScore() { return score; }
 
-    public static void resetArticleAndScore() { article = ""; score = 0; sentences = new HashSet<string>(); dialoguespreordered  = new List<string>{}; dialoguespostordered  = new List<string>{};}
+    public static void resetArticleAndScore() { 
+        article = ""; score = 0; 
+        sentences = new HashSet<string>(); 
+        dialoguespreordered  = new List<string>{}; 
+        dialoguespostordered  = new List<string>{}; 
+        chosen = new List<TestEvidence>(); 
+    }
 
     public static string updateArticle(string evix, bool remove) {
         print(evix);
@@ -207,6 +214,8 @@ public static string getFeedback()
             else                        { score += 25; }
             sentences.Remove(sentence);
             article = "";
+            if (GameManager.post) { chosen.Remove(tespostordered[num-1]); }
+            else                  { chosen.Remove(tespreordered[num-1]); }
             foreach (string s in sentences) {
                 article += s;
             } return article;
@@ -215,6 +224,8 @@ public static string getFeedback()
             if (truesums.Contains(sum)) { score += 25; }
             else                        { score -= 25; }            
             sentences.Add(sentence); 
+            if (GameManager.post) { chosen.Add(tespostordered[num-1]); }
+            else                  { chosen.Add(tespreordered[num-1]); }
             article += sentence;
             return article;
         
