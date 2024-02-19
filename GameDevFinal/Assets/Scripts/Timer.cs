@@ -59,7 +59,7 @@ public class Timer : MonoBehaviour
                 UpdateTime();    
             }
             
-            yield return new WaitForSeconds(0.7f); 
+            yield return new WaitForSeconds(0.8f); 
             Debug.Log("less");   
         }
         GameManager.Instance.BackToOffice();

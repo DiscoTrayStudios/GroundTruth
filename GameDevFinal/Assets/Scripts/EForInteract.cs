@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EForInteract : MonoBehaviour {
 
     public string[] text;
 
-    // private bool canShowDialog;
+    private bool canShowDialog;
 
     private bool dialogShown;
     private bool mousePressed;
@@ -14,9 +15,8 @@ public class EForInteract : MonoBehaviour {
     public string evidence_name;
     public TestEvidence testEvi;
 
+    private bool canClick = false;
     public GameObject exPoint;
-
-    //private bool SpokenTo = false;
 
     public bool whichDialogue;
     public bool talking;
@@ -36,25 +36,46 @@ public class EForInteract : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player") & !GameManager.Instance.GetPlayerBusy()) {
-            // canShowDialog = true;
-            StartInteract();
+            canShowDialog = true;
+            StartCoroutine(WaitForStart());
         }
     }
 
     public void OnTriggerExit2D(Collider2D collider2D) {
         if (collider2D.gameObject.CompareTag("Player"))
         {
-            // canShowDialog = false;
+            canShowDialog = false;
             StopAllCoroutines();
         }
     }
 
 
+    public void OnMouseEnter(){
+        canClick = true;
+        if(canShowDialog){
+            GameManager.Instance.ChatCursor();    
+        }
+        
+    }
 
-    public void StartInteract(){
-        dialogShown = true;
+    public void OnMouseExit(){
+        canClick = false;
+        GameManager.Instance.NormalCursor();
+    }
+    IEnumerator WaitForStart(){
+        
+        bool started = false;
+        while(!started){
+            if(Input.GetKeyDown(KeyCode.E)){
+                started = true;
+            }
+            else if(Input.GetMouseButtonDown(0) && canClick){
+                started = true;
+            }
+            yield return null;
+        }
         GameManager.Instance.StartDialogue(text);
-            
+        dialogShown = true;
         if (gameObject.GetComponent<NPCWander>()!= null) {
             gameObject.GetComponent<NPCWander>().FaceFront();
             Camera.main.GetComponent<FollowCam>().enabled = false;
