@@ -22,6 +22,9 @@ public class Dialogue : MonoBehaviour {
         GameManager.Instance.SetPlayerBusy(true);
         textIndex = 0;
         text = newtext;
+        if(text.Length == 1){
+            nextButtonText.text = "Done";
+        }
         GameManager.Instance.DialogShow(text[textIndex]);
         DialogueHappening = true;
         StartCoroutine(InDialogue());
