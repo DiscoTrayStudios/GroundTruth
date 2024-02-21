@@ -123,7 +123,7 @@ public class NPCWander : MonoBehaviour {
 
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player")){
+        if (other.CompareTag("Player") || other.CompareTag("NPC")){
             if (moveToWaypointCoroutine != null){
                 StopCoroutine(moveToWaypointCoroutine);
                 moveToWaypointCoroutine = null;

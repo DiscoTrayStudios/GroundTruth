@@ -190,8 +190,8 @@ public class AStar : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "NPC") {
             path = new Stack<Vector3>();
-            // newDestination = true;
             rb.velocity = new Vector2(0f, 0f);
+            AnimatorUpdate(3);
         }
     }
 
