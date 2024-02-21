@@ -21,8 +21,7 @@ public class AStar : MonoBehaviour
     public static bool left;
     public static bool right;
 
-    void Start()
-    {
+    void Start() {
         path = new Stack<Vector3>();    
         if (GetComponent<Animator>() != null) {
             animator = GetComponent<Animator>();
@@ -49,7 +48,6 @@ public class AStar : MonoBehaviour
             //    if (grid[y,x]) { print("hit! " + (x + l) + ", " + (y + b)); }
             }
         }   
-
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -59,10 +57,18 @@ public class AStar : MonoBehaviour
         (int, int)[] playersize = {(0,0), (0,-1), (-1,0), (-1,-1), (-1,1), (0,1), 
         // (1,1), (1,0), (1,-1)
         };
+        if (gameObject.tag != "Player") {
+            List<Collider2D> cols = Physics2D.OverlapCircleAll(transform.position, 3f).ToList();
+            var envcols = cols.Where(col => col.CompareTag("Player")).ToList();
+            if (GameManager.Instance.GetPlayerBusy() && (envcols.Count > 0)) {
+                return true;
+            }
+        }
         foreach ((int,int) ps in playersize) {
             if (tilemap.HasTile(new Vector3Int(cellPosition.x + ps.Item1, cellPosition.y + ps.Item2, 0))) {
                 return true;
             }
+            
             // Collider2D[] near = Physics2D.OverlapCircleAll(cellCenter, 1f);
             // foreach (Collider2D n in near) {
             //     if (n.CompareTag("NPC")) { 
@@ -191,7 +197,9 @@ public class AStar : MonoBehaviour
         if (collision.gameObject.tag == "NPC") {
             path = new Stack<Vector3>();
             rb.velocity = new Vector2(0f, 0f);
-            AnimatorUpdate(3);
+            if (tag == "Player") {
+                AnimatorUpdate(3);
+            }
         }
     }
 
@@ -219,7 +227,5 @@ public class AStar : MonoBehaviour
             this.position = ps;
             this.value = v;
         }
-
     }
-
 }
