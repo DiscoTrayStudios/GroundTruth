@@ -53,10 +53,10 @@ public string[] text;
 
     
     void Update() {
-        if(Input.GetKeyDown(KeyCode.E)){
+        if(Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)){
             if(!GameManager.Instance.IsPost() & !startedDialogue){
                 if(currentTextIndex == 0){
-                    GameManager.Instance.GameDialogShow("To advance through dialogue in game, press" + "\"" + "E" + "\"" + "like you just did.");
+                    GameManager.Instance.GameDialogShow("To advance through dialogue in game, press" + "\"" + "E" + "\"" + "or click, like you just did.");
                     currentTextIndex++;
                 }
                 else{
