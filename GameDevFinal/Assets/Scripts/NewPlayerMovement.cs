@@ -46,6 +46,9 @@ public class NewPlayerMovement : MonoBehaviour
             animator.SetTrigger("Up");
         } else {
             animator.SetTrigger("Idle");
+            animator.ResetTrigger("Walking");
+            animator.ResetTrigger("Down");
+            animator.ResetTrigger("Up");
             walking.Stop();
         }
         if((!walking.isPlaying) & (horizontal != 0 || vertical != 0)){
