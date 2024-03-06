@@ -20388,7 +20388,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'To New Madrid
 
-    (5 Days)'
+    (3 Days)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c87f0686d0fdf1d4a8716c6791690ac1, type: 2}
   m_sharedMaterial: {fileID: -6113257599831227576, guid: c87f0686d0fdf1d4a8716c6791690ac1, type: 2}
@@ -41677,7 +41677,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'To New Madrid
 
-    (5 Days)'
+    (3 Days)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c87f0686d0fdf1d4a8716c6791690ac1, type: 2}
   m_sharedMaterial: {fileID: -6113257599831227576, guid: c87f0686d0fdf1d4a8716c6791690ac1, type: 2}

@@ -51320,7 +51320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - I love my husband, but he's a fool if he thinks anyone would believe that nonsense...
+  - Beautiful weather today!
   evidence_name: 
   testEvi: {fileID: 0}
   exPoint: {fileID: 0}
