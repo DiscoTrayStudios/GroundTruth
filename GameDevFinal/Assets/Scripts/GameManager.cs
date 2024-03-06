@@ -389,10 +389,10 @@ public class GameManager : MonoBehaviour
         if (lastScene == nextScene) {print("No Travel Cost");}
         else if (nextScene == "St.LouisPreQuake"  ) {AddDays(1);}
         else if (nextScene == "RiverPreQuake"     ) {AddDays(2);}
-        else if (nextScene == "NewMadridPreQuake" ) {AddDays(5);}
+        else if (nextScene == "NewMadridPreQuake" ) {AddDays(3);}
         else if (nextScene == "St.LouisPostQuakes") {AddDays(1);}
         else if (nextScene == "RiverPostQuake"    ) {AddDays(2);}
-        else if (nextScene == "NewMadridPostQuake") {AddDays(5);}
+        else if (nextScene == "NewMadridPostQuake") {AddDays(3);}
     }
 
 

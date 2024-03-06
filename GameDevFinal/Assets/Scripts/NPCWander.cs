@@ -26,6 +26,7 @@ public class NPCWander : MonoBehaviour {
     void Start() {
         path = new Stack<Vector3>();    
         rb = GetComponent<Rigidbody2D>();
+        playerNear = true;
         //moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());    
     }
 
@@ -101,6 +102,7 @@ public class NPCWander : MonoBehaviour {
         }
     }
 
+    public void resetPath() { path = new Stack<Vector3>(); }
 
     public void FaceFront(){
         if(!front.Equals(null)){

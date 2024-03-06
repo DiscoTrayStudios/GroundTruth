@@ -717,8 +717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - 'This man cowered behind some trees as soon as we shored. Do not listen to a
-    word he spews... '
+  - Mr. O'Malley just stole $25 from me!
   evidence_name: 
   testEvi: {fileID: 0}
   exPoint: {fileID: 0}
@@ -1004,7 +1003,7 @@ MonoBehaviour:
   - After shoring our vessel, I noticed a family struggling in the currents...
   - I immediately jumped into the river to aide them...
   - I single-handedly saved all four of them on my own...
-  - I am a hero to say the least!
+  - I, Conner O'Malley, am a hero to say the least!
   - I would point you to the family but they ran off...
   evidence_name: Evi7
   testEvi: {fileID: 1470871001}
@@ -39467,9 +39466,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - That guy didn't save that family.
-  - He can't even swim!
-  - And he owes me 45 dollars! Pinhead!
+  - My next door neighbor, Mr. O'Malley, has been lying to me all day.
+  - He didn't save his family, I did!
+  - 'He can''t even swim! And he owes me 45 dollars! '
+  - I 'oughta give him the silent treatment.
   evidence_name: Evi7
   testEvi: {fileID: 1470871001}
   exPoint: {fileID: 0}
@@ -51140,9 +51140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text:
-  - Did that guy just say he said he was gonna get you?
+  - Some guy just said he was gonna 'get' me.
   - I don't think he's gonna do it.
-  - I might be wrong, but let's see if he does.
+  - I might be wrong, but he's never done it before.
   evidence_name: Evi9
   testEvi: {fileID: 989287864}
   exPoint: {fileID: 0}

@@ -60120,6 +60120,7 @@ MonoBehaviour:
   testNotebook: {fileID: 0}
   journalPopup: {fileID: 0}
   Timer: {fileID: 0}
+  cursortexture: {fileID: 0}
   Timerbox: {fileID: 0}
   postTestNotebook: {fileID: 0}
   BossUI: {fileID: 0}
@@ -61954,7 +61955,7 @@ GameObject:
   - component: {fileID: 632093523}
   - component: {fileID: 632093524}
   m_Layer: 0
-  m_Name: Male Farmer (1)
+  m_Name: Timothy Robinson
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68456,7 +68457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - The river people sort of look like long frogs!
-  - Is that guy out of earshot?
+  - Is Mr. Robinson out of earshot?
   - I just made all that up to mess with him.
   evidence_name: Evi7
   testEvi: {fileID: 170264695}
