@@ -7,6 +7,7 @@ TagManager:
   - Evidence
   - EvidenceHolder
   - NPC
+  - Scenery
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - light
   - 
   - 
   - 
@@ -64,4 +65,7 @@ TagManager:
     locked: 0
   - name: Buildings NC
     uniqueID: 1636294707
+    locked: 0
+  - name: lighting
+    uniqueID: 644786471
     locked: 0
