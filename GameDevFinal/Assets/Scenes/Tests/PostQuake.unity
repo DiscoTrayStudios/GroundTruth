@@ -311,7 +311,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi6
-  score: 6
 --- !u!61 &12556951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1656,7 +1655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 2
-  score: 2
 --- !u!61 &183943631
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3479,7 +3477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 8
-  score: 8
 --- !u!61 &453174102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4174,7 +4171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 3
-  score: 3
 --- !u!61 &530817366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6084,7 +6080,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi4
-  score: 4
 --- !u!61 &801372733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6624,7 +6619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi5
-  score: 5
 --- !u!61 &856249675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8149,7 +8143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi8
-  score: 8
 --- !u!61 &954874121
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8685,7 +8678,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 4
-  score: 4
 --- !u!61 &1016912487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8823,7 +8815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi1
-  score: 1
 --- !u!61 &1019572460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9670,7 +9661,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 6
-  score: 6
 --- !u!61 &1180328779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12088,7 +12078,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi2
-  score: 2
 --- !u!61 &1496906480
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12361,7 +12350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 5
-  score: 5
 --- !u!61 &1501012649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12969,7 +12957,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7b31486be00f44849ada2ed6e8b27149, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a456911e70b78be41832074e283e78e8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -15495,7 +15483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 1
-  score: 1
 --- !u!61 &1861234857
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15900,7 +15887,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evidence 7
-  score: 7
 --- !u!61 &1897545927
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16176,7 +16162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi3
-  score: 3
 --- !u!61 &1913805363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17499,7 +17484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidence: Evi7
-  score: 7
 --- !u!61 &2049738500
 BoxCollider2D:
   m_ObjectHideFlags: 0
