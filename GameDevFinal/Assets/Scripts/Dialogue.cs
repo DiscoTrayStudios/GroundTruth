@@ -30,6 +30,14 @@ public class Dialogue : MonoBehaviour {
         StartCoroutine(InDialogue());
 
     }
+    public void NextButton(){
+        if(dialogueText.text.Equals(text[textIndex])){
+                    NextText();
+                }
+                else{
+                    GameManager.Instance.SkipTypeText(dialogueText, text[textIndex]);
+                }
+    }
 
     public void NextText(){
         if(textIndex == text.Length - 1){

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {   
@@ -56,7 +57,11 @@ public class Timer : MonoBehaviour
         while(TimeLeft>0){
             if(!GameManager.Instance.GetPlayerBusy()){
                 TimeLeft--;
+                gameObject.transform.parent.GetComponent<Image>().color = Color.white;
                 UpdateTime();    
+            }
+            else{
+                gameObject.transform.parent.GetComponent<Image>().color = new Color32(255, 199, 199, 255);
             }
             
             yield return new WaitForSeconds(0.8f); 
@@ -71,6 +76,11 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameManager.Instance.GetPlayerBusy()){
+            gameObject.transform.parent.GetComponent<Image>().color = new Color32(255, 199, 199, 255);
+        }
+        else{
+            gameObject.transform.parent.GetComponent<Image>().color = Color.white;
+        }
     }
 }
