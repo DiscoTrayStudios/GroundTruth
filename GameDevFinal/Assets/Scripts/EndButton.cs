@@ -30,6 +30,7 @@ public class EndButton : MonoBehaviour
 
     void FunctionOnClick(){
         if(GameManager.Instance.IsPost()){
+            GameManager.Instance.pre();
             GameManager.Instance.ChangeScene("TitleScreen");
         }
         else{
