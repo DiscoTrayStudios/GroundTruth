@@ -23,12 +23,18 @@ public class Timer : MonoBehaviour
     }
     public void StartTimer(){
         if(Started == false){
+            TimeLeft = TimeLimit;
             UpdateTime();
             Debug.Log("start");
             StartCoroutine(RunTimer());
             Started = true;  
         }
-        
+    }
+
+    public void StopTimer(){
+        Started = false;
+        StopCoroutine(RunTimer());
+        TimeLeft = TimeLimit;
     }
     public void UpdateTime(){
         /*minutes = TimeLeft/60;
@@ -76,11 +82,14 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.Instance.GetPlayerBusy()){
+        if(gameObject.transform.parent.gameObject.activeSelf){
+            if(GameManager.Instance.GetPlayerBusy()){
             gameObject.transform.parent.GetComponent<Image>().color = new Color32(255, 199, 199, 255);
-        }
-        else{
+            }
+            else{
             gameObject.transform.parent.GetComponent<Image>().color = Color.white;
+            }
         }
+        
     }
 }

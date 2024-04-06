@@ -413,6 +413,7 @@ public class GameManager : MonoBehaviour
             SetPlayerBusy(false);
         } else if (scene == "InvestigativeArea") {
             timerGoing = false;
+            Timer.GetComponent<Timer>().StopTimer();
             groundshake = false;
             dialogBox.SetActive(false);
             UI.SetActive(false);
@@ -487,6 +488,8 @@ public class GameManager : MonoBehaviour
             groundshake = true;
             dialogBox.SetActive(false);
             UI.SetActive(false);
+            timerGoing = false;
+            Timer.GetComponent<Timer>().StopTimer();
             testNotebook.SetActive(false);
             PostUI.SetActive(false);
             Title.SetActive(false);
