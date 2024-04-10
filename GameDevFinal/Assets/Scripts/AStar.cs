@@ -144,6 +144,8 @@ public class AStar : MonoBehaviour
             float vertical = Input.GetAxisRaw("Vertical");
             if (horizontal != 0 | vertical != 0 || GameManager.Instance.GetPlayerBusy()) {
                 path = new Stack<Vector3>();
+                left  = false;
+                right = false;
             }
             if (Input.GetMouseButtonDown(0)) {
                 // print("oy");
@@ -180,8 +182,8 @@ public class AStar : MonoBehaviour
         }
     }   
 
-    public static bool GetLeft()  { return left;  }
-    public static bool GetRight() { return right; }
+    public bool GetLeft()  { return left;  }
+    public bool GetRight() { return right; }
 
     void AnimatorUpdate(int index) {
         int c = 0;

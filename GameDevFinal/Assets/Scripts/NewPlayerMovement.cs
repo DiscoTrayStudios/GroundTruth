@@ -64,15 +64,19 @@ public class NewPlayerMovement : MonoBehaviour
         }
 
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-        if (horizontal > 0) {
+        gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        if (horizontal > 0 || gameObject.GetComponent<AStar>().GetRight()) {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
             left = false;
             right = true;
-        } else if (horizontal < 0) {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        } else if (horizontal < 0 || gameObject.GetComponent<AStar>().GetLeft()) {
             left = true;
             right = false;
+        } else if (horizontal == 0 && !gameObject.GetComponent<AStar>().GetRight() && !gameObject.GetComponent<AStar>().GetRight()) {
+            left  = false;
+            right = false;
         }
+
     }
 
     public bool GetLook() {
