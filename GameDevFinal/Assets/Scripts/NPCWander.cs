@@ -32,7 +32,7 @@ public class NPCWander : MonoBehaviour {
 
     void Update() {
         if (gameObject.activeSelf) {
-            Collider2D[] near = Physics2D.OverlapCircleAll(rb.gameObject.transform.position, 1.0f);
+            Collider2D[] near = Physics2D.OverlapCircleAll(rb.gameObject.transform.position, 2.5f);
             int l = near.Length;
             foreach (Collider2D n in near) {
                 if (n.CompareTag("Player")) { playerNear = true;  }
