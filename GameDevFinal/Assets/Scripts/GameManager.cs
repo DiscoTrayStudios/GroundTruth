@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI dateText;
 
     public TextMeshProUGUI dueDateText;
-
+    public static List<string> seenScenes; 
     public TextMeshProUGUI daysLeft;
     public TextMeshProUGUI postDateText;
     public TextMeshProUGUI postDaysLeft;
@@ -437,6 +437,7 @@ public class GameManager : MonoBehaviour
                 UI.SetActive(true);
                 PostUI.SetActive(false);
             }
+            seenScenes.Add(scene);
             Title.SetActive(false);
             InvesArea.SetActive(false);
             PostQuakeInves.SetActive(false);

@@ -1,0 +1,28 @@
+// REORGANIZING JOURNAL TO ELIMINATE REDUNDANCY AND CLEARLY PRESENT NARRATIVE
+
+
+Initialization
+
+A lot of people think the Ozarks are boring, and that the people here have nothing to say. If that were true, I'd be unemployed. Luckily, a lot happens out here. My task, this next week and a half, is to pull together an article about something interesting and particular to our region. This should be fun.
+
+
+NewMadridPreQuake
+
+RiverPreQuake
+
+StLouisPreQuake
+
+  I didn't need to travel far at all to talk to people in St. Louis. 
+
+  The War with England that we fought a generation ago, for "freedom," seems to have flared up again at sea. 
+
+
+PostInitialization
+
+  A devastating earthquake hit a couple days ago. The roof of my house, in St. Louis, almost caved in from a falling tree. I'm lucky that my family and I survived. My new assignment at the paper is decidedly less open-ended. I need to tell the story of this earthquake, of the lives lost and upended. I've found that its epicenter was New Madrid: going there is a top priority.
+
+NewMadridPostQuake
+
+RiverPostQuake
+
+StLouisPostQuake

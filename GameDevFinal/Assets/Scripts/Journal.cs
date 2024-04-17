@@ -37,8 +37,6 @@ public class Journal : MonoBehaviour
             informationTwo.SetActive(true);
             } 
         }
-
-        
     }
 
     public void closingJournal()
@@ -68,3 +66,12 @@ public class Journal : MonoBehaviour
         
     }
 }
+
+// STLPre -> "Flying", "Potential war in 1812", "Louisiana Purchase", 
+// STLPos -> "Phlogiston", "Tenskwatawa predicted earthquakes", "Volcanic Eruption"
+
+// NMPre  -> "Creature in the woods", "River People", "Joining the United States", 
+// NMPos  -> "Ground continues to shake", "Houses got burned", "Monster Earthquakes"
+
+// RivPre -> "Prophetstown", "Steamboat on the Mississippi", "Traveling Up River"
+// RivPos -> "Man claims he saves family", "I'm gonna get you!", "River flowing backwards."

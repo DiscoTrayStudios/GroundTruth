@@ -36,6 +36,7 @@ public class testJournal : MonoBehaviour
     public GameObject openedNotebook;
     public AudioSource bookOpenSound;
     public AudioSource bookCloseSound;
+    private Dictionary<string, string> journalEntries;
     private bool firstOpen = false; 
 
 
@@ -43,6 +44,14 @@ public class testJournal : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         MakePages();
+        journalEntries = new Dictionary<string, string>(){
+            {"NewMadridPreQuake",  "I went to New Madrid. It was a very small town, but it had some charm."},
+            {"RiverPreQuake",      "I found a small community who lived at a nearby bank of the Mississippi River."},
+            {"StLouisPreQuake",    "I spent some time in my neck of the woods, St. Louis."},
+            {"NewMadridPostQuake", "New Madrid was hit hard by the quake. The people there were wounded, but their stunning resilience filled me with an unexpected hope."},
+            {"RiverPostQuake",     "At the River, the quake was so intense that residents had a tough time telling fact from fiction - I don't blame them."},
+            {"StLouisPostQuake",   "Despite being far from the epicenter, the earthquake was very destructive in St. Louis."}
+        };
     }
     void MakePages()
     {
@@ -75,7 +84,7 @@ public class testJournal : MonoBehaviour
             userInterface.SetActive(false);
             openedNotebook.SetActive(true);
             bookOpenSound.Play();
-            testAddToJournal(GameManager.TestEvidenceList);
+            testAddToJournal(GameManager.seenScenes, GameManager.TestEvidenceList);
         //PageOne.SetActive(true);
         }
     }
@@ -88,11 +97,13 @@ public class testJournal : MonoBehaviour
         GameManager.Instance.SetPlayerBusy(false);
     }
 
-    public void testAddToJournal(List<TestEvidence> evidenceList){
+    public void testAddToJournal(List<string> seenScenes, List<TestEvidence> evidenceList){
         boxIndex = 0;
         print("Boxes" + journalBoxes.Count);
-        foreach (var item in evidenceList)
-        {
+        foreach (string scene in seenScenes) {
+            
+        }
+        foreach (var item in evidenceList) {
             print(boxIndex);
             print(item.test_evidence);
             // if(!item.test_collected){
