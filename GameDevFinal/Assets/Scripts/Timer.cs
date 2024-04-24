@@ -82,14 +82,15 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.transform.parent.gameObject.activeSelf){
+        /*
+        if(gameObject.activeInHierarchy){
             if(GameManager.Instance.GetPlayerBusy()){
             gameObject.transform.parent.GetComponent<Image>().color = new Color32(255, 199, 199, 255);
             }
             else{
             gameObject.transform.parent.GetComponent<Image>().color = Color.white;
             }
-        }
+        }*/
         
     }
 }
