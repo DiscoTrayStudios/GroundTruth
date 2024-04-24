@@ -65,9 +65,9 @@ public class testJournal : MonoBehaviour
             {"RiverPreQuake",      "I found a small community who lived at a nearby bank of the Mississippi River. I've heard there's an automated boat, which propels itself with steam power, making its way down the river at present. If I'm lucky, I'll find it, and write about it in the article."},
             {"St.LouisPreQuake",   "I spent some time in my neck of the woods, St. Louis. I've lived here about five years now, which means I never experienced Spanish or French rule. The city is growing rapidly: there are talks of declaring it the capital of the entire Louisiana Territory, which takes up almost half of U.S.-owned land."},
             {"Cutscene",           "A devastating earthquake hit a couple days ago. The roof of my house, in St. Louis, almost caved in from a falling tree. I'm lucky that my family and I survived. My new assignment at the paper is decidedly less open-ended. I need to tell the story of this earthquake, of the lives lost and upended. I've found that its epicenter was New Madrid: going there is a top priority."},
-            {"NewMadridPostQuake", "New Madrid was hit hard by the quake. The people there were wounded, but their stunning resilience filled me with an unexpected hope."},
-            {"RiverPostQuake",     "At the River, the quake was so intense that residents had a tough time telling fact from fiction - I don't blame them."},
-            {"St.LouisPostQuake",  "Despite being far from the epicenter, the earthquake was very destructive in St. Louis."}
+            {"NewMadridPostQuake", "New Madrid was hit hardest by the quake. The people there were wounded, but their stunning resilience filled me with an unexpected hope."},
+            {"RiverPostQuake",     "At the River, the quake was so intense that residents had a tough time telling fact from fiction - I don't blame them. Rivers are prone to unexpected behavior, especially during something as intense as this. Some say that rivers can flow backward, during a strong enough earthquake."},
+            {"St.LouisPostQuake",  "Despite being far from the epicenter, the earthquake was very destructive in St. Louis. Meriwether Lewis, the explorer, was our governor for years, starting in 1807. "}
         };
     }
     void MakePages()
