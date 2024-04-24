@@ -105,8 +105,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        firstArticle.text    = "\n \n Article: " + article;
-        secondArticle.text   = "\n \n Article: " + article;
+        //firstArticle.text    = "\n \n Article: " + article;
+        //secondArticle.text   = "\n \n Article: " + article;
         firstFeedback.text   = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
         secondFeedback.text  = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
         if (finalDay - days < 16) {
@@ -217,6 +217,7 @@ public class GameManager : MonoBehaviour
         //GABBY UPDATE
         TestEvidenceList.Clear();
         print(TestEvidenceList.Count);
+        InvesArea.GetComponent<DeskScript>().reset();
         //
         groundshake = false;
         RemoveAllEvidence();

@@ -50,8 +50,9 @@ public class ButtonText : MonoBehaviour
     }
 
     public void Reset(){
-        clicked = false;
-        boolean.text = "false";
+        if(clicked){
+            toggle();
+        }
     }
 
     // Update is called once per frame

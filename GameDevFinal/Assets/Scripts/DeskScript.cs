@@ -88,6 +88,13 @@ public class DeskScript : MonoBehaviour
         }
         
     }
+
+    public void reset(){
+        rt.anchoredPosition = new Vector2(0f, 0f);
+        article.SetActive(false);
+        pen.SetActive(true);
+        writeButton.SetActive(true);
+    }
     // Update is called once per frame
     void Update()
     {
