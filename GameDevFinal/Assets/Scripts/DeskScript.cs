@@ -12,6 +12,7 @@ public class DeskScript : MonoBehaviour
     Vector2 articlePos = new Vector3 (-269, 0);
     Vector3 articleDeskPos = new Vector3(10, -78, 0);
 
+    public GameObject writingHolder;
     RectTransform rt;
     private Boolean atArticle;
     public GameObject desk;
@@ -19,6 +20,7 @@ public class DeskScript : MonoBehaviour
     public GameObject pen;
     public GameObject article;
     public TextMeshProUGUI articleText;
+    public GameObject writeButton;
 
     public GameObject report;
     public GameObject submit;
@@ -42,21 +44,25 @@ public class DeskScript : MonoBehaviour
         StartCoroutine(MoveDesk(normalPos, articlePos));
         report.GetComponent<RectTransform>().anchoredPosition = new Vector2(296f, -3.6f);
         submit.GetComponent<RectTransform>().anchoredPosition = new Vector2(296f, -3.6f);
+        writingHolder.GetComponent<RectTransform>().anchoredPosition = new Vector2(296f, -3.6f);
+    
     }
     public void ToRegularDesk(){
          Debug.Log("starterrp");
-        pen.SetActive(true);
+        
        // desk.SetActive(true);
         atArticle = false;
         StopAllCoroutines();
         StartCoroutine(MoveDesk(articlePos, normalPos));
         report.GetComponent<RectTransform>().anchoredPosition = new Vector2(296f, -3.6f);
         submit.GetComponent<RectTransform>().anchoredPosition = new Vector2(296f, -3.6f);
+        writingHolder.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
+    
     }
 
     private IEnumerator MoveDesk(Vector2 startPos, Vector2 endPos){
         Debug.Log("startinglerp");
-        float moveSpeed = 300f;
+        float moveSpeed = 400f;
         float journeyLength = Vector2.Distance(startPos, endPos);
         Debug.Log(journeyLength);
         float startTime = Time.time;
@@ -75,7 +81,10 @@ public class DeskScript : MonoBehaviour
 
         }
         else{
+            pen.SetActive(true);
+            article.SetActive(false);
             seconddesk.SetActive(false);
+            writeButton.SetActive(true);
         }
         
     }
