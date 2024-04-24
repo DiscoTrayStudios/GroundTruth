@@ -532,7 +532,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282927176
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2272,7 +2272,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282927176
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5368,7 +5368,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -6127,7 +6127,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -8727,8 +8727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216.96332, y: 187.74461}
-  m_SizeDelta: {x: 374.0734, y: 137.1108}
+  m_AnchoredPosition: {x: -216.96, y: 127.78}
+  m_SizeDelta: {x: 374.08, y: 255.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &441086294
 MonoBehaviour:
@@ -12048,7 +12048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216.96, y: 25.3986}
+  m_AnchoredPosition: {x: -216.96, y: -54}
   m_SizeDelta: {x: 374.08, y: 157.1697}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &587262018
@@ -14973,7 +14973,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -15815,8 +15815,8 @@ MonoBehaviour:
   PageTwo: {fileID: 940144840}
   PageThree: {fileID: 1134790458}
   PageFour: {fileID: 721317046}
-  LeftTab: {fileID: 0}
-  RightTab: {fileID: 0}
+  LeftTab: {fileID: 1511189014}
+  RightTab: {fileID: 1583658672}
   userInterface: {fileID: 1238759140}
   openedNotebook: {fileID: 694954574}
   bookOpenSound: {fileID: 694954578}
@@ -32598,7 +32598,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -34170,7 +34170,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -36203,7 +36203,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -38873,7 +38873,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: the river
+          m_StringArgument: River
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1617770901
@@ -42195,8 +42195,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216.96, y: 25.3986}
-  m_SizeDelta: {x: 374.08, y: 157.1697}
+  m_AnchoredPosition: {x: -216.96, y: -82.79865}
+  m_SizeDelta: {x: 374.08, y: 115.7055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783283067
 MonoBehaviour:
@@ -42248,7 +42248,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -43682,8 +43682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216.96, y: -142.5}
-  m_SizeDelta: {x: 374.08, y: 157.1697}
+  m_AnchoredPosition: {x: -216.96, y: -195.75}
+  m_SizeDelta: {x: 374.08, y: 86.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1869199064
 MonoBehaviour:
@@ -43735,7 +43735,7 @@ MonoBehaviour:
   m_fontSize: 26
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -44409,7 +44409,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282927176
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

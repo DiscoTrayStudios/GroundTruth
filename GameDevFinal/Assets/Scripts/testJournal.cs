@@ -44,19 +44,6 @@ public class testJournal : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         MakePages();
-        journalEntries = new Dictionary<string, string>(){
-            {"NewMadridPreQuake",  "I went to New Madrid. It was a very small town, but it had some charm."},
-            {"RiverPreQuake",      "I found a small community who lived at a nearby bank of the Mississippi River."},
-            {"StLouisPreQuake",    "I spent some time in my neck of the woods, St. Louis."},
-            {"NewMadridPostQuake", "New Madrid was hit hard by the quake. The people there were wounded, but their stunning resilience filled me with an unexpected hope."},
-            {"RiverPostQuake",     "At the River, the quake was so intense that residents had a tough time telling fact from fiction - I don't blame them."},
-            {"StLouisPostQuake",   "Despite being far from the epicenter, the earthquake was very destructive in St. Louis."}
-        };
-    }
-    void MakePages()
-    {
-        if(!firstOpen){
-        print("Making Journal!");
         boxIndex = 0;
         pageIndex = 0;
         journalBoxes.Add(journalBoxOne);
@@ -73,7 +60,37 @@ public class testJournal : MonoBehaviour
         Pages.Add(PageTwo);
         Pages.Add(PageThree);
         Pages.Add(PageFour);
-        firstOpen = true;
+        journalEntries = new Dictionary<string, string>(){
+            {"NewMadridPreQuake",  "I went south, to New Madrid. It's a very small town, way out in the boothill. The land there is in constant flux, having been run by the Spanish, French, Native, and Missourian governments in the last twenty years. It's about twenty minutes from the confluence of the Ohio and Mississippi Rivers - maybe I'll visit if I have time. Some locals warn of risk of earthquakes..."},
+            {"RiverPreQuake",      "I found a small community who lived at a nearby bank of the Mississippi River. I've heard there's an automated boat, which propels itself with steam power, making its way down the river at present. If I'm lucky, I'll find it, and write about it in the article."},
+            {"St.LouisPreQuake",   "I spent some time in my neck of the woods, St. Louis. I've lived here about five years now, which means I never experienced Spanish or French rule. The city is growing rapidly: there are talks of declaring it the capital of the entire Louisiana Territory, which takes up almost half of U.S.-owned land."},
+            {"Cutscene",           "A devastating earthquake hit a couple days ago. The roof of my house, in St. Louis, almost caved in from a falling tree. I'm lucky that my family and I survived. My new assignment at the paper is decidedly less open-ended. I need to tell the story of this earthquake, of the lives lost and upended. I've found that its epicenter was New Madrid: going there is a top priority."},
+            {"NewMadridPostQuake", "New Madrid was hit hard by the quake. The people there were wounded, but their stunning resilience filled me with an unexpected hope."},
+            {"RiverPostQuake",     "At the River, the quake was so intense that residents had a tough time telling fact from fiction - I don't blame them."},
+            {"St.LouisPostQuake",  "Despite being far from the epicenter, the earthquake was very destructive in St. Louis."}
+        };
+    }
+    void MakePages()
+    {
+        if(!firstOpen) {
+            print("Making Journal!");
+            boxIndex = 0;
+            pageIndex = 0;
+            journalBoxes.Add(journalBoxOne);
+            journalBoxes.Add(journalBoxTwo);
+            journalBoxes.Add(journalBoxThree);
+            journalBoxes.Add(journalBoxFour);
+            journalBoxes.Add(journalBoxFive);
+            journalBoxes.Add(journalBoxSix);
+            journalBoxes.Add(journalBoxSeven);
+            journalBoxes.Add(journalBoxEight);
+            journalBoxes.Add(journalBoxZero);
+
+            Pages.Add(PageOne);
+            Pages.Add(PageTwo);
+            Pages.Add(PageThree);
+            Pages.Add(PageFour);
+            firstOpen = true;
         }
     }
     public void openingJournal()
@@ -84,7 +101,7 @@ public class testJournal : MonoBehaviour
             userInterface.SetActive(false);
             openedNotebook.SetActive(true);
             bookOpenSound.Play();
-            testAddToJournal(GameManager.seenScenes, GameManager.TestEvidenceList);
+            testAddToJournal(GameManager.Instance.getSeenScenes(), GameManager.Instance.getTestEvidenceList());
         //PageOne.SetActive(true);
         }
     }
@@ -98,20 +115,26 @@ public class testJournal : MonoBehaviour
     }
 
     public void testAddToJournal(List<string> seenScenes, List<TestEvidence> evidenceList){
-        boxIndex = 0;
+        boxIndex = 1;
+        journalBoxes[0].text = "A lot of people think the Ozarks are boring, and that the people here have nothing to say. If that were true, I'd be unemployed. Luckily, a lot happens out here. My task, this next week and a half, is to pull together an article about something interesting and particular to our region. This should be fun.";
         print("Boxes" + journalBoxes.Count);
-        foreach (string scene in seenScenes) {
-            
-        }
+        journalBoxNineArticle.text = "Current Article Draft: \n" + ArticleManager.getArticle();
         foreach (var item in evidenceList) {
             print(boxIndex);
             print(item.test_evidence);
             // if(!item.test_collected){
-            journalBoxes[boxIndex].text = ArticleManager.getDialogues(boxIndex);
-            if (boxIndex +1 < journalBoxes.Count) {
-                boxIndex = boxIndex + 1;
-            } journalBoxNineArticle.text = "Current Article Draft: \n" + ArticleManager.getArticle();
-            // item.test_collected = true;
+            // journalBoxes[boxIndex].text = ArticleManager.getDialogues(boxIndex);
+            // if (boxIndex +1 < journalBoxes.Count) {
+            //     boxIndex = boxIndex + 1;
+            // } 
+            
+            item.test_collected = true;
+        }
+        foreach (var scene in seenScenes) {
+            journalBoxes[boxIndex].text = journalEntries[scene];
+            if (boxIndex + 1 < journalBoxes.Count) {
+                boxIndex++;
+            } 
         }
     }
 
