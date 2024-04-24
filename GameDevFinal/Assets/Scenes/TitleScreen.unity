@@ -36320,18 +36320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This land out here was "acquired" in the Louisiana Purchase.There is conflict
-    in the northern territories. It can lead to a war.You can fly from St. Louis
-    to Virginia in the year 1812.Man claims to sail up the entire river in one day
-    from South to North.I would like this area to become part of the United States.
-    Some folks might disagree with me on that.Have you seen the river people yet?
-    They come out from the depths of the river at night. I am standing watch. Leave
-    me be.There are some magical creatures in the woods around here. I saw it with
-    my own eyes.My husband calls me crazy and says it was just a wild dog.It had
-    HUGE teeth.It had wings and would fly.I am the only person who has seen it. Sometimes
-    I feel the ground rumble from the creature''s steps.The Mississippi River has
-    recently had a steamboat on the river. It can travel much faster than regular
-    wooden boats. '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c87f0686d0fdf1d4a8716c6791690ac1, type: 2}
   m_sharedMaterial: {fileID: -6113257599831227576, guid: c87f0686d0fdf1d4a8716c6791690ac1, type: 2}
