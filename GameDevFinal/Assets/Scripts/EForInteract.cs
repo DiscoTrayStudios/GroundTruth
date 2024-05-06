@@ -135,7 +135,7 @@ public class EForInteract : MonoBehaviour {
         // scribble.Play();
         if(!GameManager.CheckEvidence(evidence_name)){
             GameManager.Instance.AddEvidence(evidence_name);
-            GameManager.Instance.GmCollectEvidence(testEvi);    
+            GameManager.Instance.GmCollectEvidence(testEvi);
             ArticleManager.updateOrderedEvidenceSet(testEvi, whichDialogue);
         }
         else {
