@@ -105,8 +105,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        firstArticle.text    = "\n \n Article: " + article;
-        secondArticle.text   = "\n \n Article: " + article;
+        //firstArticle.text    = "\n \n Article: " + article;
+        //secondArticle.text   = "\n \n Article: " + article;
         firstFeedback.text   = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
         secondFeedback.text  = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
         if (finalDay - days < 16) {
@@ -217,6 +217,7 @@ public class GameManager : MonoBehaviour
         //GABBY UPDATE
         TestEvidenceList.Clear();
         print(TestEvidenceList.Count);
+        InvesArea.GetComponent<DeskScript>().reset();
         //
         groundshake = false;
         RemoveAllEvidence();
@@ -413,6 +414,7 @@ public class GameManager : MonoBehaviour
             SetPlayerBusy(false);
         } else if (scene == "InvestigativeArea") {
             timerGoing = false;
+            Timer.GetComponent<Timer>().StopTimer();
             groundshake = false;
             dialogBox.SetActive(false);
             UI.SetActive(false);
@@ -487,6 +489,8 @@ public class GameManager : MonoBehaviour
             groundshake = true;
             dialogBox.SetActive(false);
             UI.SetActive(false);
+            timerGoing = false;
+            Timer.GetComponent<Timer>().StopTimer();
             testNotebook.SetActive(false);
             PostUI.SetActive(false);
             Title.SetActive(false);
