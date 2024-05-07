@@ -105,10 +105,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        firstArticle.text    = "\n \n Article: " + article;
-        secondArticle.text   = "\n \n Article: " + article;
-        firstFeedback.text   = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore();
-        secondFeedback.text  = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore();
+        //firstArticle.text    = article;
+        //secondArticle.text   = article;
+        firstFeedback.text   = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
+        secondFeedback.text  = "\n \n Feedback: " + feedback + "\n \n Score: " + ArticleManager.getScore().ToString();
         if (finalDay - days < 16) {
             daysLeft.text = "Days Left: " + (finalDay - days).ToString();
         } else {
