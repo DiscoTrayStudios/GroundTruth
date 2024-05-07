@@ -440,6 +440,7 @@ public class GameManager : MonoBehaviour
             if (!seenScenes.Contains(scene)) { seenScenes.Add(scene); }
             dialogBox.SetActive(false);
             Timerbox.SetActive(true);
+            currentLocation = scene;
             if (post) {
                 PostUI.SetActive(true);
                 UI.SetActive(false);
@@ -483,7 +484,6 @@ public class GameManager : MonoBehaviour
             seenScenes.Add(scene);
             ResetScene();
             SetPost();
-            currentLocation = "InvestigativeArea";
             dialogBox.SetActive(false);
             UI.SetActive(false);
             testNotebook.SetActive(false);

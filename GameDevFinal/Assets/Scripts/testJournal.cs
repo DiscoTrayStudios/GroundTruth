@@ -116,25 +116,27 @@ public class testJournal : MonoBehaviour
 
     public void testAddToJournal(List<string> seenScenes, List<TestEvidence> evidenceList){
         boxIndex = 1;
-        journalBoxes[0].text = "A lot of people think the Ozarks are boring, and that the people here have nothing to say. If that were true, I'd be unemployed. Luckily, a lot happens out here. My task, this next week and a half, is to pull together an article about something interesting and particular to our region. This should be fun.";
-        print("Boxes" + journalBoxes.Count);
-        journalBoxNineArticle.text = "Current Article Draft: \n" + ArticleManager.getArticle();
-        foreach (var item in evidenceList) {
-            print(boxIndex);
-            print(item.test_evidence);
-            // if(!item.test_collected){
-            // journalBoxes[boxIndex].text = ArticleManager.getDialogues(boxIndex);
-            // if (boxIndex +1 < journalBoxes.Count) {
-            //     boxIndex = boxIndex + 1;
-            // } 
-            
-            item.test_collected = true;
-        }
-        foreach (var scene in seenScenes) {
-            journalBoxes[boxIndex].text = journalEntries[scene];
-            if (boxIndex + 1 < journalBoxes.Count) {
-                boxIndex++;
-            } 
+        if (journalBoxes.Count > 0) {
+            journalBoxes[0].text = "A lot of people think the Ozarks are boring, and that the people here have nothing to say. If that were true, I'd be unemployed. Luckily, a lot happens out here. My task, this next week and a half, is to pull together an article about something interesting and particular to our region. This should be fun.";
+            print("Boxes" + journalBoxes.Count);
+            journalBoxNineArticle.text = "Current Article Draft: \n" + ArticleManager.getArticle();
+            foreach (var item in evidenceList) {
+                print(boxIndex);
+                print(item.test_evidence);
+                // if(!item.test_collected){
+                // journalBoxes[boxIndex].text = ArticleManager.getDialogues(boxIndex);
+                // if (boxIndex +1 < journalBoxes.Count) {
+                //     boxIndex = boxIndex + 1;
+                // } 
+
+                item.test_collected = true;
+            }
+            foreach (var scene in seenScenes) {
+                journalBoxes[boxIndex].text = journalEntries[scene];
+                if (boxIndex + 1 < journalBoxes.Count) {
+                    boxIndex++;
+                } 
+            }
         }
     }
 

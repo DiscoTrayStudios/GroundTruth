@@ -20,8 +20,10 @@ public class AStar : MonoBehaviour
     private Animator animator;
     public static bool left;
     public static bool right;
+    public static string direction;
 
     void Start() {
+        direction = "Idle";
         path = new Stack<Vector3>();    
         if (GetComponent<Animator>() != null) {
             animator = GetComponent<Animator>();
@@ -189,10 +191,14 @@ public class AStar : MonoBehaviour
         int c = 0;
         string[] animations = {"Up", "Down", "Walking", "Idle"};
         foreach (string s in animations) {
-            if (c == index) { animator.SetTrigger(s);   }
+            if (c == index) { animator.SetTrigger(s);  direction = s; }
             else            { animator.ResetTrigger(s); }
             c++;
         }
+    }
+
+    public string getDirection() {
+        return direction;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
