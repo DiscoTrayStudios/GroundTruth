@@ -138,6 +138,13 @@ public class AStar : MonoBehaviour
         return Mathf.Sqrt(dx * dx + dy * dy);
     }
 
+    public void ClearPath() {
+        path = new Stack<Vector3>();
+        left  = false;
+        right = false;
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -149,7 +156,7 @@ public class AStar : MonoBehaviour
                 left  = false;
                 right = false;
             }
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonUp(0)) {
                 // print("oy");
                 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseWorldPos.z = 0f;

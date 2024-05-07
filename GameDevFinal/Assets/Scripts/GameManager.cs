@@ -295,6 +295,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ClearPath() {
+        // transform.Find("Player").GetComponent<AStar>().ClearPath();
+        // return;
+    }
+
     public static bool CheckEvidence(string evi){
         // print(evidence.ContainsKey(evi));
         return evidence.ContainsKey(evi);
@@ -327,6 +332,9 @@ public class GameManager : MonoBehaviour
     public static void RemoveAllUsedEvidence() {
         used_evidence.Clear();
     }
+
+    public IEnumerator wait()
+    { yield return new WaitForSeconds(1f); }
 
     public void AddDays(int n) {
         days = n + days;
