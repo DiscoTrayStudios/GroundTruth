@@ -413,8 +413,8 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(string scene){
         // RemoveAllUsedEvidence();
-        StartCoroutine(LoadYourAsyncScene(scene));
         TimeManager(currentLocation,scene);
+        StartCoroutine(LoadYourAsyncScene(scene));
         if (scene == "TitleScreen") {     
             testNotebook.GetComponent<testJournal>().ResetJournal();       
             dialogBox.SetActive(false);
@@ -448,6 +448,7 @@ public class GameManager : MonoBehaviour
             if (!seenScenes.Contains(scene)) { seenScenes.Add(scene); }
             dialogBox.SetActive(false);
             Timerbox.SetActive(true);
+            // Why is this here and also in LoadYourAsyncScene??
             currentLocation = scene;
             if (post) {
                 PostUI.SetActive(true);
