@@ -200,17 +200,21 @@ public class testJournal : MonoBehaviour
                 testFlipRightPage(1);
             }
         }
-        if(pageIndex == 0){
-            LeftTab.SetActive(false);
+        if (LeftTab != null) {
+            if(pageIndex == 0){
+                LeftTab.SetActive(false);
+            }
+            else{
+                LeftTab.SetActive(true);
+            }
         }
-        else{
-            LeftTab.SetActive(true);
-        }
-        if(pageIndex == Pages.Count -1){
-            RightTab.SetActive(false);
-        }
-        else{
-            RightTab.SetActive(true);
+        if (RightTab != null) { 
+            if(pageIndex == Pages.Count -1){
+                RightTab.SetActive(false);
+            }
+            else{
+                RightTab.SetActive(true);
+            }
         }
     }
 }
