@@ -248,12 +248,6 @@ public class GameManager : MonoBehaviour
     public void DialogHide() {
         dialogBox.SetActive(false);
         playerBusy = false;
-        if(haveEvidence == 1){
-            testNotebook.GetComponent<testJournal>().openingJournal();
-            testNotebook.GetComponent<testJournal>().flipToPage(1);
-
-            haveEvidence = 2;
-        }
     }
 
     public void FirstTown() {
@@ -288,10 +282,6 @@ public class GameManager : MonoBehaviour
     public void AddEvidence(string evi) {
         if (!evidence.ContainsKey(evi)) {
             evidence.Add(evi, true);
-            journalPopup.GetComponent<JournalPopup>().Notify();
-        } 
-        if(haveEvidence == 0){
-                haveEvidence = 1;
         }
     }
 

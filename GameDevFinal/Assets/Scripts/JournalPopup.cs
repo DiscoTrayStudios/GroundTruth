@@ -12,7 +12,7 @@ public class JournalPopup : MonoBehaviour
     }
 
     public void Notify(){
-        StartCoroutine("JournalNotify");
+        //StartCoroutine("JournalNotify");
     }
     IEnumerator JournalNotify(){
         while(GameManager.Instance.GetPlayerBusy()){
