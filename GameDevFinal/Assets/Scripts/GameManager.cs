@@ -213,6 +213,7 @@ public class GameManager : MonoBehaviour
         month = pMonth;
         year = 1812;
         finalDay = pFinalDay;
+        print("reset days to " + days);
     }
 
     public void ResetScene() {
@@ -401,9 +402,9 @@ public class GameManager : MonoBehaviour
         else if (nextScene == "St.LouisPreQuake"  ) {AddDays(1);}
         else if (nextScene == "RiverPreQuake"     ) {AddDays(2);}
         else if (nextScene == "NewMadridPreQuake" ) {AddDays(3);}
-        else if (nextScene == "St.LouisPostQuakes") {PAddDays(1);}
-        else if (nextScene == "RiverPostQuake"    ) {PAddDays(2);}
-        else if (nextScene == "NewMadridPostQuake") {PAddDays(3);}
+        else if (nextScene == "St.LouisPostQuakes") {AddDays(1);}
+        else if (nextScene == "RiverPostQuake"    ) {AddDays(2);}
+        else if (nextScene == "NewMadridPostQuake") {AddDays(3);}
     }
 
 
@@ -441,12 +442,18 @@ public class GameManager : MonoBehaviour
             int dLeft = finalDay - days;
             if (dLeft < 3) {
                 NewMadridTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+            } else {
+                NewMadridTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
             }
             if (dLeft < 2) {
                 RiverTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+            } else {
+                RiverTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
             }
             if (dLeft < 1) {
                 StLouisTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+            } else {
+                StLouisTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
             }
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
