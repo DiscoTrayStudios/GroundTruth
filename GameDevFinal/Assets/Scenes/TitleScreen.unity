@@ -30076,6 +30076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68e64f3c2605b945880b03adb3b159d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NewMadridTravelButton: {fileID: 1877642778}
+  StLouisTravelButton: {fileID: 1165744979}
+  RiverTravelButton: {fileID: 1617770898}
   prequakeWatcher: {fileID: 684767989}
   postquakeWatcher: {fileID: 1318881555}
   dialogBox: {fileID: 1109175458}

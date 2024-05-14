@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance {get; private set;}
 
+    public GameObject NewMadridTravelButton;
+    public GameObject StLouisTravelButton;
+    public GameObject RiverTravelButton;
+
     public EvidenceWatcher prequakeWatcher;
     public EvidenceWatcher postquakeWatcher;
     public static Dictionary<string, bool> evidence = new Dictionary<string, bool>();
@@ -397,9 +401,9 @@ public class GameManager : MonoBehaviour
         else if (nextScene == "St.LouisPreQuake"  ) {AddDays(1);}
         else if (nextScene == "RiverPreQuake"     ) {AddDays(2);}
         else if (nextScene == "NewMadridPreQuake" ) {AddDays(3);}
-        else if (nextScene == "St.LouisPostQuakes") {AddDays(1);}
-        else if (nextScene == "RiverPostQuake"    ) {AddDays(2);}
-        else if (nextScene == "NewMadridPostQuake") {AddDays(3);}
+        else if (nextScene == "St.LouisPostQuakes") {PAddDays(1);}
+        else if (nextScene == "RiverPostQuake"    ) {PAddDays(2);}
+        else if (nextScene == "NewMadridPostQuake") {PAddDays(3);}
     }
 
 
@@ -434,6 +438,16 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(false);
             Timerbox.SetActive(false);
             SetPlayerBusy(false);
+            int dLeft = finalDay - days;
+            if (dLeft < 3) {
+                NewMadridTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+            }
+            if (dLeft < 2) {
+                RiverTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+            }
+            if (dLeft < 1) {
+                StLouisTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+            }
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             beenanywhere = true;
