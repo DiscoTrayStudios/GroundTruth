@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI dateText;
 
     public TextMeshProUGUI dueDateText;
-
+    public static List<string> seenScenes = new List<string>(); 
     public TextMeshProUGUI daysLeft;
     public TextMeshProUGUI postDateText;
     public TextMeshProUGUI postDaysLeft;
@@ -193,9 +193,7 @@ public class GameManager : MonoBehaviour
         postFailureScreen.SetActive(true);
     }
 
-    public Boolean IsPost(){
-        return post;
-    }
+    public bool IsPost(){ return post; }
 
     public void pre() {
         post = false;
@@ -224,10 +222,10 @@ public class GameManager : MonoBehaviour
         RemoveAllUsedEvidence();
         prequakeWatcher.ResetEvidence();
         postquakeWatcher.ResetEvidence();
-        testNotebook.GetComponent<testJournal>().ResetJournal();
+        // testNotebook.GetComponent<testJournal>().ResetJournal();
         print("cleared journal");
-        postTestNotebook.GetComponent<testJournal>().ResetJournal();
-        print("cleared journal");
+        // postTestNotebook.GetComponent<testJournal>().ResetJournal();
+        // print("cleared journal");
         ArticleManager.resetArticleAndScore();
         article = "";
         
@@ -247,15 +245,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(TypeText(dialogText, text));
     }
 
-    public void DialogHide(){
+    public void DialogHide() {
         dialogBox.SetActive(false);
         playerBusy = false;
-        if(haveEvidence == 1){
-            testNotebook.GetComponent<testJournal>().openingJournal();
-            testNotebook.GetComponent<testJournal>().flipToPage(1);
-
-            haveEvidence = 2;
-        }
     }
 
     public void FirstTown() {
@@ -290,11 +282,12 @@ public class GameManager : MonoBehaviour
     public void AddEvidence(string evi) {
         if (!evidence.ContainsKey(evi)) {
             evidence.Add(evi, true);
-            journalPopup.GetComponent<JournalPopup>().Notify();
-        } 
-        if(haveEvidence == 0){
-                haveEvidence = 1;
         }
+    }
+
+    public void ClearPath() {
+        // transform.Find("Player").GetComponent<AStar>().ClearPath();
+        // return;
     }
 
     public static bool CheckEvidence(string evi){
@@ -329,6 +322,9 @@ public class GameManager : MonoBehaviour
     public static void RemoveAllUsedEvidence() {
         used_evidence.Clear();
     }
+
+    public IEnumerator wait()
+    { yield return new WaitForSeconds(1f); }
 
     public void AddDays(int n) {
         days = n + days;
@@ -369,8 +365,16 @@ public class GameManager : MonoBehaviour
         TravelDisplay.GetComponent<TravelDisplay>().ShowTraveling("desk");
     }
 
+    public List<string> getSeenScenes() { return seenScenes; }
+    public List<TestEvidence> getTestEvidenceList() { return TestEvidenceList; }
+
     IEnumerator LoadYourAsyncScene(string scene) {
-        if (scene != "InvestigativeArea") {currentLocation = scene;}
+        if (scene != "InvestigativeArea") {
+            currentLocation = scene; 
+            if (InvesArea.activeSelf || PostQuakeInves.activeSelf) { 
+                InvesArea.SetActive(false); PostQuakeInves.SetActive(false); 
+            } 
+        } 
         currentScene = scene;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
 
@@ -398,10 +402,11 @@ public class GameManager : MonoBehaviour
 
 
     public void ChangeScene(string scene){
+        // RemoveAllUsedEvidence();
         TimeManager(currentLocation,scene);
         StartCoroutine(LoadYourAsyncScene(scene));
-        // RemoveAllUsedEvidence();
-        if (scene == "TitleScreen") {            
+        if (scene == "TitleScreen") {     
+            testNotebook.GetComponent<testJournal>().ResetJournal();       
             dialogBox.SetActive(false);
             UI.SetActive(false);
             PostUI.SetActive(false);
@@ -430,14 +435,19 @@ public class GameManager : MonoBehaviour
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             beenanywhere = true;
+            if (!seenScenes.Contains(scene)) { seenScenes.Add(scene); }
             dialogBox.SetActive(false);
             Timerbox.SetActive(true);
+            // Why is this here and also in LoadYourAsyncScene??
+            currentLocation = scene;
             if (post) {
                 PostUI.SetActive(true);
                 UI.SetActive(false);
+                testNotebook.GetComponent<testJournal>().testAddToJournal(seenScenes, TestEvidenceList);
             } else {
                 UI.SetActive(true);
                 PostUI.SetActive(false);
+                postTestNotebook.GetComponent<testJournal>().testAddToJournal(seenScenes, TestEvidenceList);
             }
             Title.SetActive(false);
             InvesArea.SetActive(false);
@@ -470,9 +480,9 @@ public class GameManager : MonoBehaviour
             BossUI.transform.Find("SkipButton").gameObject.SetActive(false);
         } else if (scene == "Cutscene") {
             ArticleManager.resetArticleAndScore();
+            seenScenes.Add(scene);
             ResetScene();
             SetPost();
-            currentLocation = "InvestigativeArea";
             dialogBox.SetActive(false);
             UI.SetActive(false);
             testNotebook.SetActive(false);

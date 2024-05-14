@@ -23,6 +23,7 @@ public class TravelButtonScript : MonoBehaviour
         else{
             scenename += "PreQuake";
         }
+        print(scenename);
         GameManager.Instance.ChangeScene(scenename);
     }
 

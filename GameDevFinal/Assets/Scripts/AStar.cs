@@ -20,8 +20,10 @@ public class AStar : MonoBehaviour
     private Animator animator;
     public static bool left;
     public static bool right;
+    public static string direction;
 
     void Start() {
+        direction = "Idle";
         path = new Stack<Vector3>();    
         if (GetComponent<Animator>() != null) {
             animator = GetComponent<Animator>();
@@ -136,6 +138,13 @@ public class AStar : MonoBehaviour
         return Mathf.Sqrt(dx * dx + dy * dy);
     }
 
+    public void ClearPath() {
+        path = new Stack<Vector3>();
+        left  = false;
+        right = false;
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -144,8 +153,10 @@ public class AStar : MonoBehaviour
             float vertical = Input.GetAxisRaw("Vertical");
             if (horizontal != 0 | vertical != 0 || GameManager.Instance.GetPlayerBusy()) {
                 path = new Stack<Vector3>();
+                left  = false;
+                right = false;
             }
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonUp(0)) {
                 // print("oy");
                 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseWorldPos.z = 0f;
@@ -180,17 +191,21 @@ public class AStar : MonoBehaviour
         }
     }   
 
-    public static bool GetLeft()  { return left;  }
-    public static bool GetRight() { return right; }
+    public bool GetLeft()  { return left;  }
+    public bool GetRight() { return right; }
 
     void AnimatorUpdate(int index) {
         int c = 0;
         string[] animations = {"Up", "Down", "Walking", "Idle"};
         foreach (string s in animations) {
-            if (c == index) { animator.SetTrigger(s);   }
+            if (c == index) { animator.SetTrigger(s);  direction = s; }
             else            { animator.ResetTrigger(s); }
             c++;
         }
+    }
+
+    public string getDirection() {
+        return direction;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

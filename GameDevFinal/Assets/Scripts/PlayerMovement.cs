@@ -8,12 +8,13 @@ public class PlayerMovement: MonoBehaviour {
     public float vertical;
     private float moveLimiter = 0.7f;
     public float runSpeed = 5f;
-
+    private AStar path;
     private Animator animator;
 
     void Start() {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        path = GetComponent<AStar>();
     }
 
     void Update() {
@@ -24,6 +25,15 @@ public class PlayerMovement: MonoBehaviour {
         else{
             horizontal = 0;
             vertical = 0;
+        }
+        if (horizontal == 0 && vertical == 0) {
+            switch (path.getDirection())
+            {
+                case "Up":      vertical = 1; break;
+                case "Down": vertical = -1; break;
+                case "Walking": horizontal = GetComponent<AStar>().GetRight() ? 1 : -1; break;
+                case "Idle": break;
+            }
         }
         animator.SetFloat("horizontal", horizontal);
         if (horizontal > 0) {
@@ -52,6 +62,8 @@ public class PlayerMovement: MonoBehaviour {
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         }
+            horizontal *= moveLimiter;
+            vertical *= moveLimiter;
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 }
