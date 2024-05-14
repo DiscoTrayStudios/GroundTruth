@@ -83,8 +83,13 @@ public class EForInteract : MonoBehaviour {
             Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);             
         }
         talking = true;
-        if (evidence_name != "") { collect(); }   
-        StartCoroutine(WaitForEnd());
+        if (evidence_name != "") { collect(); }  
+        print("Trying to have dialog..."); 
+        if (gameObject.activeInHierarchy) {
+            StartCoroutine(WaitForEnd());
+        } else {
+            StopAllCoroutines();
+        }
     }
     IEnumerator WaitForEnd(){
         while(dialogShown & GameManager.Instance.GetPlayerBusy()){

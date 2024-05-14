@@ -39,7 +39,7 @@ public class NPCWander : MonoBehaviour {
                 else                        { l--; }
             }
             if (l == 0) { playerNear = false; }
-            if (moveToWaypointCoroutine == null && !playerNear) {
+            if (moveToWaypointCoroutine == null && !playerNear && gameObject.activeInHierarchy) {
                 moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
             }
         }
@@ -115,7 +115,7 @@ public class NPCWander : MonoBehaviour {
 
     public void DontFaceFront(){
         if(!front.Equals(null)){
-            if (moveToWaypointCoroutine == null) {
+            if (moveToWaypointCoroutine == null && gameObject.activeInHierarchy) {
                 moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
             }
         }
@@ -135,7 +135,7 @@ public class NPCWander : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            if (moveToWaypointCoroutine == null){
+            if (moveToWaypointCoroutine == null && gameObject.activeInHierarchy){
                 moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
             }
         }
@@ -157,7 +157,7 @@ public class NPCWander : MonoBehaviour {
     }
 
     void OnCollisionExit2D(Collision2D collision) {
-        if (moveToWaypointCoroutine == null && collision.gameObject.activeSelf){
+        if (moveToWaypointCoroutine == null && collision.gameObject.activeSelf && gameObject.activeInHierarchy){
                 moveToWaypointCoroutine = StartCoroutine(MoveToWaypoint());
                 colliding = false;
         }
