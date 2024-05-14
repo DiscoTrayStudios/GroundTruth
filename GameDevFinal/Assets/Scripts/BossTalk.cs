@@ -27,10 +27,14 @@ public string[] text;
     private bool startedDialogue;
     public AudioSource speaking;
 
-    void Awake(){
+    void Start(){
         currentTextIndex = 0;
         if(!GameManager.Instance.IsPost()){
-            GameManager.Instance.GameDialogShow("Welcome to Ground Truth! (Press E to Continue)");    
+            //GameManager.Instance.GameDialogShow("Welcome to Ground Truth! (Press E to Continue)");    
+            startedDialogue = true;
+            speaking.Play();
+            GameManager.Instance.StartDialogue(text);   
+            GameManager.Instance.GameDialogHide();
         }
         else{
             prevScore = ArticleManager.getScoreNum();

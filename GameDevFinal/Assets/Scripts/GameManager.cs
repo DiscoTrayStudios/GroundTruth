@@ -246,7 +246,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void DialogHide() {
+        StopAllCoroutines();
         dialogBox.SetActive(false);
+        dialogText.text = "";
         playerBusy = false;
     }
 
