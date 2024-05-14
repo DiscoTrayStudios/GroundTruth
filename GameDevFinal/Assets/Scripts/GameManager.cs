@@ -375,8 +375,8 @@ public class GameManager : MonoBehaviour
     public List<TestEvidence> getTestEvidenceList() { return TestEvidenceList; }
 
     IEnumerator LoadYourAsyncScene(string scene) {
+        currentLocation = scene; 
         if (scene != "InvestigativeArea") {
-            currentLocation = scene; 
             if (InvesArea.activeSelf || PostQuakeInves.activeSelf) { 
                 InvesArea.SetActive(false); PostQuakeInves.SetActive(false); 
             } 
