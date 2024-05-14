@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.Linq;
+using UnityEditor;
 
 public class AStar : MonoBehaviour
 {
@@ -151,13 +152,14 @@ public class AStar : MonoBehaviour
         if (gameObject.tag == "Player") {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
-            if (horizontal != 0 | vertical != 0 || GameManager.Instance.GetPlayerBusy()) {
+            if (horizontal != 0 || vertical != 0 || GameManager.Instance.GetPlayerBusy()) {
                 path = new Stack<Vector3>();
                 left  = false;
                 right = false;
             }
-            if (Input.GetMouseButtonUp(0)) {
-                // print("oy");
+            if (Input.GetMouseButtonDown(0) && !GameManager.Instance.GetPlayerBusy()) {
+                print("oy");
+
                 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseWorldPos.z = 0f;
                 // rb.velocity = new Vector2(mouseWorldPos.x - transform.position.x, mouseWorldPos.y - transform.position.y);
