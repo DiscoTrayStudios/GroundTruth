@@ -89,7 +89,7 @@ public class DeskScript : MonoBehaviour
         
     }
 
-    public void reset(){
+    public void Reset(){
         rt.anchoredPosition = new Vector2(0f, 0f);
         writingHolder.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
         article.SetActive(false);

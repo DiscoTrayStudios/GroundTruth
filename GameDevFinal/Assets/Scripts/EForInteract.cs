@@ -31,6 +31,10 @@ public class EForInteract : MonoBehaviour {
                 exPoint.SetActive(false);
                 print(exPoint.name);
             }
+        } else {
+            if (GameManager.Instance.HasSpoken(gameObject.name)) {
+                exPoint.SetActive(false);
+            }
         }
     }
 
@@ -83,7 +87,10 @@ public class EForInteract : MonoBehaviour {
             Camera.main.GetComponent<ZoomCamera>().ZoomIn(transform.position);             
         }
         talking = true;
-        if (evidence_name != "") { collect(); }  
+        if (evidence_name != "") { collect(); } 
+        else {
+            GameManager.Instance.Speak(gameObject.name);
+        }
         print("Trying to have dialog..."); 
         if (gameObject.activeInHierarchy) {
             StartCoroutine(WaitForEnd());

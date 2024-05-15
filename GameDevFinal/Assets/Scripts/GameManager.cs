@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public static Dictionary<string, int> used_evidence = new Dictionary<string, int>();
 
+    public HashSet<string> spokenTo = new HashSet<string>();
+
     public static List<int> score_keeper = new List<int>();
 
     public GameObject dialogBox;
@@ -143,6 +145,14 @@ public class GameManager : MonoBehaviour
       //  }
     }
 
+    public bool HasSpoken(string name) {
+        return spokenTo.Contains(name);
+    }
+
+    public void Speak(string name) {
+        spokenTo.Add(name);
+    }
+
     public void StartTime(){
         if(Timer.GetComponent<Timer>().Started == false){
             Timer.GetComponent<Timer>().StartTimer();
@@ -220,7 +230,7 @@ public class GameManager : MonoBehaviour
         //GABBY UPDATE
         TestEvidenceList.Clear();
         print(TestEvidenceList.Count);
-        InvesArea.GetComponent<DeskScript>().reset();
+        InvesArea.GetComponent<DeskScript>().Reset();
         //
         groundshake = false;
         RemoveAllEvidence();
