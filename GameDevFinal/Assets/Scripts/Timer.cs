@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
 
     private int hours;
     private int seconds;
-    public int TimeLimit = 90;
+    public int TimeLimit = 50;
     public bool Started;
     // Start is called before the first frame update
     void Start()

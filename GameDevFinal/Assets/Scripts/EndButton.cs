@@ -21,7 +21,7 @@ public class EndButton : MonoBehaviour
 
     public void SetText(){
         if(GameManager.Instance.IsPost()){
-            text.SetText("Back to Main Menu");
+            text.SetText("The End!");
         }
         else{
             text.SetText("Continue");

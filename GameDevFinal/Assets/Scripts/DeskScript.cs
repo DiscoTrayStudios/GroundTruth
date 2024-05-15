@@ -91,6 +91,7 @@ public class DeskScript : MonoBehaviour
 
     public void reset(){
         rt.anchoredPosition = new Vector2(0f, 0f);
+        writingHolder.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
         article.SetActive(false);
         pen.SetActive(true);
         writeButton.SetActive(true);
