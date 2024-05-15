@@ -18406,7 +18406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 965ef69ebd794b94a94911b3e59fa49a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45af0ea37f3edd7499538fac301d037a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33772,7 +33772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377.00003, y: -153}
+  m_AnchoredPosition: {x: -377.00003, y: -56}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1165744981
@@ -33819,18 +33819,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1038403563}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: FirstTown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1154789034}
         m_TargetAssemblyTypeName: TravelDisplay, Assembly-CSharp
         m_MethodName: ShowTraveling
@@ -40102,7 +40090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.65368, y: -1.1278992}
+  m_AnchoredPosition: {x: -50, y: -40}
   m_SizeDelta: {x: 1101.2, y: 877.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380895807
@@ -47194,7 +47182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377.00003, y: -248}
+  m_AnchoredPosition: {x: -377.00003, y: -153}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617770900
@@ -47241,18 +47229,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1038403563}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: FirstTown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1154789034}
         m_TargetAssemblyTypeName: TravelDisplay, Assembly-CSharp
         m_MethodName: ShowTraveling
@@ -53586,7 +53562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376.00003, y: -56}
+  m_AnchoredPosition: {x: -377, y: -248}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877642780
@@ -53633,18 +53609,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1038403563}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: FirstTown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1131664599}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -54305,7 +54269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 965ef69ebd794b94a94911b3e59fa49a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45af0ea37f3edd7499538fac301d037a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

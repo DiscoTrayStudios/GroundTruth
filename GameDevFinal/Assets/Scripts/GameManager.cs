@@ -269,9 +269,14 @@ public class GameManager : MonoBehaviour
         playerBusy = false;
     }
 
-    public void FirstTown() {
-        if (!beenanywhere) {
+    public void FirstTimeInTown() {
+        print(currentLocation);
+        print(seenScenes.Count);
+        if (!seenScenes.Contains(currentLocation)) {
             testNotebook.GetComponent<testJournal>().openingJournal();
+            if (beenanywhere) {
+                testNotebook.GetComponent<testJournal>().flipToPage(1);
+            } 
         } 
     }
 
@@ -454,12 +459,15 @@ public class GameManager : MonoBehaviour
             TravelCheck();
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
+            FirstTimeInTown();
             beenanywhere = true;
+
             if (!seenScenes.Contains(scene)) { seenScenes.Add(scene); }
             dialogBox.SetActive(false);
             Timerbox.SetActive(true);
             // Why is this here and also in LoadYourAsyncScene??
             currentLocation = scene;
+
             if (post) {
                 PostUI.SetActive(true);
                 UI.SetActive(false);
@@ -475,6 +483,8 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(false);
             StartTime();
+
+
         } else if (scene == "Credits") {
             dialogBox.SetActive(false);
             UI.SetActive(false);
