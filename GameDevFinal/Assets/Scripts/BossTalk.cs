@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BossTalk : MonoBehaviour
 {
@@ -50,6 +50,7 @@ public string[] text;
                 i++;
             }
             GameManager.Instance.StartDialogue(usedPostText);
+            Camera.main.transform.RotateAround(transform.position, UnityEngine.Vector3.forward, 7);
         }
         //GameManager.Instance.SetPlayerBusy(false);
     

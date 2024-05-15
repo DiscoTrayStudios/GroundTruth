@@ -28,6 +28,7 @@ public class CutsceneManager : MonoBehaviour {
 
         audioSource.PlayOneShot(earthquakeSound, 1f);
         StartCoroutine(CameraShake());
+        GameManager.Instance.CutSceneText.SetActive(false);
         yield return new WaitForSeconds(2);
         preTilemap.SetActive(false);
         postTilemap.SetActive(true);

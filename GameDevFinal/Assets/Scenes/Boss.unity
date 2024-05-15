@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 32501647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -1.62, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -281,7 +281,7 @@ MonoBehaviour:
   - Remember, travel times vary between locations.
   - Use your time wisely, and good luck!
   postText:
-  - Something catastrophic is happening.
+  - Did you feel that? Something catastrophic is happening!!
   - Your last article was not the most accurate. We need you to write another.
   - Your last article was acceptable. We need you to write another.
   - Your last article was quite good. We need you to write another.

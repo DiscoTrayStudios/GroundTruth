@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject StLouisTravelButton;
     public GameObject RiverTravelButton;
 
+    public GameObject CutSceneText;
+
     public EvidenceWatcher prequakeWatcher;
     public EvidenceWatcher postquakeWatcher;
     public static Dictionary<string, bool> evidence = new Dictionary<string, bool>();
@@ -510,6 +512,7 @@ public class GameManager : MonoBehaviour
             PostQuakeInves.SetActive(false);
             Credits.SetActive(false);
             BossUI.SetActive(false);
+            CutSceneText.SetActive(true);
         }
         else if (scene == "PostQuake") {
             //GameManager.TestEvidenceList.Clear();
