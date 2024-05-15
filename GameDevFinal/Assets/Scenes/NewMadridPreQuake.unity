@@ -49472,7 +49472,7 @@ GameObject:
   - component: {fileID: 167138968}
   - component: {fileID: 167138969}
   m_Layer: 0
-  m_Name: SmallFarmer
+  m_Name: PN SmallFarmer
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53619,7 +53619,7 @@ GameObject:
   - component: {fileID: 596491545}
   - component: {fileID: 596491546}
   m_Layer: 0
-  m_Name: Native Male
+  m_Name: PN Native Male
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54013,7 +54013,7 @@ GameObject:
   - component: {fileID: 632093523}
   - component: {fileID: 632093524}
   m_Layer: 0
-  m_Name: Timothy Robinson
+  m_Name: PN Timothy Robinson
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54392,7 +54392,7 @@ GameObject:
   - component: {fileID: 639990191}
   - component: {fileID: 639990199}
   m_Layer: 0
-  m_Name: Tecumseh
+  m_Name: PN Tecumseh
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55283,7 +55283,7 @@ GameObject:
   - component: {fileID: 997683083}
   - component: {fileID: 997683084}
   m_Layer: 0
-  m_Name: Native FeMale
+  m_Name: PN Native FeMale
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55548,7 +55548,7 @@ GameObject:
   - component: {fileID: 1054507607}
   - component: {fileID: 1054507615}
   m_Layer: 0
-  m_Name: Eliza Bryan
+  m_Name: PN Eliza Bryan
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55926,7 +55926,7 @@ GameObject:
   - component: {fileID: 1096000124}
   - component: {fileID: 1096000125}
   m_Layer: 0
-  m_Name: Unionist
+  m_Name: PN Unionist
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56994,7 +56994,7 @@ GameObject:
   - component: {fileID: 1657408946}
   - component: {fileID: 1657408947}
   m_Layer: 0
-  m_Name: Female Creature Seer
+  m_Name: PN Female Creature Seer
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57374,7 +57374,7 @@ GameObject:
   - component: {fileID: 1742125200}
   - component: {fileID: 1742125201}
   m_Layer: 0
-  m_Name: Husband
+  m_Name: PN Husband
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57731,7 +57731,7 @@ GameObject:
   - component: {fileID: 1883024740}
   - component: {fileID: 1883024748}
   m_Layer: 0
-  m_Name: Politician
+  m_Name: PN Politician
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -23644,7 +23644,7 @@ GameObject:
   - component: {fileID: 582157188}
   - component: {fileID: 582157195}
   m_Layer: 0
-  m_Name: Nimrod Hughes
+  m_Name: QS Nimrod Hughes
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24022,7 +24022,7 @@ GameObject:
   - component: {fileID: 746134570}
   - component: {fileID: 746134571}
   m_Layer: 0
-  m_Name: Female Townsperson
+  m_Name: QS Female Townsperson
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29315,7 +29315,7 @@ GameObject:
   - component: {fileID: 1033061331}
   - component: {fileID: 1033061332}
   m_Layer: 0
-  m_Name: Priest
+  m_Name: QS Priest
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29583,7 +29583,7 @@ GameObject:
   - component: {fileID: 1072947613}
   - component: {fileID: 1072947620}
   m_Layer: 0
-  m_Name: Patricia Harrison
+  m_Name: QS Patricia Harrison
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32618,7 +32618,7 @@ GameObject:
   - component: {fileID: 1529045106}
   - component: {fileID: 1529045113}
   m_Layer: 0
-  m_Name: Akecheta
+  m_Name: QS Akecheta
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37671,7 +37671,7 @@ GameObject:
   - component: {fileID: 1754727274}
   - component: {fileID: 1754727275}
   m_Layer: 0
-  m_Name: Farmer Man
+  m_Name: QS Farmer Man
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37939,7 +37939,7 @@ GameObject:
   - component: {fileID: 1760869914}
   - component: {fileID: 1760869915}
   m_Layer: 0
-  m_Name: Male Townsperson
+  m_Name: QS Male Townsperson
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38372,7 +38372,7 @@ GameObject:
   - component: {fileID: 1866578266}
   - component: {fileID: 1866578267}
   m_Layer: 0
-  m_Name: Politician
+  m_Name: QS Politician
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

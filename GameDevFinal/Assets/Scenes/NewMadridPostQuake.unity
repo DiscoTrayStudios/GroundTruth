@@ -5193,7 +5193,7 @@ GameObject:
   - component: {fileID: 229701269}
   - component: {fileID: 229701275}
   m_Layer: 0
-  m_Name: Patricia Harrison
+  m_Name: QN Patricia Harrison
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9198,7 +9198,7 @@ GameObject:
   - component: {fileID: 298588405}
   - component: {fileID: 298588406}
   m_Layer: 0
-  m_Name: Farmer's wife
+  m_Name: QN Farmer's wife
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9568,7 +9568,7 @@ GameObject:
   - component: {fileID: 454353346}
   - component: {fileID: 454353347}
   m_Layer: 0
-  m_Name: Male Townsperson 1
+  m_Name: QN Male Townsperson 1
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10529,7 +10529,7 @@ GameObject:
   - component: {fileID: 967889324}
   - component: {fileID: 967889325}
   m_Layer: 0
-  m_Name: Female Townsperson 1
+  m_Name: QN Female Townsperson 1
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60004,7 +60004,7 @@ GameObject:
   - component: {fileID: 1176317153}
   - component: {fileID: 1176317159}
   m_Layer: 0
-  m_Name: Bald Activist
+  m_Name: QN Bald Activist
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68674,7 +68674,7 @@ GameObject:
   - component: {fileID: 1627804157}
   - component: {fileID: 1627804158}
   m_Layer: 0
-  m_Name: Male Farmer 1
+  m_Name: QN Male Farmer 1
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77008,7 +77008,7 @@ GameObject:
   - component: {fileID: 1723962921}
   - component: {fileID: 1723962927}
   m_Layer: 0
-  m_Name: Tecumseh's Sister
+  m_Name: QN Tecumseh's Sister
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

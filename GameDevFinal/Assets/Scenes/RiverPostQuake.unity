@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 268605879}
   - component: {fileID: 268605880}
   m_Layer: 0
-  m_Name: Sailor 2
+  m_Name: QR Sailor 2
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 458145201}
   - component: {fileID: 458145202}
   m_Layer: 0
-  m_Name: Sailor 1
+  m_Name: QR Sailor 1
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38646,7 +38646,7 @@ GameObject:
   - component: {fileID: 1146369784}
   - component: {fileID: 1146369785}
   m_Layer: 0
-  m_Name: Sailor 5
+  m_Name: QR Sailor 5
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39069,7 +39069,7 @@ GameObject:
   - component: {fileID: 1417099260}
   - component: {fileID: 1417099261}
   m_Layer: 0
-  m_Name: Sailor 6
+  m_Name: QR Sailor 6
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39337,7 +39337,7 @@ GameObject:
   - component: {fileID: 1450194554}
   - component: {fileID: 1450194555}
   m_Layer: 0
-  m_Name: Nimrod Hughes
+  m_Name: QR Nimrod Hughes
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39667,7 +39667,7 @@ GameObject:
   - component: {fileID: 1519401429}
   - component: {fileID: 1519401430}
   m_Layer: 0
-  m_Name: Eliza Bryan
+  m_Name: QR Eliza Bryan
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50283,7 +50283,7 @@ GameObject:
   - component: {fileID: 1867861371}
   - component: {fileID: 1867861372}
   m_Layer: 0
-  m_Name: Sailor 3
+  m_Name: QR Sailor 3
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50549,7 +50549,7 @@ GameObject:
   - component: {fileID: 1936279214}
   - component: {fileID: 1936279215}
   m_Layer: 0
-  m_Name: Tecumseh
+  m_Name: QR Tecumseh
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50992,7 +50992,7 @@ GameObject:
   - component: {fileID: 2072108698}
   - component: {fileID: 2072108699}
   m_Layer: 0
-  m_Name: Sailor 4
+  m_Name: QR Sailor 4
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
