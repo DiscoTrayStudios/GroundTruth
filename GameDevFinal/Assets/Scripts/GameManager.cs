@@ -439,22 +439,7 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(false);
             Timerbox.SetActive(false);
             SetPlayerBusy(false);
-            int dLeft = finalDay - days;
-            if (dLeft < 3) {
-                NewMadridTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
-            } else {
-                NewMadridTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
-            }
-            if (dLeft < 2) {
-                RiverTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
-            } else {
-                RiverTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
-            }
-            if (dLeft < 1) {
-                StLouisTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
-            } else {
-                StLouisTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
-            }
+            TravelCheck();
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
             beenanywhere = true;
@@ -533,6 +518,7 @@ public class GameManager : MonoBehaviour
             BossUI.SetActive(false);
             Timerbox.SetActive(false);
             SetPlayerBusy(false);
+            TravelCheck();
         } else {
             dialogBox.SetActive(false);
             UI.SetActive(false);
@@ -544,6 +530,25 @@ public class GameManager : MonoBehaviour
             Credits.SetActive(false);
             BossUI.SetActive(false);
             Timerbox.SetActive(false);
+        }
+    }
+
+    void TravelCheck() {
+        int dLeft = finalDay - days;
+        if (dLeft < 3) {
+            NewMadridTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+        } else {
+            NewMadridTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
+        }
+        if (dLeft < 2) {
+            RiverTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+        } else {
+            RiverTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
+        }
+        if (dLeft < 1) {
+            StLouisTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = false;
+        } else {
+            StLouisTravelButton.GetComponent<UnityEngine.UI.Button>().interactable = true;
         }
     }
 

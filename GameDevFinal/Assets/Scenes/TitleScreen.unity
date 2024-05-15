@@ -45679,7 +45679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeText: {fileID: 1576219957}
   TimeLeft: 0
-  TimeLimit: 90
+  TimeLimit: 35
   Started: 0
 --- !u!114 &1576219957
 MonoBehaviour:
