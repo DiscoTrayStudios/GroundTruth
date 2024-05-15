@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EvidenceWatcher : MonoBehaviour
@@ -55,6 +56,7 @@ public class EvidenceWatcher : MonoBehaviour
         }
     }
     public void ResetEvidence(){
+        print("clearing evidence " + evidence.Count());
         foreach (var evi in evidence) {
             evi.SetActive(false);
             
