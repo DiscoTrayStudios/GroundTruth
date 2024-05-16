@@ -463,11 +463,7 @@ public class GameManager : MonoBehaviour
             TravelCheck();
         } else if (scene == "NewMadridPreQuake" || scene == "St.LouisPreQuake" || scene == "St.LouisPostQuake" || scene == "RiverPreQuake" || 
                 scene == "RiverPostQuake" || scene == "NewMadridPostQuake") {
-            FirstTimeInTown();
-            beenanywhere = true;
-
-            if (!seenScenes.Contains(scene)) { seenScenes.Add(scene); }
-            dialogBox.SetActive(false);
+             dialogBox.SetActive(false);
             Timerbox.SetActive(true);
             // Why is this here and also in LoadYourAsyncScene??
             currentLocation = scene;
@@ -481,6 +477,10 @@ public class GameManager : MonoBehaviour
                 PostUI.SetActive(false);
                 postTestNotebook.GetComponent<testJournal>().testAddToJournal(seenScenes, TestEvidenceList);
             }
+            FirstTimeInTown();
+            beenanywhere = true;
+            if (!seenScenes.Contains(scene)) { seenScenes.Add(scene); }
+
             Title.SetActive(false);
             InvesArea.SetActive(false);
             PostQuakeInves.SetActive(false);
