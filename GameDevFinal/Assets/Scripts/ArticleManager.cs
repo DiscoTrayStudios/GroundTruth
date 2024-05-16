@@ -187,7 +187,7 @@ public static string getFeedback()
         if (chosen.Count == 0) { return "NONE"; }
         if (score >= 100) { return "SUPERB";    }
         if (score > 50)   { return "GREAT";     } 
-        if (score > 0)    { return "GOOD";      } 
+        if (score > 0)    { return "OK";        } 
         if (score == 0)   { return "MIDDLING";  } 
         if (score > -50)  { return "BAD";       }
         else              { return "ABHORRENT"; } 

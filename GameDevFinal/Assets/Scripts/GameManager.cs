@@ -270,12 +270,16 @@ public class GameManager : MonoBehaviour
     }
 
     public void FirstTimeInTown() {
-        print(currentLocation);
-        print(seenScenes.Count);
+        //print(currentLocation);
+        //print(seenScenes.Count);
         if (!seenScenes.Contains(currentLocation)) {
             testNotebook.GetComponent<testJournal>().openingJournal();
             if (beenanywhere) {
-                testNotebook.GetComponent<testJournal>().flipToPage(1);
+                if (seenScenes.Count > 3) {
+                    testNotebook.GetComponent<testJournal>().flipToPage(2);
+                } else {
+                    testNotebook.GetComponent<testJournal>().flipToPage(1);
+                }
             } 
         } 
     }
